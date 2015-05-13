@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using App1.Clases;
+using App1.Clases.AccesoSQL;
 using MetroFramework.Forms;
 
 namespace App1
@@ -54,7 +55,7 @@ namespace App1
                 Clientes.Cel = Convert.ToInt64(txtCel.Text);
                 Clientes.Correo = txtCorreo.Text;
 
-                int resultado = ConsultorioDAL.AgregarCliente(Clientes);
+                int resultado = ClienteDAL.AgregarCliente(Clientes);
 
                 if (resultado > 0)
                 {
@@ -159,7 +160,7 @@ namespace App1
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = ConsultorioDAL.BuscarClientes(txtBuscar.Text);
+            dataGridView1.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
 
         }
 
@@ -168,7 +169,7 @@ namespace App1
             if (dataGridView1.SelectedRows.Count == 1)
             {
                 Int64 Id = Convert.ToInt64(dataGridView1.CurrentRow.Cells[0].Value);
-                ClienteSeleccionado = ConsultorioDAL.ObtenerCliente2(Id);
+                ClienteSeleccionado = ClienteDAL.ObtenerCliente2(Id);
 
             }
             else
@@ -200,6 +201,7 @@ namespace App1
 
         private void btnACtualizar_Click(object sender, EventArgs e)
         {
+
             Cliente pCliente = new Cliente();
             pCliente.Apellido = txtApellido.Text;
             pCliente.Nombre = txtNombre.Text;
@@ -212,7 +214,7 @@ namespace App1
             pCliente.Id = ClienteActual.Id;
 
 
-            int resultado = ConsultorioDAL.Modificar(pCliente);
+            int resultado = ClienteDAL.Modificar(pCliente);
 
             if (resultado > 0)
             {

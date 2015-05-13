@@ -7,13 +7,13 @@ namespace App1.Clases
 {
     class Especialidad
     {
-             public Int64 Id { get; set; }
+             public int Id { get; set; }
         public string Descripcion { get; set; }
         
           public Especialidad()
         { }
 
-        public Especialidad(Int64 pId, string pDescripcion)
+        public Especialidad(int pId, string pDescripcion)
         {
             this.Id = pId;
             this.Descripcion = pDescripcion;

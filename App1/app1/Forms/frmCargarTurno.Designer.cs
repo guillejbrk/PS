@@ -35,7 +35,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnCargar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.label8 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtMOtivo = new System.Windows.Forms.TextBox();
             this.rbnCancelado = new System.Windows.Forms.RadioButton();
             this.rbnAlta = new System.Windows.Forms.RadioButton();
@@ -47,10 +51,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +101,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(239, 227);
+            this.btnCargar.Location = new System.Drawing.Point(212, 240);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 8;
@@ -135,6 +135,31 @@
             this.panel1.Size = new System.Drawing.Size(327, 369);
             this.panel1.TabIndex = 9;
             // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(137, 127);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(120, 94);
+            this.listView2.TabIndex = 19;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 107);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "LIsta de Dias y Horarios Disponibles";
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(16, 127);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(101, 97);
+            this.listView1.TabIndex = 13;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -143,6 +168,14 @@
             this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 17;
             this.label8.Text = "Motivo";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(112, 83);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 12;
             // 
             // txtMOtivo
             // 
@@ -155,7 +188,7 @@
             // rbnCancelado
             // 
             this.rbnCancelado.AutoSize = true;
-            this.rbnCancelado.Location = new System.Drawing.Point(125, 232);
+            this.rbnCancelado.Location = new System.Drawing.Point(112, 240);
             this.rbnCancelado.Name = "rbnCancelado";
             this.rbnCancelado.Size = new System.Drawing.Size(76, 17);
             this.rbnCancelado.TabIndex = 15;
@@ -166,7 +199,7 @@
             // rbnAlta
             // 
             this.rbnAlta.AutoSize = true;
-            this.rbnAlta.Location = new System.Drawing.Point(63, 230);
+            this.rbnAlta.Location = new System.Drawing.Point(56, 240);
             this.rbnAlta.Name = "rbnAlta";
             this.rbnAlta.Size = new System.Drawing.Size(43, 17);
             this.rbnAlta.TabIndex = 14;
@@ -177,7 +210,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 232);
+            this.label7.Location = new System.Drawing.Point(2, 240);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 13;
@@ -246,39 +279,6 @@
             this.panel2.Size = new System.Drawing.Size(406, 219);
             this.panel2.TabIndex = 11;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(112, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(89, 21);
-            this.comboBox1.TabIndex = 12;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(23, 120);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(83, 97);
-            this.listView1.TabIndex = 13;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 107);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "LIsta de Dias y Horarios Disponibles";
-            // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(130, 120);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(83, 97);
-            this.listView2.TabIndex = 19;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
             // frmCargarTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,7 +288,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCargarTurno";
             this.Text = "frmCargarTurno";
             this.Load += new System.EventHandler(this.frmCargarTurno_Load);

@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using App1.Clases;
+using App1.Clases.AccesoSQL;
+using MetroFramework.Forms;
 
 namespace App1.Forms
 {
-    public partial class frmCargarTurno : Form
+    public partial class frmCargarTurno : MetroForm
     {
         public frmCargarTurno()
         {
@@ -20,7 +22,7 @@ namespace App1.Forms
         private void frmCargarTurno_Load(object sender, EventArgs e)
         {
             frmCargarCliente frmCargar = new frmCargarCliente();
-            cboCliente.DataSource = ConsultorioDAL.ObtenerClientes();
+            cboCliente.DataSource = ClienteDAL.ObtenerClientes();
 
             cboCliente.DisplayMember = "Apellido";
             cboCliente.ValueMember = "Id";
@@ -45,8 +47,8 @@ namespace App1.Forms
 
                 pTurno.id_Cliente = Convert.ToInt32(cboCliente.SelectedValue);
                 pTurno.id_Tratamiento = Convert.ToInt32(cboTratamiento.SelectedValue);
-                pTurno.Fecha_Tratamiento = dtpFecha_Tratamiento.Value.ToShortDateString();
-                pTurno.Hora = txtHora.Text;
+             
+             
                 pTurno.id_Terapeuta = Convert.ToInt32(cboTerapeuta.SelectedValue);
                 if (rbnAlta.Checked == false)
                 {
@@ -102,7 +104,7 @@ namespace App1.Forms
         private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             frmCargarCliente frmCargar = new frmCargarCliente();
-            cboCliente.DataSource = ConsultorioDAL.ObtenerClientes();
+            cboCliente.DataSource = ClienteDAL.ObtenerClientes();
 
             cboCliente.DisplayMember = "Apellido";
             cboCliente.ValueMember = "Id";

@@ -12,15 +12,14 @@ namespace App1.Clases
         public string Nombre { get; set; }
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
-        public Int64 id_Agenda { get; set; }
-        public Int64 id_Jornada { get; set; }
-        public Int64 id_Especialidad { get; set; }
+        public Int64 Id_Jornada { get; set; }
+        public Int64 Id_Especialidad { get; set; }
 
           public Terapeuta()
         { }
 
         public Terapeuta(Int64 pId, string pApellido, string pNombre, string pUsuario,string pContraseña,
-            Int64 pid_Agenda, Int64 pid_Jornada, Int64 pid_Especialidad)
+           Int64 pId_Jornada, Int64 pId_Especialidad)
 
         {
             this.Id = pId;
@@ -28,9 +27,9 @@ namespace App1.Clases
             this.Nombre = pNombre;
             this.Usuario=pUsuario;
             this.Contraseña=pContraseña;
-            this.id_Agenda = pid_Agenda;
-            this.id_Jornada = pid_Jornada;
-            this.id_Especialidad = pid_Especialidad; 
+           
+            this.Id_Jornada = pId_Jornada;
+            this.Id_Especialidad = pId_Especialidad; 
            
         }
     }

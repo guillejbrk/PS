@@ -55,11 +55,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\AccesoDatos.cs" />
+    <Compile Include="Clases\AccesoSQL\AgendaDAL.cs" />
+    <Compile Include="Clases\AccesoSQL\ClienteDAL.cs" />
+    <Compile Include="Clases\AccesoSQL\TerapeutaDAL.cs" />
     <Compile Include="Clases\Agenda.cs" />
-    <Compile Include="Clases\BDComun.cs" />
+    <Compile Include="Clases\AccesoSQL\BDComun.cs" />
     <Compile Include="Clases\Cliente.cs" />
-    <Compile Include="Clases\ConsultorioDAL.cs" />
+    <Compile Include="Clases\AccesoSQL\ConsultorioDAL.cs" />
+    <Compile Include="Clases\DiasNoLaborales.cs" />
     <Compile Include="Clases\Especialidad.cs" />
     <Compile Include="Clases\EstadoTurno.cs" />
     <Compile Include="Clases\Historias.cs" />
@@ -232,6 +235,7 @@
   <ItemGroup>
     <None Include="Imagens\IniciarSesion123.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

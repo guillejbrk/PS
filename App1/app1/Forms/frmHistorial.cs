@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using App1.Clases;
+using App1.Clases.AccesoSQL;
 
 namespace App1.Forms
 {
@@ -24,7 +25,7 @@ namespace App1.Forms
 
         private void frmHistorial_Load(object sender, EventArgs e)
         {
-            cboCliente.DataSource = ConsultorioDAL.ObtenerClientes();
+            cboCliente.DataSource = ClienteDAL.ObtenerClientes();
 
             cboCliente.DisplayMember = "Apellido";
             cboCliente.ValueMember = "Id";
