@@ -42,6 +42,16 @@ namespace App1.Forms
             cboTerapeutaNOLAb.DisplayMember = "Apellido";
             cboTerapeutaNOLAb.ValueMember = "Id";
 
+            cbmDiasNoLaboralesMes.DataSource = TerapeutaDAL.ObtenerTerapeuta();
+            cbmDiasNoLaboralesMes.DisplayMember = "Apellido";
+            cbmDiasNoLaboralesMes.ValueMember = "Id";
+
+
+            cmbDiasNoLaboralesSemana.DataSource = TerapeutaDAL.ObtenerTerapeuta();
+            cmbDiasNoLaboralesSemana.DisplayMember = "Apellido";
+            cmbDiasNoLaboralesSemana.ValueMember = "Id";
+
+       
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -294,28 +304,55 @@ namespace App1.Forms
 
         private void btnCargarNL_Click(object sender, EventArgs e)
         {
-
-             if (!AgendaDAL.DiaLaboralExiste( Convert.ToInt32(cboTerapeutaNOLAb.SelectedValue),dtDiasNoLaborables.Value.ToShortDateString()))
-            {
-                DiasNoLaborales DiasNoLab = new DiasNoLaborales();
+            
+                if (!AgendaDAL.DiaLaboralExiste(Convert.ToInt32(cboTerapeutaNOLAb.SelectedValue),
+                    dtDiasNoLaborables.Value.ToShortDateString()))
                 {
+                    if (dtDiasNoLaborables.Value >= DateTime.Today)
+                    {
 
-                    Convert.ToInt32(cboTerapeutaNOLAb.SelectedValue);
-                    DiasNoLab.DiaNoLaboral = dtDiasNoLaborables.Value.ToShortDateString();
-                    DiasNoLab.IdTerapeuta = (Int64) cboTerapeutaNOLAb.SelectedValue;
+                        DiasNoLaborales diasNoLab = new DiasNoLaborales();
+
+                      
+                       diasNoLab.DiaNoLaboral = dtDiasNoLaborables.Value.ToShortDateString();
+                       diasNoLab.IdTerapeuta = (Int64)cboTerapeutaNOLAb.SelectedValue;
+
+
+                        AgendaDAL.AgregarDiaNoLaboral(diasNoLab);
+                        MessageBox.Show("Se Cargo Dia No Laboral", "Dia No Laboral", MessageBoxButtons.OK,
+                     MessageBoxIcon.Information);
+
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Fecha No permitida!", "Error", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
+                    }
 
                 }
-                AgendaDAL.AgregarDiaNoLaboral(DiasNoLab);
-                MessageBox.Show("Se agrego el Dia!!!! ", "Dia No Laboral Guardado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                else
+                {
+                    MessageBox.Show("Ya se Cargo es Dia No LAboral para ese Terapeuta!!", "Error", MessageBoxButtons.OK,
+
+                        MessageBoxIcon.Error);
+                }
+           
+            
+
+        }
+
+        private void lstNoLaboralesSemana_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DiasNoLaborales pDiasNoLaborales = new DiasNoLaborales();
+
+            if (cmbDiasNoLaboralesSemana.SelectedValue != null)
+            {
+                pDiasNoLaborales = AgendaDAL.ObtenerDiasNoLaborales(((Terapeuta) cboTerapeuta.SelectedItem).Id);
+
+                lstNoLaboralesSemana.Items.Add(cmbDiasNoLaboralesSemana.SelectedValue);
 
             }
-             else
-             {
-                 MessageBox.Show("Ya Se Asigno el Dia laboral Al Terapeuta!", "Error", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-             }
-
 
         }
     }

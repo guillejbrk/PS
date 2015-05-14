@@ -143,6 +143,37 @@ namespace App1.Clases.AccesoSQL
             }
         }
 
+        public static DiasNoLaborales ObtenerDiasNoLaborales(Int64 pIdTerapeuta)
+        {
+
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+
+                DiasNoLaborales pDiasNoLaborales = new DiasNoLaborales();
+                SqlCommand comando = new SqlCommand(string.Format(
+                    "Select id_Dia_NoLaborales,Dia_NoLaboral, id_Terapeuta from Dias_NoLaborales where id_Terapeuta = {0} ",
+                    pIdTerapeuta), conexion);
+
+                SqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    pDiasNoLaborales.Id = reader.GetInt32(0);
+                    pDiasNoLaborales.DiaNoLaboral = reader.GetString(1);
+                    pDiasNoLaborales.IdTerapeuta = reader.GetInt32(2);
+              
+
+                }
+                conexion.Close();
+                return pDiasNoLaborales;
+
+            }
+
+
+
+        }
+
+
 
     }
 }

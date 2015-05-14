@@ -11,9 +11,8 @@ namespace App1
 
         {
 
-            SqlConnection Conn=new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=P7; user Id=sa; Password=guille");
+            SqlConnection Conn=new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=BDConsu; user Id=sa; Password=guille");
             Conn.Open();
-
             return Conn;
         }
     }
