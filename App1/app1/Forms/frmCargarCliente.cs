@@ -160,6 +160,7 @@ namespace App1
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
             dataGridView1.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
 
         }
@@ -236,6 +237,27 @@ namespace App1
 
 
         }
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+              if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            dataGridView1.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
+        }
+        
 
         
 

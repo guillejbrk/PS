@@ -8,10 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using App1.Clases;
+using App1.Clases.AccesoSQL;
+using MetroFramework.Forms;
 
 namespace App1.Forms
 {
-    public partial class frmAdmPaciente : Form
+    public partial class frmAdmPaciente : MetroForm
     {
 
         
@@ -33,5 +35,13 @@ namespace App1.Forms
         {
             this.Close();
         }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            dtgPac.DataSource = ClienteDAL.BuscarClientes2(txtBuscar.Text);
+        }
+
+        
+      
     }
 }

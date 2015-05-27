@@ -14,7 +14,7 @@ namespace App1.Forms
 {
     public partial class frmTerapeuta : MetroForm
     {
-        private Agenda pAgenda;
+       
         private Agenda AgendaActual { get; set; }
 
 
@@ -24,10 +24,18 @@ namespace App1.Forms
 
         }
 
+        private void metroTabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+           
+
+
 
 
         private void frmTerapeuta_Load(object sender, EventArgs e)
         {
+
 
             cboTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeuta();
             cboTerapeuta.DisplayMember = "Apellido";
@@ -38,55 +46,10 @@ namespace App1.Forms
             cboEspecialidad.DataSource = TerapeutaDAL.ObtenerEspecialidad();
             cboEspecialidad.DisplayMember = "descripcion";
             cboEspecialidad.ValueMember = "Id";
-            cboTerapeutaNOLAb.DataSource = TerapeutaDAL.ObtenerTerapeuta();
-            cboTerapeutaNOLAb.DisplayMember = "Apellido";
-            cboTerapeutaNOLAb.ValueMember = "Id";
 
-            cbmDiasNoLaboralesMes.DataSource = TerapeutaDAL.ObtenerTerapeuta();
-            cbmDiasNoLaboralesMes.DisplayMember = "Apellido";
-            cbmDiasNoLaboralesMes.ValueMember = "Id";
-
-
-            cmbDiasNoLaboralesSemana.DataSource = TerapeutaDAL.ObtenerTerapeuta();
-            cmbDiasNoLaboralesSemana.DisplayMember = "Apellido";
-            cmbDiasNoLaboralesSemana.ValueMember = "Id";
-
-       
-        }
-        
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Terapeuta Terapeutas = new Terapeuta();
-            if (validar())
-            {
-                Terapeutas.Apellido = txtApe.Text;
-                Terapeutas.Nombre = txtNom.Text;
-                Terapeutas.Usuario = txtUsu.Text;
-                Terapeutas.Contraseña = txtContra.Text;
-                Terapeutas.Id_Jornada = (int) cboJornada.SelectedValue;
-                Terapeutas.Id_Especialidad = (int) cboEspecialidad.SelectedValue;
-
-                int resultado = TerapeutaDAL.AgregarTerapeuta(Terapeutas);
-
-                if (resultado > 0)
-                {
-                    MessageBox.Show("Datos Ingresados Correctamente", "Datos Guardados", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                 
-                    cboTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeuta();
-                    cboTerapeuta.DisplayMember = "Apellido";
-                    cboTerapeuta.ValueMember = "Id";
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo Guardar", "Error al Guardar", MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                }
-
-            }
 
         }
-        
+
         private bool validar()
         {
             if (txtApe.Text == "")
@@ -106,9 +69,44 @@ namespace App1.Forms
             return true;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Terapeuta Terapeutas = new Terapeuta();
+            if (validar())
+            {
+                Terapeutas.Apellido = txtApe.Text;
+                Terapeutas.Nombre = txtNom.Text;
+                Terapeutas.Usuario = txtUsu.Text;
+                Terapeutas.Contraseña = txtContra.Text;
+                Terapeutas.Id_Jornada = (int) cboJornada.SelectedValue;
+                Terapeutas.Id_Especialidad = (int) cboEspecialidad.SelectedValue;
+
+                int resultado = TerapeutaDAL.AgregarTerapeuta(Terapeutas);
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Datos Ingresados Correctamente", "Datos Guardados", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    cboTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeuta();
+                    cboTerapeuta.DisplayMember = "Apellido";
+                    cboTerapeuta.ValueMember = "Id";
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo Guardar", "Error al Guardar", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                }
+
+            }
+
+        }
+
         private void btnCargarL_Click_1(object sender, EventArgs e)
         {
-
             if (!AgendaDAL.Existe(Convert.ToInt32(cboTerapeuta.SelectedValue)))
             {
                 Agenda pAgenda = new Agenda();
@@ -118,15 +116,11 @@ namespace App1.Forms
                     {
                         pAgenda.Lunes = true;
                         pAgenda.IdTerapeuta = (Int64) cboTerapeuta.SelectedValue;
-
                     }
-
                     if (chbMartes1.Checked)
                     {
                         pAgenda.Martes = true;
-                        pAgenda.IdTerapeuta = (Int64)cboTerapeuta.SelectedValue;
-
-
+                        pAgenda.IdTerapeuta = (Int64) cboTerapeuta.SelectedValue;
                     }
                     if (chbMiercoles.Checked)
                     {
@@ -134,13 +128,10 @@ namespace App1.Forms
                         pAgenda.IdTerapeuta = (Int64) cboTerapeuta.SelectedValue;
 
                     }
-
                     if (chbJueves.Checked)
                     {
                         pAgenda.Jueves = true;
                         pAgenda.IdTerapeuta = (Int64) cboTerapeuta.SelectedValue;
-
-
                     }
                     if (chbViernes.Checked)
                     {
@@ -152,67 +143,120 @@ namespace App1.Forms
                     {
                         pAgenda.Sabado = true;
                         pAgenda.IdTerapeuta = (Int64) cboTerapeuta.SelectedValue;
-
                     }
                     if (chbDomingo.Checked)
                     {
                         pAgenda.Domingo = true;
                         pAgenda.IdTerapeuta = (Int64) cboTerapeuta.SelectedValue;
-
                     }
+
                     AgendaDAL.AgregarDia(pAgenda);
                     MessageBox.Show("Se agrego el DIA", "Dias Guardados", MessageBoxButtons.OK,
-                   MessageBoxIcon.Information);
+                        MessageBoxIcon.Information);
                 }
 
             }
             else
-            {MessageBox.Show("Ya Se han Asiganado los dias al Terapeuta!", "Error", MessageBoxButtons.OK,
+            {
+                MessageBox.Show("Ya Se han Asiganado los dias al Terapeuta!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
 
-            
+
 
         }
 
         private void cboTerapeuta_SelectedIndexChanged(object sender, EventArgs e)
         {
+            List<DiasNoLaborales> pDiasNoLaborales = new List<DiasNoLaborales>();
             Agenda pAgenda = new Agenda();
 
             if (cboTerapeuta.SelectedValue != null)
             {
+                pDiasNoLaborales = AgendaDAL.ObtenerDiasNoLaboralesAño(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+                lstNoLaboralesSemana.DataSource = null;
+                lstNoLaboralesSemana.DataSource = pDiasNoLaborales;
+                cboTerapeuta.ValueMember = "Id";
+                lstNoLaboralesSemana.DisplayMember = "DiaNoLaboral";
+
+                rbtSemana.Checked = false;
+                rbtMes.Checked = false;
+                rbtAño.Checked = false;
+
+
+
                 pAgenda = AgendaDAL.ObtenerAgenda(((Terapeuta) cboTerapeuta.SelectedItem).Id);
+                
 
+                if (pAgenda.Lunes)
+                {
+                    chbLunes.Checked = true;
+                }
+                else
+                {
+                    chbLunes.Checked = false;
+                }
 
-              
+                if (pAgenda.Martes)
+                {
+                    chbMartes1.Checked = true;
+                }
+                else
+                {
+                    chbMartes1.Checked = false;
+                }
 
-                if (pAgenda.Lunes){chbLunes.Checked = true;}
-                else{chbLunes.Checked = false;}
+                if (pAgenda.Miercoles)
+                {
+                    chbMiercoles.Checked = true;
+                }
+                else
+                {
+                    chbMiercoles.Checked = false;
+                }
 
-                if (pAgenda.Martes) { chbMartes1.Checked = true; }
-                else { chbMartes1.Checked = false; }
+                if (pAgenda.Jueves)
+                {
+                    chbJueves.Checked = true;
+                }
+                else
+                {
+                    chbJueves.Checked = false;
+                }
 
-                if (pAgenda.Miercoles){chbMiercoles.Checked = true;}
-                else{chbMiercoles.Checked = false;}
+                if (pAgenda.Viernes)
+                {
+                    chbViernes.Checked = true;
+                }
+                else
+                {
+                    chbViernes.Checked = false;
+                }
 
-                if (pAgenda.Jueves){chbJueves.Checked = true;
-                }else{chbJueves.Checked = false;}
+                if (pAgenda.Sabado)
+                {
+                    chbSabado.Checked = true;
+                }
+                else
+                {
+                    chbSabado.Checked = false;
+                }
 
-                if (pAgenda.Viernes){chbViernes.Checked = true;}
-                else{chbViernes.Checked = false;}
+                if (pAgenda.Domingo)
+                {
+                    chbDomingo.Checked = true;
+                }
+                else
+                {
+                    chbDomingo.Checked = false;
+                }
+            }
 
-                if (pAgenda.Sabado){chbSabado.Checked = true;}
-                else{chbSabado.Checked = false;}
-
-                if (pAgenda.Domingo){chbDomingo.Checked = true;}
-                else{chbDomingo.Checked = false;}
-              }
-            
         }
 
         private void btnModLab_Click(object sender, EventArgs e)
         {
-             if (cboTerapeuta.SelectedValue !=null)
+            if (cboTerapeuta.SelectedValue != null)
             {
                 Int64 Id = Convert.ToInt64(cboTerapeuta.SelectedValue);
                 AgendaActual = AgendaDAL.ObtenerAgenda(Id);
@@ -272,7 +316,7 @@ namespace App1.Forms
                 }
 
                 pAgenda.IdTerapeuta = pAgenda.IdTerapeuta;
-                
+
                 int resultado = AgendaDAL.ModificarAgenda(pAgenda);
 
                 if (resultado > 0)
@@ -292,72 +336,129 @@ namespace App1.Forms
 
         }
 
-        private void metroPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCargarNL_Click(object sender, EventArgs e)
         {
-            
-                if (!AgendaDAL.DiaLaboralExiste(Convert.ToInt32(cboTerapeutaNOLAb.SelectedValue),
-                    dtDiasNoLaborables.Value.ToShortDateString()))
+
+            if (!AgendaDAL.DiaLaboralExiste(Convert.ToInt32(cboTerapeuta.SelectedValue),
+                dtDiasNoLaborables.Value.ToShortDateString()))
+            {
+                if (dtDiasNoLaborables.Value >= DateTime.Today)
                 {
-                    if (dtDiasNoLaborables.Value >= DateTime.Today)
-                    {
 
-                        DiasNoLaborales diasNoLab = new DiasNoLaborales();
-
-                      
-                       diasNoLab.DiaNoLaboral = dtDiasNoLaborables.Value.ToShortDateString();
-                       diasNoLab.IdTerapeuta = (Int64)cboTerapeutaNOLAb.SelectedValue;
+                    DiasNoLaborales diasNoLab = new DiasNoLaborales();
 
 
-                        AgendaDAL.AgregarDiaNoLaboral(diasNoLab);
-                        MessageBox.Show("Se Cargo Dia No Laboral", "Dia No Laboral", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information);
+                    diasNoLab.DiaNoLaboral = dtDiasNoLaborables.Value.ToShortDateString();
+                    diasNoLab.IdTerapeuta = (Int64) cboTerapeuta.SelectedValue;
 
-                    }
 
-                    else
-                    {
-                        MessageBox.Show("Fecha No permitida!", "Error", MessageBoxButtons.OK,
-                                 MessageBoxIcon.Error);
-                    }
+                    AgendaDAL.AgregarDiaNoLaboral(diasNoLab);
+                    MessageBox.Show("Se Cargo Dia No Laboral", "Dia No Laboral", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                  
+
+                    List<DiasNoLaborales> pDiasNoLaborales = new List<DiasNoLaborales>();
+                    pDiasNoLaborales = AgendaDAL.ObtenerDiasNoLaboralesAño(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+                    lstNoLaboralesSemana.DataSource = null;
+                    lstNoLaboralesSemana.DataSource = pDiasNoLaborales;
+
+                    cboTerapeuta.ValueMember = "Id";
+                    lstNoLaboralesSemana.DisplayMember = "DiaNoLaboral";
+
+                    rbtSemana.Checked = false;
+                    rbtMes.Checked = false;
+                    rbtAño.Checked = false;
 
                 }
-                else
-                {
-                    MessageBox.Show("Ya se Cargo es Dia No LAboral para ese Terapeuta!!", "Error", MessageBoxButtons.OK,
+                  
 
+            else
+                {
+                    MessageBox.Show("Fecha No permitida!", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-           
-            
-
-        }
-
-        private void lstNoLaboralesSemana_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DiasNoLaborales pDiasNoLaborales = new DiasNoLaborales();
-
-            if (cmbDiasNoLaboralesSemana.SelectedValue != null)
-            {
-                pDiasNoLaborales = AgendaDAL.ObtenerDiasNoLaborales(((Terapeuta) cboTerapeuta.SelectedItem).Id);
-
-                lstNoLaboralesSemana.Items.Add(cmbDiasNoLaboralesSemana.SelectedValue);
 
             }
+            else
+            {
+                MessageBox.Show("Ya se Cargo es Dia No LAboral para ese Terapeuta!!", "Error", MessageBoxButtons.OK,
+
+                    MessageBoxIcon.Error);
+            }
+
+
+
+        }
+
+        private void rbtSemana_CheckedChanged(object sender, EventArgs e)
+        {
+          //  this.cboTerapeuta.SelectedIndexChanged += new System.EventHandler(this.rbtSemana_CheckedChanged);
+            List<DiasNoLaborales> pDiasNoLaborales = new List<DiasNoLaborales>();
+
+            pDiasNoLaborales = AgendaDAL.ObtenerDiasNoLaboralesSemana(((Terapeuta) cboTerapeuta.SelectedItem).Id);
+
+            lstNoLaboralesSemana.DataSource = pDiasNoLaborales;
+            cboTerapeuta.ValueMember = "Id";
+            lstNoLaboralesSemana.DisplayMember = "DiaNoLaboral";
+        }
+
+        private void rbtMes_CheckedChanged(object sender, EventArgs e)
+        {
+          //  this.cboTerapeuta.SelectedIndexChanged += new System.EventHandler(this.rbtMes_CheckedChanged);
+            List<DiasNoLaborales> pDiasNoLaborales = new List<DiasNoLaborales>();
+            pDiasNoLaborales = AgendaDAL.ObtenerDiasNoLaboralesMes(((Terapeuta) cboTerapeuta.SelectedItem).Id);
+
+            lstNoLaboralesSemana.DataSource = pDiasNoLaborales;
+            cboTerapeuta.ValueMember = "Id";
+            lstNoLaboralesSemana.DisplayMember = "DiaNoLaboral";
+
+        }
+
+        private void rbtAño_CheckedChanged(object sender, EventArgs e)
+        {
+           // this.cboTerapeuta.SelectedIndexChanged += new System.EventHandler(this.rbtAño_CheckedChanged);
+
+            List<DiasNoLaborales> pDiasNoLaborales = new List<DiasNoLaborales>();
+            pDiasNoLaborales = AgendaDAL.ObtenerDiasNoLaboralesAño(((Terapeuta) cboTerapeuta.SelectedItem).Id);
+
+            lstNoLaboralesSemana.DataSource = pDiasNoLaborales;
+            cboTerapeuta.ValueMember = "Id";
+            lstNoLaboralesSemana.DisplayMember = "DiaNoLaboral";
+        }
+
+        private void btnEliminarDiaNoLaboral_Click(object sender, EventArgs e)
+        {
+
+            
+           
+                Int64 Id = Convert.ToInt64(cboTerapeuta.SelectedValue);
+
+                AgendaDAL.EliminarDiaNoLaboral(Id, (lstNoLaboralesSemana.Text));
+
+                MessageBox.Show("Dia No Laboral Eliminado", "Agenda Modificada", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+           
+                List<DiasNoLaborales> pDiasNoLaborales = new List<DiasNoLaborales>();
+
+                lstNoLaboralesSemana.DataSource = null;
+                lstNoLaboralesSemana.DataSource = pDiasNoLaborales;
+                cboTerapeuta.ValueMember = "Id";
+                lstNoLaboralesSemana.DisplayMember = "DiaNoLaboral";
+
+            rbtSemana.Checked = false;
+            rbtMes.Checked = false;
+            rbtAño.Checked = false;
+
+
+
+        }
+
+        
 
         }
     }
-      
 
-    }
 
 

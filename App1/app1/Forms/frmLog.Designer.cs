@@ -80,6 +80,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(175, 22);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtPass
             // 
@@ -91,6 +92,8 @@
             this.txtPass.Size = new System.Drawing.Size(175, 22);
             this.txtPass.TabIndex = 2;
             this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // label2
             // 
@@ -104,6 +107,7 @@
             this.label2.Size = new System.Drawing.Size(94, 22);
             this.label2.TabIndex = 11;
             this.label2.Text = "Contraseña";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -117,6 +121,7 @@
             this.label1.Size = new System.Drawing.Size(65, 22);
             this.label1.TabIndex = 10;
             this.label1.Text = "Usuario";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -129,6 +134,7 @@
             this.label3.Size = new System.Drawing.Size(150, 25);
             this.label3.TabIndex = 15;
             this.label3.Text = "Iniciar Sesion";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // linkLabel1
             // 
@@ -156,7 +162,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(450, 250);
+            this.ClientSize = new System.Drawing.Size(451, 250);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);

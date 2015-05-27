@@ -8,10 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using App1.Clases;
 using App1.Clases.AccesoSQL;
+using MetroFramework.Forms;
 
 namespace App1.Forms
 {
-    public partial class frmHistorial : Form
+    public partial class frmHistorial : MetroForm
     {
         public frmHistorial()
         {
@@ -30,13 +31,27 @@ namespace App1.Forms
             cboCliente.DisplayMember = "Apellido";
             cboCliente.ValueMember = "Id";
 
+
+        }
+        private bool validar()
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Debe Completar el campo Observacion", "Error al Cargar", MessageBoxButtons.OK,
+                      MessageBoxIcon.Exclamation); ;
+                textBox1.Focus();
+                return false;
+            }
+          
+
+            return true;
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
+        private void btnCargar_Click_1(object sender, EventArgs e)
         {
             Historias pHistorias = new Historias();
 
-            {
+           if(validar()) {
                 pHistorias.fecha = dtpFecha1.Text;
                 pHistorias.Observacion = textBox1.Text;
                 pHistorias.id_Cliente = Convert.ToInt32(cboCliente.SelectedValue);
@@ -55,6 +70,8 @@ namespace App1.Forms
                         MessageBoxIcon.Exclamation);
                 }
             }
+
         }
+
     }
 }

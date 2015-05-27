@@ -28,133 +28,144 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboCliente = new System.Windows.Forms.ComboBox();
             this.btnCargar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // button1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.dtpFecha1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.cboCliente);
-            this.panel1.Controls.Add(this.btnCargar);
-            this.panel1.Location = new System.Drawing.Point(37, 37);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 183);
-            this.panel1.TabIndex = 1;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::App1.Properties.Resources.Boton;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Image = global::App1.Properties.Resources.Boton;
+            this.button1.Location = new System.Drawing.Point(546, 321);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 27);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Cerrar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.metroLabel1);
+            this.metroPanel1.Controls.Add(this.textBox1);
+            this.metroPanel1.Controls.Add(this.dtpFecha1);
+            this.metroPanel1.Controls.Add(this.label2);
+            this.metroPanel1.Controls.Add(this.label1);
+            this.metroPanel1.Controls.Add(this.cboCliente);
+            this.metroPanel1.Controls.Add(this.btnCargar);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(24, 63);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(503, 250);
+            this.metroPanel1.TabIndex = 3;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 56);
+            this.textBox1.Location = new System.Drawing.Point(93, 69);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 93);
-            this.textBox1.TabIndex = 7;
+            this.textBox1.Size = new System.Drawing.Size(306, 139);
+            this.textBox1.TabIndex = 13;
             // 
             // dtpFecha1
             // 
             this.dtpFecha1.CustomFormat = "dd-MM-yyyy";
             this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(72, 30);
+            this.dtpFecha1.Location = new System.Drawing.Point(93, 40);
             this.dtpFecha1.Name = "dtpFecha1";
             this.dtpFecha1.Size = new System.Drawing.Size(133, 20);
-            this.dtpFecha1.TabIndex = 6;
+            this.dtpFecha1.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 37);
+            this.label2.Location = new System.Drawing.Point(24, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 11;
             this.label2.Text = "Fecha";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Location = new System.Drawing.Point(24, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 10;
             this.label1.Text = "Paciente";
             // 
             // cboCliente
             // 
             this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(72, 3);
+            this.cboCliente.Location = new System.Drawing.Point(93, 13);
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(133, 21);
-            this.cboCliente.TabIndex = 3;
+            this.cboCliente.TabIndex = 9;
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(291, 155);
+            this.btnCargar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCargar.BackgroundImage = global::App1.Properties.Resources.Boton;
+            this.btnCargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCargar.Location = new System.Drawing.Point(404, 218);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 23);
-            this.btnCargar.TabIndex = 1;
+            this.btnCargar.Size = new System.Drawing.Size(94, 27);
+            this.btnCargar.TabIndex = 8;
             this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseVisualStyleBackColor = true;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            this.btnCargar.UseVisualStyleBackColor = false;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click_1);
             // 
-            // button1
+            // metroLabel1
             // 
-            this.button1.Location = new System.Drawing.Point(426, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Cerrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(423, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Cargar Historia";
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(3, 66);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel1.TabIndex = 14;
+            this.metroLabel1.Text = "Observacion:";
             // 
             // frmHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 261);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(667, 356);
+            this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHistorial";
-            this.Text = "frmHistorial";
+            this.Text = "Cargar Historia";
             this.Load += new System.EventHandler(this.frmHistorial_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cboCliente;
-        private System.Windows.Forms.Button btnCargar;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker dtpFecha1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cboCliente;
+        private System.Windows.Forms.Button btnCargar;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }

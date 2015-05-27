@@ -34,7 +34,7 @@ namespace App1.Clases.AccesoSQL
 
             SqlConnection conexion = BDComun.obtenerConexion();
 
-            SqlCommand _comando = new SqlCommand("select id_terapeuta,Apellido from Terapeuta", conexion);
+            SqlCommand _comando = new SqlCommand("select nro_cliente, Apellido,Nombre,Apellido+' '+Nombre as NOMBRECOMPLETO from Cliente", conexion);
             SqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
@@ -42,7 +42,8 @@ namespace App1.Clases.AccesoSQL
 
                 pTerapeuta.Id = _reader.GetInt32(0);
                 pTerapeuta.Apellido = _reader.GetString(1);
-
+                pTerapeuta.Nombre = _reader.GetString(2);
+                
 
 
                 _listaTerapeutas.Add(pTerapeuta);

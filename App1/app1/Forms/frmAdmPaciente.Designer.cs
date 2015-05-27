@@ -28,54 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Buscar = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lstPaciente = new System.Windows.Forms.ListView();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.Cerrar = new System.Windows.Forms.Button();
+            this.dtgPac = new MetroFramework.Controls.MetroGrid();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPac)).BeginInit();
             this.SuspendLayout();
             // 
             // Buscar
             // 
             this.Buscar.AutoSize = true;
-            this.Buscar.Location = new System.Drawing.Point(57, 55);
+            this.Buscar.Location = new System.Drawing.Point(3, 21);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(40, 13);
+            this.Buscar.Size = new System.Drawing.Size(46, 13);
             this.Buscar.TabIndex = 46;
-            this.Buscar.Text = "Buscar";
+            this.Buscar.Text = "Buscar :";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(203, 246);
+            this.button1.Location = new System.Drawing.Point(402, 278);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 43;
             this.button1.Text = "Modificar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(20, 17);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(332, 20);
-            this.txtBuscar.TabIndex = 44;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 13);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "Administrar Paciente";
-            // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(103, 246);
+            this.btnNuevo.Location = new System.Drawing.Point(118, 278);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 47;
@@ -86,18 +73,19 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Location = new System.Drawing.Point(103, 35);
+            this.panel1.Controls.Add(this.Buscar);
+            this.panel1.Location = new System.Drawing.Point(111, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(374, 56);
+            this.panel1.Size = new System.Drawing.Size(357, 56);
             this.panel1.TabIndex = 48;
             // 
-            // lstPaciente
+            // txtBuscar
             // 
-            this.lstPaciente.Location = new System.Drawing.Point(103, 98);
-            this.lstPaciente.Name = "lstPaciente";
-            this.lstPaciente.Size = new System.Drawing.Size(374, 142);
-            this.lstPaciente.TabIndex = 49;
-            this.lstPaciente.UseCompatibleStateImageBehavior = false;
+            this.txtBuscar.Location = new System.Drawing.Point(55, 18);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(293, 20);
+            this.txtBuscar.TabIndex = 44;
+            this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
             // Cerrar
             // 
@@ -109,24 +97,66 @@
             this.Cerrar.UseVisualStyleBackColor = true;
             this.Cerrar.Click += new System.EventHandler(this.Cerrar_Click);
             // 
+            // dtgPac
+            // 
+            this.dtgPac.AllowUserToResizeRows = false;
+            this.dtgPac.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtgPac.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgPac.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dtgPac.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgPac.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgPac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgPac.ColumnHeadersVisible = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgPac.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgPac.EnableHeadersVisualStyles = false;
+            this.dtgPac.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dtgPac.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtgPac.Location = new System.Drawing.Point(111, 140);
+            this.dtgPac.Name = "dtgPac";
+            this.dtgPac.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgPac.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgPac.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtgPac.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgPac.Size = new System.Drawing.Size(427, 132);
+            this.dtgPac.TabIndex = 51;
+            // 
             // frmAdmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 356);
+            this.ClientSize = new System.Drawing.Size(631, 373);
+            this.Controls.Add(this.dtgPac);
             this.Controls.Add(this.Cerrar);
-            this.Controls.Add(this.lstPaciente);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.Buscar);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label9);
             this.Name = "frmAdmPaciente";
-            this.Text = "frmAdmPaciente";
+            this.Text = "Administrar Pacientes";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPac)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -134,11 +164,10 @@
 
         private System.Windows.Forms.Label Buscar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListView lstPaciente;
         private System.Windows.Forms.Button Cerrar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private MetroFramework.Controls.MetroGrid dtgPac;
     }
 }

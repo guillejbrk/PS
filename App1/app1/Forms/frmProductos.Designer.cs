@@ -28,125 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnCargarProducto = new MetroFramework.Controls.MetroButton();
+            this.txtCosto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.btnCargar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.txtProducto = new System.Windows.Forms.TextBox();
+            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // btnCargarProducto
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Productos";
+            this.btnCargarProducto.Location = new System.Drawing.Point(277, 104);
+            this.btnCargarProducto.Name = "btnCargarProducto";
+            this.btnCargarProducto.Size = new System.Drawing.Size(99, 23);
+            this.btnCargarProducto.TabIndex = 14;
+            this.btnCargarProducto.Text = "Cargar";
+            this.btnCargarProducto.UseSelectable = true;
+            this.btnCargarProducto.Click += new System.EventHandler(this.btnCargarProducto_Click);
             // 
-            // textBox1
+            // txtCosto
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 66);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Cantidad";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Producto";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(87, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtCosto.Location = new System.Drawing.Point(80, 62);
+            this.txtCosto.Name = "txtCosto";
+            this.txtCosto.Size = new System.Drawing.Size(100, 20);
+            this.txtCosto.TabIndex = 13;
+            this.txtCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCosto_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 101);
+            this.label4.Location = new System.Drawing.Point(18, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 5;
+            this.label4.TabIndex = 12;
             this.label4.Text = "Costo";
             // 
-            // textBox3
+            // txtCantidad
             // 
-            this.textBox3.Location = new System.Drawing.Point(87, 94);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtCantidad.Location = new System.Drawing.Point(80, 34);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 11;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
-            // btnCargar
+            // label3
             // 
-            this.btnCargar.Location = new System.Drawing.Point(376, 165);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 23);
-            this.btnCargar.TabIndex = 7;
-            this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Producto";
             // 
-            // panel1
+            // label2
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(93, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(226, 145);
-            this.panel1.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Cantidad";
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Controls.Add(this.btnCargarProducto);
+            this.metroPanel1.Controls.Add(this.txtCosto);
+            this.metroPanel1.Controls.Add(this.label4);
+            this.metroPanel1.Controls.Add(this.txtCantidad);
+            this.metroPanel1.Controls.Add(this.label3);
+            this.metroPanel1.Controls.Add(this.label2);
+            this.metroPanel1.Controls.Add(this.txtProducto);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(23, 63);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(393, 130);
+            this.metroPanel1.TabIndex = 3;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // txtProducto
+            // 
+            this.txtProducto.Location = new System.Drawing.Point(80, 8);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(100, 20);
+            this.txtProducto.TabIndex = 8;
             // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 216);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnCargar);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(448, 219);
+            this.Controls.Add(this.metroPanel1);
             this.Name = "frmProductos";
-            this.Text = "frmProductos";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Text = "Cargar Productos:";
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private MetroFramework.Controls.MetroButton btnCargarProducto;
+        private System.Windows.Forms.TextBox txtCosto;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button btnCargar;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.TextBox txtProducto;
+
+
+
     }
 }

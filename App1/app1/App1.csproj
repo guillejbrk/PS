@@ -59,7 +59,10 @@
   <ItemGroup>
     <Compile Include="Clases\AccesoSQL\AgendaDAL.cs" />
     <Compile Include="Clases\AccesoSQL\ClienteDAL.cs" />
+    <Compile Include="Clases\AccesoSQL\HistoriaDAL.cs" />
+    <Compile Include="Clases\AccesoSQL\ProductosDAL.cs" />
     <Compile Include="Clases\AccesoSQL\TerapeutaDAL.cs" />
+    <Compile Include="Clases\AccesoSQL\TratamientoDAL.cs" />
     <Compile Include="Clases\Agenda.cs" />
     <Compile Include="Clases\AccesoSQL\BDComun.cs" />
     <Compile Include="Clases\Cliente.cs" />

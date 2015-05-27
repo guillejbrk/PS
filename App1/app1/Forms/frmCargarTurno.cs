@@ -35,7 +35,16 @@ namespace App1.Forms
             cboTerapeuta.DataSource = ConsultorioDAL.ObtenerTerapeuta();
             cboTerapeuta.DisplayMember = "Apellido";
             cboTerapeuta.ValueMember = "Id";
-            txtMOtivo.Visible = false;
+            txtMotivo.Visible = false;
+
+            if (rbnCancelado.Checked)
+            {
+                panelCanelado.Visible = true;
+            }
+            else
+            {
+                panelCanelado.Visible = false;
+            }
 
         }
 
@@ -112,6 +121,17 @@ namespace App1.Forms
             cboTratamiento.DataSource = ConsultorioDAL.ObtenerTratamiento();
             cboTratamiento.DisplayMember = "Descripcion";
             cboTratamiento.ValueMember = "Id";
+        }
+
+        private void rbnCancelado_CheckedChanged(object sender, EventArgs e)
+        {
+            panelCanelado.Visible = true;
+            txtMotivo.Visible = true;
+        }
+
+        private void rbnAlta_CheckedChanged(object sender, EventArgs e)
+        {
+            panelCanelado.Visible = false;
         }
         
 

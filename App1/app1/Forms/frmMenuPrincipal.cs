@@ -38,10 +38,7 @@ namespace App1.Forms
             CargarTratamiento.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            label1.Text = DateTime.Now.ToString();
-        }
+       
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -116,6 +113,27 @@ namespace App1.Forms
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void nuevaHistoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHistorial CargarTratamiento = new frmHistorial();
+            CargarTratamiento.MdiParent = this;
+            CargarTratamiento.Show();
+        }
+
+        private void prodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProductosDisponibles ProductosDisponibles = new frmProductosDisponibles();
+            ProductosDisponibles.MdiParent = this;
+            ProductosDisponibles.Show();
+        }
+
+        private void buscarPacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmPaciente Pacientes = new frmAdmPaciente();
+            Pacientes.MdiParent = this;
+            Pacientes.Show();
         }
 
 

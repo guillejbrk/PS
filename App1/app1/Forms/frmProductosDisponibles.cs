@@ -6,10 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MetroFramework.Forms;
 
 namespace App1.Forms
 {
-    public partial class frmProductosDisponibles : Form
+    public partial class frmProductosDisponibles : MetroForm
     {
         public frmProductosDisponibles()
         {

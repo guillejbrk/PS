@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace App1.Clases.AccesoSQL
 {
@@ -111,7 +114,7 @@ namespace App1.Clases.AccesoSQL
                     new SqlCommand(
                         String.Format(
                             "insert into Dias_NoLaborales (Dia_NoLaboral,id_Terapeuta) values ('{0}','{1}')",
-                           pDiasNoLaborales.DiaNoLaboral, pDiasNoLaborales.IdTerapeuta), Conn);
+                            pDiasNoLaborales.DiaNoLaboral, pDiasNoLaborales.IdTerapeuta), Conn);
 
                 retorno = Comando.ExecuteNonQuery();
             }
@@ -130,7 +133,7 @@ namespace App1.Clases.AccesoSQL
                 string query = "SELECT count(*) FROM Dias_NoLaborales" +
                                " WHERE dia_NoLaboral= @dia_NoLaboral and id_Terapeuta=@id_Terapeuta";
                 SqlCommand cmd = new SqlCommand(query, conexion);
-              
+
                 cmd.Parameters.AddWithValue("id_Terapeuta", var);
                 cmd.Parameters.AddWithValue("dia_NoLaboral", var1);
 
@@ -143,37 +146,173 @@ namespace App1.Clases.AccesoSQL
             }
         }
 
-        public static DiasNoLaborales ObtenerDiasNoLaborales(Int64 pIdTerapeuta)
+        public static List<DiasNoLaborales> ObtenerDiasNoLaborales(Int64 pIdTerapeuta)
         {
-
+            List<DiasNoLaborales> _listaDiasNoLaboraleses = new List<DiasNoLaborales>();
             using (SqlConnection conexion = BDComun.obtenerConexion())
             {
 
-                DiasNoLaborales pDiasNoLaborales = new DiasNoLaborales();
+
                 SqlCommand comando = new SqlCommand(string.Format(
                     "Select id_Dia_NoLaborales,Dia_NoLaboral, id_Terapeuta from Dias_NoLaborales where id_Terapeuta = {0} ",
                     pIdTerapeuta), conexion);
-
                 SqlDataReader reader = comando.ExecuteReader();
 
                 while (reader.Read())
                 {
+                    DiasNoLaborales pDiasNoLaborales = new DiasNoLaborales();
                     pDiasNoLaborales.Id = reader.GetInt32(0);
-                    pDiasNoLaborales.DiaNoLaboral = reader.GetString(1);
+                    pDiasNoLaborales.DiaNoLaboral = reader.GetDateTime(1).ToShortDateString();
                     pDiasNoLaborales.IdTerapeuta = reader.GetInt32(2);
-              
+
+                    _listaDiasNoLaboraleses.Add(pDiasNoLaborales);
 
                 }
+                return _listaDiasNoLaboraleses;
                 conexion.Close();
-                return pDiasNoLaborales;
 
+
+            }
+
+
+
+
+        }
+
+        public static List<DiasNoLaborales> ObtenerDiasNoLaboralesSemana(Int64 pIdTerapeuta)
+        {
+            List<DiasNoLaborales> _listaDiasNoLaboraleses = new List<DiasNoLaborales>();
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+
+            {
+
+
+                SqlCommand comando = new SqlCommand(string.Format(
+                    "select id_Dia_NoLaborales,dia_NoLaboral, id_Terapeuta from Dias_NoLaborales where id_Terapeuta={0} and dia_NoLaboral between '{1}' and '{2}' order by dia_NoLaboral asc",
+                    pIdTerapeuta, DateTime.Now.ToShortDateString(), DateTime.Now.AddDays(7).ToShortDateString()),
+                    conexion);
+                SqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    DiasNoLaborales pDiasNoLaborales = new DiasNoLaborales();
+                    pDiasNoLaborales.Id = reader.GetInt32(0);
+                    pDiasNoLaborales.DiaNoLaboral = reader.GetDateTime(1).ToShortDateString();
+                    pDiasNoLaborales.IdTerapeuta = reader.GetInt32(2);
+
+                    _listaDiasNoLaboraleses.Add(pDiasNoLaborales);
+
+                }
+                return _listaDiasNoLaboraleses;
+
+
+                conexion.Close();
             }
 
 
 
         }
 
+        public static List<DiasNoLaborales> ObtenerDiasNoLaboralesMes(Int64 pIdTerapeuta)
+        {
+            List<DiasNoLaborales> _listaDiasNoLaboraleses = new List<DiasNoLaborales>();
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+
+            {
 
 
+                SqlCommand comando = new SqlCommand(string.Format(
+                    "select id_Dia_NoLaborales,dia_NoLaboral, id_Terapeuta from Dias_NoLaborales where id_Terapeuta={0} and dia_NoLaboral between '{1}' and '{2}' order by dia_NoLaboral asc",
+                    pIdTerapeuta, DateTime.Now.ToShortDateString(), DateTime.Now.AddDays(30).ToShortDateString()),
+                    conexion);
+                SqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    DiasNoLaborales pDiasNoLaborales = new DiasNoLaborales();
+                    pDiasNoLaborales.Id = reader.GetInt32(0);
+                    pDiasNoLaborales.DiaNoLaboral = reader.GetDateTime(1).ToShortDateString();
+                    pDiasNoLaborales.IdTerapeuta = reader.GetInt32(2);
+
+                    _listaDiasNoLaboraleses.Add(pDiasNoLaborales);
+
+                }
+                return _listaDiasNoLaboraleses;
+
+
+                conexion.Close();
+            }
+        }
+
+        public static List<DiasNoLaborales> ObtenerDiasNoLaboralesAño(Int64 pIdTerapeuta)
+        {
+            List<DiasNoLaborales> _listaDiasNoLaboraleses = new List<DiasNoLaborales>();
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+
+
+                SqlCommand comando = new SqlCommand(string.Format(
+                    "select id_Dia_NoLaborales,dia_NoLaboral, id_Terapeuta from Dias_NoLaborales where id_Terapeuta={0} and dia_NoLaboral between '{1}' and '{2}' order by dia_NoLaboral asc",
+                    pIdTerapeuta, DateTime.Now.ToShortDateString(), DateTime.Now.AddDays(365).ToShortDateString()),
+                    conexion);
+                SqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    DiasNoLaborales pDiasNoLaborales = new DiasNoLaborales();
+                    pDiasNoLaborales.Id = reader.GetInt32(0);
+                    pDiasNoLaborales.DiaNoLaboral = reader.GetDateTime(1).ToShortDateString();
+                    pDiasNoLaborales.IdTerapeuta = reader.GetInt32(2);
+
+                    _listaDiasNoLaboraleses.Add(pDiasNoLaborales);
+
+                }
+                return _listaDiasNoLaboraleses;
+
+
+                conexion.Close();
+            }
+        }
+
+        public static int EliminarDiaNoLaboral(Int64 pInt, string pDia_NoLaboral)
+        {
+            int retorno = 0;
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand
+                    (string.Format(
+                        "Delete Dias_NoLaborales where id_Terapeuta={0} and dia_NoLaboral='{1}'",
+                        pInt, pDia_NoLaboral), conexion);
+
+
+                retorno = comando.ExecuteNonQuery();
+                conexion.Close();
+            }
+            return retorno;
+
+        }
+
+        public static Agenda ObtenerDias()
+        {
+
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+
+                Agenda pAgenda = new Agenda();
+                SqlCommand comando = new SqlCommand(string.Format(
+                    "Select * from Dias_NoLaborales"
+                    ), conexion);
+
+                SqlDataReader reader = comando.ExecuteReader();
+
+               
+                conexion.Close();
+                return pAgenda;
+
+            }
+
+
+
+        }
     }
 }
