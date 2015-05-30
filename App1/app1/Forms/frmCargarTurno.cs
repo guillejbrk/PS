@@ -9,32 +9,40 @@ using System.Windows.Forms;
 using App1.Clases;
 using App1.Clases.AccesoSQL;
 using MetroFramework.Forms;
+using System.Globalization;
+using System.Threading;
 
 namespace App1.Forms
 {
     public partial class frmCargarTurno : MetroForm
     {
+       
+         
         public frmCargarTurno()
         {
+           
             InitializeComponent();
         }
 
         private void frmCargarTurno_Load(object sender, EventArgs e)
         {
             frmCargarCliente frmCargar = new frmCargarCliente();
-            cboCliente.DataSource = ClienteDAL.ObtenerClientes();
 
-            cboCliente.DisplayMember = "Apellido";
-            cboCliente.ValueMember = "Id";
+          
+
+            cboPaciente.DataSource = ClienteDAL.ObtenerClientes();
+            cboPaciente.DisplayMember = "Apellido";
+            cboPaciente.ValueMember = "Id";
            
 
             cboTratamiento.DataSource = ConsultorioDAL.ObtenerTratamiento();
             cboTratamiento.DisplayMember = "Descripcion";
             cboTratamiento.ValueMember = "Id";
 
-            cboTerapeuta.DataSource = ConsultorioDAL.ObtenerTerapeuta();
+            cboTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeuta();
             cboTerapeuta.DisplayMember = "Apellido";
             cboTerapeuta.ValueMember = "Id";
+
             txtMotivo.Visible = false;
 
             if (rbnCancelado.Checked)
@@ -54,7 +62,7 @@ namespace App1.Forms
 
             {
 
-                pTurno.id_Cliente = Convert.ToInt32(cboCliente.SelectedValue);
+                pTurno.id_Cliente = Convert.ToInt32(cboPaciente.SelectedValue);
                 pTurno.id_Tratamiento = Convert.ToInt32(cboTratamiento.SelectedValue);
              
              
@@ -98,30 +106,11 @@ namespace App1.Forms
 
         private void btnCrearPaciente_Click(object sender, EventArgs e)
         {
-
             frmCargarCliente frmCargar= new frmCargarCliente();
              frmCargar.ShowDialog();
             
-
-
-
-
         }
-
-
-
-        private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            frmCargarCliente frmCargar = new frmCargarCliente();
-            cboCliente.DataSource = ClienteDAL.ObtenerClientes();
-
-            cboCliente.DisplayMember = "Apellido";
-            cboCliente.ValueMember = "Id";
-
-            cboTratamiento.DataSource = ConsultorioDAL.ObtenerTratamiento();
-            cboTratamiento.DisplayMember = "Descripcion";
-            cboTratamiento.ValueMember = "Id";
-        }
+    
 
         private void rbnCancelado_CheckedChanged(object sender, EventArgs e)
         {
@@ -133,6 +122,60 @@ namespace App1.Forms
         {
             panelCanelado.Visible = false;
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+     
+        private void cboPaciente_MouseClick(object sender, MouseEventArgs e)
+        {
+            frmCargarCliente frmCargar = new frmCargarCliente();
+            cboPaciente.DataSource = ClienteDAL.ObtenerClientes();
+
+            cboPaciente.DisplayMember = "Apellido";
+            cboPaciente.ValueMember = "Id";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+
+
+
+        }
+
+        private void cboPaciente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+
+            
+
+
+         
+
+        }
+
+        private void cboTerapeuta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboDia.DataSource = null;
+            cboDia.DataSource = AgendaDAL.ObtenerListaDias(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+          
+            
+        }
+
+        
+        //internacionalizacion de idioma cambiar idioma C#
+      
+
+
+     
         
 
     

@@ -136,6 +136,20 @@ namespace App1.Forms
             Pacientes.Show();
         }
 
+        private void buscarHistorialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMostrarHistorial Histo = new frmMostrarHistorial();
+            Histo.MdiParent = this;
+            Histo.Show();
+        }
+
+        private void agendaTelefonicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAgendaTel Age = new frmAgendaTel();
+            Age.MdiParent = this;
+            Age.Show();
+        }
+
 
 
 

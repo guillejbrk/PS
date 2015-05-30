@@ -17,8 +17,8 @@ namespace App1
         public Int64 Edad { get; set; }
         public string Fecha { get; set; }
         public string Domicilio { get; set; }
-        public Int64 Tel { get; set; }
-        public Int64 Cel { get; set; }
+        public string Tel { get; set; }
+        public string Cel { get; set; }
         public string Correo { get; set; }
        
 
@@ -29,7 +29,7 @@ namespace App1
 
         }
 
-        public Cliente( Int64 pId, string pApellido, string pNombre, Int64 pEdad, string pFecha,string pDomicilio, Int64 pTel, Int64 pCel,
+        public Cliente( Int64 pId, string pApellido, string pNombre, Int64 pEdad, string pFecha,string pDomicilio, string pTel, string pCel,
             string pCorreo)
 
         {

@@ -30,13 +30,13 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboCliente = new System.Windows.Forms.ComboBox();
             this.btnCargar = new System.Windows.Forms.Button();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.cboCliente = new MetroFramework.Controls.MetroComboBox();
+            this.dtpFecha1 = new MetroFramework.Controls.MetroDateTime();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,12 +57,12 @@
             // metroPanel1
             // 
             this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.dtpFecha1);
+            this.metroPanel1.Controls.Add(this.cboCliente);
             this.metroPanel1.Controls.Add(this.metroLabel1);
             this.metroPanel1.Controls.Add(this.textBox1);
-            this.metroPanel1.Controls.Add(this.dtpFecha1);
             this.metroPanel1.Controls.Add(this.label2);
             this.metroPanel1.Controls.Add(this.label1);
-            this.metroPanel1.Controls.Add(this.cboCliente);
             this.metroPanel1.Controls.Add(this.btnCargar);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
@@ -75,22 +75,22 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(3, 66);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(86, 19);
+            this.metroLabel1.TabIndex = 14;
+            this.metroLabel1.Text = "Observacion:";
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(93, 69);
+            this.textBox1.Location = new System.Drawing.Point(92, 88);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(306, 139);
             this.textBox1.TabIndex = 13;
-            // 
-            // dtpFecha1
-            // 
-            this.dtpFecha1.CustomFormat = "dd-MM-yyyy";
-            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha1.Location = new System.Drawing.Point(93, 40);
-            this.dtpFecha1.Name = "dtpFecha1";
-            this.dtpFecha1.Size = new System.Drawing.Size(133, 20);
-            this.dtpFecha1.TabIndex = 12;
             // 
             // label2
             // 
@@ -110,14 +110,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Paciente";
             // 
-            // cboCliente
-            // 
-            this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(93, 13);
-            this.cboCliente.Name = "cboCliente";
-            this.cboCliente.Size = new System.Drawing.Size(133, 21);
-            this.cboCliente.TabIndex = 9;
-            // 
             // btnCargar
             // 
             this.btnCargar.BackColor = System.Drawing.Color.Transparent;
@@ -131,14 +123,24 @@
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click_1);
             // 
-            // metroLabel1
+            // cboCliente
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 66);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(86, 19);
-            this.metroLabel1.TabIndex = 14;
-            this.metroLabel1.Text = "Observacion:";
+            this.cboCliente.FormattingEnabled = true;
+            this.cboCliente.ItemHeight = 23;
+            this.cboCliente.Location = new System.Drawing.Point(93, 12);
+            this.cboCliente.Name = "cboCliente";
+            this.cboCliente.Size = new System.Drawing.Size(121, 29);
+            this.cboCliente.TabIndex = 15;
+            this.cboCliente.UseSelectable = true;
+            // 
+            // dtpFecha1
+            // 
+            this.dtpFecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha1.Location = new System.Drawing.Point(96, 48);
+            this.dtpFecha1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtpFecha1.Name = "dtpFecha1";
+            this.dtpFecha1.Size = new System.Drawing.Size(200, 29);
+            this.dtpFecha1.TabIndex = 16;
             // 
             // frmHistorial
             // 
@@ -161,11 +163,11 @@
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dtpFecha1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboCliente;
         private System.Windows.Forms.Button btnCargar;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroComboBox cboCliente;
+        private MetroFramework.Controls.MetroDateTime dtpFecha1;
     }
 }

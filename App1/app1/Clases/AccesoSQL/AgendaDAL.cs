@@ -6,11 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using System.Globalization;
+using System.Threading;
+
 
 namespace App1.Clases.AccesoSQL
 {
     internal class AgendaDAL
     {
+
         public static int AgregarDia(Agenda pAgenda)
         {
             int retorno = 0;
@@ -36,36 +40,46 @@ namespace App1.Clases.AccesoSQL
 
             using (SqlConnection conexion = BDComun.obtenerConexion())
             {
-
                 Agenda pAgenda = new Agenda();
                 SqlCommand comando = new SqlCommand(string.Format(
                     "Select id_Agenda, Lunes, Martes ,Miercoles , Jueves , Viernes ,Sabado ,Domingo ,id_Terapeuta from Agenda where id_Terapeuta = {0} ",
                     pIdTerapeuta), conexion);
 
                 SqlDataReader reader = comando.ExecuteReader();
+                
 
-                while (reader.Read())
-                {
+               if( reader.Read())
+                
+               {
                     pAgenda.Id = reader.GetInt32(0);
                     pAgenda.Lunes = reader.GetBoolean(1);
+                   
                     pAgenda.Martes = reader.GetBoolean(2);
+                  
                     pAgenda.Miercoles = reader.GetBoolean(3);
+                  
                     pAgenda.Jueves = reader.GetBoolean(4);
+                
                     pAgenda.Viernes = reader.GetBoolean(5);
+                 
                     pAgenda.Sabado = reader.GetBoolean(6);
+                
                     pAgenda.Domingo = reader.GetBoolean(7);
+                 
                     pAgenda.IdTerapeuta = reader.GetInt32(8);
 
 
-                }
+            }
+
                 conexion.Close();
+              
                 return pAgenda;
 
             }
-
-
-
+            
         }
+
+
 
         public static bool Existe(int id)
         {
@@ -312,6 +326,80 @@ namespace App1.Clases.AccesoSQL
             }
 
 
+
+        }
+
+        public static List <DayOfWeek> ObtenerListaDias(Int64 pIdTerapeuta)
+        {
+            CultureInfo MyCulture = new CultureInfo("es-ES");
+            Thread.CurrentThread.CurrentCulture = MyCulture;
+
+            Agenda pAgenda = new Agenda();
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {            
+             
+
+                
+                SqlCommand comando = new SqlCommand(string.Format(
+                    "Select id_Agenda, Lunes, Martes ,Miercoles , Jueves , Viernes ,Sabado ,Domingo ,id_Terapeuta from Agenda where id_Terapeuta = {0} ",
+                    pIdTerapeuta), conexion);
+
+                SqlDataReader reader = comando.ExecuteReader();
+
+                List<DayOfWeek> pDias = new List<DayOfWeek>();
+
+            
+
+                
+                if (reader.Read())
+                {
+                  
+                    pAgenda.Id = reader.GetInt32(0);
+                    pAgenda.Lunes = reader.GetBoolean(1);
+                    if (pAgenda.Lunes)
+                    {
+                        pDias.Add(DayOfWeek.Monday);
+                    }
+                    pAgenda.Martes = reader.GetBoolean(2);
+                    if (pAgenda.Martes)
+                    {
+                        pDias.Add(DayOfWeek.Tuesday);
+                    }
+                    pAgenda.Miercoles = reader.GetBoolean(3);
+                    if (pAgenda.Miercoles)
+                    {
+                        pDias.Add(DayOfWeek.Wednesday);
+                    }
+                    pAgenda.Jueves = reader.GetBoolean(4);
+                    if (pAgenda.Miercoles)
+                    {
+                        pDias.Add(DayOfWeek.Thursday);
+                    }
+                    pAgenda.Viernes = reader.GetBoolean(5);
+                    if (pAgenda.Viernes)
+                    {
+                        pDias.Add(DayOfWeek.Wednesday);
+                    }
+                    pAgenda.Sabado = reader.GetBoolean(6);
+                    if (pAgenda.Sabado)
+                    {
+                        pDias.Add(DayOfWeek.Saturday);
+                    }
+                    pAgenda.Domingo = reader.GetBoolean(7);
+                    if (pAgenda.Domingo)
+                    {
+                        pDias.Add(DayOfWeek.Sunday);
+                    }
+                    pAgenda.IdTerapeuta = reader.GetInt32(8);
+
+
+                }
+
+                conexion.Close();
+                return pDias;
+              
+
+            }
 
         }
     }

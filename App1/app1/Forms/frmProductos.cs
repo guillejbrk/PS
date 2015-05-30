@@ -59,7 +59,7 @@ namespace App1.Forms
                 pProducto.Descripcion = txtProducto.Text;
                 pProducto.Cantidad = Convert.ToInt64(txtCantidad.Text);
                 pProducto.Costo = Convert.ToDecimal(txtCosto.Text);
-
+                pProducto.id_Terapeuta = Convert.ToInt64(cboTerapeuta.SelectedValue);
 
                 int resultado = ProductosDAL.AgregarProducto(pProducto);
 
@@ -109,6 +109,15 @@ namespace App1.Forms
                 return;
             }
         }
+
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+            cboTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeuta();
+            cboTerapeuta.DisplayMember = "Apellido";
+            cboTerapeuta.ValueMember = "Id";
+
+        }
+
 
         
 

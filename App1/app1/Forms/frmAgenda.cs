@@ -377,6 +377,8 @@ namespace App1.Forms
             rbtAño.Checked = false;
         }
 
+       
+
         
 
         }

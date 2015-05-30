@@ -52,9 +52,9 @@ namespace App1.Forms
             Historias pHistorias = new Historias();
 
            if(validar()) {
-                pHistorias.fecha = dtpFecha1.Text;
+                pHistorias.Fecha = dtpFecha1.Text;
                 pHistorias.Observacion = textBox1.Text;
-                pHistorias.id_Cliente = Convert.ToInt32(cboCliente.SelectedValue);
+                pHistorias.idPaciente = Convert.ToInt32(cboCliente.SelectedValue);
 
 
                 int resultado = ConsultorioDAL.AgregarHistoria(pHistorias);

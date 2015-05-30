@@ -41,6 +41,25 @@ namespace App1.Forms
             dtgPac.DataSource = ClienteDAL.BuscarClientes2(txtBuscar.Text);
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmCargarCliente CargarClienteForm = new frmCargarCliente();
+            
+            CargarClienteForm.Show();
+
+            
+        }
+
+      
+      
+
+       
+
         
       
     }

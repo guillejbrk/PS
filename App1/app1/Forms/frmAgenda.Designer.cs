@@ -403,6 +403,7 @@
             this.lstNoLaboralesSemana.Name = "lstNoLaboralesSemana";
             this.lstNoLaboralesSemana.Size = new System.Drawing.Size(147, 114);
             this.lstNoLaboralesSemana.TabIndex = 35;
+        
             // 
             // cboTerapeuta
             // 

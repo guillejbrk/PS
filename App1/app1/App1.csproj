@@ -100,6 +100,12 @@
     <Compile Include="Forms\frmAgenda.Designer.cs">
       <DependentUpon>frmAgenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmAgendaTel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAgendaTel.Designer.cs">
+      <DependentUpon>frmAgendaTel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmCalendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,12 @@
     <Compile Include="Forms\frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmMostrarHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMostrarHistorial.Designer.cs">
+      <DependentUpon>frmMostrarHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +183,9 @@
     <EmbeddedResource Include="Forms\frmAgenda.resx">
       <DependentUpon>frmAgenda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAgendaTel.resx">
+      <DependentUpon>frmAgendaTel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCalendar.resx">
       <DependentUpon>frmCalendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +207,9 @@
     <EmbeddedResource Include="Forms\frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMostrarHistorial.resx">
+      <DependentUpon>frmMostrarHistorial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,7 +227,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

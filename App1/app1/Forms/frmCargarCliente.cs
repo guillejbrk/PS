@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using App1.Clases;
 using App1.Clases.AccesoSQL;
 using MetroFramework.Forms;
+using App1.Forms;
 
 namespace App1
 {
@@ -24,57 +25,10 @@ namespace App1
             InitializeComponent();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void metroTabPage1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void Cerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnGuardar_Click_1(object sender, EventArgs e)
-        {
-            Cliente Clientes = new Cliente();
-            if (txtNombre.Text == "" || txtApellido.Text == "" || txtCorreo.Text == "" || txtCel.Text == "" ||
-                txtEdad.Text == "" || txtDomi.Text == "")
-
-            {
-                MessageBox.Show("Debe llenar todos los Campos", "Advertencia", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                Clientes.Apellido = txtApellido.Text;
-                Clientes.Nombre = txtNombre.Text;
-                Clientes.Edad = Convert.ToInt64(txtEdad.Text);
-                Clientes.Fecha = dtpFecha.Value.ToShortDateString();
-                Clientes.Domicilio = txtDomi.Text;
-                Clientes.Tel = Convert.ToInt64(txtTel.Text);
-                Clientes.Cel = Convert.ToInt64(txtCel.Text);
-                Clientes.Correo = txtCorreo.Text;
-
-                int resultado = ClienteDAL.AgregarCliente(Clientes);
-
-                if (resultado > 0)
-                {
-                    MessageBox.Show("Datos Guardados Corerectamente", "Datos Guardado", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    limpiar();
-
-                }
-
-                else
-                {
-                    MessageBox.Show("No se pudieron Guardar lo datos", "Error al Guardar", MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                }
-
-            }
-
-        }
-
 
         private void limpiar()
         {
@@ -88,19 +42,7 @@ namespace App1
 
         }
 
-        /*  private void Actualizar_Lista()
-        {
-            lstCliente.Items.Clear();
-            for (int i = 0; i < ind_actual; i++)
-                lstCliente.Items.Add(Clientes[i].ToString());
-        }*/
-
-        private void Cerrar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private bool validar()
+       private bool validar()
         {
             if (txtApellido.Text == "")
             {
@@ -118,8 +60,139 @@ namespace App1
 
             return true;
         }
+           
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            dtgvPaciente.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
+
+        }
+
+        private void txtBuscar_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            dtgvPaciente.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
+        }
 
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (dtgvPaciente.SelectedRows.Count == 1)
+            {
+                Int64 Id = Convert.ToInt64(dtgvPaciente.CurrentRow.Cells[0].Value);
+                ClienteSeleccionado = ClienteDAL.ObtenerCliente2(Id);
+
+            }
+            else
+            {
+                MessageBox.Show("Aun no ha seleccionado Ningun Paciente");
+            }
+
+            if (ClienteSeleccionado != null)
+            {
+                ClienteActual = ClienteSeleccionado;
+
+                txtApellido.Text = ClienteSeleccionado.Apellido;
+                txtNombre.Text = ClienteSeleccionado.Nombre;
+                txtEdad.Text = Convert.ToString(ClienteSeleccionado.Edad);
+                dtpFecha.Text = ClienteSeleccionado.Fecha;
+                txtDomi.Text = ClienteSeleccionado.Domicilio;
+                txtTel.Text = Convert.ToString(ClienteSeleccionado.Tel);
+                txtCel.Text = Convert.ToString(ClienteSeleccionado.Cel);
+                txtCorreo.Text = ClienteSeleccionado.Correo;
+                btnGuardar.Enabled = false;
+                btnACtualizar.Enabled = true;
+                metroTabControl1.SelectedIndex = 0;
+
+            }
+
+        }
+
+        private void btnACtualizar_Click_1(object sender, EventArgs e)
+        {
+            
+            Cliente pCliente = new Cliente();
+            pCliente.Apellido = txtApellido.Text;
+            pCliente.Nombre = txtNombre.Text;
+            pCliente.Edad = Convert.ToInt64(txtEdad.Text);
+            pCliente.Fecha = dtpFecha.Value.ToShortDateString();
+            pCliente.Domicilio = txtDomi.Text;
+            pCliente.Tel = txtTel.Text;
+            pCliente.Cel = txtCel.Text;
+            pCliente.Correo = txtCorreo.Text;
+            pCliente.Id = ClienteActual.Id;
+
+
+            int resultado = ClienteDAL.Modificar(pCliente);
+
+            if (resultado > 0)
+            {
+
+                MessageBox.Show("Paciente Modificado Correctamente", "Paciente Modificado", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                limpiar();
+
+                btnGuardar.Enabled = true;
+            }
+
+            else
+            {
+                MessageBox.Show("No se pudo Modificar el Paciente", "Ocurrio un error!!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            }
+
+
+
+
+        }
+
+        private void btnGuardar_Click_2(object sender, EventArgs e)
+        {
+            Cliente Clientes = new Cliente();
+            if (txtNombre.Text == "" || txtApellido.Text == "" || txtCorreo.Text == "" || txtCel.Text == "" ||
+                txtEdad.Text == "" || txtDomi.Text == "")
+            {
+                MessageBox.Show("Debe llenar todos los Campos", "Advertencia", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                Clientes.Apellido = txtApellido.Text;
+                Clientes.Nombre = txtNombre.Text;
+                Clientes.Edad = Convert.ToInt64(txtEdad.Text);
+                Clientes.Fecha = dtpFecha.Value.ToShortDateString();
+                Clientes.Domicilio = txtDomi.Text;
+                Clientes.Tel = txtTel.Text;
+                Clientes.Cel = txtCel.Text;
+                Clientes.Correo = txtCorreo.Text;
+
+                int resultado = ClienteDAL.AgregarCliente(Clientes);
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Datos Guardados Corerectamente", "Datos Guardado", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+
+                    limpiar();
+
+                }
+
+                else
+                {
+                    MessageBox.Show("No se pudieron Guardar lo datos", "Error al Guardar", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                }
+
+            }
+
+        }
+
+        private void frmCargarCliente_Load(object sender, EventArgs e)
+        {
+            btnACtualizar.Enabled = false;
+            metroTabControl1.SelectedIndex = 0;
+        }
 
         public static void SoloNumeros(KeyPressEventArgs pE)
         {
@@ -136,7 +209,6 @@ namespace App1
                 pE.Handled = true;
             }
         }
-
 
         public static void SoloLetras(KeyPressEventArgs pE)
         {
@@ -158,108 +230,14 @@ namespace App1
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void Cerrar_Click_2(object sender, EventArgs e)
         {
-
-            dataGridView1.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
-
+            this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count == 1)
-            {
-                Int64 Id = Convert.ToInt64(dataGridView1.CurrentRow.Cells[0].Value);
-                ClienteSeleccionado = ClienteDAL.ObtenerCliente2(Id);
+       
 
-            }
-            else
-            {
-                MessageBox.Show("Aun no ha seleccionado Ningun Cliente");
-            }
-
-            if (ClienteSeleccionado != null)
-            {
-                ClienteActual = ClienteSeleccionado;
-
-                txtApellido.Text = ClienteSeleccionado.Apellido;
-                txtNombre.Text = ClienteSeleccionado.Apellido;
-                txtEdad.Text = Convert.ToString(ClienteSeleccionado.Edad);
-                dtpFecha.Text = ClienteSeleccionado.Fecha;
-                txtDomi.Text = ClienteSeleccionado.Domicilio;
-                txtTel.Text = Convert.ToString(ClienteSeleccionado.Tel);
-                txtCel.Text = Convert.ToString(ClienteSeleccionado.Cel);
-                txtCorreo.Text = ClienteSeleccionado.Correo;
-                btnGuardar.Enabled = false;
-
-            }
-
-
-
-
-
-        }
-
-        private void btnACtualizar_Click(object sender, EventArgs e)
-        {
-
-            Cliente pCliente = new Cliente();
-            pCliente.Apellido = txtApellido.Text;
-            pCliente.Nombre = txtNombre.Text;
-            pCliente.Edad = Convert.ToInt64(txtEdad.Text);
-            pCliente.Fecha = dtpFecha.Value.ToShortDateString();
-            pCliente.Domicilio = txtDomi.Text;
-            pCliente.Tel = Convert.ToInt64(txtTel.Text);
-            pCliente.Cel = Convert.ToInt64(txtCel.Text);
-            pCliente.Correo = txtCorreo.Text;
-            pCliente.Id = ClienteActual.Id;
-
-
-            int resultado = ClienteDAL.Modificar(pCliente);
-
-            if (resultado > 0)
-            {
-
-                MessageBox.Show("ALumno Modificado con exito", "ALumno Modificado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                limpiar();
-
-                btnGuardar.Enabled = true;
-            }
-
-            else
-            {
-                MessageBox.Show("No se pudo Modificar el alumno", "Ocurrio un error!!", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-            }
-
-
-
-
-        }
-
-        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-              if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
-        {
-            dataGridView1.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
-        }
-        
-
-        
+       
 
    }
 }

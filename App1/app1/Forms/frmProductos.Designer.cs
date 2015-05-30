@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.txtProducto = new System.Windows.Forms.TextBox();
+            this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +96,8 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.label1);
+            this.metroPanel1.Controls.Add(this.cboTerapeuta);
             this.metroPanel1.Controls.Add(this.btnCargarProducto);
             this.metroPanel1.Controls.Add(this.txtCosto);
             this.metroPanel1.Controls.Add(this.label4);
@@ -119,14 +123,35 @@
             this.txtProducto.Size = new System.Drawing.Size(100, 20);
             this.txtProducto.TabIndex = 8;
             // 
+            // cboTerapeuta
+            // 
+            this.cboTerapeuta.FormattingEnabled = true;
+            this.cboTerapeuta.ItemHeight = 23;
+            this.cboTerapeuta.Location = new System.Drawing.Point(80, 88);
+            this.cboTerapeuta.Name = "cboTerapeuta";
+            this.cboTerapeuta.Size = new System.Drawing.Size(140, 29);
+            this.cboTerapeuta.TabIndex = 15;
+            this.cboTerapeuta.UseSelectable = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Terapeuta";
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 219);
+            this.ClientSize = new System.Drawing.Size(438, 221);
             this.Controls.Add(this.metroPanel1);
             this.Name = "frmProductos";
             this.Text = "Cargar Productos:";
+            this.Theme = MetroFramework.MetroThemeStyle.Default;
+            this.Load += new System.EventHandler(this.frmProductos_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -143,6 +168,8 @@
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.TextBox txtProducto;
+        private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroComboBox cboTerapeuta;
 
 
 

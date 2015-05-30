@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.cboCliente = new System.Windows.Forms.ComboBox();
             this.cboTratamiento = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCargar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.cboPaciente = new MetroFramework.Controls.MetroComboBox();
             this.panelCanelado = new MetroFramework.Controls.MetroPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMotivo = new System.Windows.Forms.TextBox();
             this.listView2 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboDia = new System.Windows.Forms.ComboBox();
             this.rbnCancelado = new System.Windows.Forms.RadioButton();
             this.rbnAlta = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
@@ -65,19 +66,10 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Dia de terapeuta";
             // 
-            // cboCliente
-            // 
-            this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(112, 3);
-            this.cboCliente.Name = "cboCliente";
-            this.cboCliente.Size = new System.Drawing.Size(121, 21);
-            this.cboCliente.TabIndex = 4;
-            this.cboCliente.SelectedIndexChanged += new System.EventHandler(this.cboCliente_SelectedIndexChanged);
-            // 
             // cboTratamiento
             // 
             this.cboTratamiento.FormattingEnabled = true;
-            this.cboTratamiento.Location = new System.Drawing.Point(112, 30);
+            this.cboTratamiento.Location = new System.Drawing.Point(112, 34);
             this.cboTratamiento.Name = "cboTratamiento";
             this.cboTratamiento.Size = new System.Drawing.Size(121, 21);
             this.cboTratamiento.TabIndex = 5;
@@ -85,11 +77,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 11);
+            this.label3.Location = new System.Drawing.Point(13, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Paciente";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -102,7 +95,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(212, 240);
+            this.btnCargar.Location = new System.Drawing.Point(255, 240);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 8;
@@ -113,11 +106,13 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.metroButton1);
+            this.panel1.Controls.Add(this.cboPaciente);
             this.panel1.Controls.Add(this.panelCanelado);
             this.panel1.Controls.Add(this.listView2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.listView1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cboDia);
             this.panel1.Controls.Add(this.rbnCancelado);
             this.panel1.Controls.Add(this.rbnAlta);
             this.panel1.Controls.Add(this.label7);
@@ -128,12 +123,33 @@
             this.panel1.Controls.Add(this.cboTratamiento);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.cboCliente);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(10, 49);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(384, 457);
+            this.panel1.Size = new System.Drawing.Size(408, 457);
             this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(239, 33);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(91, 23);
+            this.metroButton1.TabIndex = 22;
+            this.metroButton1.Text = "Cargar";
+            this.metroButton1.UseSelectable = true;
+            // 
+            // cboPaciente
+            // 
+            this.cboPaciente.FormattingEnabled = true;
+            this.cboPaciente.ItemHeight = 23;
+            this.cboPaciente.Location = new System.Drawing.Point(112, 2);
+            this.cboPaciente.Name = "cboPaciente";
+            this.cboPaciente.Size = new System.Drawing.Size(121, 29);
+            this.cboPaciente.TabIndex = 21;
+            this.cboPaciente.UseSelectable = true;
+            this.cboPaciente.SelectedIndexChanged += new System.EventHandler(this.cboPaciente_SelectedIndexChanged);
+            this.cboPaciente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cboPaciente_MouseClick);
             // 
             // panelCanelado
             // 
@@ -192,13 +208,14 @@
             this.listView1.TabIndex = 13;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // comboBox1
+            // cboDia
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(112, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 12;
+            this.cboDia.FormattingEnabled = true;
+            this.cboDia.Location = new System.Drawing.Point(112, 83);
+            this.cboDia.Name = "cboDia";
+            this.cboDia.Size = new System.Drawing.Size(121, 21);
+            this.cboDia.TabIndex = 12;
+            this.cboDia.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // rbnCancelado
             // 
@@ -249,12 +266,13 @@
             this.cboTerapeuta.Name = "cboTerapeuta";
             this.cboTerapeuta.Size = new System.Drawing.Size(121, 21);
             this.cboTerapeuta.TabIndex = 11;
+            this.cboTerapeuta.SelectedIndexChanged += new System.EventHandler(this.cboTerapeuta_SelectedIndexChanged);
             // 
             // btnCrearPaciente
             // 
-            this.btnCrearPaciente.Location = new System.Drawing.Point(239, 3);
+            this.btnCrearPaciente.Location = new System.Drawing.Point(239, 4);
             this.btnCrearPaciente.Name = "btnCrearPaciente";
-            this.btnCrearPaciente.Size = new System.Drawing.Size(75, 23);
+            this.btnCrearPaciente.Size = new System.Drawing.Size(91, 23);
             this.btnCrearPaciente.TabIndex = 10;
             this.btnCrearPaciente.Text = "Crear";
             this.btnCrearPaciente.UseVisualStyleBackColor = true;
@@ -262,7 +280,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(801, 386);
+            this.button1.Location = new System.Drawing.Point(896, 504);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
@@ -282,16 +300,16 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Location = new System.Drawing.Point(383, 49);
+            this.panel2.Location = new System.Drawing.Point(424, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(482, 219);
+            this.panel2.Size = new System.Drawing.Size(547, 219);
             this.panel2.TabIndex = 11;
             // 
             // frmCargarTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 529);
+            this.ClientSize = new System.Drawing.Size(1015, 529);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -310,7 +328,6 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cboCliente;
         private System.Windows.Forms.ComboBox cboTratamiento;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -328,9 +345,11 @@
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboDia;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroPanel panelCanelado;
+        private MetroFramework.Controls.MetroComboBox cboPaciente;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

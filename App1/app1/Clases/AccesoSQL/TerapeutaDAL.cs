@@ -34,14 +34,14 @@ namespace App1.Clases.AccesoSQL
 
             SqlConnection conexion = BDComun.obtenerConexion();
 
-            SqlCommand _comando = new SqlCommand("select nro_cliente, Apellido,Nombre,Apellido+' '+Nombre as NOMBRECOMPLETO from Cliente", conexion);
+            SqlCommand _comando = new SqlCommand("select id_Terapeuta, Apellido,Nombre,Apellido+' '+Nombre as NOMBRECOMPLETO from Terapeuta", conexion);
             SqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
                 Terapeuta pTerapeuta = new Terapeuta();
 
                 pTerapeuta.Id = _reader.GetInt32(0);
-                pTerapeuta.Apellido = _reader.GetString(1);
+                pTerapeuta.Apellido = _reader.GetString(3);
                 pTerapeuta.Nombre = _reader.GetString(2);
                 
 
