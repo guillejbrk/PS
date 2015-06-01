@@ -34,8 +34,6 @@ namespace App1.Forms
 
         private void cboFecha_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Int64 Id = Convert.ToInt64(cboPaciente.SelectedValue);
-            HistoriaDAL.ObtenerObservacion(Id, cboFecha.ToString());
              
 
         }

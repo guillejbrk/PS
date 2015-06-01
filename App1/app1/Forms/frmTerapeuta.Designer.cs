@@ -30,23 +30,25 @@
         {
             this.sdf = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cboEspecialidad = new System.Windows.Forms.ComboBox();
+            this.cboEspecialidad = new MetroFramework.Controls.MetroComboBox();
+            this.txtUsuario = new MetroFramework.Controls.MetroTextBox();
+            this.cboJornada = new MetroFramework.Controls.MetroComboBox();
+            this.txtNombre = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.txtApellido = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.txtPass2 = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.txtPass = new MetroFramework.Controls.MetroTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.cboJornada = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtContra = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtUsu = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtApe = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.btnNuevosTurnos = new System.Windows.Forms.Button();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.btnModLab = new MetroFramework.Controls.MetroButton();
@@ -95,20 +97,21 @@
             this.sdf.Location = new System.Drawing.Point(141, 52);
             this.sdf.Name = "sdf";
             this.sdf.SelectedIndex = 1;
-            this.sdf.Size = new System.Drawing.Size(994, 560);
-            this.sdf.Style = MetroFramework.MetroColorStyle.Green;
+            this.sdf.Size = new System.Drawing.Size(994, 531);
+            this.sdf.Style = MetroFramework.MetroColorStyle.Orange;
             this.sdf.TabIndex = 16;
             this.sdf.UseSelectable = true;
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.button2);
             this.metroTabPage1.Controls.Add(this.metroPanel2);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(986, 518);
+            this.metroTabPage1.Size = new System.Drawing.Size(986, 489);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Cargar Terapeuta";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -117,162 +120,216 @@
             this.metroTabPage1.Visible = false;
             this.metroTabPage1.Click += new System.EventHandler(this.metroTabPage1_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DarkOrange;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(831, 429);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 26);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Cerrar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // metroPanel2
             // 
-            this.metroPanel2.Controls.Add(this.label7);
-            this.metroPanel2.Controls.Add(this.button5);
-            this.metroPanel2.Controls.Add(this.label9);
+            this.metroPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.metroPanel2.Controls.Add(this.cboEspecialidad);
-            this.metroPanel2.Controls.Add(this.button1);
+            this.metroPanel2.Controls.Add(this.txtUsuario);
             this.metroPanel2.Controls.Add(this.cboJornada);
-            this.metroPanel2.Controls.Add(this.label10);
-            this.metroPanel2.Controls.Add(this.txtContra);
-            this.metroPanel2.Controls.Add(this.label11);
-            this.metroPanel2.Controls.Add(this.txtUsu);
-            this.metroPanel2.Controls.Add(this.label12);
-            this.metroPanel2.Controls.Add(this.txtNom);
-            this.metroPanel2.Controls.Add(this.label13);
-            this.metroPanel2.Controls.Add(this.txtApe);
-            this.metroPanel2.Controls.Add(this.label14);
+            this.metroPanel2.Controls.Add(this.txtNombre);
+            this.metroPanel2.Controls.Add(this.metroLabel9);
+            this.metroPanel2.Controls.Add(this.txtApellido);
+            this.metroPanel2.Controls.Add(this.metroLabel8);
+            this.metroPanel2.Controls.Add(this.metroLabel7);
+            this.metroPanel2.Controls.Add(this.metroLabel6);
+            this.metroPanel2.Controls.Add(this.txtPass2);
+            this.metroPanel2.Controls.Add(this.metroLabel5);
+            this.metroPanel2.Controls.Add(this.metroLabel4);
+            this.metroPanel2.Controls.Add(this.metroLabel3);
+            this.metroPanel2.Controls.Add(this.txtPass);
+            this.metroPanel2.Controls.Add(this.button1);
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(3, 3);
+            this.metroPanel2.Location = new System.Drawing.Point(16, 31);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(384, 322);
+            this.metroPanel2.Size = new System.Drawing.Size(312, 326);
             this.metroPanel2.TabIndex = 2;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 11);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Terapeuta";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(156, 204);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "Modificar";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(49, 171);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 13);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Especialidad";
-            // 
             // cboEspecialidad
             // 
             this.cboEspecialidad.FormattingEnabled = true;
-            this.cboEspecialidad.Location = new System.Drawing.Point(122, 168);
+            this.cboEspecialidad.ItemHeight = 23;
+            this.cboEspecialidad.Location = new System.Drawing.Point(153, 223);
             this.cboEspecialidad.Name = "cboEspecialidad";
-            this.cboEspecialidad.Size = new System.Drawing.Size(100, 21);
-            this.cboEspecialidad.TabIndex = 9;
+            this.cboEspecialidad.Size = new System.Drawing.Size(118, 29);
+            this.cboEspecialidad.TabIndex = 6;
+            this.cboEspecialidad.UseSelectable = true;
             // 
-            // button1
+            // txtUsuario
             // 
-            this.button1.Location = new System.Drawing.Point(75, 204);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Cargar ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtUsuario.Lines = new string[0];
+            this.txtUsuario.Location = new System.Drawing.Point(153, 94);
+            this.txtUsuario.MaxLength = 32767;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.PasswordChar = '\0';
+            this.txtUsuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUsuario.SelectedText = "";
+            this.txtUsuario.Size = new System.Drawing.Size(118, 23);
+            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.UseSelectable = true;
             // 
             // cboJornada
             // 
             this.cboJornada.FormattingEnabled = true;
-            this.cboJornada.Location = new System.Drawing.Point(122, 138);
+            this.cboJornada.ItemHeight = 23;
+            this.cboJornada.Location = new System.Drawing.Point(153, 188);
             this.cboJornada.Name = "cboJornada";
-            this.cboJornada.Size = new System.Drawing.Size(100, 21);
-            this.cboJornada.TabIndex = 8;
+            this.cboJornada.Size = new System.Drawing.Size(118, 29);
+            this.cboJornada.TabIndex = 5;
+            this.cboJornada.UseSelectable = true;
             // 
-            // label10
+            // txtNombre
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(70, 141);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(45, 13);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Jornada";
+            this.txtNombre.Lines = new string[0];
+            this.txtNombre.Location = new System.Drawing.Point(153, 60);
+            this.txtNombre.MaxLength = 32767;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.PasswordChar = '\0';
+            this.txtNombre.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNombre.SelectedText = "";
+            this.txtNombre.Size = new System.Drawing.Size(118, 23);
+            this.txtNombre.TabIndex = 1;
+            this.txtNombre.UseSelectable = true;
             // 
-            // txtContra
+            // metroLabel9
             // 
-            this.txtContra.Location = new System.Drawing.Point(122, 113);
-            this.txtContra.Name = "txtContra";
-            this.txtContra.Size = new System.Drawing.Size(100, 20);
-            this.txtContra.TabIndex = 3;
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.Location = new System.Drawing.Point(66, 233);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel9.TabIndex = 23;
+            this.metroLabel9.Text = "Especialidad";
             // 
-            // label11
+            // txtApellido
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(55, 113);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 13);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Contraseña";
+            this.txtApellido.Lines = new string[0];
+            this.txtApellido.Location = new System.Drawing.Point(153, 28);
+            this.txtApellido.MaxLength = 32767;
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.PasswordChar = '\0';
+            this.txtApellido.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtApellido.SelectedText = "";
+            this.txtApellido.Size = new System.Drawing.Size(118, 23);
+            this.txtApellido.TabIndex = 0;
+            this.txtApellido.UseSelectable = true;
             // 
-            // txtUsu
+            // metroLabel8
             // 
-            this.txtUsu.Location = new System.Drawing.Point(122, 87);
-            this.txtUsu.Name = "txtUsu";
-            this.txtUsu.Size = new System.Drawing.Size(100, 20);
-            this.txtUsu.TabIndex = 2;
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(88, 198);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel8.TabIndex = 22;
+            this.metroLabel8.Text = "Jornada:";
             // 
-            // label12
+            // metroLabel7
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(72, 90);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 13);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Usuario";
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(23, 159);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(124, 19);
+            this.metroLabel7.TabIndex = 21;
+            this.metroLabel7.Text = "Repetir Contraseña:";
             // 
-            // txtNom
+            // metroLabel6
             // 
-            this.txtNom.Location = new System.Drawing.Point(122, 57);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(100, 20);
-            this.txtNom.TabIndex = 1;
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(69, 126);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel6.TabIndex = 20;
+            this.metroLabel6.Text = "Contraseña:";
             // 
-            // label13
+            // txtPass2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(72, 64);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 13);
-            this.label13.TabIndex = 21;
-            this.label13.Text = "Nombre";
+            this.txtPass2.Lines = new string[0];
+            this.txtPass2.Location = new System.Drawing.Point(153, 159);
+            this.txtPass2.MaxLength = 32767;
+            this.txtPass2.Name = "txtPass2";
+            this.txtPass2.PasswordChar = '●';
+            this.txtPass2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPass2.SelectedText = "";
+            this.txtPass2.Size = new System.Drawing.Size(118, 23);
+            this.txtPass2.TabIndex = 4;
+            this.txtPass2.UseSelectable = true;
+            this.txtPass2.UseSystemPasswordChar = true;
             // 
-            // txtApe
+            // metroLabel5
             // 
-            this.txtApe.Location = new System.Drawing.Point(122, 31);
-            this.txtApe.Name = "txtApe";
-            this.txtApe.Size = new System.Drawing.Size(100, 20);
-            this.txtApe.TabIndex = 0;
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(91, 94);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel5.TabIndex = 18;
+            this.metroLabel5.Text = "Usuario:";
             // 
-            // label14
+            // metroLabel4
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(72, 31);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 13);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Apellido";
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(85, 64);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(62, 19);
+            this.metroLabel4.TabIndex = 17;
+            this.metroLabel4.Text = "Nombre:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(86, 32);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(61, 19);
+            this.metroLabel3.TabIndex = 16;
+            this.metroLabel3.Text = "Apellido:";
+            // 
+            // txtPass
+            // 
+            this.txtPass.Lines = new string[0];
+            this.txtPass.Location = new System.Drawing.Point(153, 126);
+            this.txtPass.MaxLength = 32767;
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '●';
+            this.txtPass.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPass.SelectedText = "";
+            this.txtPass.Size = new System.Drawing.Size(118, 23);
+            this.txtPass.TabIndex = 3;
+            this.txtPass.UseSelectable = true;
+            this.txtPass.UseSystemPasswordChar = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(241, 290);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(64, 29);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Cargar ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.btnNuevosTurnos);
             this.metroTabPage2.Controls.Add(this.metroPanel8);
             this.metroTabPage2.Controls.Add(this.metroPanel7);
             this.metroTabPage2.Controls.Add(this.cboTerapeuta);
@@ -281,12 +338,22 @@
             this.metroTabPage2.HorizontalScrollbarSize = 10;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(986, 518);
+            this.metroTabPage2.Size = new System.Drawing.Size(986, 489);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Administracion Agenda";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // btnNuevosTurnos
+            // 
+            this.btnNuevosTurnos.Location = new System.Drawing.Point(14, 434);
+            this.btnNuevosTurnos.Name = "btnNuevosTurnos";
+            this.btnNuevosTurnos.Size = new System.Drawing.Size(126, 23);
+            this.btnNuevosTurnos.TabIndex = 45;
+            this.btnNuevosTurnos.Text = "Generar Turnos ";
+            this.btnNuevosTurnos.UseVisualStyleBackColor = true;
+       
             // 
             // metroPanel8
             // 
@@ -510,7 +577,7 @@
             this.metroPanel7.HorizontalScrollbarSize = 10;
             this.metroPanel7.Location = new System.Drawing.Point(177, 207);
             this.metroPanel7.Name = "metroPanel7";
-            this.metroPanel7.Size = new System.Drawing.Size(519, 269);
+            this.metroPanel7.Size = new System.Drawing.Size(519, 250);
             this.metroPanel7.TabIndex = 43;
             this.metroPanel7.VerticalScrollbarBarColor = true;
             this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
@@ -584,7 +651,7 @@
             this.metroPanel5.HorizontalScrollbarSize = 10;
             this.metroPanel5.Location = new System.Drawing.Point(38, 81);
             this.metroPanel5.Name = "metroPanel5";
-            this.metroPanel5.Size = new System.Drawing.Size(372, 164);
+            this.metroPanel5.Size = new System.Drawing.Size(372, 150);
             this.metroPanel5.TabIndex = 36;
             this.metroPanel5.VerticalScrollbarBarColor = true;
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
@@ -592,7 +659,7 @@
             // 
             // btnEliminarDiaNoLaboral
             // 
-            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(281, 138);
+            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(280, 111);
             this.btnEliminarDiaNoLaboral.Name = "btnEliminarDiaNoLaboral";
             this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarDiaNoLaboral.TabIndex = 43;
@@ -609,7 +676,7 @@
             this.lstNoLaboralesSemana.ItemHeight = 16;
             this.lstNoLaboralesSemana.Location = new System.Drawing.Point(105, 20);
             this.lstNoLaboralesSemana.Name = "lstNoLaboralesSemana";
-            this.lstNoLaboralesSemana.Size = new System.Drawing.Size(147, 114);
+            this.lstNoLaboralesSemana.Size = new System.Drawing.Size(147, 98);
             this.lstNoLaboralesSemana.TabIndex = 35;
             // 
             // cboTerapeuta
@@ -627,9 +694,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 581);
+            this.ClientSize = new System.Drawing.Size(1142, 582);
             this.Controls.Add(this.sdf);
             this.Name = "frmTerapeuta";
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Administrar Terapeuta";
             this.Load += new System.EventHandler(this.frmTerapeuta_Load);
             this.sdf.ResumeLayout(false);
@@ -661,21 +729,7 @@
         private System.Windows.Forms.Label label8;
         private MetroFramework.Controls.MetroButton btnCargarNL;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cboEspecialidad;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cboJornada;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtContra;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtUsu;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtApe;
-        private System.Windows.Forms.Label label14;
         private MetroFramework.Controls.MetroPanel metroPanel4;
         private MetroFramework.Controls.MetroButton btnCargarL;
         private MetroFramework.Controls.MetroPanel metroPanel1;
@@ -701,5 +755,21 @@
         private MetroFramework.Controls.MetroRadioButton rbtSemana;
         private System.Windows.Forms.Button btnEliminarDiaNoLaboral;
         private MetroFramework.Controls.MetroPanel metroPanel8;
+        private System.Windows.Forms.Button btnNuevosTurnos;
+        private MetroFramework.Controls.MetroTextBox txtPass2;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroTextBox txtPass;
+        private MetroFramework.Controls.MetroComboBox cboEspecialidad;
+        private MetroFramework.Controls.MetroTextBox txtUsuario;
+        private MetroFramework.Controls.MetroComboBox cboJornada;
+        private MetroFramework.Controls.MetroTextBox txtNombre;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroTextBox txtApellido;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private System.Windows.Forms.Button button2;
     }
 }

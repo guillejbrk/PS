@@ -26,12 +26,15 @@ namespace App1.Forms
 
         private void txtPaciente_KeyUp(object sender, KeyEventArgs e)
         {
+            dgvTele.DataSource = null;
             dgvTele.DataSource = ClienteDAL.BuscarClientes2(txtPaciente.Text);
             dgvTele.Columns["id"].Visible = false;
             dgvTele.Columns["Edad"].Visible = false;
             dgvTele.Columns["Fecha"].Visible = false;
             dgvTele.Columns["Correo"].Visible = false;
             dgvTele.Columns["Domicilio"].Visible = false;
+         
+           
         }
 
         private void dgvTele_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -39,9 +42,16 @@ namespace App1.Forms
 
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPaciente_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

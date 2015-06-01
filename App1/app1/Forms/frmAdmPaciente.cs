@@ -15,19 +15,10 @@ namespace App1.Forms
 {
     public partial class frmAdmPaciente : MetroForm
     {
-
-        
-         SqlConnection conexion = new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=PS6; user Id=sa; Password=guille");
-       
-      
-        
         public frmAdmPaciente()
         {
             InitializeComponent();
-        }
-
-
-        
+        }           
        
 
 
@@ -36,10 +27,7 @@ namespace App1.Forms
             this.Close();
         }
 
-        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
-        {
-            dtgPac.DataSource = ClienteDAL.BuscarClientes2(txtBuscar.Text);
-        }
+      
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -51,8 +39,16 @@ namespace App1.Forms
             frmCargarCliente CargarClienteForm = new frmCargarCliente();
             
             CargarClienteForm.Show();
+            this.Close();
 
             
+        }
+
+     
+
+        private void txtBuscar_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            dtgPac.DataSource = ClienteDAL.BuscarClientes2(txtBuscar.Text);
         }
 
       

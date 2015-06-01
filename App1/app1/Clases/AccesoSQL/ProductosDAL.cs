@@ -23,9 +23,7 @@ namespace App1.Clases.AccesoSQL
             }
             return retorno;
         }
-
-
-
+        
         public static List<Producto> ObtenerProducto()
         {
             List<Producto> _lista = new List<Producto>();

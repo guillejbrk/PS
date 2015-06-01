@@ -33,6 +33,8 @@
             this.txtObservacion = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cboPaciente
@@ -60,7 +62,7 @@
             // txtObservacion
             // 
             this.txtObservacion.Lines = new string[0];
-            this.txtObservacion.Location = new System.Drawing.Point(110, 150);
+            this.txtObservacion.Location = new System.Drawing.Point(23, 134);
             this.txtObservacion.MaxLength = 32767;
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
@@ -90,19 +92,31 @@
             this.metroLabel2.TabIndex = 4;
             this.metroLabel2.Text = "Fecha";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::App1.Properties.Resources.book3;
+            this.pictureBox1.Location = new System.Drawing.Point(396, 107);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(255, 210);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMostrarHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 392);
+            this.ClientSize = new System.Drawing.Size(665, 392);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.txtObservacion);
             this.Controls.Add(this.cboFecha);
             this.Controls.Add(this.cboPaciente);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "frmMostrarHistorial";
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Ver Historial";
             this.Load += new System.EventHandler(this.frmMostrarHistorial_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +129,6 @@
         private MetroFramework.Controls.MetroTextBox txtObservacion;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

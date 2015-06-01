@@ -46,7 +46,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(587, 297);
+            this.button3.Location = new System.Drawing.Point(574, 297);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(49, 23);
             this.button3.TabIndex = 16;
@@ -73,7 +73,7 @@
             // 
             // btnCargarTratamiento
             // 
-            this.btnCargarTratamiento.Location = new System.Drawing.Point(340, 76);
+            this.btnCargarTratamiento.Location = new System.Drawing.Point(389, 76);
             this.btnCargarTratamiento.Name = "btnCargarTratamiento";
             this.btnCargarTratamiento.Size = new System.Drawing.Size(91, 23);
             this.btnCargarTratamiento.TabIndex = 13;
@@ -168,10 +168,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 340);
+            this.ClientSize = new System.Drawing.Size(655, 327);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Name = "frmAdmTratamiento";
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Administrar Tratamiento";
             this.Load += new System.EventHandler(this.frmAdmTratamiento_Load);
             this.panel1.ResumeLayout(false);

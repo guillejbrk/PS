@@ -331,8 +331,7 @@ namespace App1.Clases.AccesoSQL
 
         public static List <DayOfWeek> ObtenerListaDias(Int64 pIdTerapeuta)
         {
-            CultureInfo MyCulture = new CultureInfo("es-ES");
-            Thread.CurrentThread.CurrentCulture = MyCulture;
+          
 
             Agenda pAgenda = new Agenda();
             using (SqlConnection conexion = BDComun.obtenerConexion())
@@ -343,14 +342,9 @@ namespace App1.Clases.AccesoSQL
                 SqlCommand comando = new SqlCommand(string.Format(
                     "Select id_Agenda, Lunes, Martes ,Miercoles , Jueves , Viernes ,Sabado ,Domingo ,id_Terapeuta from Agenda where id_Terapeuta = {0} ",
                     pIdTerapeuta), conexion);
-
                 SqlDataReader reader = comando.ExecuteReader();
-
                 List<DayOfWeek> pDias = new List<DayOfWeek>();
-
-            
-
-                
+               
                 if (reader.Read())
                 {
                   
@@ -371,14 +365,14 @@ namespace App1.Clases.AccesoSQL
                         pDias.Add(DayOfWeek.Wednesday);
                     }
                     pAgenda.Jueves = reader.GetBoolean(4);
-                    if (pAgenda.Miercoles)
+                    if (pAgenda.Jueves)
                     {
                         pDias.Add(DayOfWeek.Thursday);
                     }
                     pAgenda.Viernes = reader.GetBoolean(5);
                     if (pAgenda.Viernes)
                     {
-                        pDias.Add(DayOfWeek.Wednesday);
+                        pDias.Add(DayOfWeek.Friday);
                     }
                     pAgenda.Sabado = reader.GetBoolean(6);
                     if (pAgenda.Sabado)
@@ -389,6 +383,7 @@ namespace App1.Clases.AccesoSQL
                     if (pAgenda.Domingo)
                     {
                         pDias.Add(DayOfWeek.Sunday);
+                       
                     }
                     pAgenda.IdTerapeuta = reader.GetInt32(8);
 
@@ -403,4 +398,6 @@ namespace App1.Clases.AccesoSQL
 
         }
     }
+
+
 }

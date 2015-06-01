@@ -85,7 +85,8 @@ namespace App1
             }
             else
             {
-                MessageBox.Show("Aun no ha seleccionado Ningun Paciente");
+                MessageBox.Show("Seleccione Paciente que desea Modificar", "Advertencia", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
             }
 
             if (ClienteSeleccionado != null)
@@ -137,7 +138,7 @@ namespace App1
 
             else
             {
-                MessageBox.Show("No se pudo Modificar el Paciente", "Ocurrio un error!!", MessageBoxButtons.OK,
+                MessageBox.Show("No se pudo Modificar el Paciente", "Error!!", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
             }
 
@@ -152,7 +153,7 @@ namespace App1
             if (txtNombre.Text == "" || txtApellido.Text == "" || txtCorreo.Text == "" || txtCel.Text == "" ||
                 txtEdad.Text == "" || txtDomi.Text == "")
             {
-                MessageBox.Show("Debe llenar todos los Campos", "Advertencia", MessageBoxButtons.OK,
+                MessageBox.Show("Debe Completar Todos los Campos", "Advertencia", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
             }
             else
@@ -170,7 +171,7 @@ namespace App1
 
                 if (resultado > 0)
                 {
-                    MessageBox.Show("Datos Guardados Corerectamente", "Datos Guardado", MessageBoxButtons.OK,
+                    MessageBox.Show("Paciente Cargado Corerectamente", "Cargado", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
 
@@ -180,7 +181,7 @@ namespace App1
 
                 else
                 {
-                    MessageBox.Show("No se pudieron Guardar lo datos", "Error al Guardar", MessageBoxButtons.OK,
+                    MessageBox.Show("No se pudo Cargar el Paciente", "Error al Cargar", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                 }
 
@@ -231,6 +232,11 @@ namespace App1
         }
 
         private void Cerrar_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

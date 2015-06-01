@@ -57,7 +57,7 @@ namespace App1.Forms
                 pHistorias.idPaciente = Convert.ToInt32(cboCliente.SelectedValue);
 
 
-                int resultado = ConsultorioDAL.AgregarHistoria(pHistorias);
+                int resultado = HistoriaDAL.AgregarHistoria(pHistorias);
 
                 if (resultado > 0)
                 {

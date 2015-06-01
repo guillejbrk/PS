@@ -35,6 +35,13 @@ namespace App1.Forms
 
         }
 
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            frmProductos pProductos = new frmProductos();
+            pProductos.Show();
+            this.Close();
+        }
+
        
     }
 }

@@ -52,16 +52,22 @@ namespace App1.Forms
 
         private bool validar()
         {
-            if (txtApe.Text == "")
+            if (txtApellido.Text == "")
             {
                 MessageBox.Show("Debe ingresar Apellido...");
-                txtApe.Focus();
+                txtApellido.Focus();
                 return false;
             }
-            if (txtNom.Text == "")
+            if (txtNombre.Text == "")
             {
                 MessageBox.Show("Debe ingresar Nombre...");
-                txtApe.Focus();
+                txtNombre.Focus();
+                return false;
+            }
+            if (txtPass.Text != txtPass2.Text)
+            {
+                MessageBox.Show("Verificar Contraseña...");
+                txtApellido.Focus();
                 return false;
             }
 
@@ -74,11 +80,11 @@ namespace App1.Forms
             Terapeuta Terapeutas = new Terapeuta();
             if (validar())
             {
-                Terapeutas.Apellido = txtApe.Text;
-                Terapeutas.Nombre = txtNom.Text;
-                Terapeutas.Usuario = txtUsu.Text;
-                Terapeutas.Contraseña = txtContra.Text;
-                Terapeutas.Id_Jornada = (int) cboJornada.SelectedValue;
+                Terapeutas.Apellido = txtApellido.Text;
+                Terapeutas.Nombre = txtNombre.Text;
+                Terapeutas.Usuario = txtUsuario.Text;
+                Terapeutas.Contraseña = txtPass.Text;
+                Terapeutas.Id_Jornada = (int)cboJornada.SelectedValue;
                 Terapeutas.Id_Especialidad = (int) cboEspecialidad.SelectedValue;
 
                 int resultado = TerapeutaDAL.AgregarTerapeuta(Terapeutas);
@@ -429,9 +435,6 @@ namespace App1.Forms
 
         private void btnEliminarDiaNoLaboral_Click(object sender, EventArgs e)
         {
-
-            
-           
                 Int64 Id = Convert.ToInt64(cboTerapeuta.SelectedValue);
 
                 AgendaDAL.EliminarDiaNoLaboral(Id, (lstNoLaboralesSemana.Text));
@@ -455,6 +458,25 @@ namespace App1.Forms
 
         }
 
+      
+
+        
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+      
+        /*
+       private void btnNuevosTurnos_Click(object sender, EventArgs e)
+        {
+           TurnosDAL.CargarTurnos(Int64 idTerapeuta);
+
+          
+
+        }
+        */
         
 
         }

@@ -53,33 +53,7 @@ namespace App1.Forms
 
         private void btnCargarProducto_Click(object sender, EventArgs e)
         {
-            if (validar())
-            {
-                Producto pProducto=new Producto();
-                pProducto.Descripcion = txtProducto.Text;
-                pProducto.Cantidad = Convert.ToInt64(txtCantidad.Text);
-                pProducto.Costo = Convert.ToDecimal(txtCosto.Text);
-                pProducto.id_Terapeuta = Convert.ToInt64(cboTerapeuta.SelectedValue);
-
-                int resultado = ProductosDAL.AgregarProducto(pProducto);
-
-                if (resultado > 0)
-                {
-                    MessageBox.Show("Datos Guardados Corerectamente", "Datos Guardado", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    limpiar();
-
-                }
-
-                else
-                {
-                    MessageBox.Show("No se pudieron Guardar lo datos", "Error al Guardar", MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                }
-
-
-
-            }
+          
         }
 
         private void limpiar()
@@ -116,6 +90,43 @@ namespace App1.Forms
             cboTerapeuta.DisplayMember = "Apellido";
             cboTerapeuta.ValueMember = "Id";
 
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            if (validar())
+            {
+                Producto pProducto = new Producto();
+                pProducto.Descripcion = txtProducto.Text;
+                pProducto.Cantidad = Convert.ToInt64(txtCantidad.Text);
+                pProducto.Costo = Convert.ToDecimal(txtCosto.Text);
+                pProducto.id_Terapeuta = Convert.ToInt64(cboTerapeuta.SelectedValue);
+
+                int resultado = ProductosDAL.AgregarProducto(pProducto);
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Producto Guardado Correctamente", "Producto Guardado", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    limpiar();
+
+                }
+
+                else
+                {
+                    MessageBox.Show("No se pudieron Guardar lo datos", "Error al Guardar", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                }
+
+
+
+            }
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 

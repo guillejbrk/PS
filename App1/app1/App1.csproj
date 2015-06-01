@@ -33,6 +33,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -63,10 +67,11 @@
     <Compile Include="Clases\AccesoSQL\ProductosDAL.cs" />
     <Compile Include="Clases\AccesoSQL\TerapeutaDAL.cs" />
     <Compile Include="Clases\AccesoSQL\TratamientoDAL.cs" />
+    <Compile Include="Clases\AccesoSQL\TurnosDAL.cs" />
     <Compile Include="Clases\Agenda.cs" />
     <Compile Include="Clases\AccesoSQL\BDComun.cs" />
     <Compile Include="Clases\Cliente.cs" />
-    <Compile Include="Clases\AccesoSQL\ConsultorioDAL.cs" />
+    <Compile Include="Clases\DayOfWeekConverter.cs" />
     <Compile Include="Clases\DiasNoLaborales.cs" />
     <Compile Include="Clases\Especialidad.cs" />
     <Compile Include="Clases\EstadoTurno.cs" />
@@ -81,12 +86,6 @@
     </Compile>
     <Compile Include="Forms\frmAdmPaciente.Designer.cs">
       <DependentUpon>frmAdmPaciente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmAdmTerapeuta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmAdmTerapeuta.Designer.cs">
-      <DependentUpon>frmAdmTerapeuta.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmAdmTratamiento.cs">
       <SubType>Form</SubType>
@@ -105,12 +104,6 @@
     </Compile>
     <Compile Include="Forms\frmAgendaTel.Designer.cs">
       <DependentUpon>frmAgendaTel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmCalendar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmCalendar.Designer.cs">
-      <DependentUpon>frmCalendar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmCargarCliente.cs">
       <SubType>Form</SubType>
@@ -177,17 +170,11 @@
     <EmbeddedResource Include="Forms\frmAdmPaciente.resx">
       <DependentUpon>frmAdmPaciente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmAdmTerapeuta.resx">
-      <DependentUpon>frmAdmTerapeuta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAgenda.resx">
       <DependentUpon>frmAgenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAgendaTel.resx">
       <DependentUpon>frmAgendaTel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmCalendar.resx">
-      <DependentUpon>frmCalendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCargarCliente.resx">
       <DependentUpon>frmCargarCliente.cs</DependentUpon>
@@ -260,7 +247,24 @@
   <ItemGroup>
     <None Include="Imagens\IniciarSesion123.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Dakirby309-Windows-8-Metro-Apps-BitTorrent-Metro.ico" />
+    <None Include="Resources\telephone_red.png" />
+    <None Include="Resources\diary.png" />
+    <None Include="Resources\diary_128.png" />
+    <None Include="Resources\sa.png" />
+    <None Include="Resources\as.png" />
+    <None Include="Resources\delete%281%29.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\delete.ico" />
+    <None Include="Resources\deletered.png" />
+    <None Include="Resources\switch_user.png" />
+    <None Include="Resources\man_grey.png" />
+    <None Include="Resources\book3.png" />
+    <None Include="Resources\blocnote.png" />
+    <None Include="Resources\user_man.png" />
+    <None Include="Resources\user_man.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

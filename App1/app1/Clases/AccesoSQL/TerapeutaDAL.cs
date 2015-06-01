@@ -75,7 +75,27 @@ namespace App1.Clases.AccesoSQL
             return _listaJornadas;
         }
 
-       
+        public static Terapeuta ObtenerTerapeuta(Int64 pIdTerapeuta)
+        {
+            Terapeuta pTerapeuta = new Terapeuta();
+
+            SqlConnection conexion = BDComun.obtenerConexion();
+
+            SqlCommand _comando = new SqlCommand("select id_Terapeuta, Apellido,Nombre,Apellido+' '+Nombre as NOMBRECOMPLETO from Terapeuta where id_Terapeuta='" + pIdTerapeuta.ToString() + "'", conexion);
+            SqlDataReader _reader = _comando.ExecuteReader();
+            if (_reader.Read())
+            {
+             
+
+                pTerapeuta.Id = _reader.GetInt32(0);
+                pTerapeuta.Apellido = _reader.GetString(3);
+                pTerapeuta.Nombre = _reader.GetString(2);
+
+
+            }
+
+            return pTerapeuta;
+        }
 
         public static List<Especialidad> ObtenerEspecialidad()
         {

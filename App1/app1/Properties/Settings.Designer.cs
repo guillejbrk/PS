@@ -22,27 +22,5 @@ namespace App1.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KRUSCHOV\\SQLEXPRESS;Initial Catalog=PS5;Persist Security Info=True;Us" +
-            "er ID=sa;Password=guille")]
-        public string PS5ConnectionString {
-            get {
-                return ((string)(this["PS5ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KRUSCHOV\\SQLEXPRESS;Initial Catalog=PS4;Persist Security Info=True;Us" +
-            "er ID=sa;Password=guille")]
-        public string PS4ConnectionString {
-            get {
-                return ((string)(this["PS4ConnectionString"]));
-            }
-        }
     }
 }

@@ -17,7 +17,7 @@ namespace App1.Forms
         public frmMenuPrincipal()
         {
             InitializeComponent();
-          timer1.Enabled=true;
+        
            
         }
 

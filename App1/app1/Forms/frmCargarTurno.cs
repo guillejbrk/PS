@@ -35,7 +35,7 @@ namespace App1.Forms
             cboPaciente.ValueMember = "Id";
            
 
-            cboTratamiento.DataSource = ConsultorioDAL.ObtenerTratamiento();
+            cboTratamiento.DataSource = TratamientoDAL.ObtenerTratamiento();
             cboTratamiento.DisplayMember = "Descripcion";
             cboTratamiento.ValueMember = "Id";
 
@@ -64,9 +64,8 @@ namespace App1.Forms
 
                 pTurno.id_Cliente = Convert.ToInt32(cboPaciente.SelectedValue);
                 pTurno.id_Tratamiento = Convert.ToInt32(cboTratamiento.SelectedValue);
-             
-             
                 pTurno.id_Terapeuta = Convert.ToInt32(cboTerapeuta.SelectedValue);
+
                 if (rbnAlta.Checked == false)
                 {
                     pTurno.id_Estado = 1;
@@ -75,11 +74,11 @@ namespace App1.Forms
                 {
                     pTurno.id_Estado = 2;
                 }
-               
+              
             
         
 
-        int resultado = ConsultorioDAL.AgregarTurno(pTurno);
+     /*  int resultado = ConsultorioDAL.AgregarTurno(pTurno);
 
                 if (resultado > 0)
                 {
@@ -90,15 +89,11 @@ namespace App1.Forms
                 {
                     MessageBox.Show("No se pudo Guardar", "Error al Guardar", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
-                }
+                }*/
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+  
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -123,10 +118,7 @@ namespace App1.Forms
             panelCanelado.Visible = false;
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -143,31 +135,22 @@ namespace App1.Forms
             cboPaciente.ValueMember = "Id";
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+     
+
+        private void cboTerapeuta_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-         
+            var cultureInfo = new CultureInfo("es-Ar");
+            var dateTimeInfo = cultureInfo.DateTimeFormat;
+            var dayNames = dateTimeInfo.DayNames;
 
-
-
-        }
-
-        private void cboPaciente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-
-            
-
-
-         
-
-        }
-
-        private void cboTerapeuta_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            List<string> Listadedias = new List<string>();
+            List<DayOfWeek> L = AgendaDAL.ObtenerListaDias(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+            foreach (DayOfWeek item in L)
+            {
+                Listadedias.Add(dayNames[(int)item]);
+            }
             cboDia.DataSource = null;
-            cboDia.DataSource = AgendaDAL.ObtenerListaDias(((Terapeuta)cboTerapeuta.SelectedItem).Id);
-          
-            
+            cboDia.DataSource = Listadedias;
         }
 
         

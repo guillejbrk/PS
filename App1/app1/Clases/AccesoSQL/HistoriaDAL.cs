@@ -16,7 +16,7 @@ namespace App1.Clases.AccesoSQL
                 SqlCommand Comando =
                     new SqlCommand(
                         String.Format(
-                            "insert into Historial (Fecha,Observacion,nro_Cliente) values ('{0}','{1}','{2}')",
+                            "insert into Historial (Fecha,Observacion,nro_Paciente) values ('{0}','{1}','{2}')",
                             pHistorias.Fecha, pHistorias.Observacion, pHistorias.idPaciente), Conn);
 
                 retorno = Comando.ExecuteNonQuery();

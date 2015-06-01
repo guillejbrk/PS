@@ -46,5 +46,29 @@ namespace App1.Clases.AccesoSQL
 
             return _listaProductos;
         }
+
+        public static List<Tratamiento> ObtenerTratamiento()
+        {
+            List<Tratamiento> _listaTratamiento = new List<Tratamiento>();
+
+            SqlConnection conexion = BDComun.obtenerConexion();
+
+            SqlCommand _comando =
+                new SqlCommand("select id_Tipo_Tratamiento, tipo_Tratamiento, Costo from Tipo_Tratamiento", conexion);
+            SqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                Tratamiento pTratamiento = new Tratamiento();
+
+                pTratamiento.Id = _reader.GetInt32(0);
+                pTratamiento.Descripcion = _reader.GetString(1);
+                pTratamiento.Costo = _reader.GetDecimal(2);
+
+
+                _listaTratamiento.Add(pTratamiento);
+            }
+
+            return _listaTratamiento;
+        }
     }
 }
