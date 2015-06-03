@@ -30,7 +30,10 @@
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModLab = new MetroFramework.Controls.MetroButton();
             this.btnCargarL = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
@@ -46,27 +49,28 @@
             this.btnCargarNL = new MetroFramework.Controls.MetroButton();
             this.dtDiasNoLaborables = new MetroFramework.Controls.MetroDateTime();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
+            this.rbtAño = new MetroFramework.Controls.MetroRadioButton();
+            this.rbtMes = new MetroFramework.Controls.MetroRadioButton();
+            this.rbtSemana = new MetroFramework.Controls.MetroRadioButton();
             this.btnEliminarDiaNoLaboral = new System.Windows.Forms.Button();
             this.lstNoLaboralesSemana = new System.Windows.Forms.ListBox();
             this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
             this.cbmTera = new MetroFramework.Controls.MetroComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
-            this.rbtAño = new MetroFramework.Controls.MetroRadioButton();
-            this.rbtMes = new MetroFramework.Controls.MetroRadioButton();
-            this.rbtSemana = new MetroFramework.Controls.MetroRadioButton();
+            this.cboJornada = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.metroPanel8.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel7.SuspendLayout();
             this.metroPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -80,6 +84,9 @@
             // metroPanel8
             // 
             this.metroPanel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel8.Controls.Add(this.button1);
+            this.metroPanel8.Controls.Add(this.label1);
+            this.metroPanel8.Controls.Add(this.cboJornada);
             this.metroPanel8.Controls.Add(this.metroLabel5);
             this.metroPanel8.Controls.Add(this.metroLabel4);
             this.metroPanel8.Controls.Add(this.metroPanel4);
@@ -95,9 +102,28 @@
             this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel8.VerticalScrollbarSize = 10;
             // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(391, 11);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(115, 19);
+            this.metroLabel5.TabIndex = 39;
+            this.metroLabel5.Text = "Dias No Laborales";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(3, 13);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(177, 19);
+            this.metroLabel4.TabIndex = 38;
+            this.metroLabel4.Text = "Dias Laborales de la Semana";
+            // 
             // metroPanel4
             // 
             this.metroPanel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.metroPanel4.Controls.Add(this.btnEliminar);
             this.metroPanel4.Controls.Add(this.btnModLab);
             this.metroPanel4.Controls.Add(this.btnCargarL);
             this.metroPanel4.Controls.Add(this.metroPanel1);
@@ -112,9 +138,19 @@
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel4.VerticalScrollbarSize = 10;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(287, 68);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 34;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // btnModLab
             // 
-            this.btnModLab.Location = new System.Drawing.Point(286, 77);
+            this.btnModLab.Location = new System.Drawing.Point(286, 37);
             this.btnModLab.Name = "btnModLab";
             this.btnModLab.Size = new System.Drawing.Size(75, 23);
             this.btnModLab.TabIndex = 33;
@@ -124,7 +160,7 @@
             // 
             // btnCargarL
             // 
-            this.btnCargarL.Location = new System.Drawing.Point(286, 38);
+            this.btnCargarL.Location = new System.Drawing.Point(286, 8);
             this.btnCargarL.Name = "btnCargarL";
             this.btnCargarL.Size = new System.Drawing.Size(75, 23);
             this.btnCargarL.TabIndex = 32;
@@ -286,6 +322,15 @@
             this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel7.VerticalScrollbarSize = 10;
             // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(181, 14);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(115, 19);
+            this.metroLabel3.TabIndex = 42;
+            this.metroLabel3.Text = "Dias No Laborales";
+            // 
             // metroPanel5
             // 
             this.metroPanel5.Controls.Add(this.metroPanel6);
@@ -301,86 +346,6 @@
             this.metroPanel5.VerticalScrollbarBarColor = true;
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel5.VerticalScrollbarSize = 10;
-            // 
-            // btnEliminarDiaNoLaboral
-            // 
-            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(344, 152);
-            this.btnEliminarDiaNoLaboral.Name = "btnEliminarDiaNoLaboral";
-            this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarDiaNoLaboral.TabIndex = 43;
-            this.btnEliminarDiaNoLaboral.Text = "Quitar";
-            this.btnEliminarDiaNoLaboral.UseVisualStyleBackColor = true;
-            this.btnEliminarDiaNoLaboral.Click += new System.EventHandler(this.btnEliminarDiaNoLaboral_Click_1);
-            // 
-            // lstNoLaboralesSemana
-            // 
-            this.lstNoLaboralesSemana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lstNoLaboralesSemana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lstNoLaboralesSemana.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstNoLaboralesSemana.FormattingEnabled = true;
-            this.lstNoLaboralesSemana.ItemHeight = 16;
-            this.lstNoLaboralesSemana.Location = new System.Drawing.Point(131, 68);
-            this.lstNoLaboralesSemana.Name = "lstNoLaboralesSemana";
-            this.lstNoLaboralesSemana.Size = new System.Drawing.Size(147, 98);
-            this.lstNoLaboralesSemana.TabIndex = 35;
-            // 
-            // cboTerapeuta
-            // 
-            this.cboTerapeuta.FormattingEnabled = true;
-            this.cboTerapeuta.ItemHeight = 23;
-            this.cboTerapeuta.Location = new System.Drawing.Point(109, -50);
-            this.cboTerapeuta.Name = "cboTerapeuta";
-            this.cboTerapeuta.Size = new System.Drawing.Size(163, 29);
-            this.cboTerapeuta.TabIndex = 45;
-            this.cboTerapeuta.UseSelectable = true;
-            // 
-            // cbmTera
-            // 
-            this.cbmTera.FormattingEnabled = true;
-            this.cbmTera.ItemHeight = 23;
-            this.cbmTera.Location = new System.Drawing.Point(123, 28);
-            this.cbmTera.Name = "cbmTera";
-            this.cbmTera.Size = new System.Drawing.Size(163, 29);
-            this.cbmTera.TabIndex = 48;
-            this.cbmTera.UseSelectable = true;
-            this.cbmTera.SelectedIndexChanged += new System.EventHandler(this.cbmTera_SelectedIndexChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::App1.Properties.Resources.diary;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 273);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 207);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 49;
-            this.pictureBox1.TabStop = false;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(3, 13);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(177, 19);
-            this.metroLabel4.TabIndex = 38;
-            this.metroLabel4.Text = "Dias Laborales de la Semana";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(391, 11);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(115, 19);
-            this.metroLabel5.TabIndex = 39;
-            this.metroLabel5.Text = "Dias No Laborales";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(181, 14);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(115, 19);
-            this.metroLabel3.TabIndex = 42;
-            this.metroLabel3.Text = "Dias No Laborales";
             // 
             // metroPanel6
             // 
@@ -429,11 +394,91 @@
             this.rbtSemana.Text = "Semana";
             this.rbtSemana.UseSelectable = true;
             // 
+            // btnEliminarDiaNoLaboral
+            // 
+            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(344, 152);
+            this.btnEliminarDiaNoLaboral.Name = "btnEliminarDiaNoLaboral";
+            this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarDiaNoLaboral.TabIndex = 43;
+            this.btnEliminarDiaNoLaboral.Text = "Quitar";
+            this.btnEliminarDiaNoLaboral.UseVisualStyleBackColor = true;
+            this.btnEliminarDiaNoLaboral.Click += new System.EventHandler(this.btnEliminarDiaNoLaboral_Click_1);
+            // 
+            // lstNoLaboralesSemana
+            // 
+            this.lstNoLaboralesSemana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lstNoLaboralesSemana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstNoLaboralesSemana.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstNoLaboralesSemana.FormattingEnabled = true;
+            this.lstNoLaboralesSemana.ItemHeight = 16;
+            this.lstNoLaboralesSemana.Location = new System.Drawing.Point(131, 68);
+            this.lstNoLaboralesSemana.Name = "lstNoLaboralesSemana";
+            this.lstNoLaboralesSemana.Size = new System.Drawing.Size(147, 98);
+            this.lstNoLaboralesSemana.TabIndex = 35;
+            // 
+            // cboTerapeuta
+            // 
+            this.cboTerapeuta.FormattingEnabled = true;
+            this.cboTerapeuta.ItemHeight = 23;
+            this.cboTerapeuta.Location = new System.Drawing.Point(109, -50);
+            this.cboTerapeuta.Name = "cboTerapeuta";
+            this.cboTerapeuta.Size = new System.Drawing.Size(163, 29);
+            this.cboTerapeuta.TabIndex = 45;
+            this.cboTerapeuta.UseSelectable = true;
+            // 
+            // cbmTera
+            // 
+            this.cbmTera.FormattingEnabled = true;
+            this.cbmTera.ItemHeight = 23;
+            this.cbmTera.Location = new System.Drawing.Point(123, 28);
+            this.cbmTera.Name = "cbmTera";
+            this.cbmTera.Size = new System.Drawing.Size(163, 29);
+            this.cbmTera.Style = MetroFramework.MetroColorStyle.Orange;
+            this.cbmTera.TabIndex = 48;
+            this.cbmTera.UseSelectable = true;
+            this.cbmTera.SelectedIndexChanged += new System.EventHandler(this.cbmTera_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::App1.Properties.Resources.diary;
+            this.pictureBox1.Location = new System.Drawing.Point(35, 273);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(202, 207);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cboJornada
+            // 
+            this.cboJornada.FormattingEnabled = true;
+            this.cboJornada.Location = new System.Drawing.Point(391, 97);
+            this.cboJornada.Name = "cboJornada";
+            this.cboJornada.Size = new System.Drawing.Size(121, 21);
+            this.cboJornada.TabIndex = 40;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(610, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Jornada Laboral";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(518, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Editar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 522);
+            this.ClientSize = new System.Drawing.Size(831, 518);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbmTera);
             this.Controls.Add(this.metroPanel8);
@@ -452,9 +497,9 @@
             this.metroPanel7.ResumeLayout(false);
             this.metroPanel7.PerformLayout();
             this.metroPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroPanel6.ResumeLayout(false);
             this.metroPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -492,5 +537,9 @@
         private MetroFramework.Controls.MetroRadioButton rbtAño;
         private MetroFramework.Controls.MetroRadioButton rbtMes;
         private MetroFramework.Controls.MetroRadioButton rbtSemana;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboJornada;
     }
 }

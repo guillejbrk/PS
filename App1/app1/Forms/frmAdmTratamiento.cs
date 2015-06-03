@@ -9,17 +9,17 @@ using System.Windows.Forms;
 using App1.Clases;
 using App1.Clases.AccesoSQL;
 using MetroFramework.Forms;
+using System.Data.SqlClient;
 
 namespace App1.Forms
 {
     public partial class frmAdmTratamiento : MetroForm
     {
+        SqlConnection conexion = new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=BDConsu; user Id=sa; Password=guille");
         public frmAdmTratamiento()
         {
             InitializeComponent();
         }
-
-
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -31,12 +31,26 @@ namespace App1.Forms
             cbmProducto.DataSource = TratamientoDAL.ObtenerProductos();
             cbmProducto.DisplayMember = "Descripcion";
             cbmProducto.ValueMember = "Id";
-        }
+           
 
-        private void cbmProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
+            conexion.Open();
+
+            SqlCommand cmd = conexion.CreateCommand();
+
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Tipo_Tratamiento 'Descripcion',descripcion'Producto',t.costo from Tipo_Tratamiento t JOIN Productos p on t.id_Producto=p.id_producto";
+            cmd.ExecuteNonQuery();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(dt);
+
+            dtgvTrtamiento.DataSource = dt;
+            this.dtgvTrtamiento.Columns["costo"].DefaultCellStyle.Format = "c";
+            conexion.Close();
+        }     
 
         private bool validar()
         {
@@ -65,7 +79,7 @@ namespace App1.Forms
             {
 
                 pTratamiento.Descripcion = textBox1.Text;
-                pTratamiento.Id_Producto = Convert.ToInt64(cbmProducto.SelectedValue);
+                pTratamiento.IdProducto = Convert.ToInt64(cbmProducto.SelectedValue);
                 pTratamiento.Costo = Convert.ToDecimal(textBox2.Text);
 
 
@@ -75,6 +89,27 @@ namespace App1.Forms
                 {
                     MessageBox.Show("Datos Ingresados Correctamente", "Datos Guardados", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+
+                    conexion.Open();
+
+                    SqlCommand cmd = conexion.CreateCommand();
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select Tipo_Tratamiento 'Descripcion',descripcion'Producto',t.costo from Tipo_Tratamiento t JOIN Productos p on t.id_Producto=p.id_producto";
+                    cmd.ExecuteNonQuery();
+
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    dtgvTrtamiento.DataSource = dt;
+
+                    conexion.Close();
+
+                     
+                 
+
                 }
                 else
                 {
@@ -83,6 +118,8 @@ namespace App1.Forms
                 }
             }
         }
+
+       
 
 
     }

@@ -30,13 +30,23 @@
         {
             this.btnCargar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboDia = new MetroFramework.Controls.MetroComboBox();
+            this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
+            this.cboTratamiento = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.cboPaciente = new MetroFramework.Controls.MetroComboBox();
             this.panelCanelado = new MetroFramework.Controls.MetroPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMotivo = new System.Windows.Forms.TextBox();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.rbnCancelado = new System.Windows.Forms.RadioButton();
             this.rbnAlta = new System.Windows.Forms.RadioButton();
             this.btnCrearPaciente = new System.Windows.Forms.Button();
@@ -44,26 +54,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.cboTratamiento = new MetroFramework.Controls.MetroComboBox();
-            this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
-            this.cboDia = new MetroFramework.Controls.MetroComboBox();
             this.panel1.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
             this.panelCanelado.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(288, 281);
+            this.btnCargar.Location = new System.Drawing.Point(288, 288);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 8;
@@ -90,11 +90,131 @@
             this.panel1.Controls.Add(this.rbnAlta);
             this.panel1.Controls.Add(this.btnCargar);
             this.panel1.Controls.Add(this.btnCrearPaciente);
-            this.panel1.Location = new System.Drawing.Point(10, 49);
+            this.panel1.Location = new System.Drawing.Point(10, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(408, 457);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cboDia
+            // 
+            this.cboDia.FormattingEnabled = true;
+            this.cboDia.ItemHeight = 23;
+            this.cboDia.Location = new System.Drawing.Point(112, 100);
+            this.cboDia.Name = "cboDia";
+            this.cboDia.Size = new System.Drawing.Size(121, 29);
+            this.cboDia.TabIndex = 32;
+            this.cboDia.UseSelectable = true;
+            // 
+            // cboTerapeuta
+            // 
+            this.cboTerapeuta.FormattingEnabled = true;
+            this.cboTerapeuta.ItemHeight = 23;
+            this.cboTerapeuta.Location = new System.Drawing.Point(112, 66);
+            this.cboTerapeuta.Name = "cboTerapeuta";
+            this.cboTerapeuta.Size = new System.Drawing.Size(121, 29);
+            this.cboTerapeuta.TabIndex = 31;
+            this.cboTerapeuta.UseSelectable = true;
+            this.cboTerapeuta.SelectedIndexChanged += new System.EventHandler(this.cboTerapeuta_SelectedIndexChanged_1);
+            // 
+            // cboTratamiento
+            // 
+            this.cboTratamiento.FormattingEnabled = true;
+            this.cboTratamiento.ItemHeight = 23;
+            this.cboTratamiento.Location = new System.Drawing.Point(112, 33);
+            this.cboTratamiento.Name = "cboTratamiento";
+            this.cboTratamiento.Size = new System.Drawing.Size(121, 29);
+            this.cboTratamiento.TabIndex = 30;
+            this.cboTratamiento.UseSelectable = true;
+            this.cboTratamiento.SelectedIndexChanged += new System.EventHandler(this.cboTratamiento_SelectedIndexChanged);
+            this.cboTratamiento.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cboTratamiento_MouseClick);
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(9, 289);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel6.TabIndex = 29;
+            this.metroLabel6.Text = "Estado";
+            // 
+            // metroPanel1
+            // 
+            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.metroLabel5);
+            this.metroPanel1.Controls.Add(this.listView2);
+            this.metroPanel1.Controls.Add(this.listView1);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(16, 152);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(337, 130);
+            this.metroPanel1.TabIndex = 28;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(83, 2);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(145, 19);
+            this.metroLabel5.TabIndex = 27;
+            this.metroLabel5.Text = "Lista de Dias y Horarios";
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(57, 26);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(101, 97);
+            this.listView2.TabIndex = 19;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(164, 26);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(101, 97);
+            this.listView1.TabIndex = 13;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(27, 110);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(31, 19);
+            this.metroLabel4.TabIndex = 26;
+            this.metroLabel4.Text = "Dia:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(19, 70);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel3.TabIndex = 25;
+            this.metroLabel3.Text = "Terapeuta:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(16, 37);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel2.TabIndex = 24;
+            this.metroLabel2.Text = "Tratamiento:";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(16, 5);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel1.TabIndex = 23;
+            this.metroLabel1.Text = "Paciente:";
             // 
             // metroButton1
             // 
@@ -104,6 +224,7 @@
             this.metroButton1.TabIndex = 22;
             this.metroButton1.Text = "Cargar";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // cboPaciente
             // 
@@ -114,7 +235,6 @@
             this.cboPaciente.Size = new System.Drawing.Size(121, 29);
             this.cboPaciente.TabIndex = 21;
             this.cboPaciente.UseSelectable = true;
-      
             this.cboPaciente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cboPaciente_MouseClick);
             // 
             // panelCanelado
@@ -149,26 +269,10 @@
             this.txtMotivo.Size = new System.Drawing.Size(221, 80);
             this.txtMotivo.TabIndex = 16;
             // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(57, 28);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(101, 97);
-            this.listView2.TabIndex = 19;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(164, 28);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(101, 97);
-            this.listView1.TabIndex = 13;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // rbnCancelado
             // 
             this.rbnCancelado.AutoSize = true;
-            this.rbnCancelado.Location = new System.Drawing.Point(112, 273);
+            this.rbnCancelado.Location = new System.Drawing.Point(112, 291);
             this.rbnCancelado.Name = "rbnCancelado";
             this.rbnCancelado.Size = new System.Drawing.Size(76, 17);
             this.rbnCancelado.TabIndex = 15;
@@ -180,7 +284,7 @@
             // rbnAlta
             // 
             this.rbnAlta.AutoSize = true;
-            this.rbnAlta.Location = new System.Drawing.Point(63, 273);
+            this.rbnAlta.Location = new System.Drawing.Point(63, 289);
             this.rbnAlta.Name = "rbnAlta";
             this.rbnAlta.Size = new System.Drawing.Size(43, 17);
             this.rbnAlta.TabIndex = 14;
@@ -201,7 +305,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(831, 504);
+            this.button1.Location = new System.Drawing.Point(878, 501);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
@@ -230,119 +334,17 @@
             // 
             this.pictureBox1.ErrorImage = global::App1.Properties.Resources.blocnote;
             this.pictureBox1.Image = global::App1.Properties.Resources.blocnote;
-            this.pictureBox1.Location = new System.Drawing.Point(497, 274);
+            this.pictureBox1.Location = new System.Drawing.Point(445, 274);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(313, 232);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(24, 12);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel1.TabIndex = 23;
-            this.metroLabel1.Text = "Paciente";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(24, 44);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(78, 19);
-            this.metroLabel2.TabIndex = 24;
-            this.metroLabel2.Text = "Tratamiento";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(24, 79);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(66, 19);
-            this.metroLabel3.TabIndex = 25;
-            this.metroLabel3.Text = "Terapeuta";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(29, 115);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(28, 19);
-            this.metroLabel4.TabIndex = 26;
-            this.metroLabel4.Text = "Dia";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(83, 6);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(145, 19);
-            this.metroLabel5.TabIndex = 27;
-            this.metroLabel5.Text = "Lista de Dias y Horarios";
-            // 
-            // metroPanel1
-            // 
-            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel1.Controls.Add(this.metroLabel5);
-            this.metroPanel1.Controls.Add(this.listView2);
-            this.metroPanel1.Controls.Add(this.listView1);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(16, 140);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(337, 130);
-            this.metroPanel1.TabIndex = 28;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(9, 271);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel6.TabIndex = 29;
-            this.metroLabel6.Text = "Estado";
-            // 
-            // cboTratamiento
-            // 
-            this.cboTratamiento.FormattingEnabled = true;
-            this.cboTratamiento.ItemHeight = 23;
-            this.cboTratamiento.Location = new System.Drawing.Point(112, 34);
-            this.cboTratamiento.Name = "cboTratamiento";
-            this.cboTratamiento.Size = new System.Drawing.Size(121, 29);
-            this.cboTratamiento.TabIndex = 30;
-            this.cboTratamiento.UseSelectable = true;
-            // 
-            // cboTerapeuta
-            // 
-            this.cboTerapeuta.FormattingEnabled = true;
-            this.cboTerapeuta.ItemHeight = 23;
-            this.cboTerapeuta.Location = new System.Drawing.Point(112, 69);
-            this.cboTerapeuta.Name = "cboTerapeuta";
-            this.cboTerapeuta.Size = new System.Drawing.Size(121, 29);
-            this.cboTerapeuta.TabIndex = 31;
-            this.cboTerapeuta.UseSelectable = true;
-            this.cboTerapeuta.SelectedIndexChanged += new System.EventHandler(this.cboTerapeuta_SelectedIndexChanged_1);
-            // 
-            // cboDia
-            // 
-            this.cboDia.FormattingEnabled = true;
-            this.cboDia.ItemHeight = 23;
-            this.cboDia.Location = new System.Drawing.Point(112, 105);
-            this.cboDia.Name = "cboDia";
-            this.cboDia.Size = new System.Drawing.Size(121, 29);
-            this.cboDia.TabIndex = 32;
-            this.cboDia.UseSelectable = true;
-            // 
             // frmCargarTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 529);
+            this.ClientSize = new System.Drawing.Size(976, 534);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
@@ -353,12 +355,12 @@
             this.Load += new System.EventHandler(this.frmCargarTurno_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel1.PerformLayout();
             this.panelCanelado.ResumeLayout(false);
             this.panelCanelado.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

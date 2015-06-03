@@ -14,12 +14,12 @@ using MetroFramework.Forms;
 namespace App1.Forms
 {
 
-    
+
 
     public partial class frmAgenda : MetroForm
     {
         private Agenda AgendaActual { get; set; }
-       
+
         public frmAgenda()
         {
 
@@ -55,7 +55,7 @@ namespace App1.Forms
 
 
                 pAgenda = AgendaDAL.ObtenerAgenda(((Terapeuta)cbmTera.SelectedItem).Id);
-                
+
                 if (pAgenda.Lunes)
                 {
                     chbLunes1.Checked = true;
@@ -171,6 +171,7 @@ namespace App1.Forms
                         AgendaDAL.AgregarDia(pAgenda);
                         MessageBox.Show("Se agrego el DIA", "Dias Guardados", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+                        btnModLab.Enabled = true;
                     }
 
                 }
@@ -258,7 +259,7 @@ namespace App1.Forms
 
                 else
                 {
-                    MessageBox.Show("No se pudo Modificar La Agenda", "Ocurrio un error!!", MessageBoxButtons.OK,
+                    MessageBox.Show("Debe Crear Primero la Agenda", "Ocurrio un error!!", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
                 }
 
@@ -295,10 +296,10 @@ namespace App1.Forms
                     cbmTera.ValueMember = "Id";
                     lstNoLaboralesSemana.DisplayMember = "DiaNoLaboral";
 
-                   
-                        rbtSemana.Checked = false;
-                        rbtMes.Checked = false;
-                        rbtAño.Checked = false;
+
+                    rbtSemana.Checked = false;
+                    rbtMes.Checked = false;
+                    rbtAño.Checked = false;
                 }
 
 
@@ -377,10 +378,96 @@ namespace App1.Forms
             rbtAño.Checked = false;
         }
 
-       
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (AgendaDAL.Existe(Convert.ToInt32(cbmTera.SelectedValue)))
+            {
+
+                Int64 Id = Convert.ToInt64(cbmTera.SelectedValue);
+
+                AgendaDAL.EliminarAgenda(Id);
+
+                MessageBox.Show("Dia No Laboral Eliminado", "Agenda Modificada", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                btnModLab.Enabled = false;
+                Agenda pAgenda = new Agenda();
+                pAgenda = AgendaDAL.ObtenerAgenda(((Terapeuta)cbmTera.SelectedItem).Id);
+
+                if (pAgenda.Lunes)
+                {
+                    chbLunes1.Checked = true;
+                }
+                else
+                {
+                    chbLunes1.Checked = false;
+                }
+
+                if (pAgenda.Martes)
+                {
+                    chbMartes2.Checked = true;
+                }
+                else
+                {
+                    chbMartes2.Checked = false;
+                }
+
+                if (pAgenda.Miercoles)
+                {
+                    chbMiercoles3.Checked = true;
+                }
+                else
+                {
+                    chbMiercoles3.Checked = false;
+                }
+
+                if (pAgenda.Jueves)
+                {
+                    chbJueves4.Checked = true;
+                }
+                else
+                {
+                    chbJueves4.Checked = false;
+                }
+
+                if (pAgenda.Viernes)
+                {
+                    chbViernes5.Checked = true;
+                }
+                else
+                {
+                    chbViernes5.Checked = false;
+                }
+
+                if (pAgenda.Sabado)
+                {
+                    chbSabado6.Checked = true;
+                }
+                else
+                {
+                    chbSabado6.Checked = false;
+                }
+
+                if (pAgenda.Domingo)
+                {
+                    chbDomingo7.Checked = true;
+                }
+                else
+                {
+                    chbDomingo7.Checked = false;
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("No Existe Agenda a Eliminar", "Agenda", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+            }
+        }
+
+    }
+
+}
 
         
 
-        }
-    }
 

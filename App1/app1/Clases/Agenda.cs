@@ -36,5 +36,37 @@ namespace App1.Clases
 
 
         }
+
+        public bool trabajahoy(DateTime fecha)
+        {
+            switch (fecha.DayOfWeek)
+            {
+                case DayOfWeek.Friday:
+                    return Viernes;
+                    break;
+                case DayOfWeek.Monday:
+                    return Lunes;
+                    break;
+                case DayOfWeek.Saturday:
+                    return Sabado;
+                    break;
+                case DayOfWeek.Sunday:
+                    return Domingo;
+                    break;
+                case DayOfWeek.Thursday:
+                    return Jueves;
+                    break;
+                case DayOfWeek.Tuesday:
+                    return Martes;
+                    break;
+                case DayOfWeek.Wednesday:
+                    return Miercoles;
+                    break;
+                default:
+                    break;
+                    
+            }
+            return false;
+        }
     }
 }

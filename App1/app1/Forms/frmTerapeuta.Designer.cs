@@ -77,6 +77,7 @@
             this.btnEliminarDiaNoLaboral = new System.Windows.Forms.Button();
             this.lstNoLaboralesSemana = new System.Windows.Forms.ListBox();
             this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.sdf.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -170,6 +171,7 @@
             this.cboEspecialidad.Location = new System.Drawing.Point(153, 223);
             this.cboEspecialidad.Name = "cboEspecialidad";
             this.cboEspecialidad.Size = new System.Drawing.Size(118, 29);
+            this.cboEspecialidad.Style = MetroFramework.MetroColorStyle.Orange;
             this.cboEspecialidad.TabIndex = 6;
             this.cboEspecialidad.UseSelectable = true;
             // 
@@ -193,6 +195,7 @@
             this.cboJornada.Location = new System.Drawing.Point(153, 188);
             this.cboJornada.Name = "cboJornada";
             this.cboJornada.Size = new System.Drawing.Size(118, 29);
+            this.cboJornada.Style = MetroFramework.MetroColorStyle.Orange;
             this.cboJornada.TabIndex = 5;
             this.cboJornada.UseSelectable = true;
             // 
@@ -353,7 +356,7 @@
             this.btnNuevosTurnos.TabIndex = 45;
             this.btnNuevosTurnos.Text = "Generar Turnos ";
             this.btnNuevosTurnos.UseVisualStyleBackColor = true;
-       
+            this.btnNuevosTurnos.Click += new System.EventHandler(this.btnNuevosTurnos_Click);
             // 
             // metroPanel8
             // 
@@ -376,6 +379,7 @@
             // metroPanel4
             // 
             this.metroPanel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel4.Controls.Add(this.btnEliminar);
             this.metroPanel4.Controls.Add(this.btnModLab);
             this.metroPanel4.Controls.Add(this.btnCargarL);
             this.metroPanel4.Controls.Add(this.metroPanel1);
@@ -392,7 +396,7 @@
             // 
             // btnModLab
             // 
-            this.btnModLab.Location = new System.Drawing.Point(286, 77);
+            this.btnModLab.Location = new System.Drawing.Point(286, 39);
             this.btnModLab.Name = "btnModLab";
             this.btnModLab.Size = new System.Drawing.Size(75, 23);
             this.btnModLab.TabIndex = 33;
@@ -402,7 +406,7 @@
             // 
             // btnCargarL
             // 
-            this.btnCargarL.Location = new System.Drawing.Point(286, 38);
+            this.btnCargarL.Location = new System.Drawing.Point(286, 10);
             this.btnCargarL.Name = "btnCargarL";
             this.btnCargarL.Size = new System.Drawing.Size(75, 23);
             this.btnCargarL.TabIndex = 32;
@@ -445,7 +449,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(159, -1);
+            this.metroLabel2.Location = new System.Drawing.Point(173, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(96, 19);
             this.metroLabel2.TabIndex = 24;
@@ -686,9 +690,20 @@
             this.cboTerapeuta.Location = new System.Drawing.Point(3, 7);
             this.cboTerapeuta.Name = "cboTerapeuta";
             this.cboTerapeuta.Size = new System.Drawing.Size(163, 29);
+            this.cboTerapeuta.Style = MetroFramework.MetroColorStyle.Orange;
             this.cboTerapeuta.TabIndex = 31;
             this.cboTerapeuta.UseSelectable = true;
             this.cboTerapeuta.SelectedIndexChanged += new System.EventHandler(this.cboTerapeuta_SelectedIndexChanged);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(286, 77);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 35;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmTerapeuta
             // 
@@ -771,5 +786,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using App1.Clases.AccesoSQL;
+using App1.Clases;
 
 namespace App1.Forms
 {
@@ -23,6 +24,7 @@ namespace App1.Forms
             cboPaciente.DataSource = HistoriaDAL.ObtenerClientes();
             cboPaciente.DisplayMember = "Apellido";
             cboPaciente.ValueMember = "Id";
+            txtObservacion.Text = "";
         }
 
         private void cboPaciente_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,12 +32,20 @@ namespace App1.Forms
             
             cboFecha.DataSource = HistoriaDAL.ObtenerFecha(((Cliente)cboPaciente.SelectedItem).Id);
             cboFecha.DisplayMember = "Fecha";
+                 txtObservacion.Text = "";
         }
 
         private void cboFecha_SelectedIndexChanged(object sender, EventArgs e)
         {
-             
 
+            txtObservacion.Text = ((Historias)cboFecha.SelectedItem).Observacion;
+
+         
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
   

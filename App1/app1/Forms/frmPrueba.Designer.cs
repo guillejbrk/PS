@@ -107,7 +107,7 @@
             this.dtgvTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvTurnos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvTurnos.Size = new System.Drawing.Size(240, 150);
+            this.dtgvTurnos.Size = new System.Drawing.Size(437, 150);
             this.dtgvTurnos.TabIndex = 5;
             // 
             // frmPrueba
@@ -120,6 +120,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.mcaleTurno);
             this.Name = "frmPrueba";
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "frmPrueba";
             this.Load += new System.EventHandler(this.frmPrueba_Load);
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).EndInit();

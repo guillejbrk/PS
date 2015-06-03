@@ -17,7 +17,7 @@ namespace App1.Clases.AccesoSQL
                     new SqlCommand(
                         String.Format(
                             "insert into Tipo_Tratamiento (tipo_Tratamiento,id_Producto,Costo) values ('{0}','{1}','{2}')",
-                            pTratamiento.Descripcion, pTratamiento.Id_Producto,pTratamiento.Costo), Conn);
+                            pTratamiento.Descripcion, pTratamiento.IdProducto,pTratamiento.Costo), Conn);
 
                 retorno = Comando.ExecuteNonQuery();
             }
@@ -54,7 +54,7 @@ namespace App1.Clases.AccesoSQL
             SqlConnection conexion = BDComun.obtenerConexion();
 
             SqlCommand _comando =
-                new SqlCommand("select id_Tipo_Tratamiento, tipo_Tratamiento, Costo from Tipo_Tratamiento", conexion);
+                new SqlCommand("select id_Tipo_Tratamiento, tipo_Tratamiento,id_Producto , Costo from Tipo_Tratamiento", conexion);
             SqlDataReader _reader = _comando.ExecuteReader();
             while (_reader.Read())
             {
@@ -62,7 +62,8 @@ namespace App1.Clases.AccesoSQL
 
                 pTratamiento.Id = _reader.GetInt32(0);
                 pTratamiento.Descripcion = _reader.GetString(1);
-                pTratamiento.Costo = _reader.GetDecimal(2);
+                pTratamiento.IdProducto = _reader.GetInt32(2);
+                pTratamiento.Costo = _reader.GetDecimal(3);
 
 
                 _listaTratamiento.Add(pTratamiento);
@@ -70,5 +71,7 @@ namespace App1.Clases.AccesoSQL
 
             return _listaTratamiento;
         }
+
+
     }
 }

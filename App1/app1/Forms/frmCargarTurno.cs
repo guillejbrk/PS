@@ -153,6 +153,25 @@ namespace App1.Forms
             cboDia.DataSource = Listadedias;
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            frmAdmTratamiento frmCargarTra = new frmAdmTratamiento();
+            frmCargarTra.ShowDialog();
+        }
+
+        private void cboTratamiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cboTratamiento_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            cboTratamiento.DataSource = TratamientoDAL.ObtenerTratamiento();
+            cboTratamiento.DisplayMember = "Descripcion";
+            cboTratamiento.ValueMember = "Id";
+        }
+
         
         //internacionalizacion de idioma cambiar idioma C#
       

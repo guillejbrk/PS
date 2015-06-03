@@ -15,6 +15,9 @@ namespace App1.Forms
 {
     public partial class frmAdmPaciente : MetroForm
     {
+
+        public Cliente ClienteSeleccionado { get; set; }
+        public Cliente ClienteActual { get; set; }
         public frmAdmPaciente()
         {
             InitializeComponent();
@@ -27,17 +30,42 @@ namespace App1.Forms
             this.Close();
         }
 
-      
 
-        private void btnModificar_Click(object sender, EventArgs e)
+
+        public void btnModificar_Click(object sender, EventArgs e)
         {
 
-        }
+            if (dtgPac.SelectedRows.Count == 1)
+            {
+                Int64 Id = Convert.ToInt64(dtgPac.CurrentRow.Cells[0].Value);
+                ClienteSeleccionado = ClienteDAL.ObtenerCliente2(Id);
 
+                frmCargarCliente CargarClienteForm = new frmCargarCliente();
+                CargarClienteForm.Show();
+                this.Close();
+
+
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione Paciente que desea Modificar", "Advertencia", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            }
+
+            if (ClienteSeleccionado != null)
+            {
+                ClienteActual = ClienteSeleccionado;
+
+            }
+
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmCargarCliente CargarClienteForm = new frmCargarCliente();
-            
+       
             CargarClienteForm.Show();
             this.Close();
 

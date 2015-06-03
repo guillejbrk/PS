@@ -40,7 +40,7 @@ namespace App1.Forms
             cboTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeuta();
             cboTerapeuta.DisplayMember = "Apellido";
             cboTerapeuta.ValueMember = "Id";
-            cboJornada.DataSource = TerapeutaDAL.ObtenerJornadas();
+           cboJornada.DataSource = TerapeutaDAL.ObtenerJornada();
             cboJornada.DisplayMember = "tipo_Jornada";
             cboJornada.ValueMember = "Id";
             cboEspecialidad.DataSource = TerapeutaDAL.ObtenerEspecialidad();
@@ -159,6 +159,7 @@ namespace App1.Forms
                     AgendaDAL.AgregarDia(pAgenda);
                     MessageBox.Show("Se agrego el DIA", "Dias Guardados", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+                    btnModLab.Enabled = true;
                 }
 
             }
@@ -465,6 +466,103 @@ namespace App1.Forms
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnNuevosTurnos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+
+            if (AgendaDAL.Existe(Convert.ToInt32(cboTerapeuta.SelectedValue)))
+            {
+                Int64 Id = Convert.ToInt64(cboTerapeuta.SelectedValue);
+
+                AgendaDAL.EliminarAgenda(Id);
+
+                    MessageBox.Show("Agenda Eliminada", "Agenda", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                btnModLab.Enabled = false;
+
+                Agenda pAgenda = new Agenda();
+                pAgenda = AgendaDAL.ObtenerAgenda(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+
+                if (pAgenda.Lunes)
+                {
+                    chbLunes.Checked = true;
+                }
+                else
+                {
+                    chbLunes.Checked = false;
+                }
+
+                if (pAgenda.Martes)
+                {
+                    chbMartes1.Checked = true;
+                }
+                else
+                {
+                    chbMartes1.Checked = false;
+                }
+
+                if (pAgenda.Miercoles)
+                {
+
+
+                    chbMiercoles.Checked = true;
+                }
+                else
+                {
+                    chbMiercoles.Checked = false;
+                }
+
+                if (pAgenda.Jueves)
+                {
+
+                    chbJueves.Checked = true;
+                }
+                else
+                {
+                    chbJueves.Checked = false;
+                }
+
+                if (pAgenda.Viernes)
+                {
+                    chbViernes.Checked = true;
+                }
+                else
+                {
+                    chbViernes.Checked = false;
+                }
+
+                if (pAgenda.Sabado)
+                {
+
+                    chbSabado.Checked = true;
+                }
+                else
+                {
+                    chbSabado.Checked = false;
+                }
+
+                if (pAgenda.Domingo)
+                {
+
+                    chbDomingo.Checked = true;
+                }
+                else
+                {
+                    chbDomingo.Checked = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Existe Agenda a Eliminar", "Agenda", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+            }
         }
 
       

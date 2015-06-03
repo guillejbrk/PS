@@ -29,22 +29,24 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.txtProducto = new MetroFramework.Controls.MetroTextBox();
-            this.txtCantidad = new MetroFramework.Controls.MetroTextBox();
             this.txtCosto = new MetroFramework.Controls.MetroTextBox();
+            this.txtCantidad = new MetroFramework.Controls.MetroTextBox();
+            this.txtProducto = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
             this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.metroPanel1.Controls.Add(this.metroLabel5);
             this.metroPanel1.Controls.Add(this.txtCosto);
             this.metroPanel1.Controls.Add(this.txtCantidad);
             this.metroPanel1.Controls.Add(this.txtProducto);
@@ -65,15 +67,80 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // cboTerapeuta
+            // txtCosto
             // 
-            this.cboTerapeuta.FormattingEnabled = true;
-            this.cboTerapeuta.ItemHeight = 23;
-            this.cboTerapeuta.Location = new System.Drawing.Point(90, 114);
-            this.cboTerapeuta.Name = "cboTerapeuta";
-            this.cboTerapeuta.Size = new System.Drawing.Size(140, 29);
-            this.cboTerapeuta.TabIndex = 15;
-            this.cboTerapeuta.UseSelectable = true;
+            this.txtCosto.Lines = new string[0];
+            this.txtCosto.Location = new System.Drawing.Point(178, 82);
+            this.txtCosto.MaxLength = 32767;
+            this.txtCosto.Name = "txtCosto";
+            this.txtCosto.PasswordChar = '\0';
+            this.txtCosto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCosto.SelectedText = "";
+            this.txtCosto.Size = new System.Drawing.Size(52, 23);
+            this.txtCosto.TabIndex = 24;
+            this.txtCosto.UseSelectable = true;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Lines = new string[0];
+            this.txtCantidad.Location = new System.Drawing.Point(178, 43);
+            this.txtCantidad.MaxLength = 32767;
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.PasswordChar = '\0';
+            this.txtCantidad.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCantidad.SelectedText = "";
+            this.txtCantidad.Size = new System.Drawing.Size(52, 23);
+            this.txtCantidad.TabIndex = 23;
+            this.txtCantidad.UseSelectable = true;
+            // 
+            // txtProducto
+            // 
+            this.txtProducto.Lines = new string[0];
+            this.txtProducto.Location = new System.Drawing.Point(90, 7);
+            this.txtProducto.MaxLength = 32767;
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.PasswordChar = '\0';
+            this.txtProducto.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtProducto.SelectedText = "";
+            this.txtProducto.Size = new System.Drawing.Size(140, 23);
+            this.txtProducto.TabIndex = 22;
+            this.txtProducto.UseSelectable = true;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(12, 121);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel4.TabIndex = 21;
+            this.metroLabel4.Text = "Terapeuta:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(12, 82);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(46, 19);
+            this.metroLabel3.TabIndex = 20;
+            this.metroLabel3.Text = "Costo:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(12, 47);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(65, 19);
+            this.metroLabel2.TabIndex = 19;
+            this.metroLabel2.Text = "Cantidad:";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(12, 9);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel1.TabIndex = 18;
+            this.metroLabel1.Text = "Producto:";
             // 
             // btnNuevo
             // 
@@ -89,80 +156,15 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // metroLabel1
+            // cboTerapeuta
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(12, 9);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(66, 19);
-            this.metroLabel1.TabIndex = 18;
-            this.metroLabel1.Text = "Producto:";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(12, 47);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel2.TabIndex = 19;
-            this.metroLabel2.Text = "Cantidad:";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(12, 82);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(46, 19);
-            this.metroLabel3.TabIndex = 20;
-            this.metroLabel3.Text = "Costo:";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(12, 121);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(69, 19);
-            this.metroLabel4.TabIndex = 21;
-            this.metroLabel4.Text = "Terapeuta:";
-            // 
-            // txtProducto
-            // 
-            this.txtProducto.Lines = new string[0];
-            this.txtProducto.Location = new System.Drawing.Point(90, 7);
-            this.txtProducto.MaxLength = 32767;
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.PasswordChar = '\0';
-            this.txtProducto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtProducto.SelectedText = "";
-            this.txtProducto.Size = new System.Drawing.Size(140, 23);
-            this.txtProducto.TabIndex = 22;
-            this.txtProducto.UseSelectable = true;
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Lines = new string[0];
-            this.txtCantidad.Location = new System.Drawing.Point(178, 43);
-            this.txtCantidad.MaxLength = 32767;
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.PasswordChar = '\0';
-            this.txtCantidad.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCantidad.SelectedText = "";
-            this.txtCantidad.Size = new System.Drawing.Size(52, 23);
-            this.txtCantidad.TabIndex = 23;
-            this.txtCantidad.UseSelectable = true;
-            // 
-            // txtCosto
-            // 
-            this.txtCosto.Lines = new string[0];
-            this.txtCosto.Location = new System.Drawing.Point(178, 82);
-            this.txtCosto.MaxLength = 32767;
-            this.txtCosto.Name = "txtCosto";
-            this.txtCosto.PasswordChar = '\0';
-            this.txtCosto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCosto.SelectedText = "";
-            this.txtCosto.Size = new System.Drawing.Size(52, 23);
-            this.txtCosto.TabIndex = 24;
-            this.txtCosto.UseSelectable = true;
+            this.cboTerapeuta.FormattingEnabled = true;
+            this.cboTerapeuta.ItemHeight = 23;
+            this.cboTerapeuta.Location = new System.Drawing.Point(90, 114);
+            this.cboTerapeuta.Name = "cboTerapeuta";
+            this.cboTerapeuta.Size = new System.Drawing.Size(140, 29);
+            this.cboTerapeuta.TabIndex = 15;
+            this.cboTerapeuta.UseSelectable = true;
             // 
             // btnCerrar
             // 
@@ -177,6 +179,15 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(236, 82);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(16, 19);
+            this.metroLabel5.TabIndex = 25;
+            this.metroLabel5.Text = "$";
             // 
             // frmProductos
             // 
@@ -209,6 +220,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.Button btnCerrar;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
 
 
 

@@ -49,6 +49,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Framework\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -249,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dakirby309-Windows-8-Metro-Apps-BitTorrent-Metro.ico" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\Presentation-icon.png" />
+    <Content Include="TODO.txt" />
     <None Include="Resources\telephone_red.png" />
     <None Include="Resources\diary.png" />
     <None Include="Resources\diary_128.png" />

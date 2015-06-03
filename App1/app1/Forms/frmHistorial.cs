@@ -51,26 +51,35 @@ namespace App1.Forms
         {
             Historias pHistorias = new Historias();
 
-           if(validar()) {
-                pHistorias.Fecha = dtpFecha1.Text;
-                pHistorias.Observacion = textBox1.Text;
-                pHistorias.idPaciente = Convert.ToInt32(cboCliente.SelectedValue);
-
-
-                int resultado = HistoriaDAL.AgregarHistoria(pHistorias);
-
-                if (resultado > 0)
+            if (!HistoriaDAL.ExisteHistoria(dtpFecha1.Text, Convert.ToInt32(cboCliente.SelectedValue)))
+            {
+                if (validar())
                 {
-                    MessageBox.Show("Hitoria Guardada Correctamente", "Datos Guardados", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    pHistorias.Fecha = dtpFecha1.Text;
+                    pHistorias.Observacion = textBox1.Text;
+                    pHistorias.idPaciente = Convert.ToInt32(cboCliente.SelectedValue);
+
+
+                    int resultado = HistoriaDAL.AgregarHistoria(pHistorias);
+
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Hitoria Guardada Correctamente", "Datos Guardados", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo Guardar", "Error al Guardar", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("No se pudo Guardar", "Error al Guardar", MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                }
+              
             }
-
+            else
+            {
+                MessageBox.Show("Ya se Cargo Historia para  esa Fecha sobre el Paciente Seleccionado", "Error al Guardar", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            }
         }
 
     }

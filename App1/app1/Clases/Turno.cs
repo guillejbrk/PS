@@ -34,5 +34,16 @@ namespace App1.Clases
             this.Motivo = pMotivo;
 
         }
+        public Turno( string pFecha_Tratamiento, string pHora)
+        {
+           
+            
+            this.Fecha_Tratamiento = pFecha_Tratamiento;
+            this.Hora = pHora;
+            
+            this.id_Estado = 3;
+            
+
+        }
     }
 }

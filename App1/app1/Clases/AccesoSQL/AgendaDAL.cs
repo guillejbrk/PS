@@ -79,8 +79,6 @@ namespace App1.Clases.AccesoSQL
             
         }
 
-
-
         public static bool Existe(int id)
         {
 
@@ -136,8 +134,6 @@ namespace App1.Clases.AccesoSQL
 
 
         }
-
-
 
         public static bool DiaLaboralExiste(int var, string var1)
         {
@@ -397,6 +393,25 @@ namespace App1.Clases.AccesoSQL
             }
 
         }
+
+        public static int EliminarAgenda(Int64 pInt)
+        {
+            int retorno = 0;
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand
+                    (string.Format(
+                        "Delete Agenda where id_Terapeuta={0} ",
+                        pInt), conexion);
+
+
+                retorno = comando.ExecuteNonQuery();
+                conexion.Close();
+            }
+            return retorno;
+
+        }
+
     }
 
 

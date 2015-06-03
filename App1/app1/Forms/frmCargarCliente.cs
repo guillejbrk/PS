@@ -62,20 +62,10 @@ namespace App1
         }
            
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-
-            dtgvPaciente.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
-
-        }
-
-        private void txtBuscar_KeyUp_1(object sender, KeyEventArgs e)
-        {
-            dtgvPaciente.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
-        }
+    
 
 
-        private void button1_Click_1(object sender, EventArgs e)
+        public void button1_Click_1(object sender, EventArgs e)
         {
             if (dtgvPaciente.SelectedRows.Count == 1)
             {
@@ -132,8 +122,10 @@ namespace App1
                 MessageBox.Show("Paciente Modificado Correctamente", "Paciente Modificado", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 limpiar();
-
+                btnACtualizar.Enabled = false;
                 btnGuardar.Enabled = true;
+                txtBuscar.Text = "";
+                dtgvPaciente.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
             }
 
             else
@@ -173,6 +165,7 @@ namespace App1
                 {
                     MessageBox.Show("Paciente Cargado Corerectamente", "Cargado", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                    btnACtualizar.Enabled = false;
 
 
                     limpiar();
@@ -239,6 +232,23 @@ namespace App1
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+          
+            dtgvPaciente.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
+           
+        }
+
+        private void txtBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgvPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
 
        

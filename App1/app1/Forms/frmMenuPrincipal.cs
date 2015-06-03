@@ -150,6 +150,11 @@ namespace App1.Forms
             Age.Show();
         }
 
+        private void administracionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

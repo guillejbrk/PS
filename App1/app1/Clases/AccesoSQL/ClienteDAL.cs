@@ -73,7 +73,7 @@ namespace App1.Clases.AccesoSQL
                     pCliente.Apellido = reader.GetString(1);
                     pCliente.Nombre = reader.GetString(2);
                     pCliente.Edad = reader.GetInt32(3);
-                    pCliente.Fecha = Convert.ToString(reader.GetDateTime(4));
+                    pCliente.Fecha = reader.GetDateTime(4).ToShortDateString();
                     pCliente.Domicilio = reader.GetString(5);
                     pCliente.Tel = reader.GetString(6);
                     pCliente.Cel = reader.GetString(7);
@@ -166,7 +166,7 @@ namespace App1.Clases.AccesoSQL
                     pCliente.Apellido = reader.GetString(1);
                     pCliente.Nombre = reader.GetString(2);
                     pCliente.Edad = reader.GetInt32(3);
-                    pCliente.Fecha = Convert.ToString(reader.GetDateTime(4));
+                    pCliente.Fecha = reader.GetDateTime(4).ToShortDateString();
                     pCliente.Domicilio = reader.GetString(5);
                     pCliente.Tel = reader.GetString(6);
                     pCliente.Cel = reader.GetString(7);

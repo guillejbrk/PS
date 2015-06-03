@@ -32,14 +32,47 @@ namespace App1.Forms
 
             dgvProductos.DataSource = ProductosDAL.ObtenerProductoss(((Terapeuta)cboTerapeuta.SelectedItem).Id);
             dgvProductos.Columns["id_Terapeuta"].Visible = false;
+        
+            this.dgvProductos.Columns["Costo"].DefaultCellStyle.Format = "c";
 
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
             frmProductos pProductos = new frmProductos();
-            pProductos.Show();
+            pProductos.ShowDialog();
             this.Close();
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            if(ProductosDAL.ExisteTerapeuta(Convert.ToInt32(cboTerapeuta.SelectedValue)))
+            {
+                 if (!ProductosDAL.ExisteTratamiento(Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value)))
+                      { Int64 Id = Convert.ToInt64(dgvProductos.CurrentRow.Cells[0].Value);
+
+                        ProductosDAL.EliminarProductos(Id);
+
+                        MessageBox.Show("Producto Eliminado", "Agenda Modificada", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                        dgvProductos.DataSource = ProductosDAL.ObtenerProductoss(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+                        dgvProductos.Columns["id_Terapeuta"].Visible = false;          
+                        this.dgvProductos.Columns["Costo"].DefaultCellStyle.Format = "c";
+                      }
+                else
+                {
+                    MessageBox.Show("Primeo Debe eliminar Tratamiento Asociado", "Atencion!", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+                }
+
+            }
+            else
+            {
+                 MessageBox.Show("No Existe Productos Asociados", "Atencion!", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
+            }
+
+           
         }
 
        

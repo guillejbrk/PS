@@ -9,7 +9,7 @@ namespace App1.Clases
     {
         public Int64 Id { get; set; }
         public string Descripcion { get; set; }
-        public Int64 Id_Producto { get; set; }
+        public Int64 IdProducto { get; set; }
         public decimal Costo { get; set; }
 
 
@@ -20,7 +20,7 @@ namespace App1.Clases
         {
             this.Id = pId;
             this.Descripcion = pDescripcion;
-            this.Id_Producto = pId_Producto;
+            this.IdProducto = pId_Producto;
             this.Costo = pCosto;
 
 

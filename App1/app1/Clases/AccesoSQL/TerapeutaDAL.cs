@@ -52,29 +52,7 @@ namespace App1.Clases.AccesoSQL
             return _listaTerapeutas;
         }
 
-        public static List<Jornada> ObtenerJornadas()
-        {
-            List<Jornada> _listaJornadas = new List<Jornada>();
-
-            SqlConnection conexion = BDComun.obtenerConexion();
-
-            SqlCommand _comando = new SqlCommand("select id_Jornada,tipo_Jornada from Jornada", conexion);
-            SqlDataReader _reader = _comando.ExecuteReader();
-            while (_reader.Read())
-            {
-                Jornada pJornada = new Jornada();
-
-                pJornada.Id = _reader.GetInt32(0);
-                pJornada.tipo_Jornada = _reader.GetString(1);
-
-
-
-                _listaJornadas.Add(pJornada);
-            }
-
-            return _listaJornadas;
-        }
-
+  
         public static Terapeuta ObtenerTerapeuta(Int64 pIdTerapeuta)
         {
             Terapeuta pTerapeuta = new Terapeuta();
@@ -91,7 +69,7 @@ namespace App1.Clases.AccesoSQL
                 pTerapeuta.Apellido = _reader.GetString(3);
                 pTerapeuta.Nombre = _reader.GetString(2);
 
-
+                //falta la jornada
             }
 
             return pTerapeuta;
@@ -119,5 +97,50 @@ namespace App1.Clases.AccesoSQL
 
             return _listaEspecialidad;
         }
+
+        public static List<Jornada> ObtenerJornada()
+        {
+            List<Jornada> _listaJornadas = new List<Jornada>();
+
+            SqlConnection conexion = BDComun.obtenerConexion();
+
+            SqlCommand _comando = new SqlCommand("select id_Jornada,tipo_Jornada from Jornada", conexion);
+            SqlDataReader _reader = _comando.ExecuteReader();
+            while (_reader.Read())
+            {
+                Jornada pJornada = new Jornada();
+
+                pJornada.Id = _reader.GetInt32(0);
+                pJornada.tipo_Jornada = _reader.GetString(1);
+
+
+
+                _listaJornadas.Add(pJornada);
+            }
+            return _listaJornadas;
+        }
+ 
+ 
+        public static Jornada ObtenerJornadas(Int64 idjornada)
+        {
+
+            SqlConnection conexion = BDComun.obtenerConexion();
+
+            SqlCommand _comando = new SqlCommand("select id_Jornada,tipo_Jornada,HoraDesde,HoraHasta from Jornada where id_Jornada = '" + idjornada + "'", conexion);
+            SqlDataReader _reader = _comando.ExecuteReader();
+
+            Jornada pJornada = new Jornada();
+            if (_reader.Read())
+            {
+
+                pJornada = new Jornada(_reader.GetInt32(0), _reader.GetString(1), _reader.GetTimeSpan(2), _reader.GetTimeSpan(3));
+
+            }
+            return pJornada;
+
+
+
+        }
+
     }
 }

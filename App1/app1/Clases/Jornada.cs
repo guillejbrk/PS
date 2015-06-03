@@ -9,16 +9,18 @@ namespace App1.Clases
     {
         public int Id { get; set; }
         public string tipo_Jornada { get; set; }
-        public string Franja_Horaria { get; set; }
+        public TimeSpan desde { get; set; }
+        public TimeSpan hasta { get; set; }
 
-          public Jornada()
+        public Jornada()
         { }
 
-        public Jornada(int pId, string pTipo_Jornada, string pFranja_Horaria)
+        public Jornada(int pId, string pTipo_Jornada, TimeSpan desde, TimeSpan hasta)
         {
             this.Id = pId;
             this.tipo_Jornada = pTipo_Jornada;
-            this.Franja_Horaria = pFranja_Horaria;
+            this.desde = desde;
+            this.hasta = hasta;
             
         }
     

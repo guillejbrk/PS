@@ -56,12 +56,14 @@ namespace App1.Clases.AccesoSQL
 
 
 
-       /* public static int CargarTurnos(Int64 idTerapeuta)
+     /*  public static int GenerarTurnos(Int64 idTerapeuta)
         {
-            List<DayOfWeek> pDias = AgendaDAL.ObtenerListaDias();
+            Terapeuta pepe = TerapeutaDAL.ObtenerTerapeuta(idTerapeuta);
+            Jornada horariosdepepe = TerapeutaDAL.ObtenerJornadas(pepe.Id_Jornada);
+            List<DayOfWeek> pDias = AgendaDAL.ObtenerListaDias(idTerapeuta);
             
 
-
+        
         }*/
 
     }

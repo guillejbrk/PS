@@ -16,7 +16,7 @@ namespace App1.Clases.AccesoSQL
                 SqlCommand Comando =
                     new SqlCommand(
                         String.Format(
-                            "insert into Historial (Fecha,Observacion,nro_Paciente) values ('{0}','{1}','{2}')",
+                            "insert into Historia (Fecha,Observacion,nro_Paciente) values ('{0}','{1}','{2}')",
                             pHistorias.Fecha, pHistorias.Observacion, pHistorias.idPaciente), Conn);
 
                 retorno = Comando.ExecuteNonQuery();
@@ -91,24 +91,24 @@ namespace App1.Clases.AccesoSQL
             using (SqlConnection conexion = BDComun.obtenerConexion())
             {
 
-                  List<Historias> lista = new List<Historias>();
+                List<Historias> lista = new List<Historias>();
 
                 SqlCommand comando = new SqlCommand(string.Format(
-                    "Select id_Historial, Fecha ,Observacion,nro_Paciente from Historial where nro_Paciente = {0} ",
+                    "Select id_Historial, Fecha ,Observacion,nro_Paciente from Historia where nro_Paciente = {0} ",
                     pNro_Cliente), conexion);
 
                 SqlDataReader reader = comando.ExecuteReader();
 
                 while (reader.Read())
                 {
-                  Historias pHistoria = new Historias();
+                    Historias pHistoria = new Historias();
                     pHistoria.Id = reader.GetInt32(0);
                     pHistoria.Fecha = reader.GetDateTime(1).ToShortDateString();
                     pHistoria.Observacion = reader.GetString(2);
                     pHistoria.idPaciente = reader.GetInt32(3);
 
                     lista.Add(pHistoria);
-                 
+
                 }
 
                 conexion.Close();
@@ -117,7 +117,7 @@ namespace App1.Clases.AccesoSQL
 
             }
 
-    }
+        }
 
 
         public static Historias ObtenerObservacion(Int64 pNro_Cliente, string pFecha)
@@ -129,20 +129,18 @@ namespace App1.Clases.AccesoSQL
                 Historias pHistoria = new Historias();
 
                 SqlCommand comando = new SqlCommand(string.Format(
-                    "Select id_Historial, Fecha ,Observacion,nro_Paciente from Historial where nro_Paciente = {0} and Fecha= {1} ",
+                    "Select id_Historial, Fecha ,Observacion,nro_Paciente from Historia where nro_Paciente = {0} and Fecha= {1} ",
                     pNro_Cliente, pFecha), conexion);
 
                 SqlDataReader reader = comando.ExecuteReader();
 
                 while (reader.Read())
                 {
-                   
+
                     pHistoria.Id = reader.GetInt32(0);
                     pHistoria.Fecha = reader.GetDateTime(1).ToShortDateString();
                     pHistoria.Observacion = reader.GetString(2);
                     pHistoria.idPaciente = reader.GetInt32(3);
-
-                 
 
                 }
 
@@ -153,7 +151,26 @@ namespace App1.Clases.AccesoSQL
             }
 
         }
+
+        public static bool ExisteHistoria(string fecha, int pPa)
+        {
+
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+                string query = "SELECT COUNT(*) FROM Historia WHERE Fecha=@Fecha and nro_Paciente=@nro_Paciente";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("Fecha", fecha);
+                  cmd.Parameters.AddWithValue("nro_Paciente", pPa);
+
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if (count == 0)
+                    return false;
+                else
+                    return true;
+            }
     }
 
 
+    }
 }

@@ -66,7 +66,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(6, 90);
+            this.metroLabel3.Location = new System.Drawing.Point(3, 88);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(83, 19);
             this.metroLabel3.TabIndex = 19;
@@ -114,7 +114,8 @@
             this.textBox1.Location = new System.Drawing.Point(92, 88);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 126);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(275, 102);
             this.textBox1.TabIndex = 13;
             // 
             // btnCargar

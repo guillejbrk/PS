@@ -153,6 +153,16 @@ namespace App1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit {
+            get {
+                object obj = ResourceManager.GetObject("edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IniciarSesion {
             get {
                 object obj = ResourceManager.GetObject("IniciarSesion", resourceCulture);
@@ -226,6 +236,16 @@ namespace App1.Properties {
         internal static System.Drawing.Bitmap man_grey {
             get {
                 object obj = ResourceManager.GetObject("man_grey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Presentation_icon {
+            get {
+                object obj = ResourceManager.GetObject("Presentation-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
