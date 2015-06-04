@@ -1,6 +1,6 @@
 ﻿namespace App1.Forms
 {
-    partial class frmPrueba
+    partial class Turnos
     {
         /// <summary>
         /// Required designer variable.
@@ -50,7 +50,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(696, 318);
+            this.button1.Location = new System.Drawing.Point(746, 327);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -110,7 +110,7 @@
             this.dtgvTurnos.Size = new System.Drawing.Size(437, 150);
             this.dtgvTurnos.TabIndex = 5;
             // 
-            // frmPrueba
+            // Turnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,7 +119,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.mcaleTurno);
-            this.Name = "frmPrueba";
+            this.Name = "Turnos";
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "frmPrueba";
             this.Load += new System.EventHandler(this.frmPrueba_Load);

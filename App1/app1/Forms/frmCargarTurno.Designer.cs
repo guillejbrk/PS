@@ -35,9 +35,9 @@
             this.cboTratamiento = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.lstDias = new System.Windows.Forms.ListBox();
+            this.lstHoras = new System.Windows.Forms.ListBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -63,7 +63,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(288, 288);
+            this.btnCargar.Location = new System.Drawing.Point(288, 285);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 8;
@@ -92,7 +92,7 @@
             this.panel1.Controls.Add(this.btnCrearPaciente);
             this.panel1.Location = new System.Drawing.Point(10, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(408, 457);
+            this.panel1.Size = new System.Drawing.Size(408, 480);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -141,19 +141,35 @@
             // metroPanel1
             // 
             this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.lstDias);
+            this.metroPanel1.Controls.Add(this.lstHoras);
             this.metroPanel1.Controls.Add(this.metroLabel5);
-            this.metroPanel1.Controls.Add(this.listView2);
-            this.metroPanel1.Controls.Add(this.listView1);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(16, 152);
+            this.metroPanel1.Location = new System.Drawing.Point(16, 135);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(337, 130);
             this.metroPanel1.TabIndex = 28;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // lstDias
+            // 
+            this.lstDias.FormattingEnabled = true;
+            this.lstDias.Location = new System.Drawing.Point(38, 26);
+            this.lstDias.Name = "lstDias";
+            this.lstDias.Size = new System.Drawing.Size(120, 95);
+            this.lstDias.TabIndex = 29;
+            // 
+            // lstHoras
+            // 
+            this.lstHoras.FormattingEnabled = true;
+            this.lstHoras.Location = new System.Drawing.Point(164, 26);
+            this.lstHoras.Name = "lstHoras";
+            this.lstHoras.Size = new System.Drawing.Size(120, 95);
+            this.lstHoras.TabIndex = 28;
             // 
             // metroLabel5
             // 
@@ -164,26 +180,10 @@
             this.metroLabel5.TabIndex = 27;
             this.metroLabel5.Text = "Lista de Dias y Horarios";
             // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(57, 26);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(101, 97);
-            this.listView2.TabIndex = 19;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(164, 26);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(101, 97);
-            this.listView1.TabIndex = 13;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(27, 110);
+            this.metroLabel4.Location = new System.Drawing.Point(26, 110);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(31, 19);
             this.metroLabel4.TabIndex = 26;
@@ -272,7 +272,7 @@
             // rbnCancelado
             // 
             this.rbnCancelado.AutoSize = true;
-            this.rbnCancelado.Location = new System.Drawing.Point(112, 291);
+            this.rbnCancelado.Location = new System.Drawing.Point(112, 288);
             this.rbnCancelado.Name = "rbnCancelado";
             this.rbnCancelado.Size = new System.Drawing.Size(76, 17);
             this.rbnCancelado.TabIndex = 15;
@@ -305,7 +305,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(878, 501);
+            this.button1.Location = new System.Drawing.Point(831, 555);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
@@ -315,7 +315,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(407, 193);
+            this.button2.Location = new System.Drawing.Point(361, 193);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
@@ -327,7 +327,7 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Location = new System.Drawing.Point(424, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(510, 219);
+            this.panel2.Size = new System.Drawing.Size(485, 219);
             this.panel2.TabIndex = 11;
             // 
             // pictureBox1
@@ -336,7 +336,8 @@
             this.pictureBox1.Image = global::App1.Properties.Resources.blocnote;
             this.pictureBox1.Location = new System.Drawing.Point(445, 274);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(313, 232);
+            this.pictureBox1.Size = new System.Drawing.Size(367, 259);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
@@ -344,7 +345,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 534);
+            this.ClientSize = new System.Drawing.Size(932, 581);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
@@ -375,8 +376,6 @@
         private System.Windows.Forms.RadioButton rbnCancelado;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMotivo;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroPanel panelCanelado;
@@ -393,5 +392,7 @@
         private MetroFramework.Controls.MetroComboBox cboDia;
         private MetroFramework.Controls.MetroComboBox cboTerapeuta;
         private MetroFramework.Controls.MetroComboBox cboTratamiento;
+        private System.Windows.Forms.ListBox lstDias;
+        private System.Windows.Forms.ListBox lstHoras;
     }
 }

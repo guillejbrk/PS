@@ -50,9 +50,9 @@ namespace App1.Forms
 
             }
             else
-            {
-                MessageBox.Show("Seleccione Paciente que desea Modificar", "Advertencia", MessageBoxButtons.OK,
+            { MessageBox.Show("Seleccione Paciente que desea Modificar", "Advertencia", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
+              
             }
 
             if (ClienteSeleccionado != null)
@@ -77,6 +77,11 @@ namespace App1.Forms
         private void txtBuscar_KeyUp_1(object sender, KeyEventArgs e)
         {
             dtgPac.DataSource = ClienteDAL.BuscarClientes2(txtBuscar.Text);
+        }
+
+        private void frmAdmPaciente_Load(object sender, EventArgs e)
+        {
+
         }
 
       

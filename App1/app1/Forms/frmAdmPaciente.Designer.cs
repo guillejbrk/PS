@@ -220,6 +220,7 @@
             this.Name = "frmAdmPaciente";
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Administrar Pacientes";
+            this.Load += new System.EventHandler(this.frmAdmPaciente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPac)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroPanel1.ResumeLayout(false);

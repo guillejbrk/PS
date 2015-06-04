@@ -30,6 +30,9 @@
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboJornada = new System.Windows.Forms.ComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
@@ -60,9 +63,7 @@
             this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
             this.cbmTera = new MetroFramework.Controls.MetroComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cboJornada = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGenerar = new System.Windows.Forms.Button();
             this.metroPanel8.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -101,6 +102,32 @@
             this.metroPanel8.VerticalScrollbarBarColor = true;
             this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel8.VerticalScrollbarSize = 10;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(518, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Editar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(610, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Jornada Laboral";
+            // 
+            // cboJornada
+            // 
+            this.cboJornada.FormattingEnabled = true;
+            this.cboJornada.Location = new System.Drawing.Point(391, 97);
+            this.cboJornada.Name = "cboJornada";
+            this.cboJornada.Size = new System.Drawing.Size(121, 21);
+            this.cboJornada.TabIndex = 40;
             // 
             // metroLabel5
             // 
@@ -415,6 +442,7 @@
             this.lstNoLaboralesSemana.Name = "lstNoLaboralesSemana";
             this.lstNoLaboralesSemana.Size = new System.Drawing.Size(147, 98);
             this.lstNoLaboralesSemana.TabIndex = 35;
+          
             // 
             // cboTerapeuta
             // 
@@ -448,37 +476,22 @@
             this.pictureBox1.TabIndex = 49;
             this.pictureBox1.TabStop = false;
             // 
-            // cboJornada
+            // btnGenerar
             // 
-            this.cboJornada.FormattingEnabled = true;
-            this.cboJornada.Location = new System.Drawing.Point(391, 97);
-            this.cboJornada.Name = "cboJornada";
-            this.cboJornada.Size = new System.Drawing.Size(121, 21);
-            this.cboJornada.TabIndex = 40;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(610, 105);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Jornada Laboral";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(518, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGenerar.Location = new System.Drawing.Point(35, 239);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(140, 23);
+            this.btnGenerar.TabIndex = 50;
+            this.btnGenerar.Text = "Generar Turnos";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 518);
+            this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbmTera);
             this.Controls.Add(this.metroPanel8);
@@ -541,5 +554,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboJornada;
+        private System.Windows.Forms.Button btnGenerar;
     }
 }

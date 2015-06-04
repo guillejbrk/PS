@@ -464,6 +464,13 @@ namespace App1.Forms
             }
         }
 
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            TurnosDAL.GenerarTurnos(((Terapeuta)cbmTera.SelectedItem).Id);
+        }
+
+       
+
     }
 
 }

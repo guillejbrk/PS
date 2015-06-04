@@ -72,6 +72,25 @@ namespace App1.Clases.AccesoSQL
             return _listaTratamiento;
         }
 
+        public static int EliminarTrataiento(Int64 pInt)
+        {
+            int retorno = 0;
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand
+                    (string.Format(
+                        "Delete Tipo_Tratamiento where id_Tipo_Tratamiento={0} ",
+                        pInt), conexion);
 
+
+                retorno = comando.ExecuteNonQuery();
+                conexion.Close();
+            }
+            return retorno;
+
+        }
+
+
+       
     }
 }

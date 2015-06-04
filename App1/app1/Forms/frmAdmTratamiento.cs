@@ -39,7 +39,7 @@ namespace App1.Forms
             SqlCommand cmd = conexion.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Tipo_Tratamiento 'Descripcion',descripcion'Producto',t.costo from Tipo_Tratamiento t JOIN Productos p on t.id_Producto=p.id_producto";
+            cmd.CommandText = "select id_Tipo_Tratamiento 'CODIGO', Tipo_Tratamiento 'Descripcion',descripcion'Producto',t.costo from Tipo_Tratamiento t JOIN Productos p on t.id_Producto=p.id_producto";
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
@@ -95,7 +95,7 @@ namespace App1.Forms
                     SqlCommand cmd = conexion.CreateCommand();
 
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select Tipo_Tratamiento 'Descripcion',descripcion'Producto',t.costo from Tipo_Tratamiento t JOIN Productos p on t.id_Producto=p.id_producto";
+                    cmd.CommandText = "select id_Tipo_Tratamiento, Tipo_Tratamiento 'Descripcion',descripcion'Producto',t.costo from Tipo_Tratamiento t JOIN Productos p on t.id_Producto=p.id_producto";
                     cmd.ExecuteNonQuery();
 
                     DataTable dt = new DataTable();
@@ -119,9 +119,36 @@ namespace App1.Forms
             }
         }
 
-       
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {            
+          Int64 Id = Convert.ToInt64(dtgvTrtamiento.CurrentRow.Cells[0].Value);
+                       TratamientoDAL.EliminarTrataiento(Id);
 
+                            MessageBox.Show("Tratamiento Eliminado", "Tratamiento Modificada", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
+                            conexion.Open();
+
+                            SqlCommand cmd = conexion.CreateCommand();
+
+                            cmd.CommandType = CommandType.Text;
+                            cmd.CommandText = "select id_Tipo_Tratamiento 'CODIGO', Tipo_Tratamiento 'Descripcion',descripcion'Producto',t.costo from Tipo_Tratamiento t JOIN Productos p on t.id_Producto=p.id_producto";
+                            cmd.ExecuteNonQuery();
+
+                            DataTable dt = new DataTable();
+                            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                            da.Fill(dt);
+
+                            dtgvTrtamiento.DataSource = dt;
+                            this.dtgvTrtamiento.Columns["costo"].DefaultCellStyle.Format = "c";
+                            conexion.Close();
+                          
+                  
+        } 
+      
+
+        }      
 
     }
 
-}

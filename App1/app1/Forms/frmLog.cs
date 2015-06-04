@@ -72,30 +72,8 @@ namespace App1.Forms
             
         }
 
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
+     
 
-        }
-
-        private void txtPass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -145,6 +123,11 @@ namespace App1.Forms
                 }
 
             }
+
+        }
+
+        private void frmLog_Load(object sender, EventArgs e)
+        {
 
         }
 

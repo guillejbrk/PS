@@ -468,10 +468,7 @@ namespace App1.Forms
             this.Close();
         }
 
-        private void btnNuevosTurnos_Click(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -565,16 +562,14 @@ namespace App1.Forms
             }
         }
 
-      
-        /*
-       private void btnNuevosTurnos_Click(object sender, EventArgs e)
+        private void btnNuevosTurnos_Click(object sender, EventArgs e)
         {
-           TurnosDAL.CargarTurnos(Int64 idTerapeuta);
 
-          
-
+            TurnosDAL.GenerarTurnos(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+       
         }
-        */
+      
+       
         
 
         }

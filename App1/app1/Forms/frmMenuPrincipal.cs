@@ -18,6 +18,7 @@ namespace App1.Forms
         {
             InitializeComponent();
         
+       
            
         }
 
@@ -42,7 +43,13 @@ namespace App1.Forms
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Environment.Exit(0);
+              DialogResult Mensaje = MessageBox.Show("¿Seguro que Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if ( Mensaje == DialogResult.Yes)
+            {
+                System.Environment.Exit(0);
+            }
+
+          
         }
 
         private void cargarHistoriaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,7 +76,7 @@ namespace App1.Forms
 
         private void turnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmPrueba PruebaForm = new frmPrueba();
+            Turnos PruebaForm = new Turnos();
             PruebaForm.MdiParent = this;
             PruebaForm.Show();
 
@@ -155,6 +162,41 @@ namespace App1.Forms
 
         }
 
+        private void txtTerapeuta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void informacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAyuda Ayu = new frmAyuda();
+            Ayu.MdiParent = this;
+            Ayu.Show();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAcercaDe ace = new frmAcercaDe();
+            ace.MdiParent = this;
+            ace.Show();
+
+        }
+
+        private void frmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            {
+                if (MessageBox.Show("¿Seguro que dese salir?", "Salir",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            } 
+
+
+        }
+
+      
 
 
 

@@ -71,7 +71,6 @@ C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.f
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmMenuPrincipal.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmProductos.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmProductosDisponibles.resources
-C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmPrueba.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmTerapeuta.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Properties.Resources.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.csproj.GenerateResource.Cache
@@ -79,3 +78,6 @@ C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\bin\Debug\MetroFramework.d
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmMostrarHistorial.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmAgendaTel.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmAcercaDe.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmAyuda.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.Turnos.resources

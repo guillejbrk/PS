@@ -83,6 +83,12 @@
     <Compile Include="Clases\Terapeuta.cs" />
     <Compile Include="Clases\Tratamiento.cs" />
     <Compile Include="Clases\Turno.cs" />
+    <Compile Include="Forms\frmAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAcercaDe.Designer.cs">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmAdmPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     </Compile>
     <Compile Include="Forms\frmAgendaTel.Designer.cs">
       <DependentUpon>frmAgendaTel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAyuda.Designer.cs">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmCargarCliente.cs">
       <SubType>Form</SubType>
@@ -169,6 +181,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmAcercaDe.resx">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAdmPaciente.resx">
       <DependentUpon>frmAdmPaciente.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAgendaTel.resx">
       <DependentUpon>frmAgendaTel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAyuda.resx">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCargarCliente.resx">
       <DependentUpon>frmCargarCliente.cs</DependentUpon>
@@ -253,6 +271,15 @@
     <Content Include="Dakirby309-Windows-8-Metro-Apps-BitTorrent-Metro.ico" />
     <None Include="Resources\edit.png" />
     <None Include="Resources\Presentation-icon.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\planner.png" />
+    <None Include="Resources\male_user_edit.png" />
+    <None Include="Resources\male_user_search.png" />
+    <None Include="Resources\male_user_edit1.png" />
+    <None Include="Resources\shopping_cart_accept.png" />
+    <None Include="Resources\shopping_cart_add.png" />
+    <None Include="Resources\checklist.png" />
+    <None Include="Resources\ii.png" />
     <Content Include="TODO.txt" />
     <None Include="Resources\telephone_red.png" />
     <None Include="Resources\diary.png" />

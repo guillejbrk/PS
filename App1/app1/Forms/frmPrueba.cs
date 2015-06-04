@@ -12,10 +12,10 @@ using MetroFramework.Forms;
 
 namespace App1.Forms
 {
-    public partial class frmPrueba : MetroForm
+    public partial class Turnos : MetroForm
     {
-          SqlConnection conexion = new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=PS6; user Id=sa; Password=guille");
-        public frmPrueba()
+          SqlConnection conexion = new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=BDConsu; user Id=sa; Password=guille");
+        public Turnos()
         {
           
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace App1.Forms
 
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT Apellido,Nombre, tipo_Tratamiento 'Tratamiento',Fecha,hora" +
-                              " FROM Turno tu JOIN Cliente cl on tu.id_Cliente=cl.nro_cliente " +
+                              " FROM Turno tu JOIN Paciente cl on tu.id_Paciente=cl.nro_Paciente " +
                               "JOIN Tipo_Tratamiento tt on tu.id_TipoTratamiento=tt.id_Tipo_Tratamiento" +
                               " where Fecha = ('" + mcaleTurno.SelectionEnd.ToShortDateString() + "') ";
             cmd.ExecuteNonQuery();
@@ -57,9 +57,9 @@ namespace App1.Forms
             SqlCommand cmd = conexion.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT Apellido,Nombre, tipo_Tratamiento 'Tratamiento',Fecha,hora FROM Turno" +
-                              " tu JOIN Cliente cl on tu.id_Cliente=cl.nro_cliente JOIN Tipo_Tratamiento tt" +
-                              " on tu.id_TipoTratamiento=tt.id_Tipo_Tratamiento" +
+            cmd.CommandText = "SELECT Apellido,Nombre, tipo_Tratamiento 'Tratamiento',Fecha,hora" +
+                              " FROM Turno tu JOIN Paciente cl on tu.id_Paciente=cl.nro_Paciente " +
+                              "JOIN Tipo_Tratamiento tt on tu.id_TipoTratamiento=tt.id_Tipo_Tratamiento" +
                               " where Fecha = ('" + mcaleTurno.SelectionEnd.ToShortDateString() + "') ";
             cmd.ExecuteNonQuery();
 

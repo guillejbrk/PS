@@ -43,6 +43,8 @@ namespace App1.Forms
             cboTerapeuta.DisplayMember = "Apellido";
             cboTerapeuta.ValueMember = "Id";
 
+            lstDias.DataSource = TurnosDAL.ObtenerTurnosDelMes(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+            lstDias.DisplayMember = "Fecha_Tratamiento";
             txtMotivo.Visible = false;
 
             if (rbnCancelado.Checked)
@@ -56,7 +58,7 @@ namespace App1.Forms
 
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
+       /* private void btnCargar_Click(object sender, EventArgs e)
         {
             Turno pTurno = new Turno();
 
@@ -65,6 +67,8 @@ namespace App1.Forms
                 pTurno.id_Cliente = Convert.ToInt32(cboPaciente.SelectedValue);
                 pTurno.id_Tratamiento = Convert.ToInt32(cboTratamiento.SelectedValue);
                 pTurno.id_Terapeuta = Convert.ToInt32(cboTerapeuta.SelectedValue);
+                pTurno.Fecha_Tratamiento = Convert.ToDateTime(lstDias.Text);
+                pTurno.Hora = Convert.ToDateTime(lstHoras.Text);
 
                 if (rbnAlta.Checked == false)
                 {
@@ -73,25 +77,24 @@ namespace App1.Forms
                 else
                 {
                     pTurno.id_Estado = 2;
-                }
-              
+                }           
             
         
 
-     /*  int resultado = ConsultorioDAL.AgregarTurno(pTurno);
+         int resultado = ConsultorioDAL.AgregarTurno(pTurno);
 
                 if (resultado > 0)
                 {
-                    MessageBox.Show("Hitoria Guardada Correctamente", "Datos Guardados", MessageBoxButtons.OK,
+                    MessageBox.Show("Turno Cargado!", "Turno ", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo Guardar", "Error al Guardar", MessageBoxButtons.OK,
+                    MessageBox.Show("No se pudo Cargar!", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation);
-                }*/
+                }
             }
-        }
+        }*/
 
   
         private void button1_Click_1(object sender, EventArgs e)
@@ -172,8 +175,18 @@ namespace App1.Forms
             cboTratamiento.ValueMember = "Id";
         }
 
+        private void lstDias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
-        //internacionalizacion de idioma cambiar idioma C#
+   
       
 
 

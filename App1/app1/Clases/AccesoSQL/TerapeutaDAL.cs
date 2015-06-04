@@ -59,7 +59,7 @@ namespace App1.Clases.AccesoSQL
 
             SqlConnection conexion = BDComun.obtenerConexion();
 
-            SqlCommand _comando = new SqlCommand("select id_Terapeuta, Apellido,Nombre,Apellido+' '+Nombre as NOMBRECOMPLETO from Terapeuta where id_Terapeuta='" + pIdTerapeuta.ToString() + "'", conexion);
+            SqlCommand _comando = new SqlCommand("select id_Terapeuta, Apellido,Nombre,Apellido+' '+Nombre as NOMBRECOMPLETO,id_jornada from Terapeuta where id_Terapeuta='" + pIdTerapeuta.ToString() + "'", conexion);
             SqlDataReader _reader = _comando.ExecuteReader();
             if (_reader.Read())
             {
@@ -68,8 +68,9 @@ namespace App1.Clases.AccesoSQL
                 pTerapeuta.Id = _reader.GetInt32(0);
                 pTerapeuta.Apellido = _reader.GetString(3);
                 pTerapeuta.Nombre = _reader.GetString(2);
+                pTerapeuta.Id_Jornada = _reader.GetInt32(4);
 
-                //falta la jornada
+              
             }
 
             return pTerapeuta;
