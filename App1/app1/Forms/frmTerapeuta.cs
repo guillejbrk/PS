@@ -564,8 +564,7 @@ namespace App1.Forms
         {
             //Agregar Condicion para que no se generen dos veces los mismos dias!
             TurnosDAL.GenerarTurnos(((Terapeuta)cboTerapeuta.SelectedItem).Id);
-            MessageBox.Show("Dias Del Mes Generados, Ya puede ingresar Turnos", "Turnos", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+          
         }
 
         private void btnCargarNoLab_Click(object sender, EventArgs e)
@@ -686,6 +685,11 @@ namespace App1.Forms
                 MessageBox.Show("No se pudo Modificar el Terapeuta", "Error!!", MessageBoxButtons.OK,
                       MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void metroTabPage2_Click(object sender, EventArgs e)
+        {
+
         }
 
    

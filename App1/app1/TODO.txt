@@ -1,27 +1,3 @@
-﻿--> Generar Dias y Horarios de trabajo para terapeuta... 
-INSERT INTO Turno
-           id_Paciente
-           ,id_TipoTratamiento
-           ,Fecha
-           ,hora
-           ,id_Terapeuta
-           ,id_Estado
-           ,Motivo)
-     VALUES
-           (id_Paciente
-           ,id_TipoTratamiento
-           ,Fecha
-           ,hora
-           ,id_Terapeuta ( Tiene un tipo de Jornada )
-           ,id_Estado( estado Si esta activo o Cancelado )
-           ,Motivo
-
---> dependiendo el tipo de jornada que va a trabajar (se encuentra dentro de un rango de horarios.. )
-id_Jornada 1 = tipo_Jornada= media jorada
-id_Jornada 2 = tipo_Jornada= Jornada Completa
-id_Jornada 3 = tipo_Jornada= Jornada Extendida
-
---> Metodo que devuelva dias y horas a trabajar por terapeuta...
- 
---> verificar si ese dia no este dentro de los dias que no trabaja el terapeuta... 
-
+﻿SELECT  p.Apellido,p.Nombre, Fecha, hora, id_Terapeuta
+ FROM Turno t JOIN Paciente p 
+  on t.id_Paciente=p.nro_Paciente

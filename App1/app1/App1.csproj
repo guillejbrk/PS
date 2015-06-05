@@ -49,10 +49,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Framework\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +66,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDConsuDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDConsuDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\AccesoSQL\AgendaDAL.cs" />
     <Compile Include="Clases\AccesoSQL\ClienteDAL.cs" />
     <Compile Include="Clases\AccesoSQL\HistoriaDAL.cs" />
@@ -137,6 +145,12 @@
     <Compile Include="Forms\frmHistorial.Designer.cs">
       <DependentUpon>frmHistorial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmImprimirTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmImprimirTurno.Designer.cs">
+      <DependentUpon>frmImprimirTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,7 +199,9 @@
     <Compile Include="Forms\frmTerapeuta.Designer.cs">
       <DependentUpon>frmTerapeuta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmTurnosPorPaciente.cs" />
+    <Compile Include="Forms\frmTurnosPorPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\frmTurnosPorPaciente.Designer.cs">
       <DependentUpon>frmTurnosPorPaciente.cs</DependentUpon>
     </Compile>
@@ -218,6 +234,9 @@
     <EmbeddedResource Include="Forms\frmHistorial.resx">
       <DependentUpon>frmHistorial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmImprimirTurno.resx">
+      <DependentUpon>frmImprimirTurno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLog.resx">
       <DependentUpon>frmLog.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,13 +261,28 @@
     <EmbeddedResource Include="Forms\frmTerapeuta.resx">
       <DependentUpon>frmTerapeuta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTurnosPorPaciente.resx">
+      <DependentUpon>frmTurnosPorPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report.rdlc" />
     <None Include="app.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="BDConsuDataSet.xsc">
+      <DependentUpon>BDConsuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDConsuDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDConsuDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDConsuDataSet.xss">
+      <DependentUpon>BDConsuDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

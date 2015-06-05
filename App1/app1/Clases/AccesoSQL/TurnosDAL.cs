@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace App1.Clases.AccesoSQL
 {
@@ -44,7 +45,11 @@ namespace App1.Clases.AccesoSQL
 
         public static int GenerarTurnos(Int64 idTerapeuta)
         {
+            int resultado = 0;
 
+          
+           
+              
             Terapeuta pepe = TerapeutaDAL.ObtenerTerapeuta(idTerapeuta);
             Jornada horariosdepepe = TerapeutaDAL.ObtenerJornadas(pepe.Id_Jornada);
             List<DayOfWeek> pDias = AgendaDAL.ObtenerListaDias(idTerapeuta);
@@ -53,6 +58,8 @@ namespace App1.Clases.AccesoSQL
             DateTime FechadelTurno = new DateTime();
             FechadelTurno = DateTime.Today;
 
+            if (!ExisteDiaLaboral(idTerapeuta, FechadelTurno))
+                  {
             for (int j = 0; j < 30; j++)
             {
 
@@ -69,13 +76,23 @@ namespace App1.Clases.AccesoSQL
                     }
                 }
                 FechadelTurno = FechadelTurno.AddDays(1);
+              
             }
 
-            return 0;
+            MessageBox.Show("Dias Del Mes Generados, Ya puede ingresar Turnos", "Turnos", MessageBoxButtons.OK,
+                             MessageBoxIcon.Information);
+       
 
+            }
+            else
+            {
+                MessageBox.Show("NO se Puede Cargar Mas Dias!", "Advertencia", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
 
-
-
+            }
+            return
+               resultado;
+           
         }
 
         public static List<Turno> ObtenerTurnosDelMes(Int64 idTerapeuta, DayOfWeek d)
@@ -173,7 +190,24 @@ namespace App1.Clases.AccesoSQL
 
         }
 
+        public static bool ExisteDiaLaboral(Int64 idTerapeuta, DateTime fecha)
+        {
 
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+                string query = "SELECT COUNT(*) FROM Turno WHERE Id_Terapeuta=@Id_Terapeuta and fecha=@fecha";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("Id_Terapeuta", idTerapeuta);
+
+                cmd.Parameters.AddWithValue("fecha", fecha.ToShortDateString());
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if (count == 0)
+                    return false;
+                else
+                    return true;
+            }
+        }
 
     }
         

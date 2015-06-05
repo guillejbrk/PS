@@ -212,6 +212,13 @@ namespace App1.Forms
             }
 
         }
+
+        private void btnImprimirTurno_Click(object sender, EventArgs e)
+        {
+            frmImprimirTurno frmTurno = new frmImprimirTurno();
+
+           frmTurno.Show();
+        }
    
       
 

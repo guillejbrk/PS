@@ -466,12 +466,10 @@ namespace App1.Forms
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-        
-            
-                       TurnosDAL.GenerarTurnos(((Terapeuta)cbmTera.SelectedItem).Id);
 
-                       MessageBox.Show("Dias Del Mes Generados, Ya puede ingresar Turnos", "Turnos", MessageBoxButtons.OK,
-                               MessageBoxIcon.Information);
+
+            TurnosDAL.GenerarTurnos(((Terapeuta)cbmTera.SelectedItem).Id);
+
         }
 
        

@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCargar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rbtInactivo = new System.Windows.Forms.RadioButton();
             this.cboDia = new MetroFramework.Controls.MetroComboBox();
             this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
             this.cboTratamiento = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.lstDias = new System.Windows.Forms.ListBox();
+            this.rbtInactivo = new System.Windows.Forms.RadioButton();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.rbnAlta = new System.Windows.Forms.RadioButton();
+            this.rbnCancelado = new System.Windows.Forms.RadioButton();
+            this.lstDias = new System.Windows.Forms.ListBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -50,15 +52,14 @@
             this.panelCanelado = new MetroFramework.Controls.MetroPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMotivo = new System.Windows.Forms.TextBox();
-            this.rbnCancelado = new System.Windows.Forms.RadioButton();
-            this.rbnAlta = new System.Windows.Forms.RadioButton();
             this.btnCrearPaciente = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.dtgvTurnos = new MetroFramework.Controls.MetroGrid();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnImprimirTurno = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.panelCanelado.SuspendLayout();
@@ -101,17 +102,6 @@
             this.panel1.Size = new System.Drawing.Size(408, 480);
             this.panel1.TabIndex = 9;
             // 
-            // rbtInactivo
-            // 
-            this.rbtInactivo.AutoSize = true;
-            this.rbtInactivo.Location = new System.Drawing.Point(229, 123);
-            this.rbtInactivo.Name = "rbtInactivo";
-            this.rbtInactivo.Size = new System.Drawing.Size(63, 17);
-            this.rbtInactivo.TabIndex = 33;
-            this.rbtInactivo.TabStop = true;
-            this.rbtInactivo.Text = "Inactivo";
-            this.rbtInactivo.UseVisualStyleBackColor = true;
-            // 
             // cboDia
             // 
             this.cboDia.FormattingEnabled = true;
@@ -146,15 +136,6 @@
             this.cboTratamiento.SelectedIndexChanged += new System.EventHandler(this.cboTratamiento_SelectedIndexChanged);
             this.cboTratamiento.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cboTratamiento_MouseClick);
             // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(48, 120);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel6.TabIndex = 29;
-            this.metroLabel6.Text = "Estado";
-            // 
             // metroPanel1
             // 
             this.metroPanel1.Controls.Add(this.rbtInactivo);
@@ -174,14 +155,25 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // lstDias
+            // rbtInactivo
             // 
-            this.lstDias.FormattingEnabled = true;
-            this.lstDias.Location = new System.Drawing.Point(81, 21);
-            this.lstDias.Name = "lstDias";
-            this.lstDias.Size = new System.Drawing.Size(201, 95);
-            this.lstDias.TabIndex = 29;
-            this.lstDias.SelectedIndexChanged += new System.EventHandler(this.lstDias_SelectedIndexChanged_1);
+            this.rbtInactivo.AutoSize = true;
+            this.rbtInactivo.Location = new System.Drawing.Point(229, 123);
+            this.rbtInactivo.Name = "rbtInactivo";
+            this.rbtInactivo.Size = new System.Drawing.Size(63, 17);
+            this.rbtInactivo.TabIndex = 33;
+            this.rbtInactivo.TabStop = true;
+            this.rbtInactivo.Text = "Inactivo";
+            this.rbtInactivo.UseVisualStyleBackColor = true;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(48, 120);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel6.TabIndex = 29;
+            this.metroLabel6.Text = "Estado";
             // 
             // metroLabel5
             // 
@@ -192,6 +184,39 @@
             this.metroLabel5.Size = new System.Drawing.Size(145, 19);
             this.metroLabel5.TabIndex = 27;
             this.metroLabel5.Text = "Lista de Dias y Horarios";
+            // 
+            // rbnAlta
+            // 
+            this.rbnAlta.AutoSize = true;
+            this.rbnAlta.Location = new System.Drawing.Point(98, 123);
+            this.rbnAlta.Name = "rbnAlta";
+            this.rbnAlta.Size = new System.Drawing.Size(43, 17);
+            this.rbnAlta.TabIndex = 14;
+            this.rbnAlta.TabStop = true;
+            this.rbnAlta.Text = "Alta";
+            this.rbnAlta.UseVisualStyleBackColor = true;
+            this.rbnAlta.CheckedChanged += new System.EventHandler(this.rbnAlta_CheckedChanged);
+            // 
+            // rbnCancelado
+            // 
+            this.rbnCancelado.AutoSize = true;
+            this.rbnCancelado.Location = new System.Drawing.Point(147, 123);
+            this.rbnCancelado.Name = "rbnCancelado";
+            this.rbnCancelado.Size = new System.Drawing.Size(76, 17);
+            this.rbnCancelado.TabIndex = 15;
+            this.rbnCancelado.TabStop = true;
+            this.rbnCancelado.Text = "Cancelado";
+            this.rbnCancelado.UseVisualStyleBackColor = true;
+            this.rbnCancelado.CheckedChanged += new System.EventHandler(this.rbnCancelado_CheckedChanged);
+            // 
+            // lstDias
+            // 
+            this.lstDias.FormattingEnabled = true;
+            this.lstDias.Location = new System.Drawing.Point(81, 21);
+            this.lstDias.Name = "lstDias";
+            this.lstDias.Size = new System.Drawing.Size(201, 95);
+            this.lstDias.TabIndex = 29;
+            this.lstDias.SelectedIndexChanged += new System.EventHandler(this.lstDias_SelectedIndexChanged_1);
             // 
             // metroLabel4
             // 
@@ -282,30 +307,6 @@
             this.txtMotivo.Size = new System.Drawing.Size(221, 80);
             this.txtMotivo.TabIndex = 16;
             // 
-            // rbnCancelado
-            // 
-            this.rbnCancelado.AutoSize = true;
-            this.rbnCancelado.Location = new System.Drawing.Point(147, 123);
-            this.rbnCancelado.Name = "rbnCancelado";
-            this.rbnCancelado.Size = new System.Drawing.Size(76, 17);
-            this.rbnCancelado.TabIndex = 15;
-            this.rbnCancelado.TabStop = true;
-            this.rbnCancelado.Text = "Cancelado";
-            this.rbnCancelado.UseVisualStyleBackColor = true;
-            this.rbnCancelado.CheckedChanged += new System.EventHandler(this.rbnCancelado_CheckedChanged);
-            // 
-            // rbnAlta
-            // 
-            this.rbnAlta.AutoSize = true;
-            this.rbnAlta.Location = new System.Drawing.Point(98, 123);
-            this.rbnAlta.Name = "rbnAlta";
-            this.rbnAlta.Size = new System.Drawing.Size(43, 17);
-            this.rbnAlta.TabIndex = 14;
-            this.rbnAlta.TabStop = true;
-            this.rbnAlta.Text = "Alta";
-            this.rbnAlta.UseVisualStyleBackColor = true;
-            this.rbnAlta.CheckedChanged += new System.EventHandler(this.rbnAlta_CheckedChanged);
-            // 
             // btnCrearPaciente
             // 
             this.btnCrearPaciente.Location = new System.Drawing.Point(312, 4);
@@ -337,6 +338,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnImprimirTurno);
             this.panel2.Controls.Add(this.dtgvTurnos);
             this.panel2.Controls.Add(this.metroLabel7);
             this.panel2.Controls.Add(this.button2);
@@ -344,6 +346,50 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(485, 228);
             this.panel2.TabIndex = 11;
+            // 
+            // dtgvTurnos
+            // 
+            this.dtgvTurnos.AllowUserToResizeRows = false;
+            this.dtgvTurnos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtgvTurnos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvTurnos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtgvTurnos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTurnos.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgvTurnos.EnableHeadersVisualStyles = false;
+            this.dtgvTurnos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dtgvTurnos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtgvTurnos.Location = new System.Drawing.Point(3, 43);
+            this.dtgvTurnos.Name = "dtgvTurnos";
+            this.dtgvTurnos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgvTurnos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtgvTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvTurnos.Size = new System.Drawing.Size(468, 150);
+            this.dtgvTurnos.Style = MetroFramework.MetroColorStyle.Orange;
+            this.dtgvTurnos.TabIndex = 15;
             // 
             // metroLabel7
             // 
@@ -354,60 +400,26 @@
             this.metroLabel7.TabIndex = 14;
             this.metroLabel7.Text = "Turnos Por Terapeutas";
             // 
-            // dtgvTurnos
-            // 
-            this.dtgvTurnos.AllowUserToResizeRows = false;
-            this.dtgvTurnos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtgvTurnos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvTurnos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dtgvTurnos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvTurnos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvTurnos.EnableHeadersVisualStyles = false;
-            this.dtgvTurnos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dtgvTurnos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtgvTurnos.Location = new System.Drawing.Point(3, 43);
-            this.dtgvTurnos.Name = "dtgvTurnos";
-            this.dtgvTurnos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtgvTurnos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dtgvTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvTurnos.Size = new System.Drawing.Size(468, 150);
-            this.dtgvTurnos.Style = MetroFramework.MetroColorStyle.Orange;
-            this.dtgvTurnos.TabIndex = 15;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = global::App1.Properties.Resources.blocnote;
             this.pictureBox1.Image = global::App1.Properties.Resources.blocnote;
-            this.pictureBox1.Location = new System.Drawing.Point(444, 298);
+            this.pictureBox1.Location = new System.Drawing.Point(542, 283);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(367, 234);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnImprimirTurno
+            // 
+            this.btnImprimirTurno.Location = new System.Drawing.Point(303, 199);
+            this.btnImprimirTurno.Name = "btnImprimirTurno";
+            this.btnImprimirTurno.Size = new System.Drawing.Size(87, 23);
+            this.btnImprimirTurno.TabIndex = 16;
+            this.btnImprimirTurno.Text = "Imprimir Turno";
+            this.btnImprimirTurno.UseVisualStyleBackColor = true;
+            this.btnImprimirTurno.Click += new System.EventHandler(this.btnImprimirTurno_Click);
             // 
             // frmCargarTurno
             // 
@@ -466,5 +478,6 @@
         private System.Windows.Forms.RadioButton rbtInactivo;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroGrid dtgvTurnos;
+        private System.Windows.Forms.Button btnImprimirTurno;
     }
 }

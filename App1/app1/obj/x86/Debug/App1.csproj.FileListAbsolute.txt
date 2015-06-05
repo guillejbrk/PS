@@ -82,3 +82,7 @@ C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.f
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmAyuda.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.Turnos.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmPacienteTurnos.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmTurnosPorPaciente.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmImprimirTurno.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\RdlCompile.cache
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\RdlCompile.compiled
