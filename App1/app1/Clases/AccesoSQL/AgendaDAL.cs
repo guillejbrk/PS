@@ -96,6 +96,24 @@ namespace App1.Clases.AccesoSQL
                     return true;
             }
         }
+        public static bool ExisteNoLaboral(Int64 idTerapeuta, DateTime fecha)
+        {
+
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+                string query = "SELECT COUNT(*) FROM Dias_NoLaborales WHERE Id_Terapeuta=@Id_Terapeuta and dia_NoLaboral=@fecha";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("Id_Terapeuta", idTerapeuta);
+
+                cmd.Parameters.AddWithValue("fecha", fecha.ToShortDateString());
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if (count == 0)
+                    return false;
+                else
+                    return true;
+            }
+        }
 
         public static int ModificarAgenda(Agenda pAgenda)
         {
@@ -411,6 +429,8 @@ namespace App1.Clases.AccesoSQL
             return retorno;
 
         }
+
+
 
     }
 

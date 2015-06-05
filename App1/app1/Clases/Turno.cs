@@ -15,6 +15,15 @@ namespace App1.Clases
         public Int64 id_Terapeuta {get;set; }
         public Int64 id_Estado { get; set; }
         public string Motivo { get; set; }
+        
+
+
+        public string Feyhora
+        {
+            get { return Fecha_Tratamiento.ToShortDateString() + " " + Hora.ToString(); }
+           
+        }
+
 
         public Turno()
         {}

@@ -43,9 +43,9 @@ namespace App1.Forms
             cboTerapeuta.DisplayMember = "Apellido";
             cboTerapeuta.ValueMember = "Id";
 
-            lstDias.DataSource = TurnosDAL.ObtenerTurnosDelMes(((Terapeuta)cboTerapeuta.SelectedItem).Id);
-            lstDias.DisplayMember = "Fecha_Tratamiento";
-            txtMotivo.Visible = false;
+            dtgTurnosAlta.DataSource = TurnosDAL.DiasDeAltaOCancelado(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+
+            
 
             if (rbnCancelado.Checked)
             {
@@ -57,44 +57,6 @@ namespace App1.Forms
             }
 
         }
-
-       /* private void btnCargar_Click(object sender, EventArgs e)
-        {
-            Turno pTurno = new Turno();
-
-            {
-
-                pTurno.id_Cliente = Convert.ToInt32(cboPaciente.SelectedValue);
-                pTurno.id_Tratamiento = Convert.ToInt32(cboTratamiento.SelectedValue);
-                pTurno.id_Terapeuta = Convert.ToInt32(cboTerapeuta.SelectedValue);
-                pTurno.Fecha_Tratamiento = Convert.ToDateTime(lstDias.Text);
-                pTurno.Hora = Convert.ToDateTime(lstHoras.Text);
-
-                if (rbnAlta.Checked == false)
-                {
-                    pTurno.id_Estado = 1;
-                }
-                else
-                {
-                    pTurno.id_Estado = 2;
-                }           
-            
-        
-
-         int resultado = ConsultorioDAL.AgregarTurno(pTurno);
-
-                if (resultado > 0)
-                {
-                    MessageBox.Show("Turno Cargado!", "Turno ", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo Cargar!", "Error", MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                }
-            }
-        }*/
 
   
         private void button1_Click_1(object sender, EventArgs e)
@@ -123,10 +85,7 @@ namespace App1.Forms
 
     
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
      
         private void cboPaciente_MouseClick(object sender, MouseEventArgs e)
@@ -182,10 +141,77 @@ namespace App1.Forms
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-
+            if (lstDias.SelectedItem != null)
+            {
+                Turno t = (Turno)lstDias.SelectedItem;
+                if (t.id_Estado == 3 || t.id_Estado == 2)
+                {
+                    t.id_Estado = 1;
+                    t.id_Tratamiento = ((Tratamiento)cboTratamiento.SelectedItem).Id;
+                    t.Motivo = "";
+                    t.id_Cliente = ((Cliente) cboPaciente.SelectedItem ).Id;
+                    TurnosDAL.ActualizarTurno(t);
+                    MessageBox.Show("turno Dado de Alta");
+                }
+                else
+                {
+                    if (rbnCancelado.Checked)
+                    {
+                        t.id_Estado = 2;
+                        t.id_Tratamiento = ((Tratamiento)cboTratamiento.SelectedItem).Id;
+                        t.Motivo = txtMotivo.Text;
+                        t.id_Cliente = ((Cliente)cboPaciente.SelectedItem).Id;
+                        TurnosDAL.ActualizarTurno(t);
+                        MessageBox.Show("turno cancelado");
+                    }
+                    else
+                    {
+                        MessageBox.Show("turno ya seleccionado");
+                    }
+                }
+            }
         }
 
-        
+        private void cboDia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var cultureInfo = new CultureInfo("es-Ar");
+            var dateTimeInfo = cultureInfo.DateTimeFormat;
+            var dayNames = dateTimeInfo.DayNames;
+
+            DayOfWeek d = DayOfWeekConverter.ConvertBack((string)cboDia.SelectedItem);
+            List<Turno> turnosdisponibles = TurnosDAL.ObtenerTurnosDelMes(((Terapeuta)(cboTerapeuta.SelectedItem)).Id, d);
+            lstDias.DataSource = null;
+            lstDias.DataSource = turnosdisponibles;
+            lstDias.DisplayMember = "Feyhora";
+        }
+
+        private void lstDias_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (lstDias.SelectedItem != null)
+            {
+                switch ((((Turno)lstDias.SelectedItem).id_Estado))
+                {
+                    case 1:
+                        rbnAlta.Checked = true;
+                        rbnCancelado.Checked = false;
+                        rbtInactivo.Checked = false;
+                        break;
+                    case 2:
+                        rbnAlta.Checked = false;
+                        rbnCancelado.Checked = true;
+                        rbtInactivo.Checked = false;
+                        break;
+                    case 3:
+                        rbnAlta.Checked = false;
+                        rbnCancelado.Checked = false;
+                        rbtInactivo.Checked = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+        }
    
       
 

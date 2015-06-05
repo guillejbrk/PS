@@ -5,9 +5,9 @@ using System.Text;
 
 namespace App1.Clases
 {
-      public class DayOfWeekConverter 
+    public static class DayOfWeekConverter 
     {
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public static object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             // DayOfWeek => string
             if (value != null && value is DayOfWeek)
@@ -43,32 +43,32 @@ namespace App1.Clases
             return "";
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public static DayOfWeek ConvertBack(string value)
         {
             // string => DayOfWeek
-            if (value != null && value is string)
+            if (value != null )
             {
-                switch ((string)value)
+                switch (value)
                 {
-                    case "Domingo":
+                    case "domingo":
                         return DayOfWeek.Sunday;
 
-                    case "Lunes":
+                    case "lunes":
                         return DayOfWeek.Monday;
 
-                    case "Martes":
+                    case "martes":
                         return DayOfWeek.Tuesday;
 
-                    case "Miercoles":
+                    case "miercoles":
                         return DayOfWeek.Wednesday;
 
-                    case "Jueves":
+                    case "jueves":
                         return DayOfWeek.Thursday;
 
-                    case "Viernes":
+                    case "viernes":
                         return DayOfWeek.Friday;
 
-                    case "Sabado":
+                    case "sabado":
                         return DayOfWeek.Saturday;
 
                     default:

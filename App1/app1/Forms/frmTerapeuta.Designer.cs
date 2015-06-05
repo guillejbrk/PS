@@ -98,7 +98,7 @@
             this.sdf.Location = new System.Drawing.Point(141, 52);
             this.sdf.Name = "sdf";
             this.sdf.SelectedIndex = 1;
-            this.sdf.Size = new System.Drawing.Size(770, 531);
+            this.sdf.Size = new System.Drawing.Size(770, 507);
             this.sdf.Style = MetroFramework.MetroColorStyle.Orange;
             this.sdf.TabIndex = 16;
             this.sdf.UseSelectable = true;
@@ -111,7 +111,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(774, 489);
+            this.metroTabPage1.Size = new System.Drawing.Size(762, 465);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Cargar Terapeuta";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -126,7 +126,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(917, 544);
+            this.button2.Location = new System.Drawing.Point(917, 522);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 26);
             this.button2.TabIndex = 24;
@@ -340,7 +340,7 @@
             this.metroTabPage2.HorizontalScrollbarSize = 10;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(762, 489);
+            this.metroTabPage2.Size = new System.Drawing.Size(762, 465);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Administracion Agenda";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -349,12 +349,16 @@
             // 
             // btnNuevosTurnos
             // 
-            this.btnNuevosTurnos.Location = new System.Drawing.Point(14, 434);
+            this.btnNuevosTurnos.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnNuevosTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevosTurnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevosTurnos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNuevosTurnos.Location = new System.Drawing.Point(40, 432);
             this.btnNuevosTurnos.Name = "btnNuevosTurnos";
             this.btnNuevosTurnos.Size = new System.Drawing.Size(126, 23);
             this.btnNuevosTurnos.TabIndex = 45;
             this.btnNuevosTurnos.Text = "Generar Turnos ";
-            this.btnNuevosTurnos.UseVisualStyleBackColor = true;
+            this.btnNuevosTurnos.UseVisualStyleBackColor = false;
             this.btnNuevosTurnos.Click += new System.EventHandler(this.btnNuevosTurnos_Click);
             // 
             // metroPanel8
@@ -708,7 +712,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 582);
+            this.ClientSize = new System.Drawing.Size(996, 562);
             this.Controls.Add(this.sdf);
             this.Controls.Add(this.button2);
             this.Name = "frmTerapeuta";
