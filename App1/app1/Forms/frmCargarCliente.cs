@@ -241,15 +241,6 @@ namespace App1
            
         }
 
-        private void txtBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtgvPaciente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
 
        
 

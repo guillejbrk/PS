@@ -316,7 +316,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(175, 23);
             this.txtBuscar.TabIndex = 55;
             this.txtBuscar.UseSelectable = true;
-            this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Click);
+ 
             this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
             // 
             // dtgvPaciente
@@ -367,7 +367,7 @@
             this.dtgvPaciente.Size = new System.Drawing.Size(424, 150);
             this.dtgvPaciente.Style = MetroFramework.MetroColorStyle.Orange;
             this.dtgvPaciente.TabIndex = 54;
-            this.dtgvPaciente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPaciente_CellContentClick);
+
             // 
             // metroLabel9
             // 

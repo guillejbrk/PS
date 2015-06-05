@@ -10,16 +10,11 @@ using MetroFramework.Forms;
 
 namespace App1.Forms
 {
-    public partial class frmAcercaDe : MetroForm
+    public partial class frmPacienteTurnos : MetroForm
     {
-        public frmAcercaDe()
+        public frmPacienteTurnos()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

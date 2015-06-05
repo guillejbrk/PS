@@ -442,7 +442,6 @@
             this.lstNoLaboralesSemana.Name = "lstNoLaboralesSemana";
             this.lstNoLaboralesSemana.Size = new System.Drawing.Size(147, 98);
             this.lstNoLaboralesSemana.TabIndex = 35;
-          
             // 
             // cboTerapeuta
             // 
@@ -478,12 +477,15 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(35, 239);
+            this.btnGenerar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.ForeColor = System.Drawing.Color.White;
+            this.btnGenerar.Location = new System.Drawing.Point(65, 239);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(140, 23);
+            this.btnGenerar.Size = new System.Drawing.Size(121, 23);
             this.btnGenerar.TabIndex = 50;
             this.btnGenerar.Text = "Generar Turnos";
-            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // frmAgenda

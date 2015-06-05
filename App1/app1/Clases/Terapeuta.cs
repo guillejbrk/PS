@@ -5,7 +5,7 @@ using System.Text;
 
 namespace App1.Clases
 {
-    class Terapeuta
+    public class Terapeuta
     {
         public Int64 Id { get; set; }
         public string Apellido { get; set; }

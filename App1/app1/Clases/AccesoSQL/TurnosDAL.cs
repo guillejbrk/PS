@@ -9,7 +9,6 @@ namespace App1.Clases.AccesoSQL
     class TurnosDAL
     {
 
-
         public static int AgregarTurno(Turno pTurno)
         {
 
@@ -81,6 +80,8 @@ namespace App1.Clases.AccesoSQL
 
         public static List<Turno> ObtenerTurnosDelMes(Int64 idTerapeuta, DayOfWeek d)
         {
+
+            
             List<Turno> _listaTurnos = new List<Turno>();
 
             SqlConnection conexion = BDComun.obtenerConexion();
@@ -144,7 +145,7 @@ namespace App1.Clases.AccesoSQL
             using (SqlConnection conexion = BDComun.obtenerConexion())
             {
                 SqlCommand comando = new SqlCommand(string.Format(
-                    "Select Id_Turno, id_TipoTratamiento,Fecha,hora,id_Terapeuta,id_Estado,Motivo from Turno where id_Terapeuta = {0} and (id_Estado=1 or id_Estado=2) ",
+                    "Select Id_Turno,id_Paciente, id_TipoTratamiento,Fecha,hora,id_Terapeuta,id_Estado,Motivo from Turno where id_Terapeuta = {0} and (id_Estado=1 or id_Estado=2) ",
                     pIdTerapeuta), conexion);
                 SqlDataReader reader = comando.ExecuteReader();
 
@@ -152,13 +153,14 @@ namespace App1.Clases.AccesoSQL
                 {
                     Turno pTurnos = new Turno();
 
-                    pTurnos.Id = reader.GetInt64(0);
-                    pTurnos.id_Tratamiento = reader.GetInt64(1);
-                    pTurnos.Fecha_Tratamiento = reader.GetDateTime(2);
-                    pTurnos.Hora = reader.GetTimeSpan(3);
-                    pTurnos.id_Terapeuta = reader.GetInt64(4);
-                    pTurnos.id_Estado = reader.GetInt64(5);
-                    pTurnos.Motivo = reader.GetString(6);
+                    pTurnos.Id = reader.GetInt32(0);
+                    pTurnos.id_Cliente = reader.GetInt32(1);
+                    pTurnos.id_Tratamiento = reader.GetInt32(2);
+                    pTurnos.Fecha_Tratamiento = reader.GetDateTime(3);
+                    pTurnos.Hora = reader.GetTimeSpan(4);
+                    pTurnos.id_Terapeuta = reader.GetInt32(5);
+                    pTurnos.id_Estado = reader.GetInt32(6);
+                    pTurnos.Motivo = reader.GetString(7);
 
                     _listaTurno.Add(pTurnos);
 

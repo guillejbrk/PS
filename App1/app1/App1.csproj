@@ -155,6 +155,12 @@
     <Compile Include="Forms\frmMostrarHistorial.Designer.cs">
       <DependentUpon>frmMostrarHistorial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmPacienteTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPacienteTurnos.Designer.cs">
+      <DependentUpon>frmPacienteTurnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,17 +173,21 @@
     <Compile Include="Forms\frmProductosDisponibles.Designer.cs">
       <DependentUpon>frmProductosDisponibles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmPrueba.cs">
+    <Compile Include="Forms\frmFechasTurnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frmPrueba.Designer.cs">
-      <DependentUpon>frmPrueba.cs</DependentUpon>
+    <Compile Include="Forms\frmFechasTurnos.Designer.cs">
+      <DependentUpon>frmFechasTurnos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmTerapeuta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmTerapeuta.Designer.cs">
       <DependentUpon>frmTerapeuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTurnosPorPaciente.cs" />
+    <Compile Include="Forms\frmTurnosPorPaciente.Designer.cs">
+      <DependentUpon>frmTurnosPorPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,14 +227,17 @@
     <EmbeddedResource Include="Forms\frmMostrarHistorial.resx">
       <DependentUpon>frmMostrarHistorial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPacienteTurnos.resx">
+      <DependentUpon>frmPacienteTurnos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProductosDisponibles.resx">
       <DependentUpon>frmProductosDisponibles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmPrueba.resx">
-      <DependentUpon>frmPrueba.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\frmFechasTurnos.resx">
+      <DependentUpon>frmFechasTurnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTerapeuta.resx">
       <DependentUpon>frmTerapeuta.cs</DependentUpon>

@@ -43,7 +43,7 @@ namespace App1.Forms
             cboTerapeuta.DisplayMember = "Apellido";
             cboTerapeuta.ValueMember = "Id";
 
-            dtgTurnosAlta.DataSource = TurnosDAL.DiasDeAltaOCancelado(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+           
 
             
 
@@ -58,7 +58,6 @@ namespace App1.Forms
 
         }
 
-  
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -69,8 +68,7 @@ namespace App1.Forms
             frmCargarCliente frmCargar= new frmCargarCliente();
              frmCargar.ShowDialog();
             
-        }
-    
+        }    
 
         private void rbnCancelado_CheckedChanged(object sender, EventArgs e)
         {
@@ -82,12 +80,7 @@ namespace App1.Forms
         {
             panelCanelado.Visible = false;
         }
-
-    
-
-
-
-     
+        
         private void cboPaciente_MouseClick(object sender, MouseEventArgs e)
         {
             frmCargarCliente frmCargar = new frmCargarCliente();
@@ -97,10 +90,13 @@ namespace App1.Forms
             cboPaciente.ValueMember = "Id";
         }
 
-     
-
         private void cboTerapeuta_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
+            dtgvTurnos.DataSource = TurnosDAL.DiasDeAltaOCancelado(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+
+
+       
             var cultureInfo = new CultureInfo("es-Ar");
             var dateTimeInfo = cultureInfo.DateTimeFormat;
             var dayNames = dateTimeInfo.DayNames;
@@ -149,9 +145,13 @@ namespace App1.Forms
                     t.id_Estado = 1;
                     t.id_Tratamiento = ((Tratamiento)cboTratamiento.SelectedItem).Id;
                     t.Motivo = "";
-                    t.id_Cliente = ((Cliente) cboPaciente.SelectedItem ).Id;
+                    t.id_Cliente = ((Cliente)cboPaciente.SelectedItem).Id;
                     TurnosDAL.ActualizarTurno(t);
                     MessageBox.Show("turno Dado de Alta");
+                    dtgvTurnos.DataSource = TurnosDAL.DiasDeAltaOCancelado(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+
+
+                        
                 }
                 else
                 {

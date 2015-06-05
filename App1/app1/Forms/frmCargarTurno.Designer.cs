@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCargar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbtInactivo = new System.Windows.Forms.RadioButton();
@@ -53,34 +56,36 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.dtgvTurnos = new MetroFramework.Controls.MetroGrid();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dtgTurnosAlta = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.panelCanelado.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTurnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgTurnosAlta)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(288, 285);
+            this.btnCargar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargar.ForeColor = System.Drawing.Color.White;
+            this.btnCargar.Location = new System.Drawing.Point(320, 285);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(75, 23);
             this.btnCargar.TabIndex = 8;
             this.btnCargar.Text = "Cargar";
-            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.rbtInactivo);
             this.panel1.Controls.Add(this.cboDia);
             this.panel1.Controls.Add(this.cboTerapeuta);
             this.panel1.Controls.Add(this.cboTratamiento);
-            this.panel1.Controls.Add(this.metroLabel6);
             this.panel1.Controls.Add(this.metroPanel1);
             this.panel1.Controls.Add(this.metroLabel4);
             this.panel1.Controls.Add(this.metroLabel3);
@@ -89,8 +94,6 @@
             this.panel1.Controls.Add(this.metroButton1);
             this.panel1.Controls.Add(this.cboPaciente);
             this.panel1.Controls.Add(this.panelCanelado);
-            this.panel1.Controls.Add(this.rbnCancelado);
-            this.panel1.Controls.Add(this.rbnAlta);
             this.panel1.Controls.Add(this.btnCargar);
             this.panel1.Controls.Add(this.btnCrearPaciente);
             this.panel1.Location = new System.Drawing.Point(10, 53);
@@ -101,7 +104,7 @@
             // rbtInactivo
             // 
             this.rbtInactivo.AutoSize = true;
-            this.rbtInactivo.Location = new System.Drawing.Point(194, 289);
+            this.rbtInactivo.Location = new System.Drawing.Point(229, 123);
             this.rbtInactivo.Name = "rbtInactivo";
             this.rbtInactivo.Size = new System.Drawing.Size(63, 17);
             this.rbtInactivo.TabIndex = 33;
@@ -113,9 +116,9 @@
             // 
             this.cboDia.FormattingEnabled = true;
             this.cboDia.ItemHeight = 23;
-            this.cboDia.Location = new System.Drawing.Point(112, 100);
+            this.cboDia.Location = new System.Drawing.Point(104, 100);
             this.cboDia.Name = "cboDia";
-            this.cboDia.Size = new System.Drawing.Size(121, 29);
+            this.cboDia.Size = new System.Drawing.Size(156, 29);
             this.cboDia.TabIndex = 32;
             this.cboDia.UseSelectable = true;
             this.cboDia.SelectedIndexChanged += new System.EventHandler(this.cboDia_SelectedIndexChanged);
@@ -124,9 +127,9 @@
             // 
             this.cboTerapeuta.FormattingEnabled = true;
             this.cboTerapeuta.ItemHeight = 23;
-            this.cboTerapeuta.Location = new System.Drawing.Point(112, 66);
+            this.cboTerapeuta.Location = new System.Drawing.Point(104, 66);
             this.cboTerapeuta.Name = "cboTerapeuta";
-            this.cboTerapeuta.Size = new System.Drawing.Size(144, 29);
+            this.cboTerapeuta.Size = new System.Drawing.Size(169, 29);
             this.cboTerapeuta.TabIndex = 31;
             this.cboTerapeuta.UseSelectable = true;
             this.cboTerapeuta.SelectedIndexChanged += new System.EventHandler(this.cboTerapeuta_SelectedIndexChanged_1);
@@ -135,9 +138,9 @@
             // 
             this.cboTratamiento.FormattingEnabled = true;
             this.cboTratamiento.ItemHeight = 23;
-            this.cboTratamiento.Location = new System.Drawing.Point(112, 33);
+            this.cboTratamiento.Location = new System.Drawing.Point(104, 33);
             this.cboTratamiento.Name = "cboTratamiento";
-            this.cboTratamiento.Size = new System.Drawing.Size(144, 29);
+            this.cboTratamiento.Size = new System.Drawing.Size(189, 29);
             this.cboTratamiento.TabIndex = 30;
             this.cboTratamiento.UseSelectable = true;
             this.cboTratamiento.SelectedIndexChanged += new System.EventHandler(this.cboTratamiento_SelectedIndexChanged);
@@ -146,7 +149,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(9, 289);
+            this.metroLabel6.Location = new System.Drawing.Point(48, 120);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(48, 19);
             this.metroLabel6.TabIndex = 29;
@@ -154,15 +157,18 @@
             // 
             // metroPanel1
             // 
-            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel1.Controls.Add(this.lstDias);
+            this.metroPanel1.Controls.Add(this.rbtInactivo);
+            this.metroPanel1.Controls.Add(this.metroLabel6);
             this.metroPanel1.Controls.Add(this.metroLabel5);
+            this.metroPanel1.Controls.Add(this.rbnAlta);
+            this.metroPanel1.Controls.Add(this.rbnCancelado);
+            this.metroPanel1.Controls.Add(this.lstDias);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(16, 135);
+            this.metroPanel1.Location = new System.Drawing.Point(10, 134);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(337, 130);
+            this.metroPanel1.Size = new System.Drawing.Size(385, 145);
             this.metroPanel1.TabIndex = 28;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -171,7 +177,7 @@
             // lstDias
             // 
             this.lstDias.FormattingEnabled = true;
-            this.lstDias.Location = new System.Drawing.Point(63, 24);
+            this.lstDias.Location = new System.Drawing.Point(81, 21);
             this.lstDias.Name = "lstDias";
             this.lstDias.Size = new System.Drawing.Size(201, 95);
             this.lstDias.TabIndex = 29;
@@ -180,7 +186,8 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(83, 2);
+            this.metroLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel5.Location = new System.Drawing.Point(105, 2);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(145, 19);
             this.metroLabel5.TabIndex = 27;
@@ -189,7 +196,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(26, 110);
+            this.metroLabel4.Location = new System.Drawing.Point(66, 110);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(31, 19);
             this.metroLabel4.TabIndex = 26;
@@ -198,7 +205,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(19, 70);
+            this.metroLabel3.Location = new System.Drawing.Point(28, 66);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(69, 19);
             this.metroLabel3.TabIndex = 25;
@@ -216,7 +223,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(16, 5);
+            this.metroLabel1.Location = new System.Drawing.Point(37, 4);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(60, 19);
             this.metroLabel1.TabIndex = 23;
@@ -224,7 +231,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(262, 33);
+            this.metroButton1.Location = new System.Drawing.Point(312, 33);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(91, 23);
             this.metroButton1.TabIndex = 22;
@@ -236,9 +243,9 @@
             // 
             this.cboPaciente.FormattingEnabled = true;
             this.cboPaciente.ItemHeight = 23;
-            this.cboPaciente.Location = new System.Drawing.Point(112, 2);
+            this.cboPaciente.Location = new System.Drawing.Point(104, 2);
             this.cboPaciente.Name = "cboPaciente";
-            this.cboPaciente.Size = new System.Drawing.Size(144, 29);
+            this.cboPaciente.Size = new System.Drawing.Size(197, 29);
             this.cboPaciente.TabIndex = 21;
             this.cboPaciente.UseSelectable = true;
             this.cboPaciente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cboPaciente_MouseClick);
@@ -250,7 +257,7 @@
             this.panelCanelado.HorizontalScrollbarBarColor = true;
             this.panelCanelado.HorizontalScrollbarHighlightOnWheel = false;
             this.panelCanelado.HorizontalScrollbarSize = 10;
-            this.panelCanelado.Location = new System.Drawing.Point(3, 311);
+            this.panelCanelado.Location = new System.Drawing.Point(3, 316);
             this.panelCanelado.Name = "panelCanelado";
             this.panelCanelado.Size = new System.Drawing.Size(360, 132);
             this.panelCanelado.TabIndex = 20;
@@ -278,7 +285,7 @@
             // rbnCancelado
             // 
             this.rbnCancelado.AutoSize = true;
-            this.rbnCancelado.Location = new System.Drawing.Point(112, 288);
+            this.rbnCancelado.Location = new System.Drawing.Point(147, 123);
             this.rbnCancelado.Name = "rbnCancelado";
             this.rbnCancelado.Size = new System.Drawing.Size(76, 17);
             this.rbnCancelado.TabIndex = 15;
@@ -290,7 +297,7 @@
             // rbnAlta
             // 
             this.rbnAlta.AutoSize = true;
-            this.rbnAlta.Location = new System.Drawing.Point(63, 289);
+            this.rbnAlta.Location = new System.Drawing.Point(98, 123);
             this.rbnAlta.Name = "rbnAlta";
             this.rbnAlta.Size = new System.Drawing.Size(43, 17);
             this.rbnAlta.TabIndex = 14;
@@ -301,7 +308,7 @@
             // 
             // btnCrearPaciente
             // 
-            this.btnCrearPaciente.Location = new System.Drawing.Point(262, 4);
+            this.btnCrearPaciente.Location = new System.Drawing.Point(312, 4);
             this.btnCrearPaciente.Name = "btnCrearPaciente";
             this.btnCrearPaciente.Size = new System.Drawing.Size(91, 23);
             this.btnCrearPaciente.TabIndex = 10;
@@ -311,7 +318,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(831, 555);
+            this.button1.Location = new System.Drawing.Point(834, 509);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
@@ -321,7 +328,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(386, 193);
+            this.button2.Location = new System.Drawing.Point(396, 199);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
@@ -330,37 +337,83 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dtgTurnosAlta);
+            this.panel2.Controls.Add(this.dtgvTurnos);
+            this.panel2.Controls.Add(this.metroLabel7);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Location = new System.Drawing.Point(424, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(485, 219);
+            this.panel2.Size = new System.Drawing.Size(485, 228);
             this.panel2.TabIndex = 11;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(20, 11);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(136, 19);
+            this.metroLabel7.TabIndex = 14;
+            this.metroLabel7.Text = "Turnos Por Terapeutas";
+            // 
+            // dtgvTurnos
+            // 
+            this.dtgvTurnos.AllowUserToResizeRows = false;
+            this.dtgvTurnos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtgvTurnos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvTurnos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtgvTurnos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTurnos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgvTurnos.EnableHeadersVisualStyles = false;
+            this.dtgvTurnos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dtgvTurnos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtgvTurnos.Location = new System.Drawing.Point(3, 43);
+            this.dtgvTurnos.Name = "dtgvTurnos";
+            this.dtgvTurnos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgvTurnos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtgvTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvTurnos.Size = new System.Drawing.Size(468, 150);
+            this.dtgvTurnos.Style = MetroFramework.MetroColorStyle.Orange;
+            this.dtgvTurnos.TabIndex = 15;
             // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = global::App1.Properties.Resources.blocnote;
             this.pictureBox1.Image = global::App1.Properties.Resources.blocnote;
-            this.pictureBox1.Location = new System.Drawing.Point(445, 274);
+            this.pictureBox1.Location = new System.Drawing.Point(444, 298);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(367, 259);
+            this.pictureBox1.Size = new System.Drawing.Size(367, 234);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // dtgTurnosAlta
-            // 
-            this.dtgTurnosAlta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgTurnosAlta.Location = new System.Drawing.Point(30, 23);
-            this.dtgTurnosAlta.Name = "dtgTurnosAlta";
-            this.dtgTurnosAlta.Size = new System.Drawing.Size(431, 150);
-            this.dtgTurnosAlta.TabIndex = 13;
             // 
             // frmCargarTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 581);
+            this.ClientSize = new System.Drawing.Size(918, 540);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
@@ -376,8 +429,9 @@
             this.panelCanelado.ResumeLayout(false);
             this.panelCanelado.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTurnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgTurnosAlta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,6 +464,7 @@
         private MetroFramework.Controls.MetroComboBox cboTratamiento;
         private System.Windows.Forms.ListBox lstDias;
         private System.Windows.Forms.RadioButton rbtInactivo;
-        private System.Windows.Forms.DataGridView dtgTurnosAlta;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroGrid dtgvTurnos;
     }
 }

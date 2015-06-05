@@ -81,3 +81,4 @@ C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.f
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmAcercaDe.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmAyuda.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.Turnos.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmPacienteTurnos.resources

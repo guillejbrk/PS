@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sdf = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.cboEspecialidad = new MetroFramework.Controls.MetroComboBox();
             this.txtUsuario = new MetroFramework.Controls.MetroTextBox();
             this.cboJornada = new MetroFramework.Controls.MetroComboBox();
@@ -50,6 +53,8 @@
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.btnNuevosTurnos = new System.Windows.Forms.Button();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModLab = new MetroFramework.Controls.MetroButton();
@@ -64,20 +69,24 @@
             this.chbViernes = new MetroFramework.Controls.MetroCheckBox();
             this.chbLunes = new MetroFramework.Controls.MetroCheckBox();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.btnCargarNL = new MetroFramework.Controls.MetroButton();
+            this.btnCargarNoLab = new System.Windows.Forms.Button();
             this.dtDiasNoLaborables = new MetroFramework.Controls.MetroDateTime();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
+            this.btnEliminarDiaNoLaboral = new System.Windows.Forms.Button();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.rbtAño = new MetroFramework.Controls.MetroRadioButton();
             this.rbtMes = new MetroFramework.Controls.MetroRadioButton();
             this.rbtSemana = new MetroFramework.Controls.MetroRadioButton();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
-            this.btnEliminarDiaNoLaboral = new System.Windows.Forms.Button();
             this.lstNoLaboralesSemana = new System.Windows.Forms.ListBox();
             this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.dtgvTerapeuta = new MetroFramework.Controls.MetroGrid();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.sdf.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -89,15 +98,19 @@
             this.metroPanel7.SuspendLayout();
             this.metroPanel6.SuspendLayout();
             this.metroPanel5.SuspendLayout();
+            this.metroTabPage3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTerapeuta)).BeginInit();
             this.SuspendLayout();
             // 
             // sdf
             // 
             this.sdf.Controls.Add(this.metroTabPage1);
             this.sdf.Controls.Add(this.metroTabPage2);
+            this.sdf.Controls.Add(this.metroTabPage3);
             this.sdf.Location = new System.Drawing.Point(141, 52);
             this.sdf.Name = "sdf";
-            this.sdf.SelectedIndex = 1;
+            this.sdf.SelectedIndex = 0;
             this.sdf.Size = new System.Drawing.Size(770, 507);
             this.sdf.Style = MetroFramework.MetroColorStyle.Orange;
             this.sdf.TabIndex = 16;
@@ -120,23 +133,11 @@
             this.metroTabPage1.Visible = false;
             this.metroTabPage1.Click += new System.EventHandler(this.metroTabPage1_Click);
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.DarkOrange;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(917, 522);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 26);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Cerrar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // metroPanel2
             // 
             this.metroPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.metroPanel2.Controls.Add(this.btnUpdate);
+            this.metroPanel2.Controls.Add(this.metroLabel10);
             this.metroPanel2.Controls.Add(this.cboEspecialidad);
             this.metroPanel2.Controls.Add(this.txtUsuario);
             this.metroPanel2.Controls.Add(this.cboJornada);
@@ -162,6 +163,15 @@
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.Location = new System.Drawing.Point(3, 0);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel10.TabIndex = 4;
+            this.metroLabel10.Text = "Terapeuta";
             // 
             // cboEspecialidad
             // 
@@ -353,7 +363,7 @@
             this.btnNuevosTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevosTurnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevosTurnos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNuevosTurnos.Location = new System.Drawing.Point(40, 432);
+            this.btnNuevosTurnos.Location = new System.Drawing.Point(3, 207);
             this.btnNuevosTurnos.Name = "btnNuevosTurnos";
             this.btnNuevosTurnos.Size = new System.Drawing.Size(126, 23);
             this.btnNuevosTurnos.TabIndex = 45;
@@ -364,10 +374,10 @@
             // metroPanel8
             // 
             this.metroPanel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel8.Controls.Add(this.metroLabel12);
+            this.metroPanel8.Controls.Add(this.metroLabel11);
             this.metroPanel8.Controls.Add(this.metroPanel4);
             this.metroPanel8.Controls.Add(this.metroPanel3);
-            this.metroPanel8.Controls.Add(this.label8);
-            this.metroPanel8.Controls.Add(this.label1);
             this.metroPanel8.HorizontalScrollbarBarColor = true;
             this.metroPanel8.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel8.HorizontalScrollbarSize = 10;
@@ -378,6 +388,24 @@
             this.metroPanel8.VerticalScrollbarBarColor = true;
             this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel8.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel12
+            // 
+            this.metroLabel12.AutoSize = true;
+            this.metroLabel12.Location = new System.Drawing.Point(384, 35);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(119, 19);
+            this.metroLabel12.TabIndex = 39;
+            this.metroLabel12.Text = "Dias No Laborales ";
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(6, 14);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(177, 19);
+            this.metroLabel11.TabIndex = 38;
+            this.metroLabel11.Text = "Dias Laborales de la Semana";
             // 
             // metroPanel4
             // 
@@ -399,12 +427,14 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Location = new System.Drawing.Point(286, 77);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 35;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModLab
@@ -531,12 +561,12 @@
             // metroPanel3
             // 
             this.metroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel3.Controls.Add(this.btnCargarNL);
+            this.metroPanel3.Controls.Add(this.btnCargarNoLab);
             this.metroPanel3.Controls.Add(this.dtDiasNoLaborables);
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(389, 35);
+            this.metroPanel3.Location = new System.Drawing.Point(384, 57);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(341, 53);
             this.metroPanel3.TabIndex = 35;
@@ -544,15 +574,18 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
-            // btnCargarNL
+            // btnCargarNoLab
             // 
-            this.btnCargarNL.Location = new System.Drawing.Point(258, 11);
-            this.btnCargarNL.Name = "btnCargarNL";
-            this.btnCargarNL.Size = new System.Drawing.Size(75, 23);
-            this.btnCargarNL.TabIndex = 33;
-            this.btnCargarNL.Text = "Cargar";
-            this.btnCargarNL.UseSelectable = true;
-            this.btnCargarNL.Click += new System.EventHandler(this.btnCargarNL_Click);
+            this.btnCargarNoLab.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCargarNoLab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarNoLab.ForeColor = System.Drawing.Color.White;
+            this.btnCargarNoLab.Location = new System.Drawing.Point(261, 13);
+            this.btnCargarNoLab.Name = "btnCargarNoLab";
+            this.btnCargarNoLab.Size = new System.Drawing.Size(75, 23);
+            this.btnCargarNoLab.TabIndex = 40;
+            this.btnCargarNoLab.Text = "Cargar";
+            this.btnCargarNoLab.UseVisualStyleBackColor = false;
+            this.btnCargarNoLab.Click += new System.EventHandler(this.btnCargarNoLab_Click);
             // 
             // dtDiasNoLaborables
             // 
@@ -560,45 +593,41 @@
             this.dtDiasNoLaborables.Location = new System.Drawing.Point(17, 10);
             this.dtDiasNoLaborables.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dtDiasNoLaborables.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.dtDiasNoLaborables.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtDiasNoLaborables.MinimumSize = new System.Drawing.Size(4, 29);
             this.dtDiasNoLaborables.Name = "dtDiasNoLaborables";
             this.dtDiasNoLaborables.Size = new System.Drawing.Size(235, 29);
             this.dtDiasNoLaborables.TabIndex = 30;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(389, 14);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 13);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Cargar  los  Dias No laborales ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Dias laborales Semana";
-            // 
             // metroPanel7
             // 
             this.metroPanel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.metroPanel7.Controls.Add(this.btnEliminarDiaNoLaboral);
             this.metroPanel7.Controls.Add(this.metroLabel1);
             this.metroPanel7.Controls.Add(this.metroPanel6);
             this.metroPanel7.Controls.Add(this.metroPanel5);
             this.metroPanel7.HorizontalScrollbarBarColor = true;
             this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel7.HorizontalScrollbarSize = 10;
-            this.metroPanel7.Location = new System.Drawing.Point(177, 207);
+            this.metroPanel7.Location = new System.Drawing.Point(235, 207);
             this.metroPanel7.Name = "metroPanel7";
             this.metroPanel7.Size = new System.Drawing.Size(519, 250);
             this.metroPanel7.TabIndex = 43;
             this.metroPanel7.VerticalScrollbarBarColor = true;
             this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel7.VerticalScrollbarSize = 10;
+            // 
+            // btnEliminarDiaNoLaboral
+            // 
+            this.btnEliminarDiaNoLaboral.BackColor = System.Drawing.Color.Silver;
+            this.btnEliminarDiaNoLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarDiaNoLaboral.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(417, 209);
+            this.btnEliminarDiaNoLaboral.Name = "btnEliminarDiaNoLaboral";
+            this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarDiaNoLaboral.TabIndex = 43;
+            this.btnEliminarDiaNoLaboral.Text = "Quitar";
+            this.btnEliminarDiaNoLaboral.UseVisualStyleBackColor = false;
+            this.btnEliminarDiaNoLaboral.Click += new System.EventHandler(this.btnEliminarDiaNoLaboral_Click);
             // 
             // metroLabel1
             // 
@@ -661,7 +690,6 @@
             // 
             // metroPanel5
             // 
-            this.metroPanel5.Controls.Add(this.btnEliminarDiaNoLaboral);
             this.metroPanel5.Controls.Add(this.lstNoLaboralesSemana);
             this.metroPanel5.HorizontalScrollbarBarColor = true;
             this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
@@ -673,16 +701,6 @@
             this.metroPanel5.VerticalScrollbarBarColor = true;
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel5.VerticalScrollbarSize = 10;
-            // 
-            // btnEliminarDiaNoLaboral
-            // 
-            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(280, 111);
-            this.btnEliminarDiaNoLaboral.Name = "btnEliminarDiaNoLaboral";
-            this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(75, 23);
-            this.btnEliminarDiaNoLaboral.TabIndex = 43;
-            this.btnEliminarDiaNoLaboral.Text = "Quitar";
-            this.btnEliminarDiaNoLaboral.UseVisualStyleBackColor = true;
-            this.btnEliminarDiaNoLaboral.Click += new System.EventHandler(this.btnEliminarDiaNoLaboral_Click);
             // 
             // lstNoLaboralesSemana
             // 
@@ -708,11 +726,115 @@
             this.cboTerapeuta.UseSelectable = true;
             this.cboTerapeuta.SelectedIndexChanged += new System.EventHandler(this.cboTerapeuta_SelectedIndexChanged);
             // 
+            // metroTabPage3
+            // 
+            this.metroTabPage3.Controls.Add(this.panel1);
+            this.metroTabPage3.HorizontalScrollbarBarColor = true;
+            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.HorizontalScrollbarSize = 10;
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(762, 465);
+            this.metroTabPage3.TabIndex = 2;
+            this.metroTabPage3.Text = "Administar Terapeuta";
+            this.metroTabPage3.VerticalScrollbarBarColor = true;
+            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.VerticalScrollbarSize = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnModificar);
+            this.panel1.Controls.Add(this.dtgvTerapeuta);
+            this.panel1.Location = new System.Drawing.Point(35, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(470, 207);
+            this.panel1.TabIndex = 7;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnModificar.Location = new System.Drawing.Point(378, 175);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 7;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // dtgvTerapeuta
+            // 
+            this.dtgvTerapeuta.AllowUserToResizeRows = false;
+            this.dtgvTerapeuta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtgvTerapeuta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvTerapeuta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtgvTerapeuta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTerapeuta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgvTerapeuta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTerapeuta.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgvTerapeuta.EnableHeadersVisualStyles = false;
+            this.dtgvTerapeuta.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dtgvTerapeuta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtgvTerapeuta.Location = new System.Drawing.Point(28, 19);
+            this.dtgvTerapeuta.Name = "dtgvTerapeuta";
+            this.dtgvTerapeuta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTerapeuta.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgvTerapeuta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtgvTerapeuta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvTerapeuta.Size = new System.Drawing.Size(425, 150);
+            this.dtgvTerapeuta.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gray;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(913, 522);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 26);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Cerrar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(153, 294);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 24;
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // frmTerapeuta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 562);
+            this.ClientSize = new System.Drawing.Size(996, 554);
             this.Controls.Add(this.sdf);
             this.Controls.Add(this.button2);
             this.Name = "frmTerapeuta";
@@ -735,6 +857,9 @@
             this.metroPanel6.ResumeLayout(false);
             this.metroPanel6.PerformLayout();
             this.metroPanel5.ResumeLayout(false);
+            this.metroTabPage3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTerapeuta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -745,8 +870,6 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private MetroFramework.Controls.MetroDateTime dtDiasNoLaborables;
-        private System.Windows.Forms.Label label8;
-        private MetroFramework.Controls.MetroButton btnCargarNL;
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroPanel metroPanel4;
@@ -759,7 +882,6 @@
         private MetroFramework.Controls.MetroCheckBox chbSabado;
         private MetroFramework.Controls.MetroCheckBox chbViernes;
         private MetroFramework.Controls.MetroCheckBox chbLunes;
-        private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroComboBox cboTerapeuta;
         private MetroFramework.Controls.MetroButton btnModLab;
@@ -791,5 +913,14 @@
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnEliminar;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroTabPage metroTabPage3;
+        private MetroFramework.Controls.MetroGrid dtgvTerapeuta;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private System.Windows.Forms.Button btnCargarNoLab;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

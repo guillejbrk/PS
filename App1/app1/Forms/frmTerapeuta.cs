@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using App1.Clases;
 using App1.Clases.AccesoSQL;
+
 using MetroFramework.Forms;
 
 namespace App1.Forms
@@ -16,7 +17,8 @@ namespace App1.Forms
     {
        
         private Agenda AgendaActual { get; set; }
-
+        public Terapeuta TerapeutaSeleccionado { get; set; }
+        public Terapeuta TerapeutaActual { get; set; }
 
         public frmTerapeuta()
         {
@@ -47,6 +49,8 @@ namespace App1.Forms
             cboEspecialidad.DisplayMember = "descripcion";
             cboEspecialidad.ValueMember = "Id";
 
+            dtgvTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeutaParaDTGV();
+            btnUpdate.Enabled = false;
 
         }
 
@@ -459,16 +463,10 @@ namespace App1.Forms
 
         }
 
-      
-
-        
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-  
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -564,10 +562,133 @@ namespace App1.Forms
 
         private void btnNuevosTurnos_Click(object sender, EventArgs e)
         {
-
+            //Agregar Condicion para que no se generen dos veces los mismos dias!
             TurnosDAL.GenerarTurnos(((Terapeuta)cboTerapeuta.SelectedItem).Id);
-       
+            MessageBox.Show("Dias Del Mes Generados, Ya puede ingresar Turnos", "Turnos", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
         }
+
+        private void btnCargarNoLab_Click(object sender, EventArgs e)
+        {
+
+            if (!AgendaDAL.DiaLaboralExiste(Convert.ToInt32(cboTerapeuta.SelectedValue),
+                dtDiasNoLaborables.Value.ToShortDateString()))
+            {
+                if (dtDiasNoLaborables.Value >= DateTime.Today)
+                {
+
+                    DiasNoLaborales diasNoLab = new DiasNoLaborales();
+
+
+                    diasNoLab.DiaNoLaboral = dtDiasNoLaborables.Value.ToShortDateString();
+                    diasNoLab.IdTerapeuta = (Int64)cboTerapeuta.SelectedValue;
+
+
+                    AgendaDAL.AgregarDiaNoLaboral(diasNoLab);
+                    MessageBox.Show("Se Cargo Dia No Laboral", "Dia No Laboral", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+
+
+                    List<DiasNoLaborales> pDiasNoLaborales = new List<DiasNoLaborales>();
+                    pDiasNoLaborales = AgendaDAL.ObtenerDiasNoLaboralesAño(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+                    lstNoLaboralesSemana.DataSource = null;
+                    lstNoLaboralesSemana.DataSource = pDiasNoLaborales;
+
+                    cboTerapeuta.ValueMember = "Id";
+                    lstNoLaboralesSemana.DisplayMember = "DiaNoLaboral";
+
+                    rbtSemana.Checked = false;
+                    rbtMes.Checked = false;
+                    rbtAño.Checked = false;
+
+                }
+
+
+                else
+                {
+                    MessageBox.Show("Fecha No permitida!", "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Ya se Cargo es Dia No LAboral para ese Terapeuta!!", "Error", MessageBoxButtons.OK,
+
+                    MessageBoxIcon.Error);
+            }
+
+
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dtgvTerapeuta.SelectedRows.Count == 1)
+            {
+                Int64 Id = Convert.ToInt64(dtgvTerapeuta.CurrentRow.Cells[0].Value);
+                TerapeutaSeleccionado = TerapeutaDAL.ObtenerTerapeuta2(Id);
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione Paciente que desea Modificar", "Advertencia", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            }
+
+            if (TerapeutaSeleccionado != null)
+            {
+                TerapeutaActual = TerapeutaSeleccionado;
+
+                txtApellido.Text = TerapeutaSeleccionado.Apellido;
+                txtNombre.Text = TerapeutaSeleccionado.Nombre;
+                txtUsuario.Text = TerapeutaSeleccionado.Usuario;
+                txtPass.Text = TerapeutaSeleccionado.Contraseña;
+                txtPass2.Text = TerapeutaSeleccionado.Contraseña;  
+                cboJornada.SelectedValue = TerapeutaSeleccionado.Id_Jornada;
+                cboEspecialidad.SelectedValue = TerapeutaSeleccionado.Id_Especialidad;
+                sdf.SelectedIndex = 0;
+                btnUpdate.Enabled = true;
+             
+               
+
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            Terapeuta pTerapeuta = new Terapeuta();
+            pTerapeuta.Apellido = txtApellido.Text;
+            pTerapeuta.Nombre = txtNombre.Text;
+            pTerapeuta.Usuario= txtUsuario.Text;
+            pTerapeuta.Contraseña = txtPass.Text;
+            pTerapeuta.Id_Jornada = (int)cboJornada.SelectedValue; ;
+            pTerapeuta.Id_Especialidad = (int)cboEspecialidad.SelectedValue; ;
+            pTerapeuta.Id = TerapeutaActual.Id;
+
+            
+            int resultado = TerapeutaDAL.ModificarTerapeuta(pTerapeuta);
+
+            if (resultado > 0)
+            {
+
+                MessageBox.Show("Terapeuta Modificado Correctamente", "Terapeuta Modificado", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                dtgvTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeutaParaDTGV();
+                sdf.SelectedIndex = 2;
+
+            }
+            else
+            {
+                MessageBox.Show("No se pudo Modificar el Terapeuta", "Error!!", MessageBoxButtons.OK,
+                      MessageBoxIcon.Exclamation);
+            }
+        }
+
+   
       
        
         

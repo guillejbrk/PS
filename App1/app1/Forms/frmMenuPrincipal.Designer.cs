@@ -49,7 +49,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.prodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,7 +172,6 @@
             this.toolStripSeparator4,
             this.prodToolStripMenuItem,
             this.turnosToolStripMenuItem,
-            this.clienteToolStripMenuItem1,
             this.toolStripSeparator5,
             this.agendaToolStripMenuItem});
             this.administracionToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
@@ -247,14 +245,6 @@
             this.turnosToolStripMenuItem.Size = new System.Drawing.Size(243, 36);
             this.turnosToolStripMenuItem.Text = "Turnos";
             this.turnosToolStripMenuItem.Click += new System.EventHandler(this.turnosToolStripMenuItem_Click);
-            // 
-            // clienteToolStripMenuItem1
-            // 
-            this.clienteToolStripMenuItem1.Image = global::App1.Properties.Resources.male_user_search;
-            this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(243, 36);
-            this.clienteToolStripMenuItem1.Text = "Clientes";
-            this.clienteToolStripMenuItem1.Click += new System.EventHandler(this.clienteToolStripMenuItem1_Click);
             // 
             // toolStripSeparator5
             // 
@@ -358,7 +348,6 @@
         private System.Windows.Forms.ToolStripMenuItem turnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem terapeutaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem agendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem buscarHistorialToolStripMenuItem;
