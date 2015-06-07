@@ -162,8 +162,8 @@ namespace App1.Clases.AccesoSQL
             using (SqlConnection conexion = BDComun.obtenerConexion())
             {
                 SqlCommand comando = new SqlCommand(string.Format(
-                    "Select Id_Turno,id_Paciente, id_TipoTratamiento,Fecha,hora,id_Terapeuta,id_Estado,Motivo from Turno where id_Terapeuta = {0} and (id_Estado=1 or id_Estado=2) ",
-                    pIdTerapeuta), conexion);
+                    "Select Id_Turno,id_Paciente, id_TipoTratamiento,Fecha,hora,id_Terapeuta,id_Estado,Motivo from Turno where id_Terapeuta = {0} and (id_Estado=1 or id_Estado=2) and Fecha between '{1}' and '{2}' ",
+                    pIdTerapeuta, DateTime.Now.ToShortDateString(), DateTime.Now.AddDays(365).ToShortDateString()), conexion);
                 SqlDataReader reader = comando.ExecuteReader();
 
                 while (reader.Read())
@@ -208,6 +208,66 @@ namespace App1.Clases.AccesoSQL
                     return true;
             }
         }
+
+        public static List<Turno> DiasDeAltaOCanceladoPorPaciente(Int64 pIdPaciente)
+        {
+            List<Turno> _listaTurno = new List<Turno>();
+
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand(string.Format(
+                    "Select Id_Turno,id_Paciente, id_TipoTratamiento,Fecha,hora,id_Terapeuta,id_Estado,Motivo from Turno where id_Paciente = {0} and (id_Estado=1 or id_Estado=2) ",
+                    pIdPaciente), conexion);
+                SqlDataReader reader = comando.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Turno pTurnos = new Turno();
+
+                    pTurnos.Id = reader.GetInt32(0);
+                    pTurnos.id_Cliente = reader.GetInt32(1);
+                    pTurnos.id_Tratamiento = reader.GetInt32(2);
+                    pTurnos.Fecha_Tratamiento = reader.GetDateTime(3);
+                    pTurnos.Hora = reader.GetTimeSpan(4);
+                    pTurnos.id_Terapeuta = reader.GetInt32(5);
+                    pTurnos.id_Estado = reader.GetInt32(6);
+                    pTurnos.Motivo = reader.GetString(7);
+
+                    _listaTurno.Add(pTurnos);
+
+                }
+                return _listaTurno;
+                conexion.Close();
+
+
+            }
+
+        }
+
+        internal static void ActualizarTurnosCancelar(Turno pTurno)
+        {
+            using (SqlConnection Conn = BDComun.obtenerConexion())
+            {
+
+
+                SqlCommand Comando =
+                new SqlCommand(
+                    String.Format(
+                        "update Turno set id_Estado = {2}, Motivo = '{1}' where id_Turno={0} ",
+                       pTurno.Id,pTurno.Motivo,pTurno.id_Estado), Conn);
+
+                Comando.ExecuteNonQuery();
+
+
+
+            }
+        }
+        
+        
+        
+
+
+       
 
     }
         

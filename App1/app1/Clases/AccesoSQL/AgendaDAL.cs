@@ -24,7 +24,7 @@ namespace App1.Clases.AccesoSQL
                     new SqlCommand(
                         String.Format(
                             "insert into Agenda (Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Domingo, id_Terapeuta) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')",
-                            pAgenda.Lunes, pAgenda.Martes, pAgenda.Miercoles, pAgenda.Jueves, pAgenda.Viernes,
+                            pAgenda.Lunes, pAgenda.Martes, pAgenda.Miércoles, pAgenda.Jueves, pAgenda.Viernes,
                             pAgenda.Sabado, pAgenda.Domingo, pAgenda.IdTerapeuta), Conn);
 
                 retorno = Comando.ExecuteNonQuery();
@@ -56,7 +56,7 @@ namespace App1.Clases.AccesoSQL
                    
                     pAgenda.Martes = reader.GetBoolean(2);
                   
-                    pAgenda.Miercoles = reader.GetBoolean(3);
+                    pAgenda.Miércoles = reader.GetBoolean(3);
                   
                     pAgenda.Jueves = reader.GetBoolean(4);
                 
@@ -123,7 +123,7 @@ namespace App1.Clases.AccesoSQL
                 SqlCommand comando = new SqlCommand
                     (string.Format(
                         "Update Agenda set Lunes='{0}', Martes='{1}', Miercoles='{2}', Jueves='{3}', Viernes='{4}', Sabado='{5}',Domingo='{6}' where id_Terapeuta={7}",
-                        pAgenda.Lunes, pAgenda.Martes, pAgenda.Miercoles, pAgenda.Jueves, pAgenda.Viernes,
+                        pAgenda.Lunes, pAgenda.Martes, pAgenda.Miércoles, pAgenda.Jueves, pAgenda.Viernes,
                         pAgenda.Sabado, pAgenda.Domingo, pAgenda.IdTerapeuta), conexion);
 
 
@@ -354,7 +354,7 @@ namespace App1.Clases.AccesoSQL
 
                 
                 SqlCommand comando = new SqlCommand(string.Format(
-                    "Select id_Agenda, Lunes, Martes ,Miercoles , Jueves , Viernes ,Sabado ,Domingo ,id_Terapeuta from Agenda where id_Terapeuta = {0} ",
+                    "Select id_Agenda, Lunes, Martes , Miercoles , Jueves , Viernes , Sabado , Domingo , id_Terapeuta from Agenda where id_Terapeuta = {0} ",
                     pIdTerapeuta), conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 List<DayOfWeek> pDias = new List<DayOfWeek>();
@@ -373,8 +373,8 @@ namespace App1.Clases.AccesoSQL
                     {
                         pDias.Add(DayOfWeek.Tuesday);
                     }
-                    pAgenda.Miercoles = reader.GetBoolean(3);
-                    if (pAgenda.Miercoles)
+                    pAgenda.Miércoles = reader.GetBoolean(3);
+                    if (pAgenda.Miércoles)
                     {
                         pDias.Add(DayOfWeek.Wednesday);
                     }

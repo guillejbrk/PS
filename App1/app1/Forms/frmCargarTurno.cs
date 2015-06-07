@@ -11,13 +11,15 @@ using App1.Clases.AccesoSQL;
 using MetroFramework.Forms;
 using System.Globalization;
 using System.Threading;
+using System.Data.SqlClient;
+using System.Drawing.Printing;
 
 namespace App1.Forms
 {
     public partial class frmCargarTurno : MetroForm
     {
-       
-         
+
+        SqlConnection conexion = new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=BDConsu; user Id=sa; Password=guille");
         public frmCargarTurno()
         {
            
@@ -43,8 +45,10 @@ namespace App1.Forms
             cboTerapeuta.DisplayMember = "Apellido";
             cboTerapeuta.ValueMember = "Id";
 
-           
 
+            rbnAlta.Enabled = false;
+            rbnCancelado.Enabled = false;
+            rbtInactivo.Enabled = false;
             
 
             if (rbnCancelado.Checked)
@@ -93,10 +97,27 @@ namespace App1.Forms
         private void cboTerapeuta_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
-            dtgvTurnos.DataSource = TurnosDAL.DiasDeAltaOCancelado(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+            conexion.Open();
+            dtgvTurnos.DataSource = null;
+            SqlCommand cmd = conexion.CreateCommand();
 
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '"+ DateTime.Now.AddDays(365).ToShortDateString()+"'";
+            cmd.ExecuteNonQuery();
 
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(dt);
+
+            dtgvTurnos.DataSource = dt;
+
+            conexion.Close();
        
+
+
+
+
             var cultureInfo = new CultureInfo("es-Ar");
             var dateTimeInfo = cultureInfo.DateTimeFormat;
             var dayNames = dateTimeInfo.DayNames;
@@ -147,11 +168,14 @@ namespace App1.Forms
                     t.Motivo = "";
                     t.id_Cliente = ((Cliente)cboPaciente.SelectedItem).Id;
                     TurnosDAL.ActualizarTurno(t);
-                    MessageBox.Show("turno Dado de Alta");
+                    MessageBox.Show("Turno Dado de Alta", "Turno", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dtgvTurnos.DataSource = TurnosDAL.DiasDeAltaOCancelado(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+                    DayOfWeek d = DayOfWeekConverter.ConvertBack((string)cboDia.SelectedItem);
+                    List<Turno> turnosdisponibles = TurnosDAL.ObtenerTurnosDelMes(((Terapeuta)(cboTerapeuta.SelectedItem)).Id, d);
+                    lstDias.DataSource = null;
+                    lstDias.DataSource = turnosdisponibles;
+                    lstDias.DisplayMember = "Feyhora";
 
-
-                        
                 }
                 else
                 {
@@ -162,13 +186,23 @@ namespace App1.Forms
                         t.Motivo = txtMotivo.Text;
                         t.id_Cliente = ((Cliente)cboPaciente.SelectedItem).Id;
                         TurnosDAL.ActualizarTurno(t);
-                        MessageBox.Show("turno cancelado");
+                        MessageBox.Show("Turno Cancelado Correctamente", "Turno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dtgvTurnos.DataSource = TurnosDAL.DiasDeAltaOCancelado(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+                        DayOfWeek d = DayOfWeekConverter.ConvertBack((string)cboDia.SelectedItem);
+                        List<Turno> turnosdisponibles = TurnosDAL.ObtenerTurnosDelMes(((Terapeuta)(cboTerapeuta.SelectedItem)).Id, d);
+                        lstDias.DataSource = null;
+                        lstDias.DataSource = turnosdisponibles;
+                        lstDias.DisplayMember = "Feyhora";
                     }
                     else
                     {
-                        MessageBox.Show("turno ya seleccionado");
+                        MessageBox.Show("Turno ya dado de Alta", "Turno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione Primero Un Dia", "Turno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -180,6 +214,7 @@ namespace App1.Forms
 
             DayOfWeek d = DayOfWeekConverter.ConvertBack((string)cboDia.SelectedItem);
             List<Turno> turnosdisponibles = TurnosDAL.ObtenerTurnosDelMes(((Terapeuta)(cboTerapeuta.SelectedItem)).Id, d);
+
             lstDias.DataSource = null;
             lstDias.DataSource = turnosdisponibles;
             lstDias.DisplayMember = "Feyhora";
@@ -213,12 +248,103 @@ namespace App1.Forms
 
         }
 
-        private void btnImprimirTurno_Click(object sender, EventArgs e)
-        {
-            frmImprimirTurno frmTurno = new frmImprimirTurno();
+                            private void btnImprimirTurno_Click(object sender, EventArgs e)
+                            {
+                                /// agarra toda la fila seleccionada y ponela en un string aca y mandalo a imprimir ok! no vas a querer decirme como selecciono la fila no=?
 
-           frmTurno.Show();
+                                string textToPrint = "Otra Mirada \n Proximos Turnos \n";
+                                for (int row = 0; row < dtgvTurnos.SelectedRows.Count; row++)
+                                {
+
+                                    textToPrint = textToPrint +
+                                    dtgvTurnos.SelectedRows[row].Cells[0].Value.ToString() + "\t" +
+                                    dtgvTurnos.SelectedRows[row].Cells[1].Value.ToString() + "\t" +
+                                    dtgvTurnos.SelectedRows[row].Cells[2].Value.ToString() + "\t" +
+                                    dtgvTurnos.SelectedRows[row].Cells[3].Value.ToString() + "\t" +
+                                    dtgvTurnos.SelectedRows[row].Cells[4].Value.ToString() + "\n";
+                                }
+
+                                string s = textToPrint;
+                                        PrintDialog pdi = new PrintDialog();
+                                        PrintDocument p = new PrintDocument();
+                                        p.PrintPage += delegate(object sender1, PrintPageEventArgs e1)
+                                        {
+                                        e1.Graphics.DrawString(s, new Font("Times New Roman", 12), new SolidBrush(Color.Black), new RectangleF(0, 0, p.DefaultPageSettings.PrintableArea.Width, p.DefaultPageSettings.PrintableArea.Height));
+
+                                        };
+                                        try
+                                        {
+                                            pdi.Document = p;
+                                            if (pdi.ShowDialog() == DialogResult.OK)
+                                            {
+                                                p.Print();
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Print Cancelled");
+                                            }
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                        throw new Exception("Exception Occured While Printing", ex);
+                                        }
+                                }
+      
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+
+            if (validar()==true)
+            {
+                Turno pTurno = new Turno();
+                pTurno.Id = Convert.ToInt64(dtgvTurnos.CurrentRow.Cells[0].Value);
+                pTurno.id_Estado = 2;
+                pTurno.Motivo = "";
+
+                TurnosDAL.ActualizarTurnosCancelar(pTurno);
+                panelCanelado.Visible = true;
+
+                MessageBox.Show("Turno Cancelado Correctamente", "Turno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexion.Open();
+                dtgvTurnos.DataSource = null;
+                SqlCommand cmd = conexion.CreateCommand();
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select id_Turno, Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' ";
+                cmd.ExecuteNonQuery();
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dtgvTurnos.DataSource = dt;
+                DayOfWeek d = DayOfWeekConverter.ConvertBack((string)cboDia.SelectedItem);
+                List<Turno> turnosdisponibles = TurnosDAL.ObtenerTurnosDelMes(((Terapeuta)(cboTerapeuta.SelectedItem)).Id, d);
+                conexion.Close();
+                lstDias.DataSource = null;
+                lstDias.DataSource = turnosdisponibles;
+                lstDias.DisplayMember = "Feyhora";
+            }
+            
         }
+
+        private bool validar()
+        {
+            if (txtMotivo.Text == "")
+            {
+                MessageBox.Show("No se Olvide de Cargar El Motivo!", "Turno", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtMotivo.Focus();
+                panelCanelado.Visible = true;
+                txtMotivo.Visible = true;
+                return false;
+            }
+           
+
+            return true;
+        }
+      
    
       
 

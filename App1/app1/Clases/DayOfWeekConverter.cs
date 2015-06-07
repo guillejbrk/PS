@@ -24,7 +24,7 @@ namespace App1.Clases
                         return "Martes";
 
                     case DayOfWeek.Wednesday:
-                        return "Miercoles";
+                        return "Miércoles";
 
                     case DayOfWeek.Thursday:
                         return "Jueves";
@@ -33,7 +33,7 @@ namespace App1.Clases
                         return "Viernes";
 
                     case DayOfWeek.Saturday:
-                        return "Sabado";
+                        return "Sábado";
 
                     default:
                         break;
@@ -59,7 +59,7 @@ namespace App1.Clases
                     case "martes":
                         return DayOfWeek.Tuesday;
 
-                    case "miercoles":
+                    case "miércoles":
                         return DayOfWeek.Wednesday;
 
                     case "jueves":
@@ -68,7 +68,7 @@ namespace App1.Clases
                     case "viernes":
                         return DayOfWeek.Friday;
 
-                    case "sabado":
+                    case "sábado":
                         return DayOfWeek.Saturday;
 
                     default:

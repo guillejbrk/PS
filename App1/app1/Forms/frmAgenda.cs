@@ -74,7 +74,7 @@ namespace App1.Forms
                     chbMartes2.Checked = false;
                 }
 
-                if (pAgenda.Miercoles)
+                if (pAgenda.Miércoles)
                 {
                     chbMiercoles3.Checked = true;
                 }
@@ -142,7 +142,7 @@ namespace App1.Forms
                         }
                         if (chbMiercoles3.Checked)
                         {
-                            pAgenda.Miercoles = true;
+                            pAgenda.Miércoles = true;
                             pAgenda.IdTerapeuta = (Int64)cbmTera.SelectedValue;
 
                         }
@@ -216,7 +216,7 @@ namespace App1.Forms
                 }
                 if (chbMiercoles3.Checked)
                 {
-                    pAgenda.Miercoles = true;
+                    pAgenda.Miércoles = true;
                     pAgenda.IdTerapeuta = (Int64)cbmTera.SelectedValue;
 
                 }
@@ -411,7 +411,7 @@ namespace App1.Forms
                     chbMartes2.Checked = false;
                 }
 
-                if (pAgenda.Miercoles)
+                if (pAgenda.Miércoles)
                 {
                     chbMiercoles3.Checked = true;
                 }

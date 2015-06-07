@@ -12,7 +12,7 @@ namespace App1.Clases
          public Int64 Id { get; set; }
         public Boolean Lunes { get; set; }
         public Boolean Martes { get; set; }
-        public Boolean Miercoles { get; set; }
+        public Boolean Miércoles { get; set; }
         public Boolean Jueves { get; set; }
         public Boolean Viernes { get; set; }
         public Boolean Sabado { get; set; }
@@ -27,7 +27,7 @@ namespace App1.Clases
             this.Id = pId;
             this.Lunes = pLunes;
             this.Martes = pMartes;
-            this.Miercoles = pMiercoles;
+            this.Miércoles = pMiercoles;
             this.Jueves = pJueves;
             this.Viernes = pViernes;
             this.Sabado = pSabado;
@@ -60,7 +60,7 @@ namespace App1.Clases
                     return Martes;
                     break;
                 case DayOfWeek.Wednesday:
-                    return Miercoles;
+                    return Miércoles;
                     break;
                 default:
                     break;

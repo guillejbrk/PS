@@ -86,7 +86,8 @@ namespace App1.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            frmPacienteTurnos frmTurnos = new frmPacienteTurnos();
+            frmTurnos.ShowDialog();
         }
 
       
