@@ -288,20 +288,25 @@ namespace App1.Forms
 
         private void btnImprimirTurno_Click(object sender, EventArgs e)
                             {
-                                 
 
+                                 
+                                
 
                                  string textToPrint = "Su Proximo Turno: \n";
                                 for (int row = 0; row < dtgvTurnos.SelectedRows.Count; row++)
                                 {
-                                     
+
                                     textToPrint = textToPrint +
-                                    dtgvTurnos.SelectedRows[row].Cells[0].Value.ToString() + "\n"+""+"Nombre: " +" "+
+                                    dtgvTurnos.SelectedRows[row]. Cells[0].Value.ToString() + "\n"+""+"Nombre: " +" "+
                                     dtgvTurnos.SelectedRows[row].Cells[1].Value.ToString() + " " +
                                     dtgvTurnos.SelectedRows[row].Cells[2].Value.ToString() + "\n" +"Dia: "+
-                                    dtgvTurnos.SelectedRows[row].Cells[3].Value.ToString() + "\n" + "Hora: " +
+                                   Convert.ToDateTime( dtgvTurnos.SelectedRows[row].Cells[3].Value.ToString()).ToShortDateString() + "\n" + "Hora: " +
                                     dtgvTurnos.SelectedRows[row].Cells[4].Value.ToString() + "\n";
+
+
                                 }
+
+            
 
                                 string s = textToPrint;
                                

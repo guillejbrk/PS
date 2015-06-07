@@ -75,7 +75,7 @@
             this.btnCargar.ForeColor = System.Drawing.Color.White;
             this.btnCargar.Location = new System.Drawing.Point(320, 285);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(75, 23);
+            this.btnCargar.Size = new System.Drawing.Size(81, 25);
             this.btnCargar.TabIndex = 8;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = false;
@@ -396,7 +396,6 @@
             this.dtgvTurnos.Size = new System.Drawing.Size(468, 150);
             this.dtgvTurnos.Style = MetroFramework.MetroColorStyle.Orange;
             this.dtgvTurnos.TabIndex = 15;
-           
             // 
             // btnImprimirTurno
             // 
@@ -423,7 +422,7 @@
             this.pictureBox1.Image = global::App1.Properties.Resources.blocnote;
             this.pictureBox1.Location = new System.Drawing.Point(424, 283);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(367, 234);
+            this.pictureBox1.Size = new System.Drawing.Size(390, 234);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
