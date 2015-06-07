@@ -12,8 +12,7 @@ namespace App1.Forms
 {
     public partial class frmLog : Form
     {
-           
-        public frmLog()
+       public frmLog()
         {
             InitializeComponent();
         }
@@ -22,7 +21,6 @@ namespace App1.Forms
         {
             this.Close();
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             {
@@ -36,16 +34,13 @@ namespace App1.Forms
                 txtUsuario.Clear();
             }
             else
-            {
-
-                SqlConnection conexion =
-                    new SqlConnection(
-                        @"data source=KRUSCHOV\SQLEXPRESS; initial catalog=BDConsu; user Id=sa; Password=guille");
-                conexion.Open();
+            {                             
+                SqlConnection Conn = BDComun.obtenerConexion();
+         
                 SqlCommand Consultar =
                     new SqlCommand(
                         "select usuario, contraseña from Terapeuta where  usuario = '" + txtUsuario.Text +
-                        "'and Contraseña = '" + this.txtPass.Text + "'", conexion);
+                        "'and Contraseña = '" + this.txtPass.Text + "'", Conn);
                 SqlDataReader Ejecuta = Consultar.ExecuteReader();
                 if (Ejecuta.Read() == true)
                 {
@@ -62,7 +57,7 @@ namespace App1.Forms
                         MessageBoxIcon.Error);
                     txtPass.Clear();
                     txtUsuario.Clear();
-                    conexion.Close();
+                      Conn.Close();
                 }
 
 
@@ -71,10 +66,6 @@ namespace App1.Forms
         }
             
         }
-
-     
-
-
         private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -90,14 +81,12 @@ namespace App1.Forms
                 else
                 {
 
-                    SqlConnection conexion =
-                        new SqlConnection(
-                            @"data source=KRUSCHOV\SQLEXPRESS; initial catalog=BDConsu; user Id=sa; Password=guille");
-                    conexion.Open();
+                    SqlConnection Conn = BDComun.obtenerConexion();
+                  
                     SqlCommand Consultar =
                         new SqlCommand(
                             "select usuario, contraseña from Terapeuta where  usuario = '" + txtUsuario.Text +
-                            "'and Contraseña = '" + this.txtPass.Text + "'", conexion);
+                            "'and Contraseña = '" + this.txtPass.Text + "'", Conn);
                     SqlDataReader Ejecuta = Consultar.ExecuteReader();
                     if (Ejecuta.Read() == true)
                     {
@@ -114,7 +103,7 @@ namespace App1.Forms
                             MessageBoxIcon.Error);
                         txtPass.Clear();
                         txtUsuario.Clear();
-                        conexion.Close();
+                        Conn.Close();
                     }
 
 
@@ -126,11 +115,6 @@ namespace App1.Forms
 
         }
 
-        private void frmLog_Load(object sender, EventArgs e)
-        {
-
-        }
-
-      
+            
     }
 }

@@ -16,7 +16,7 @@ namespace App1.Forms
 {
     public partial class Turnos : MetroForm
     {
-          SqlConnection conexion = new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=BDConsu; user Id=sa; Password=guille");
+    
         public Turnos()
         {
           
@@ -30,12 +30,13 @@ namespace App1.Forms
              cboTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeuta();
              cboTerapeuta.DisplayMember = "Apellido";
              cboTerapeuta.ValueMember = "Id";
-           
-            
-            
-            conexion.Open();
+
+
+
+
+            SqlConnection Conn = BDComun.obtenerConexion();
             dtgvTurnos.DataSource = null;
-            SqlCommand cmd = conexion.CreateCommand();
+            SqlCommand cmd = Conn.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT Apellido,Nombre, tipo_Tratamiento 'Tratamiento',hora" +
@@ -50,8 +51,8 @@ namespace App1.Forms
             da.Fill(dt);
 
             dtgvTurnos.DataSource = dt;
-        
-            conexion.Close();
+
+            Conn.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -61,9 +62,9 @@ namespace App1.Forms
 
         private void mcaleTurno_DateChanged(object sender, DateRangeEventArgs e)
         {
-            conexion.Open();
+            SqlConnection Conn = BDComun.obtenerConexion();
             dtgvTurnos.DataSource = null;
-            SqlCommand cmd = conexion.CreateCommand();
+            SqlCommand cmd = Conn.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT Apellido,Nombre, tipo_Tratamiento 'Tratamiento',hora" +
@@ -78,16 +79,16 @@ namespace App1.Forms
             da.Fill(dt);
 
             dtgvTurnos.DataSource = dt;
-           
-            conexion.Close();
+
+            Conn.Close();
 
         }
 
         private void cboTerapeuta_MouseClick(object sender, MouseEventArgs e)
         {
-            conexion.Open();
+            SqlConnection Conn = BDComun.obtenerConexion();
             dtgvTurnos.DataSource = null;
-            SqlCommand cmd = conexion.CreateCommand();
+            SqlCommand cmd = Conn.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT Apellido,Nombre, tipo_Tratamiento 'Tratamiento',hora" +
@@ -102,8 +103,8 @@ namespace App1.Forms
             da.Fill(dt);
 
             dtgvTurnos.DataSource = dt;
-         
-            conexion.Close();
+
+            Conn.Close();
         }
 
         private void cboTerapeuta_SelectedIndexChanged(object sender, EventArgs e)

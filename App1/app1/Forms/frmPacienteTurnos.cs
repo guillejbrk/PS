@@ -15,7 +15,7 @@ namespace App1.Forms
     public partial class frmPacienteTurnos : MetroForm
     {
 
-        SqlConnection conexion = new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=BDConsu; user Id=sa; Password=guille");
+
         public frmPacienteTurnos()
         {
             InitializeComponent();
@@ -32,9 +32,9 @@ namespace App1.Forms
 
         private void cmbPaciente_SelectedIndexChanged(object sender, EventArgs e)
         {
-             conexion.Open();
+            SqlConnection Conn = BDComun.obtenerConexion();
              dtgvTurnosPaciente.DataSource = null;
-            SqlCommand cmd = conexion.CreateCommand();
+             SqlCommand cmd = Conn.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Paciente='" + (((Cliente)cmbPaciente.SelectedItem).Id) + "' ";
@@ -46,8 +46,8 @@ namespace App1.Forms
             da.Fill(dt);
 
             dtgvTurnosPaciente.DataSource = dt;
-        
-            conexion.Close();
+
+            Conn.Close();
 
 
 

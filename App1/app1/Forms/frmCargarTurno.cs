@@ -19,7 +19,7 @@ namespace App1.Forms
     public partial class frmCargarTurno : MetroForm
     {
 
-        SqlConnection conexion = new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=BDConsu; user Id=sa; Password=guille");
+        
         public frmCargarTurno()
         {
            
@@ -97,9 +97,9 @@ namespace App1.Forms
         private void cboTerapeuta_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
-            conexion.Open();
+            SqlConnection Conn = BDComun.obtenerConexion();
             dtgvTurnos.DataSource = null;
-            SqlCommand cmd = conexion.CreateCommand();
+            SqlCommand cmd = Conn.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '"+ DateTime.Now.AddDays(365).ToShortDateString()+"'";
@@ -112,7 +112,7 @@ namespace App1.Forms
 
             dtgvTurnos.DataSource = dt;
 
-            conexion.Close();
+            Conn.Close();
        
 
 
@@ -169,7 +169,26 @@ namespace App1.Forms
                     t.id_Cliente = ((Cliente)cboPaciente.SelectedItem).Id;
                     TurnosDAL.ActualizarTurno(t);
                     MessageBox.Show("Turno Dado de Alta", "Turno", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dtgvTurnos.DataSource = TurnosDAL.DiasDeAltaOCancelado(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+
+                    SqlConnection Conn = BDComun.obtenerConexion();
+                    dtgvTurnos.DataSource = null;
+                    SqlCommand cmd = Conn.CreateCommand();
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '" + DateTime.Now.AddDays(365).ToShortDateString() + "'";
+                    cmd.ExecuteNonQuery();
+
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    dtgvTurnos.DataSource = dt;
+
+                    Conn.Close();
+       
+       
+
                     DayOfWeek d = DayOfWeekConverter.ConvertBack((string)cboDia.SelectedItem);
                     List<Turno> turnosdisponibles = TurnosDAL.ObtenerTurnosDelMes(((Terapeuta)(cboTerapeuta.SelectedItem)).Id, d);
                     lstDias.DataSource = null;
@@ -187,7 +206,26 @@ namespace App1.Forms
                         t.id_Cliente = ((Cliente)cboPaciente.SelectedItem).Id;
                         TurnosDAL.ActualizarTurno(t);
                         MessageBox.Show("Turno Cancelado Correctamente", "Turno", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dtgvTurnos.DataSource = TurnosDAL.DiasDeAltaOCancelado(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+
+                        SqlConnection Conn = BDComun.obtenerConexion();
+                        dtgvTurnos.DataSource = null;
+                        SqlCommand cmd = Conn.CreateCommand();
+
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '" + DateTime.Now.AddDays(365).ToShortDateString() + "'";
+                        cmd.ExecuteNonQuery();
+
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                        da.Fill(dt);
+
+                        dtgvTurnos.DataSource = dt;
+
+                        Conn.Close();
+       
+       
+
                         DayOfWeek d = DayOfWeekConverter.ConvertBack((string)cboDia.SelectedItem);
                         List<Turno> turnosdisponibles = TurnosDAL.ObtenerTurnosDelMes(((Terapeuta)(cboTerapeuta.SelectedItem)).Id, d);
                         lstDias.DataSource = null;
@@ -248,29 +286,35 @@ namespace App1.Forms
 
         }
 
-                            private void btnImprimirTurno_Click(object sender, EventArgs e)
+        private void btnImprimirTurno_Click(object sender, EventArgs e)
                             {
-                                /// agarra toda la fila seleccionada y ponela en un string aca y mandalo a imprimir ok! no vas a querer decirme como selecciono la fila no=?
+                                 
 
-                                string textToPrint = "Otra Mirada \n Proximos Turnos \n";
+
+                                 string textToPrint = "Su Proximo Turno: \n";
                                 for (int row = 0; row < dtgvTurnos.SelectedRows.Count; row++)
                                 {
-
+                                     
                                     textToPrint = textToPrint +
-                                    dtgvTurnos.SelectedRows[row].Cells[0].Value.ToString() + "\t" +
-                                    dtgvTurnos.SelectedRows[row].Cells[1].Value.ToString() + "\t" +
-                                    dtgvTurnos.SelectedRows[row].Cells[2].Value.ToString() + "\t" +
-                                    dtgvTurnos.SelectedRows[row].Cells[3].Value.ToString() + "\t" +
+                                    dtgvTurnos.SelectedRows[row].Cells[0].Value.ToString() + "\n"+""+"Nombre: " +" "+
+                                    dtgvTurnos.SelectedRows[row].Cells[1].Value.ToString() + " " +
+                                    dtgvTurnos.SelectedRows[row].Cells[2].Value.ToString() + "\n" +"Dia: "+
+                                    dtgvTurnos.SelectedRows[row].Cells[3].Value.ToString() + "\n" + "Hora: " +
                                     dtgvTurnos.SelectedRows[row].Cells[4].Value.ToString() + "\n";
                                 }
 
                                 string s = textToPrint;
+                               
                                         PrintDialog pdi = new PrintDialog();
                                         PrintDocument p = new PrintDocument();
                                         p.PrintPage += delegate(object sender1, PrintPageEventArgs e1)
                                         {
-                                        e1.Graphics.DrawString(s, new Font("Times New Roman", 12), new SolidBrush(Color.Black), new RectangleF(0, 0, p.DefaultPageSettings.PrintableArea.Width, p.DefaultPageSettings.PrintableArea.Height));
-
+                                            System.Drawing.Image img = System.Drawing.Image.FromFile("C:\\Users\\Guille\\Documents\\GitHub\\PS\\App1\\PS\\App1\\App1\\Resources\\as.png");
+                                            Point loc = new Point(190, 00);
+                                            e1.Graphics.DrawImage(img, loc);
+                                            
+                                            e1.Graphics.DrawString(s, new Font("Times New Roman", 12), new SolidBrush(Color.Black), new RectangleF(0, 30, p.DefaultPageSettings.PrintableArea.Width, p.DefaultPageSettings.PrintableArea.Height));
+                                           
                                         };
                                         try
                                         {
@@ -290,7 +334,6 @@ namespace App1.Forms
                                         }
                                 }
       
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
 
@@ -300,18 +343,19 @@ namespace App1.Forms
                 Turno pTurno = new Turno();
                 pTurno.Id = Convert.ToInt64(dtgvTurnos.CurrentRow.Cells[0].Value);
                 pTurno.id_Estado = 2;
-                pTurno.Motivo = "";
+                pTurno.Motivo = txtMotivo.Text;
 
                 TurnosDAL.ActualizarTurnosCancelar(pTurno);
                 panelCanelado.Visible = true;
 
                 MessageBox.Show("Turno Cancelado Correctamente", "Turno", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                conexion.Open();
+
+                SqlConnection Conn = BDComun.obtenerConexion();
                 dtgvTurnos.DataSource = null;
-                SqlCommand cmd = conexion.CreateCommand();
+                SqlCommand cmd = Conn.CreateCommand();
 
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select id_Turno, Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' ";
+                cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '" + DateTime.Now.AddDays(365).ToShortDateString() + "'";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -320,9 +364,12 @@ namespace App1.Forms
                 da.Fill(dt);
 
                 dtgvTurnos.DataSource = dt;
+
+                Conn.Close();
+       
                 DayOfWeek d = DayOfWeekConverter.ConvertBack((string)cboDia.SelectedItem);
                 List<Turno> turnosdisponibles = TurnosDAL.ObtenerTurnosDelMes(((Terapeuta)(cboTerapeuta.SelectedItem)).Id, d);
-                conexion.Close();
+                
                 lstDias.DataSource = null;
                 lstDias.DataSource = turnosdisponibles;
                 lstDias.DisplayMember = "Feyhora";
@@ -344,14 +391,9 @@ namespace App1.Forms
 
             return true;
         }
+
       
-   
-      
-
-
-     
-        
-
+  
     
 
       

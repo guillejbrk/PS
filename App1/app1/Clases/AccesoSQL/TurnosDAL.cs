@@ -57,15 +57,15 @@ namespace App1.Clases.AccesoSQL
 
             DateTime FechadelTurno = new DateTime();
             FechadelTurno = DateTime.Today;
-
-            if (!ExisteDiaLaboral(idTerapeuta, FechadelTurno))
-                  {
+            
+           // if (!ExisteDiaLaboral(idTerapeuta, FechadelTurno))
+           //       {
             for (int j = 0; j < 30; j++)
             {
 
                 TimeSpan HoraTurno = horariosdepepe.desde;
 
-                if (pDias.Contains(FechadelTurno.DayOfWeek))
+                if (pDias.Contains(FechadelTurno.DayOfWeek) && !ExisteDiaLaboral(idTerapeuta, FechadelTurno))
                 {
                     for (int i = 0; i < (horariosdepepe.hasta - horariosdepepe.desde).Hours * 2; i++)
                     {
@@ -83,13 +83,13 @@ namespace App1.Clases.AccesoSQL
                              MessageBoxIcon.Information);
        
 
-            }
-            else
-            {
-                MessageBox.Show("NO se Puede Cargar Mas Dias!", "Advertencia", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+          //  }
+          //  else
+         //   {
+            //    MessageBox.Show("NO se Puede Cargar Mas Dias!", "Advertencia", MessageBoxButtons.OK,
+          //          MessageBoxIcon.Exclamation);
 
-            }
+        //    }
             return
                resultado;
            

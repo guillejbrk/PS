@@ -56,9 +56,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtgvTurnos = new MetroFramework.Controls.MetroGrid();
             this.btnImprimirTurno = new System.Windows.Forms.Button();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.dtgvTurnos = new MetroFramework.Controls.MetroGrid();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -351,25 +351,6 @@
             this.panel2.Size = new System.Drawing.Size(485, 228);
             this.panel2.TabIndex = 11;
             // 
-            // btnImprimirTurno
-            // 
-            this.btnImprimirTurno.Location = new System.Drawing.Point(303, 199);
-            this.btnImprimirTurno.Name = "btnImprimirTurno";
-            this.btnImprimirTurno.Size = new System.Drawing.Size(87, 23);
-            this.btnImprimirTurno.TabIndex = 16;
-            this.btnImprimirTurno.Text = "Imprimir Turno";
-            this.btnImprimirTurno.UseVisualStyleBackColor = true;
-            this.btnImprimirTurno.Click += new System.EventHandler(this.btnImprimirTurno_Click);
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(20, 11);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(136, 19);
-            this.metroLabel7.TabIndex = 14;
-            this.metroLabel7.Text = "Turnos Por Terapeutas";
-            // 
             // dtgvTurnos
             // 
             this.dtgvTurnos.AllowUserToResizeRows = false;
@@ -391,6 +372,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.NullValue = null;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -414,6 +396,26 @@
             this.dtgvTurnos.Size = new System.Drawing.Size(468, 150);
             this.dtgvTurnos.Style = MetroFramework.MetroColorStyle.Orange;
             this.dtgvTurnos.TabIndex = 15;
+           
+            // 
+            // btnImprimirTurno
+            // 
+            this.btnImprimirTurno.Location = new System.Drawing.Point(303, 199);
+            this.btnImprimirTurno.Name = "btnImprimirTurno";
+            this.btnImprimirTurno.Size = new System.Drawing.Size(87, 23);
+            this.btnImprimirTurno.TabIndex = 16;
+            this.btnImprimirTurno.Text = "Imprimir Turno";
+            this.btnImprimirTurno.UseVisualStyleBackColor = true;
+            this.btnImprimirTurno.Click += new System.EventHandler(this.btnImprimirTurno_Click);
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(20, 11);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(136, 19);
+            this.metroLabel7.TabIndex = 14;
+            this.metroLabel7.Text = "Turnos Por Terapeutas";
             // 
             // pictureBox1
             // 

@@ -15,7 +15,7 @@ namespace App1.Forms
 {
     public partial class frmAdmTratamiento : MetroForm
     {
-        SqlConnection conexion = new SqlConnection(@"data source=KRUSCHOV\SQLEXPRESS; initial catalog=BDConsu; user Id=sa; Password=guille");
+    
         public frmAdmTratamiento()
         {
             InitializeComponent();
@@ -31,12 +31,12 @@ namespace App1.Forms
             cbmProducto.DataSource = TratamientoDAL.ObtenerProductos();
             cbmProducto.DisplayMember = "Descripcion";
             cbmProducto.ValueMember = "Id";
-           
 
 
-            conexion.Open();
 
-            SqlCommand cmd = conexion.CreateCommand();
+            SqlConnection Conn = BDComun.obtenerConexion();
+
+            SqlCommand cmd = Conn.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select id_Tipo_Tratamiento 'CODIGO', Tipo_Tratamiento 'Descripcion',descripcion'Producto',t.costo from Tipo_Tratamiento t JOIN Productos p on t.id_Producto=p.id_producto";
@@ -49,7 +49,7 @@ namespace App1.Forms
 
             dtgvTrtamiento.DataSource = dt;
             this.dtgvTrtamiento.Columns["costo"].DefaultCellStyle.Format = "c";
-            conexion.Close();
+            Conn.Close();
         }     
 
         private bool validar()
@@ -90,9 +90,9 @@ namespace App1.Forms
                     MessageBox.Show("Datos Ingresados Correctamente", "Datos Guardados", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
-                    conexion.Open();
+                    SqlConnection Conn = BDComun.obtenerConexion();
 
-                    SqlCommand cmd = conexion.CreateCommand();
+                    SqlCommand cmd = Conn.CreateCommand();
 
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "select id_Tipo_Tratamiento, Tipo_Tratamiento 'Descripcion',descripcion'Producto',t.costo from Tipo_Tratamiento t JOIN Productos p on t.id_Producto=p.id_producto";
@@ -105,7 +105,7 @@ namespace App1.Forms
 
                     dtgvTrtamiento.DataSource = dt;
 
-                    conexion.Close();
+                    Conn.Close();
 
                      
                  
@@ -127,9 +127,9 @@ namespace App1.Forms
                             MessageBox.Show("Tratamiento Eliminado", "Tratamiento Modificada", MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
 
-                            conexion.Open();
+                            SqlConnection Conn = BDComun.obtenerConexion();
 
-                            SqlCommand cmd = conexion.CreateCommand();
+                            SqlCommand cmd = Conn.CreateCommand();
 
                             cmd.CommandType = CommandType.Text;
                             cmd.CommandText = "select id_Tipo_Tratamiento 'CODIGO', Tipo_Tratamiento 'Descripcion',descripcion'Producto',t.costo from Tipo_Tratamiento t JOIN Productos p on t.id_Producto=p.id_producto";
@@ -142,7 +142,7 @@ namespace App1.Forms
 
                             dtgvTrtamiento.DataSource = dt;
                             this.dtgvTrtamiento.Columns["costo"].DefaultCellStyle.Format = "c";
-                            conexion.Close();
+                            Conn.Close();
                           
                   
         } 
