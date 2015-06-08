@@ -341,12 +341,12 @@ namespace App1.Forms
                                             }
                                             else
                                             {
-                                                MessageBox.Show("Print Cancelled");
+                                                MessageBox.Show("Se Cancelo la impresión", "Impresora", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                             }
                                         }
                                         catch (Exception ex)
                                         {
-                                        throw new Exception("Exception Occured While Printing", ex);
+                                        throw new Exception("Error al tratar de imprimir!", ex);
                                         }
                                 }
       

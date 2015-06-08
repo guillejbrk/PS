@@ -63,6 +63,66 @@ namespace App1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1433804248_ic_add_48px {
+            get {
+                object obj = ResourceManager.GetObject("1433804248_ic_add_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1433804360_ic_expand_more_48px {
+            get {
+                object obj = ResourceManager.GetObject("1433804360_ic_expand_more_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1433804429_ic_local_print_shop_48px {
+            get {
+                object obj = ResourceManager.GetObject("1433804429_ic_local_print_shop_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1433804497_ic_close_48px {
+            get {
+                object obj = ResourceManager.GetObject("1433804497_ic_close_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1433804663_ic_mode_edit_48px {
+            get {
+                object obj = ResourceManager.GetObject("1433804663_ic_mode_edit_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1433804667_ic_delete_48px {
+            get {
+                object obj = ResourceManager.GetObject("1433804667_ic_delete_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _as {
             get {
                 object obj = ResourceManager.GetObject("as", resourceCulture);

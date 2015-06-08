@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.txtCosto = new MetroFramework.Controls.MetroTextBox();
             this.txtCantidad = new MetroFramework.Controls.MetroTextBox();
             this.txtProducto = new MetroFramework.Controls.MetroTextBox();
@@ -39,7 +40,6 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,15 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(236, 82);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(16, 19);
+            this.metroLabel5.TabIndex = 25;
+            this.metroLabel5.Text = "$";
             // 
             // txtCosto
             // 
@@ -172,7 +181,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(445, 239);
+            this.btnCerrar.Location = new System.Drawing.Point(422, 218);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(77, 28);
             this.btnCerrar.TabIndex = 25;
@@ -180,20 +189,11 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(236, 82);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(16, 19);
-            this.metroLabel5.TabIndex = 25;
-            this.metroLabel5.Text = "$";
-            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 269);
+            this.ClientSize = new System.Drawing.Size(517, 256);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.metroPanel1);
             this.Name = "frmProductos";

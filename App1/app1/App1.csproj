@@ -145,12 +145,6 @@
     <Compile Include="Forms\frmHistorial.Designer.cs">
       <DependentUpon>frmHistorial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmImprimirTurno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmImprimirTurno.Designer.cs">
-      <DependentUpon>frmImprimirTurno.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,9 +227,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmHistorial.resx">
       <DependentUpon>frmHistorial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmImprimirTurno.resx">
-      <DependentUpon>frmImprimirTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLog.resx">
       <DependentUpon>frmLog.cs</DependentUpon>
@@ -328,6 +319,12 @@
     <None Include="Resources\checklist.png" />
     <None Include="Resources\ii.png" />
     <None Include="Resources\address_book.png" />
+    <None Include="Resources\1433804248_ic_add_48px.ico" />
+    <None Include="Resources\1433804360_ic_expand_more_48px.ico" />
+    <None Include="Resources\1433804429_ic_local_print_shop_48px.ico" />
+    <None Include="Resources\1433804497_ic_close_48px.ico" />
+    <None Include="Resources\1433804663_ic_mode_edit_48px.ico" />
+    <None Include="Resources\1433804667_ic_delete_48px.ico" />
     <Content Include="TODO.txt" />
     <None Include="Resources\telephone_red.png" />
     <None Include="Resources\diary.png" />
