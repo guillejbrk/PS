@@ -120,8 +120,13 @@ namespace App1.Forms
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
-        {            
-          Int64 Id = Convert.ToInt64(dtgvTrtamiento.CurrentRow.Cells[0].Value);
+        {
+
+
+
+            Int64 Id = Convert.ToInt64(dtgvTrtamiento.CurrentRow.Cells[0].Value);
+            if (!TratamientoDAL.ExisteTurno(Convert.ToInt32(dtgvTrtamiento.CurrentRow.Cells[0].Value)))
+                           {
                        TratamientoDAL.EliminarTrataiento(Id);
 
                             MessageBox.Show("Tratamiento Eliminado", "Tratamiento Modificada", MessageBoxButtons.OK,
@@ -143,7 +148,12 @@ namespace App1.Forms
                             dtgvTrtamiento.DataSource = dt;
                             this.dtgvTrtamiento.Columns["costo"].DefaultCellStyle.Format = "c";
                             Conn.Close();
-                          
+                           }
+                           else
+                           {
+                               MessageBox.Show("Atencion Existe TUrnos que se encuentran asociado a este tratamiento", "Tratamiento ", MessageBoxButtons.OK,
+                              MessageBoxIcon.Exclamation);
+                           }
                   
         } 
       

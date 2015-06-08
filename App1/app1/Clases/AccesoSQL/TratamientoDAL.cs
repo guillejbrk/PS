@@ -90,6 +90,25 @@ namespace App1.Clases.AccesoSQL
 
         }
 
+        public static bool ExisteTurno(int id)
+        {
+
+            using (SqlConnection conexion = BDComun.obtenerConexion())
+            {
+                string query = "SELECT COUNT(*) FROM Turno WHERE id_TipoTratamiento=@id_TipoTratamiento";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("id_TipoTratamiento", id);
+
+
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if (count == 0)
+                    return false;
+                else
+                    return true;
+            }
+
+        }
+
 
        
     }
