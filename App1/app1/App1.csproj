@@ -327,6 +327,7 @@
     <None Include="Resources\shopping_cart_add.png" />
     <None Include="Resources\checklist.png" />
     <None Include="Resources\ii.png" />
+    <None Include="Resources\address_book.png" />
     <Content Include="TODO.txt" />
     <None Include="Resources\telephone_red.png" />
     <None Include="Resources\diary.png" />

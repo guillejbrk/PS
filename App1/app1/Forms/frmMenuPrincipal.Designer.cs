@@ -103,7 +103,7 @@
             // 
             this.cargarTurnoToolStripMenuItem.Image = global::App1.Properties.Resources.blocnote;
             this.cargarTurnoToolStripMenuItem.Name = "cargarTurnoToolStripMenuItem";
-            this.cargarTurnoToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.cargarTurnoToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.cargarTurnoToolStripMenuItem.Text = "Nuevo Turno";
             this.cargarTurnoToolStripMenuItem.Click += new System.EventHandler(this.cargarTurnoToolStripMenuItem_Click);
             // 
@@ -111,20 +111,20 @@
             // 
             this.cargarHistoriaToolStripMenuItem.Image = global::App1.Properties.Resources.diary_128;
             this.cargarHistoriaToolStripMenuItem.Name = "cargarHistoriaToolStripMenuItem";
-            this.cargarHistoriaToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.cargarHistoriaToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.cargarHistoriaToolStripMenuItem.Text = "Nueva Historia";
             this.cargarHistoriaToolStripMenuItem.Click += new System.EventHandler(this.cargarHistoriaToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(217, 6);
             // 
             // buscarPacienteToolStripMenuItem
             // 
             this.buscarPacienteToolStripMenuItem.Image = global::App1.Properties.Resources.male_user_search;
             this.buscarPacienteToolStripMenuItem.Name = "buscarPacienteToolStripMenuItem";
-            this.buscarPacienteToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.buscarPacienteToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.buscarPacienteToolStripMenuItem.Text = "Buscar Paciente";
             this.buscarPacienteToolStripMenuItem.Click += new System.EventHandler(this.buscarPacienteToolStripMenuItem_Click);
             // 
@@ -133,33 +133,33 @@
             this.buscarHistorialToolStripMenuItem.Image = global::App1.Properties.Resources.book3;
             this.buscarHistorialToolStripMenuItem.Name = "buscarHistorialToolStripMenuItem";
             this.buscarHistorialToolStripMenuItem.ShowShortcutKeys = false;
-            this.buscarHistorialToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.buscarHistorialToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.buscarHistorialToolStripMenuItem.Text = "Buscar Historial";
             this.buscarHistorialToolStripMenuItem.Click += new System.EventHandler(this.buscarHistorialToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(217, 6);
             // 
             // agendaTelefonicaToolStripMenuItem
             // 
             this.agendaTelefonicaToolStripMenuItem.Image = global::App1.Properties.Resources.telephone_red;
             this.agendaTelefonicaToolStripMenuItem.Name = "agendaTelefonicaToolStripMenuItem";
-            this.agendaTelefonicaToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.agendaTelefonicaToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.agendaTelefonicaToolStripMenuItem.Text = "Agenda Telefonica";
             this.agendaTelefonicaToolStripMenuItem.Click += new System.EventHandler(this.agendaTelefonicaToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Image = global::App1.Properties.Resources.deletered;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -253,7 +253,7 @@
             // 
             // agendaToolStripMenuItem
             // 
-            this.agendaToolStripMenuItem.Image = global::App1.Properties.Resources.planner;
+            this.agendaToolStripMenuItem.Image = global::App1.Properties.Resources.address_book;
             this.agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
             this.agendaToolStripMenuItem.Size = new System.Drawing.Size(243, 36);
             this.agendaToolStripMenuItem.Text = "Agenda Terapueta";

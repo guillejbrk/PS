@@ -472,6 +472,57 @@ namespace App1.Forms
 
         }
 
+        private void btnCargarDIASNOLAB_Click(object sender, EventArgs e)
+        {
+            if (!AgendaDAL.DiaLaboralExiste(Convert.ToInt32(cbmTera.SelectedValue),
+           dtDiasNoLaborables.Value.ToShortDateString()))
+            {
+                if (dtDiasNoLaborables.Value >= DateTime.Today)
+                {
+
+                    DiasNoLaborales diasNoLab = new DiasNoLaborales();
+
+
+                    diasNoLab.DiaNoLaboral = dtDiasNoLaborables.Value.ToShortDateString();
+                    diasNoLab.IdTerapeuta = (Int64)cbmTera.SelectedValue;
+
+
+                    AgendaDAL.AgregarDiaNoLaboral(diasNoLab);
+                    MessageBox.Show("Se Cargo Dia No Laboral", "Dia No Laboral", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+
+
+                    List<DiasNoLaborales> pDiasNoLaborales = new List<DiasNoLaborales>();
+                    pDiasNoLaborales = AgendaDAL.ObtenerDiasNoLaboralesAño(((Terapeuta)cbmTera.SelectedItem).Id);
+                    lstNoLaboralesSemana.DataSource = null;
+                    lstNoLaboralesSemana.DataSource = pDiasNoLaborales;
+                    cbmTera.ValueMember = "Id";
+                    lstNoLaboralesSemana.DisplayMember = "DiaNoLaboral";
+
+
+                    rbtSemana.Checked = false;
+                    rbtMes.Checked = false;
+                    rbtAño.Checked = false;
+                }
+
+
+                else
+                {
+                    MessageBox.Show("Fecha No permitida!", "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Ya se Cargo es Dia No LAboral para ese Terapeuta!!", "Error", MessageBoxButtons.OK,
+
+                    MessageBoxIcon.Error);
+            }
+
+        }
+
        
 
     }

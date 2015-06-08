@@ -73,6 +73,16 @@ namespace App1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap address_book {
+            get {
+                object obj = ResourceManager.GetObject("address_book", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blocnote {
             get {
                 object obj = ResourceManager.GetObject("blocnote", resourceCulture);

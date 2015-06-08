@@ -306,26 +306,37 @@ namespace App1.Forms
 
                                 }
 
+
             
 
                                 string s = textToPrint;
                                
                                         PrintDialog pdi = new PrintDialog();
                                         PrintDocument p = new PrintDocument();
+                                        PrintPreviewDialog VistaPrevia = new PrintPreviewDialog(); 
                                         p.PrintPage += delegate(object sender1, PrintPageEventArgs e1)
                                         {
-                                            System.Drawing.Image img = System.Drawing.Image.FromFile("C:\\Users\\Guille\\Documents\\GitHub\\PS\\App1\\PS\\App1\\App1\\Resources\\as.png");
-                                            Point loc = new Point(190, 00);
+                                            Pen blackPen = new Pen(Color.Black, 1);
+                                            Rectangle rect = new Rectangle(0, 0, 440, 160);
+                                           
+                                            e1.Graphics.DrawRectangle(blackPen, rect);
+                                            System.Drawing.Image img = System.Drawing.Image.FromFile("C:\\Users\\Guille\\Documents\\GitHub\\PS\\App1\\PS\\App1\\App1\\Resources\\sa.png");
+                                            Point loc = new Point(160, 10);
                                             e1.Graphics.DrawImage(img, loc);
                                             
                                             e1.Graphics.DrawString(s, new Font("Times New Roman", 12), new SolidBrush(Color.Black), new RectangleF(0, 30, p.DefaultPageSettings.PrintableArea.Width, p.DefaultPageSettings.PrintableArea.Height));
-                                           
+                                         
+
+
                                         };
                                         try
                                         {
                                             pdi.Document = p;
+                                            VistaPrevia.Document = p;
+                                            VistaPrevia.ShowDialog(); 
                                             if (pdi.ShowDialog() == DialogResult.OK)
                                             {
+                                              
                                                 p.Print();
                                             }
                                             else
