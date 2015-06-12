@@ -12,6 +12,8 @@ namespace App1
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+
+        public static String usuario = "";//variable publica
         [STAThread]
 
 
@@ -19,7 +21,12 @@ namespace App1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMenuPrincipal());
+            frmSplashScreen sp = new frmSplashScreen();
+            if (sp.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new frmLog());
+            }
+           
         }
     }
 }

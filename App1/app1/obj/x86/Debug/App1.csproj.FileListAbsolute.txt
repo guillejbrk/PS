@@ -64,7 +64,6 @@ C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.csprojR
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmAdmPaciente.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmAgenda.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.frmCargarCliente.resources
-C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmAdmTratamiento.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmCargarTurno.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmHistorial.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmLog.resources
@@ -82,6 +81,9 @@ C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.f
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmAyuda.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.Turnos.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmPacienteTurnos.resources
-C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmTurnosPorPaciente.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\bin\Debug\MetroFramework.Design.dll
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\RdlCompile.cache
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\RdlCompile.compiled
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmInformes.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmCargarTratamiento.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmSplashScreen.resources

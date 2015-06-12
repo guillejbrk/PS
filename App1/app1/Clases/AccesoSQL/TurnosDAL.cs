@@ -46,8 +46,6 @@ namespace App1.Clases.AccesoSQL
         public static int GenerarTurnos(Int64 idTerapeuta)
         {
             int resultado = 0;
-
-          
            
               
             Terapeuta pepe = TerapeutaDAL.ObtenerTerapeuta(idTerapeuta);
@@ -58,8 +56,7 @@ namespace App1.Clases.AccesoSQL
             DateTime FechadelTurno = new DateTime();
             FechadelTurno = DateTime.Today;
             
-           // if (!ExisteDiaLaboral(idTerapeuta, FechadelTurno))
-           //       {
+           
             for (int j = 0; j < 30; j++)
             {
 
@@ -83,13 +80,6 @@ namespace App1.Clases.AccesoSQL
                              MessageBoxIcon.Information);
        
 
-          //  }
-          //  else
-         //   {
-            //    MessageBox.Show("NO se Puede Cargar Mas Dias!", "Advertencia", MessageBoxButtons.OK,
-          //          MessageBoxIcon.Exclamation);
-
-        //    }
             return
                resultado;
            
@@ -125,8 +115,6 @@ namespace App1.Clases.AccesoSQL
                         pTurno.id_Terapeuta = idTerapeuta;
 
 
-
-
                         _listaTurnos.Add(pTurno);
                     }
                     _reader.Close();
@@ -141,7 +129,6 @@ namespace App1.Clases.AccesoSQL
             using (SqlConnection Conn = BDComun.obtenerConexion())
             {
 
-
                 SqlCommand Comando =
                 new SqlCommand(
                     String.Format(
@@ -149,8 +136,6 @@ namespace App1.Clases.AccesoSQL
                         pTurno.id_Cliente, pTurno.id_Tratamiento, pTurno.Fecha_Tratamiento.ToShortDateString(), pTurno.Hora, pTurno.id_Terapeuta, pTurno.id_Estado, pTurno.Motivo), Conn);
 
                 Comando.ExecuteNonQuery();
-
-
 
             }
         }
@@ -262,12 +247,6 @@ namespace App1.Clases.AccesoSQL
 
             }
         }
-        
-        
-        
-
-
-       
 
     }
         

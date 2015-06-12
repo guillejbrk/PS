@@ -134,7 +134,7 @@ namespace App1.Forms
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            frmAdmTratamiento frmCargarTra = new frmAdmTratamiento();
+            frmCargarTratamiento frmCargarTra = new frmCargarTratamiento();
             frmCargarTra.ShowDialog();
         }
 

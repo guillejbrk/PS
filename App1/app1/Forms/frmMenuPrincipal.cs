@@ -34,7 +34,7 @@ namespace App1.Forms
 
         private void turnoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAdmTratamiento CargarTratamiento = new frmAdmTratamiento();
+            frmCargarTratamiento CargarTratamiento = new frmCargarTratamiento();
             CargarTratamiento.MdiParent = this;
             CargarTratamiento.Show();
         }
@@ -119,7 +119,9 @@ namespace App1.Forms
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-           
+            Size desktopSize = System.Windows.Forms.SystemInformation.PrimaryMonitorSize;
+            lblUsuario.Text = Program.usuario;
+            
         }
 
         private void nuevaHistoriaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -194,6 +196,15 @@ namespace App1.Forms
             } 
 
 
+        }
+
+     
+
+        private void informesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmInformes t = new frmInformes();
+            t.MdiParent = this;
+            t.Show();
         }
 
       

@@ -46,6 +46,7 @@ namespace App1.Forms
                 {
                     MessageBox.Show("Bienvenido " + txtUsuario.Text, "  ", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
+                    Program.usuario = txtUsuario.Text;
                     this.Hide();
                     frmMenuPrincipal MenuPrincipal = new frmMenuPrincipal();
                     MenuPrincipal.Show();
@@ -92,6 +93,7 @@ namespace App1.Forms
                     {
                         MessageBox.Show("Bienvenido " + txtUsuario.Text, "  ", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
+                        Program.usuario = txtUsuario.Text;
                         this.Hide();
                         frmMenuPrincipal MenuPrincipal = new frmMenuPrincipal();
                         MenuPrincipal.Show();

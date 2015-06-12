@@ -24,7 +24,7 @@ namespace App1 {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class BDConsuDataSet : global::System.Data.DataSet {
         
-        private Turnos_PacienteDataTable tableTurnos_Paciente;
+        private Vista2DataTable tableVista2;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace App1 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Turnos_Paciente"] != null)) {
-                    base.Tables.Add(new Turnos_PacienteDataTable(ds.Tables["Turnos_Paciente"]));
+                if ((ds.Tables["Vista2"] != null)) {
+                    base.Tables.Add(new Vista2DataTable(ds.Tables["Vista2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace App1 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Turnos_PacienteDataTable Turnos_Paciente {
+        public Vista2DataTable Vista2 {
             get {
-                return this.tableTurnos_Paciente;
+                return this.tableVista2;
             }
         }
         
@@ -152,8 +152,8 @@ namespace App1 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Turnos_Paciente"] != null)) {
-                    base.Tables.Add(new Turnos_PacienteDataTable(ds.Tables["Turnos_Paciente"]));
+                if ((ds.Tables["Vista2"] != null)) {
+                    base.Tables.Add(new Vista2DataTable(ds.Tables["Vista2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace App1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableTurnos_Paciente = ((Turnos_PacienteDataTable)(base.Tables["Turnos_Paciente"]));
+            this.tableVista2 = ((Vista2DataTable)(base.Tables["Vista2"]));
             if ((initTable == true)) {
-                if ((this.tableTurnos_Paciente != null)) {
-                    this.tableTurnos_Paciente.InitVars();
+                if ((this.tableVista2 != null)) {
+                    this.tableVista2.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace App1 {
             this.Namespace = "http://tempuri.org/BDConsuDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableTurnos_Paciente = new Turnos_PacienteDataTable();
-            base.Tables.Add(this.tableTurnos_Paciente);
+            this.tableVista2 = new Vista2DataTable();
+            base.Tables.Add(this.tableVista2);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeTurnos_Paciente() {
+        private bool ShouldSerializeVista2() {
             return false;
         }
         
@@ -270,29 +270,29 @@ namespace App1 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void Turnos_PacienteRowChangeEventHandler(object sender, Turnos_PacienteRowChangeEvent e);
+        public delegate void Vista2RowChangeEventHandler(object sender, Vista2RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Turnos_PacienteDataTable : global::System.Data.TypedTableBase<Turnos_PacienteRow> {
+        public partial class Vista2DataTable : global::System.Data.TypedTableBase<Vista2Row> {
+            
+            private global::System.Data.DataColumn columnnroTurno;
             
             private global::System.Data.DataColumn columnApellido;
             
             private global::System.Data.DataColumn columnNombre;
             
-            private global::System.Data.DataColumn columnFecha;
+            private global::System.Data.DataColumn columnEstado;
             
-            private global::System.Data.DataColumn columnhora;
-            
-            private global::System.Data.DataColumn columnid_Terapeuta;
+            private global::System.Data.DataColumn columnApellidoTerapeuta;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Turnos_PacienteDataTable() {
-                this.TableName = "Turnos_Paciente";
+            public Vista2DataTable() {
+                this.TableName = "Vista2";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +300,7 @@ namespace App1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Turnos_PacienteDataTable(global::System.Data.DataTable table) {
+            internal Vista2DataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,9 +317,17 @@ namespace App1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected Turnos_PacienteDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Vista2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nroTurnoColumn {
+                get {
+                    return this.columnnroTurno;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -340,25 +348,17 @@ namespace App1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FechaColumn {
+            public global::System.Data.DataColumn EstadoColumn {
                 get {
-                    return this.columnFecha;
+                    return this.columnEstado;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn horaColumn {
+            public global::System.Data.DataColumn ApellidoTerapeutaColumn {
                 get {
-                    return this.columnhora;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_TerapeutaColumn {
-                get {
-                    return this.columnid_Terapeuta;
+                    return this.columnApellidoTerapeuta;
                 }
             }
             
@@ -373,49 +373,56 @@ namespace App1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Turnos_PacienteRow this[int index] {
+            public Vista2Row this[int index] {
                 get {
-                    return ((Turnos_PacienteRow)(this.Rows[index]));
+                    return ((Vista2Row)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Turnos_PacienteRowChangeEventHandler Turnos_PacienteRowChanging;
+            public event Vista2RowChangeEventHandler Vista2RowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Turnos_PacienteRowChangeEventHandler Turnos_PacienteRowChanged;
+            public event Vista2RowChangeEventHandler Vista2RowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Turnos_PacienteRowChangeEventHandler Turnos_PacienteRowDeleting;
+            public event Vista2RowChangeEventHandler Vista2RowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Turnos_PacienteRowChangeEventHandler Turnos_PacienteRowDeleted;
+            public event Vista2RowChangeEventHandler Vista2RowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddTurnos_PacienteRow(Turnos_PacienteRow row) {
+            public void AddVista2Row(Vista2Row row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Turnos_PacienteRow AddTurnos_PacienteRow(string Apellido, string Nombre, System.DateTime Fecha, System.TimeSpan hora, int id_Terapeuta) {
-                Turnos_PacienteRow rowTurnos_PacienteRow = ((Turnos_PacienteRow)(this.NewRow()));
+            public Vista2Row AddVista2Row(int nroTurno, string Apellido, string Nombre, string Estado, string ApellidoTerapeuta) {
+                Vista2Row rowVista2Row = ((Vista2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        nroTurno,
                         Apellido,
                         Nombre,
-                        Fecha,
-                        hora,
-                        id_Terapeuta};
-                rowTurnos_PacienteRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTurnos_PacienteRow);
-                return rowTurnos_PacienteRow;
+                        Estado,
+                        ApellidoTerapeuta};
+                rowVista2Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVista2Row);
+                return rowVista2Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Vista2Row FindBynroTurno(int nroTurno) {
+                return ((Vista2Row)(this.Rows.Find(new object[] {
+                            nroTurno})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Turnos_PacienteDataTable cln = ((Turnos_PacienteDataTable)(base.Clone()));
+                Vista2DataTable cln = ((Vista2DataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -423,62 +430,68 @@ namespace App1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Turnos_PacienteDataTable();
+                return new Vista2DataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnnroTurno = base.Columns["nroTurno"];
                 this.columnApellido = base.Columns["Apellido"];
                 this.columnNombre = base.Columns["Nombre"];
-                this.columnFecha = base.Columns["Fecha"];
-                this.columnhora = base.Columns["hora"];
-                this.columnid_Terapeuta = base.Columns["id_Terapeuta"];
+                this.columnEstado = base.Columns["Estado"];
+                this.columnApellidoTerapeuta = base.Columns["ApellidoTerapeuta"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnnroTurno = new global::System.Data.DataColumn("nroTurno", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnroTurno);
                 this.columnApellido = new global::System.Data.DataColumn("Apellido", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApellido);
                 this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombre);
-                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha);
-                this.columnhora = new global::System.Data.DataColumn("hora", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnhora);
-                this.columnid_Terapeuta = new global::System.Data.DataColumn("id_Terapeuta", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_Terapeuta);
+                this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado);
+                this.columnApellidoTerapeuta = new global::System.Data.DataColumn("ApellidoTerapeuta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApellidoTerapeuta);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnnroTurno}, true));
+                this.columnnroTurno.AllowDBNull = false;
+                this.columnnroTurno.Unique = true;
                 this.columnApellido.AllowDBNull = false;
                 this.columnApellido.MaxLength = 50;
                 this.columnNombre.AllowDBNull = false;
                 this.columnNombre.MaxLength = 50;
+                this.columnEstado.MaxLength = 50;
+                this.columnApellidoTerapeuta.MaxLength = 150;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Turnos_PacienteRow NewTurnos_PacienteRow() {
-                return ((Turnos_PacienteRow)(this.NewRow()));
+            public Vista2Row NewVista2Row() {
+                return ((Vista2Row)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Turnos_PacienteRow(builder);
+                return new Vista2Row(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Turnos_PacienteRow);
+                return typeof(Vista2Row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Turnos_PacienteRowChanged != null)) {
-                    this.Turnos_PacienteRowChanged(this, new Turnos_PacienteRowChangeEvent(((Turnos_PacienteRow)(e.Row)), e.Action));
+                if ((this.Vista2RowChanged != null)) {
+                    this.Vista2RowChanged(this, new Vista2RowChangeEvent(((Vista2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -486,8 +499,8 @@ namespace App1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Turnos_PacienteRowChanging != null)) {
-                    this.Turnos_PacienteRowChanging(this, new Turnos_PacienteRowChangeEvent(((Turnos_PacienteRow)(e.Row)), e.Action));
+                if ((this.Vista2RowChanging != null)) {
+                    this.Vista2RowChanging(this, new Vista2RowChangeEvent(((Vista2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -495,8 +508,8 @@ namespace App1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Turnos_PacienteRowDeleted != null)) {
-                    this.Turnos_PacienteRowDeleted(this, new Turnos_PacienteRowChangeEvent(((Turnos_PacienteRow)(e.Row)), e.Action));
+                if ((this.Vista2RowDeleted != null)) {
+                    this.Vista2RowDeleted(this, new Vista2RowChangeEvent(((Vista2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -504,14 +517,14 @@ namespace App1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Turnos_PacienteRowDeleting != null)) {
-                    this.Turnos_PacienteRowDeleting(this, new Turnos_PacienteRowChangeEvent(((Turnos_PacienteRow)(e.Row)), e.Action));
+                if ((this.Vista2RowDeleting != null)) {
+                    this.Vista2RowDeleting(this, new Vista2RowChangeEvent(((Vista2Row)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveTurnos_PacienteRow(Turnos_PacienteRow row) {
+            public void RemoveVista2Row(Vista2Row row) {
                 this.Rows.Remove(row);
             }
             
@@ -538,7 +551,7 @@ namespace App1 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Turnos_PacienteDataTable";
+                attribute2.FixedValue = "Vista2DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -582,25 +595,36 @@ namespace App1 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Turnos_PacienteRow : global::System.Data.DataRow {
+        public partial class Vista2Row : global::System.Data.DataRow {
             
-            private Turnos_PacienteDataTable tableTurnos_Paciente;
+            private Vista2DataTable tableVista2;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Turnos_PacienteRow(global::System.Data.DataRowBuilder rb) : 
+            internal Vista2Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTurnos_Paciente = ((Turnos_PacienteDataTable)(this.Table));
+                this.tableVista2 = ((Vista2DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int nroTurno {
+                get {
+                    return ((int)(this[this.tableVista2.nroTurnoColumn]));
+                }
+                set {
+                    this[this.tableVista2.nroTurnoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Apellido {
                 get {
-                    return ((string)(this[this.tableTurnos_Paciente.ApellidoColumn]));
+                    return ((string)(this[this.tableVista2.ApellidoColumn]));
                 }
                 set {
-                    this[this.tableTurnos_Paciente.ApellidoColumn] = value;
+                    this[this.tableVista2.ApellidoColumn] = value;
                 }
             }
             
@@ -608,95 +632,67 @@ namespace App1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Nombre {
                 get {
-                    return ((string)(this[this.tableTurnos_Paciente.NombreColumn]));
+                    return ((string)(this[this.tableVista2.NombreColumn]));
                 }
                 set {
-                    this[this.tableTurnos_Paciente.NombreColumn] = value;
+                    this[this.tableVista2.NombreColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Fecha {
+            public string Estado {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableTurnos_Paciente.FechaColumn]));
+                        return ((string)(this[this.tableVista2.EstadoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Fecha\' in table \'Turnos_Paciente\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Estado\' in table \'Vista2\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTurnos_Paciente.FechaColumn] = value;
+                    this[this.tableVista2.EstadoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.TimeSpan hora {
+            public string ApellidoTerapeuta {
                 get {
                     try {
-                        return ((global::System.TimeSpan)(this[this.tableTurnos_Paciente.horaColumn]));
+                        return ((string)(this[this.tableVista2.ApellidoTerapeutaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'hora\' in table \'Turnos_Paciente\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ApellidoTerapeuta\' in table \'Vista2\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTurnos_Paciente.horaColumn] = value;
+                    this[this.tableVista2.ApellidoTerapeutaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_Terapeuta {
-                get {
-                    try {
-                        return ((int)(this[this.tableTurnos_Paciente.id_TerapeutaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'id_Terapeuta\' in table \'Turnos_Paciente\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableTurnos_Paciente.id_TerapeutaColumn] = value;
-                }
+            public bool IsEstadoNull() {
+                return this.IsNull(this.tableVista2.EstadoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFechaNull() {
-                return this.IsNull(this.tableTurnos_Paciente.FechaColumn);
+            public void SetEstadoNull() {
+                this[this.tableVista2.EstadoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFechaNull() {
-                this[this.tableTurnos_Paciente.FechaColumn] = global::System.Convert.DBNull;
+            public bool IsApellidoTerapeutaNull() {
+                return this.IsNull(this.tableVista2.ApellidoTerapeutaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IshoraNull() {
-                return this.IsNull(this.tableTurnos_Paciente.horaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SethoraNull() {
-                this[this.tableTurnos_Paciente.horaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isid_TerapeutaNull() {
-                return this.IsNull(this.tableTurnos_Paciente.id_TerapeutaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setid_TerapeutaNull() {
-                this[this.tableTurnos_Paciente.id_TerapeutaColumn] = global::System.Convert.DBNull;
+            public void SetApellidoTerapeutaNull() {
+                this[this.tableVista2.ApellidoTerapeutaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -704,22 +700,22 @@ namespace App1 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class Turnos_PacienteRowChangeEvent : global::System.EventArgs {
+        public class Vista2RowChangeEvent : global::System.EventArgs {
             
-            private Turnos_PacienteRow eventRow;
+            private Vista2Row eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Turnos_PacienteRowChangeEvent(Turnos_PacienteRow row, global::System.Data.DataRowAction action) {
+            public Vista2RowChangeEvent(Vista2Row row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Turnos_PacienteRow Row {
+            public Vista2Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -747,7 +743,7 @@ namespace App1.BDConsuDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Turnos_PacienteTableAdapter : global::System.ComponentModel.Component {
+    public partial class Vista2TableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -761,7 +757,7 @@ namespace App1.BDConsuDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Turnos_PacienteTableAdapter() {
+        public Vista2TableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -858,12 +854,12 @@ namespace App1.BDConsuDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Turnos_Paciente";
+            tableMapping.DataSetTable = "Vista2";
+            tableMapping.ColumnMappings.Add("nroTurno", "nroTurno");
             tableMapping.ColumnMappings.Add("Apellido", "Apellido");
             tableMapping.ColumnMappings.Add("Nombre", "Nombre");
-            tableMapping.ColumnMappings.Add("Fecha", "Fecha");
-            tableMapping.ColumnMappings.Add("hora", "hora");
-            tableMapping.ColumnMappings.Add("id_Terapeuta", "id_Terapeuta");
+            tableMapping.ColumnMappings.Add("Estado", "Estado");
+            tableMapping.ColumnMappings.Add("ApellidoTerapeuta", "ApellidoTerapeuta");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -880,24 +876,16 @@ namespace App1.BDConsuDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.Turnos_Paciente";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_Paciente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].CommandText = "SELECT nroTurno, Apellido, Nombre, Estado, ApellidoTerapeuta FROM dbo.Vista2";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BDConsuDataSet.Turnos_PacienteDataTable dataTable, global::System.Nullable<int> id_Paciente) {
+        public virtual int Fill(BDConsuDataSet.Vista2DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((id_Paciente.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id_Paciente.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -909,15 +897,9 @@ namespace App1.BDConsuDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BDConsuDataSet.Turnos_PacienteDataTable GetData(global::System.Nullable<int> id_Paciente) {
+        public virtual BDConsuDataSet.Vista2DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((id_Paciente.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(id_Paciente.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            BDConsuDataSet.Turnos_PacienteDataTable dataTable = new BDConsuDataSet.Turnos_PacienteDataTable();
+            BDConsuDataSet.Vista2DataTable dataTable = new BDConsuDataSet.Vista2DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
