@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using MetroFramework.Forms;
 
 namespace App1.Forms
 {
@@ -14,11 +13,15 @@ namespace App1.Forms
     {
         public frmSplashScreen()
         {
-
             InitializeComponent();
+        
             Tiempo.Enabled = true;
-            Tiempo.Interval = 1000;
-          
+            Tiempo.Interval = 400;
+        }
+
+        private void frmSplashScreen_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void Tiempo_Tick(object sender, EventArgs e)
@@ -31,14 +34,8 @@ namespace App1.Forms
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            
         }
 
-
-        private void progBarr_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
     }
 }

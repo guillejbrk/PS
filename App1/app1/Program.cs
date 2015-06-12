@@ -8,15 +8,13 @@ namespace App1
 {
     static class Program
     {
-        
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-
+        /// 
         public static String usuario = "";//variable publica
         [STAThread]
-
-
         static void Main()
         {
             Application.EnableVisualStyles();
@@ -26,7 +24,6 @@ namespace App1
             {
                 Application.Run(new frmLog());
             }
-           
         }
     }
 }

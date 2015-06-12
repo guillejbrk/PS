@@ -123,6 +123,16 @@ namespace App1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3 {
+            get {
+                object obj = ResourceManager.GetObject("3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _as {
             get {
                 object obj = ResourceManager.GetObject("as", resourceCulture);
@@ -136,16 +146,6 @@ namespace App1.Properties {
         internal static System.Drawing.Bitmap aa {
             get {
                 object obj = ResourceManager.GetObject("aa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap aaaaaaaaaaaaa {
-            get {
-                object obj = ResourceManager.GetObject("aaaaaaaaaaaaa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,26 +186,6 @@ namespace App1.Properties {
         internal static System.Drawing.Bitmap Boton {
             get {
                 object obj = ResourceManager.GetObject("Boton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ca2 {
-            get {
-                object obj = ResourceManager.GetObject("ca2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cae {
-            get {
-                object obj = ResourceManager.GetObject("cae", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

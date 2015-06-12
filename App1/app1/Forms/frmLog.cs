@@ -32,6 +32,7 @@ namespace App1.Forms
                 txtUsuario.Focus();
                 txtPass.Clear();
                 txtUsuario.Clear();
+
             }
             else
             {                             
@@ -46,8 +47,8 @@ namespace App1.Forms
                 {
                     MessageBox.Show("Bienvenido " + txtUsuario.Text, "  ", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-                    Program.usuario = txtUsuario.Text;
                     this.Hide();
+                    Program.usuario = txtUsuario.Text;
                     frmMenuPrincipal MenuPrincipal = new frmMenuPrincipal();
                     MenuPrincipal.Show();
 
@@ -93,8 +94,8 @@ namespace App1.Forms
                     {
                         MessageBox.Show("Bienvenido " + txtUsuario.Text, "  ", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
-                        Program.usuario = txtUsuario.Text;
                         this.Hide();
+                        Program.usuario = txtUsuario.Text;
                         frmMenuPrincipal MenuPrincipal = new frmMenuPrincipal();
                         MenuPrincipal.Show();
 

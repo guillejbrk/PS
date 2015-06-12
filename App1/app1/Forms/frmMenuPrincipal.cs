@@ -119,9 +119,10 @@ namespace App1.Forms
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            Size desktopSize = System.Windows.Forms.SystemInformation.PrimaryMonitorSize;
-            lblUsuario.Text = Program.usuario;
+           
             
+            lblUsuario.Text = Program.usuario;
+            Tiempo.Enabled = true;
         }
 
         private void nuevaHistoriaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -207,6 +208,7 @@ namespace App1.Forms
             t.Show();
         }
 
+ 
       
 
 

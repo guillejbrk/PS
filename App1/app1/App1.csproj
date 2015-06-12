@@ -37,10 +37,6 @@
   <PropertyGroup>
     <ApplicationIcon>ico.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup>
-    <Win32Resource>
-    </Win32Resource>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -208,6 +204,12 @@
     <Compile Include="Forms\frmFechasTurnos.Designer.cs">
       <DependentUpon>frmFechasTurnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSplashScreen.Designer.cs">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmTerapeuta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,12 +221,6 @@
     </Compile>
     <Compile Include="Forms\frmInformes.Designer.cs">
       <DependentUpon>frmInformes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\frmSplashScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frmSplashScreen.Designer.cs">
-      <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -276,14 +272,14 @@
     <EmbeddedResource Include="Forms\frmFechasTurnos.resx">
       <DependentUpon>frmFechasTurnos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSplashScreen.resx">
+      <DependentUpon>frmSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTerapeuta.resx">
       <DependentUpon>frmTerapeuta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInformes.resx">
       <DependentUpon>frmInformes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frmSplashScreen.resx">
-      <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -378,10 +374,8 @@
     <None Include="Resources\1433804663_ic_mode_edit_48px.ico" />
     <None Include="Resources\1433804667_ic_delete_48px.ico" />
     <None Include="Resources\aa.png" />
+    <None Include="Resources\3.png" />
     <Content Include="ico.ico" />
-    <None Include="Resources\cae.png" />
-    <None Include="Resources\ca2.png" />
-    <None Include="Resources\aaaaaaaaaaaaa.png" />
     <Content Include="TODO.txt" />
     <None Include="Resources\telephone_red.png" />
     <None Include="Resources\diary.png" />
