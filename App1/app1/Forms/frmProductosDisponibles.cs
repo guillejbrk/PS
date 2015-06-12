@@ -35,6 +35,7 @@ namespace App1.Forms
         
             this.dgvProductos.Columns["Costo"].DefaultCellStyle.Format = "c";
 
+
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -73,6 +74,16 @@ namespace App1.Forms
             }
 
            
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
        

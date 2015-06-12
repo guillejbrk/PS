@@ -78,7 +78,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(137, 625);
+            this.menuStrip1.Size = new System.Drawing.Size(137, 801);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -249,6 +249,7 @@
             this.tratamientosToolStripMenuItem.Name = "tratamientosToolStripMenuItem";
             this.tratamientosToolStripMenuItem.Size = new System.Drawing.Size(243, 36);
             this.tratamientosToolStripMenuItem.Text = "Tratamientos";
+            this.tratamientosToolStripMenuItem.Click += new System.EventHandler(this.tratamientosToolStripMenuItem_Click);
             // 
             // turnosToolStripMenuItem
             // 
@@ -322,7 +323,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::App1.Properties.Resources.sa;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 594);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 772);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(137, 86);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -331,11 +332,11 @@
             // 
             // frmMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1203, 705);
+            this.ClientSize = new System.Drawing.Size(1303, 881);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);

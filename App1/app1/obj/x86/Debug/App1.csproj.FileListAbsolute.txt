@@ -95,3 +95,4 @@ C:\Users\Guille\Desktop\App1\app1\obj\x86\Debug\RdlCompile.compiled
 C:\Users\Guille\Desktop\App1\app1\obj\x86\Debug\App1.Forms.frmSplashScreen.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmCargarTratamiento.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmSplashScreen.resources
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\App1\obj\x86\Debug\App1.Forms.frmAdmTratamiento2.resources

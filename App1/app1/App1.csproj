@@ -230,6 +230,9 @@
     <EmbeddedResource Include="Forms\frmAdmPaciente.resx">
       <DependentUpon>frmAdmPaciente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAdmTratamiento2.resx">
+      <DependentUpon>frmAdmTratamiento2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAgenda.resx">
       <DependentUpon>frmAgenda.cs</DependentUpon>
     </EmbeddedResource>

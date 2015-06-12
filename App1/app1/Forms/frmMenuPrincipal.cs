@@ -208,6 +208,13 @@ namespace App1.Forms
             t.Show();
         }
 
+        private void tratamientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmTratamiento2 trata = new frmAdmTratamiento2();
+            trata.MdiParent = this;
+            trata.Show();
+        }
+
  
       
 
