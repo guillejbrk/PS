@@ -67,11 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="BDConsuDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,6 +97,11 @@
     <Compile Include="Clases\Terapeuta.cs" />
     <Compile Include="Clases\Tratamiento.cs" />
     <Compile Include="Clases\Turno.cs" />
+    <Compile Include="dtsDias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsDias.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmAcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +161,12 @@
     </Compile>
     <Compile Include="Forms\frmHistorial.Designer.cs">
       <DependentUpon>frmHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInformes2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInformes2.Designer.cs">
+      <DependentUpon>frmInformes2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmLog.cs">
       <SubType>Form</SubType>
@@ -254,6 +260,9 @@
     <EmbeddedResource Include="Forms\frmHistorial.resx">
       <DependentUpon>frmHistorial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInformes2.resx">
+      <DependentUpon>frmInformes2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmLog.resx">
       <DependentUpon>frmLog.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,19 +298,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rar.rdlc" />
     <EmbeddedResource Include="Repo2.rdlc" />
-    <None Include="2.xsc">
-      <DependentUpon>2.xsd</DependentUpon>
-    </None>
-    <None Include="2.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>2.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="2.xss">
-      <DependentUpon>2.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="RepoHo.rdlc" />
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -326,6 +324,17 @@
     </None>
     <None Include="BDConsuDataSet1.xss">
       <DependentUpon>BDConsuDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dtsDias.xsc">
+      <DependentUpon>dtsDias.xsd</DependentUpon>
+    </None>
+    <None Include="dtsDias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsDias.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dtsDias.xss">
+      <DependentUpon>dtsDias.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

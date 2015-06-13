@@ -289,9 +289,6 @@ namespace App1.Forms
         private void btnImprimirTurno_Click(object sender, EventArgs e)
                             {
 
-                                 
-                                
-
                                  string textToPrint = "Su Proximo Turno: \n";
                                 for (int row = 0; row < dtgvTurnos.SelectedRows.Count; row++)
                                 {
@@ -305,9 +302,6 @@ namespace App1.Forms
 
 
                                 }
-
-
-            
 
                                 string s = textToPrint;
                                
@@ -325,8 +319,6 @@ namespace App1.Forms
                                             e1.Graphics.DrawImage(img, loc);
                                             
                                             e1.Graphics.DrawString(s, new Font("Times New Roman", 12), new SolidBrush(Color.Black), new RectangleF(0, 30, p.DefaultPageSettings.PrintableArea.Width, p.DefaultPageSettings.PrintableArea.Height));
-                                         
-
 
                                         };
                                         try

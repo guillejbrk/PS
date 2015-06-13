@@ -54,6 +54,8 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.informesTerapeutaYPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infomeDiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -276,12 +278,28 @@
             // 
             this.informesToolStripMenuItem1.BackColor = System.Drawing.Color.DarkOrange;
             this.informesToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.informesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informesTerapeutaYPacienteToolStripMenuItem,
+            this.infomeDiasToolStripMenuItem});
             this.informesToolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
             this.informesToolStripMenuItem1.Image = global::App1.Properties.Resources.Presentation_icon;
             this.informesToolStripMenuItem1.Name = "informesToolStripMenuItem1";
             this.informesToolStripMenuItem1.Size = new System.Drawing.Size(124, 34);
             this.informesToolStripMenuItem1.Text = "Informes";
-            this.informesToolStripMenuItem1.Click += new System.EventHandler(this.informesToolStripMenuItem1_Click);
+            // 
+            // informesTerapeutaYPacienteToolStripMenuItem
+            // 
+            this.informesTerapeutaYPacienteToolStripMenuItem.Name = "informesTerapeutaYPacienteToolStripMenuItem";
+            this.informesTerapeutaYPacienteToolStripMenuItem.Size = new System.Drawing.Size(285, 24);
+            this.informesTerapeutaYPacienteToolStripMenuItem.Text = "Informes Terapeuta y paciente";
+            this.informesTerapeutaYPacienteToolStripMenuItem.Click += new System.EventHandler(this.informesTerapeutaYPacienteToolStripMenuItem_Click);
+            // 
+            // infomeDiasToolStripMenuItem
+            // 
+            this.infomeDiasToolStripMenuItem.Name = "infomeDiasToolStripMenuItem";
+            this.infomeDiasToolStripMenuItem.Size = new System.Drawing.Size(285, 24);
+            this.infomeDiasToolStripMenuItem.Text = "Infome Dias";
+            this.infomeDiasToolStripMenuItem.Click += new System.EventHandler(this.infomeDiasToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -336,7 +354,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1303, 881);
+            this.ClientSize = new System.Drawing.Size(1292, 881);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -390,5 +408,7 @@
         private System.Windows.Forms.ToolStripMenuItem tratamientosToolStripMenuItem;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Timer Tiempo;
+        private System.Windows.Forms.ToolStripMenuItem informesTerapeutaYPacienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infomeDiasToolStripMenuItem;
     }
 }

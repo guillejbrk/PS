@@ -274,6 +274,7 @@ namespace App1.Clases.AccesoSQL
 
         public static List<DiasNoLaborales> ObtenerDiasNoLaboralesAño(Int64 pIdTerapeuta)
         {
+           
             List<DiasNoLaborales> _listaDiasNoLaboraleses = new List<DiasNoLaborales>();
             using (SqlConnection conexion = BDComun.obtenerConexion())
             {

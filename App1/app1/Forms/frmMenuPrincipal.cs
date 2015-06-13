@@ -201,18 +201,26 @@ namespace App1.Forms
 
      
 
-        private void informesToolStripMenuItem1_Click(object sender, EventArgs e)
+      
+        private void tratamientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAdmTratamiento2 trata = new frmAdmTratamiento2();
+            trata.MdiParent = this;
+            trata.Show();
+        }
+
+        private void informesTerapeutaYPacienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmInformes t = new frmInformes();
             t.MdiParent = this;
             t.Show();
         }
 
-        private void tratamientosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void infomeDiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAdmTratamiento2 trata = new frmAdmTratamiento2();
-            trata.MdiParent = this;
-            trata.Show();
+            frmInformes2 tf = new frmInformes2();
+            tf.MdiParent = this;
+            tf.Show();
         }
 
  

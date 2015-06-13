@@ -24,7 +24,9 @@ namespace App1.Forms
             cboTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeuta();
             cboTerapeuta.DisplayMember = "Apellido";
             cboTerapeuta.ValueMember = "Id";
-
+            dgvProductos.DataSource = ProductosDAL.ObtenerProductoss(((Terapeuta)cboTerapeuta.SelectedItem).Id);
+            dgvProductos.Columns["id_Terapeuta"].Visible = false;
+            dgvProductos.Columns["Costo"].DefaultCellStyle.Format = "c";
         }
 
         private void cboTerapeuta_SelectedIndexChanged(object sender, EventArgs e)
@@ -32,9 +34,19 @@ namespace App1.Forms
 
             dgvProductos.DataSource = ProductosDAL.ObtenerProductoss(((Terapeuta)cboTerapeuta.SelectedItem).Id);
             dgvProductos.Columns["id_Terapeuta"].Visible = false;
-        
-            this.dgvProductos.Columns["Costo"].DefaultCellStyle.Format = "c";
+           dgvProductos.Columns["Costo"].DefaultCellStyle.Format = "c";
+            decimal costoTotal = 0;
+            for (int row = 0; row < dgvProductos.Rows.Count; row++)
+            {
 
+
+            decimal costo = decimal.Parse(dgvProductos.Rows[row].Cells[2].Value.ToString());
+           Int64 cantidad = Int64.Parse(dgvProductos.Rows[row].Cells[3].Value.ToString());
+           costoTotal = costoTotal + costo * cantidad;
+
+
+            }
+            label1.Text = "$"+ costoTotal.ToString();
 
         }
 
