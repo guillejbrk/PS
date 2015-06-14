@@ -111,6 +111,7 @@ namespace App1.Forms
                     frmProductosDisponibles pPDIS = new frmProductosDisponibles();
                   pPDIS.Visible=true;
                   this.Close();
+                  
                     limpiar();
 
                 }
@@ -129,7 +130,7 @@ namespace App1.Forms
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
 
         }
 

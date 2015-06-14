@@ -76,11 +76,14 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnLogin.Location = new System.Drawing.Point(340, 123);
+            this.btnLogin.Image = global::App1.Properties.Resources._1434261143_ic_send_48px;
+            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogin.Location = new System.Drawing.Point(343, 122);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(87, 30);
+            this.btnLogin.Size = new System.Drawing.Size(93, 30);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Entrar";
+            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -93,7 +96,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(175, 22);
             this.txtUsuario.TabIndex = 1;
-
             // 
             // txtPass
             // 
@@ -105,7 +107,6 @@
             this.txtPass.Size = new System.Drawing.Size(175, 22);
             this.txtPass.TabIndex = 2;
             this.txtPass.UseSystemPasswordChar = true;
-
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // label2
@@ -120,7 +121,6 @@
             this.label2.Size = new System.Drawing.Size(101, 21);
             this.label2.TabIndex = 11;
             this.label2.Text = "Contraseña";
-       
             // 
             // label1
             // 
@@ -134,7 +134,6 @@
             this.label1.Size = new System.Drawing.Size(70, 21);
             this.label1.TabIndex = 10;
             this.label1.Text = "Usuario";
-         
             // 
             // label3
             // 
@@ -147,7 +146,6 @@
             this.label3.Size = new System.Drawing.Size(138, 26);
             this.label3.TabIndex = 15;
             this.label3.Text = "Iniciar Sesion";
-       
             // 
             // linkLabel1
             // 
@@ -183,7 +181,6 @@
             this.Name = "frmLog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLog";
-      
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

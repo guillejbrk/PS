@@ -55,7 +55,6 @@
             this.agendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.informesTerapeutaYPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.infomeDiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,7 +108,7 @@
             // 
             this.cargarTurnoToolStripMenuItem.Image = global::App1.Properties.Resources.blocnote;
             this.cargarTurnoToolStripMenuItem.Name = "cargarTurnoToolStripMenuItem";
-            this.cargarTurnoToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.cargarTurnoToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.cargarTurnoToolStripMenuItem.Text = "Nuevo Turno";
             this.cargarTurnoToolStripMenuItem.Click += new System.EventHandler(this.cargarTurnoToolStripMenuItem_Click);
             // 
@@ -117,20 +116,20 @@
             // 
             this.cargarHistoriaToolStripMenuItem.Image = global::App1.Properties.Resources.diary_128;
             this.cargarHistoriaToolStripMenuItem.Name = "cargarHistoriaToolStripMenuItem";
-            this.cargarHistoriaToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.cargarHistoriaToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.cargarHistoriaToolStripMenuItem.Text = "Nueva Historia";
             this.cargarHistoriaToolStripMenuItem.Click += new System.EventHandler(this.cargarHistoriaToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(217, 6);
             // 
             // buscarPacienteToolStripMenuItem
             // 
             this.buscarPacienteToolStripMenuItem.Image = global::App1.Properties.Resources.male_user_search;
             this.buscarPacienteToolStripMenuItem.Name = "buscarPacienteToolStripMenuItem";
-            this.buscarPacienteToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.buscarPacienteToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.buscarPacienteToolStripMenuItem.Text = "Buscar Paciente";
             this.buscarPacienteToolStripMenuItem.Click += new System.EventHandler(this.buscarPacienteToolStripMenuItem_Click);
             // 
@@ -139,33 +138,33 @@
             this.buscarHistorialToolStripMenuItem.Image = global::App1.Properties.Resources.book3;
             this.buscarHistorialToolStripMenuItem.Name = "buscarHistorialToolStripMenuItem";
             this.buscarHistorialToolStripMenuItem.ShowShortcutKeys = false;
-            this.buscarHistorialToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.buscarHistorialToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.buscarHistorialToolStripMenuItem.Text = "Buscar Historial";
             this.buscarHistorialToolStripMenuItem.Click += new System.EventHandler(this.buscarHistorialToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(217, 6);
             // 
             // agendaTelefonicaToolStripMenuItem
             // 
             this.agendaTelefonicaToolStripMenuItem.Image = global::App1.Properties.Resources.telephone_red;
             this.agendaTelefonicaToolStripMenuItem.Name = "agendaTelefonicaToolStripMenuItem";
-            this.agendaTelefonicaToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.agendaTelefonicaToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.agendaTelefonicaToolStripMenuItem.Text = "Agenda Telefonica";
             this.agendaTelefonicaToolStripMenuItem.Click += new System.EventHandler(this.agendaTelefonicaToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(203, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Image = global::App1.Properties.Resources.deletered;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(220, 36);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -279,8 +278,7 @@
             this.informesToolStripMenuItem1.BackColor = System.Drawing.Color.DarkOrange;
             this.informesToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.informesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.informesTerapeutaYPacienteToolStripMenuItem,
-            this.infomeDiasToolStripMenuItem});
+            this.informesTerapeutaYPacienteToolStripMenuItem});
             this.informesToolStripMenuItem1.ForeColor = System.Drawing.Color.Black;
             this.informesToolStripMenuItem1.Image = global::App1.Properties.Resources.Presentation_icon;
             this.informesToolStripMenuItem1.Name = "informesToolStripMenuItem1";
@@ -289,17 +287,11 @@
             // 
             // informesTerapeutaYPacienteToolStripMenuItem
             // 
+            this.informesTerapeutaYPacienteToolStripMenuItem.Image = global::App1.Properties.Resources.Presentation_icon;
             this.informesTerapeutaYPacienteToolStripMenuItem.Name = "informesTerapeutaYPacienteToolStripMenuItem";
-            this.informesTerapeutaYPacienteToolStripMenuItem.Size = new System.Drawing.Size(285, 24);
-            this.informesTerapeutaYPacienteToolStripMenuItem.Text = "Informes Terapeuta y paciente";
+            this.informesTerapeutaYPacienteToolStripMenuItem.Size = new System.Drawing.Size(166, 36);
+            this.informesTerapeutaYPacienteToolStripMenuItem.Text = "Informes ";
             this.informesTerapeutaYPacienteToolStripMenuItem.Click += new System.EventHandler(this.informesTerapeutaYPacienteToolStripMenuItem_Click);
-            // 
-            // infomeDiasToolStripMenuItem
-            // 
-            this.infomeDiasToolStripMenuItem.Name = "infomeDiasToolStripMenuItem";
-            this.infomeDiasToolStripMenuItem.Size = new System.Drawing.Size(285, 24);
-            this.infomeDiasToolStripMenuItem.Text = "Infome Dias";
-            this.infomeDiasToolStripMenuItem.Click += new System.EventHandler(this.infomeDiasToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -331,10 +323,10 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(152, 27);
+            this.lblUsuario.Font = new System.Drawing.Font("Minion Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(158, 26);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(79, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(92, 26);
             this.lblUsuario.TabIndex = 4;
             this.lblUsuario.Text = "lblUsuario";
             // 
@@ -409,6 +401,5 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Timer Tiempo;
         private System.Windows.Forms.ToolStripMenuItem informesTerapeutaYPacienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem infomeDiasToolStripMenuItem;
     }
 }

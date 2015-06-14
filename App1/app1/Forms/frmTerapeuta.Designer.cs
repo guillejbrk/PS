@@ -52,6 +52,7 @@
             this.txtPass = new MetroFramework.Controls.MetroTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNuevosTurnos = new System.Windows.Forms.Button();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
@@ -87,11 +88,11 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.dtgvTerapeuta = new MetroFramework.Controls.MetroGrid();
             this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sdf.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel8.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -102,7 +103,6 @@
             this.metroTabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTerapeuta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sdf
@@ -168,11 +168,14 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(153, 294);
+            this.btnUpdate.Image = global::App1.Properties.Resources._1434259696_ic_refresh_48px;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(122, 290);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(85, 27);
             this.btnUpdate.TabIndex = 24;
             this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -343,11 +346,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(241, 290);
+            this.button1.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(213, 290);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 29);
+            this.button1.Size = new System.Drawing.Size(92, 29);
             this.button1.TabIndex = 7;
             this.button1.Text = "Cargar ";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -371,6 +377,17 @@
             this.metroTabPage2.VerticalScrollbarSize = 10;
             this.metroTabPage2.Click += new System.EventHandler(this.metroTabPage2_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::App1.Properties.Resources.address_book;
+            this.pictureBox1.Location = new System.Drawing.Point(429, 245);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(312, 205);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnNuevosTurnos
             // 
             this.btnNuevosTurnos.BackColor = System.Drawing.Color.DarkOrange;
@@ -378,12 +395,14 @@
             this.btnNuevosTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevosTurnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevosTurnos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNuevosTurnos.Image = global::App1.Properties.Resources._1433804360_ic_expand_more_48px;
             this.btnNuevosTurnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevosTurnos.Location = new System.Drawing.Point(615, 207);
+            this.btnNuevosTurnos.Location = new System.Drawing.Point(598, 207);
             this.btnNuevosTurnos.Name = "btnNuevosTurnos";
-            this.btnNuevosTurnos.Size = new System.Drawing.Size(126, 35);
+            this.btnNuevosTurnos.Size = new System.Drawing.Size(143, 35);
             this.btnNuevosTurnos.TabIndex = 45;
             this.btnNuevosTurnos.Text = "Generar Turnos ";
+            this.btnNuevosTurnos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevosTurnos.UseVisualStyleBackColor = false;
             this.btnNuevosTurnos.Click += new System.EventHandler(this.btnNuevosTurnos_Click);
             // 
@@ -444,7 +463,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnEliminar.Location = new System.Drawing.Point(286, 77);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
@@ -595,11 +614,14 @@
             this.btnCargarNoLab.BackColor = System.Drawing.Color.DarkOrange;
             this.btnCargarNoLab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarNoLab.ForeColor = System.Drawing.Color.White;
+            this.btnCargarNoLab.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnCargarNoLab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCargarNoLab.Location = new System.Drawing.Point(261, 13);
             this.btnCargarNoLab.Name = "btnCargarNoLab";
             this.btnCargarNoLab.Size = new System.Drawing.Size(75, 23);
             this.btnCargarNoLab.TabIndex = 40;
             this.btnCargarNoLab.Text = "Cargar";
+            this.btnCargarNoLab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCargarNoLab.UseVisualStyleBackColor = false;
             this.btnCargarNoLab.Click += new System.EventHandler(this.btnCargarNoLab_Click);
             // 
@@ -637,11 +659,14 @@
             this.btnEliminarDiaNoLaboral.BackColor = System.Drawing.Color.Gainsboro;
             this.btnEliminarDiaNoLaboral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarDiaNoLaboral.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(292, 204);
+            this.btnEliminarDiaNoLaboral.Image = global::App1.Properties.Resources._1433804667_ic_delete_48px;
+            this.btnEliminarDiaNoLaboral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(292, 199);
             this.btnEliminarDiaNoLaboral.Name = "btnEliminarDiaNoLaboral";
-            this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(75, 28);
             this.btnEliminarDiaNoLaboral.TabIndex = 43;
             this.btnEliminarDiaNoLaboral.Text = "Quitar";
+            this.btnEliminarDiaNoLaboral.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminarDiaNoLaboral.UseVisualStyleBackColor = false;
             this.btnEliminarDiaNoLaboral.Click += new System.EventHandler(this.btnEliminarDiaNoLaboral_Click);
             // 
@@ -771,11 +796,14 @@
             this.btnModificar.BackColor = System.Drawing.Color.DarkOrange;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificar.Location = new System.Drawing.Point(378, 175);
+            this.btnModificar.Image = global::App1.Properties.Resources._1433804663_ic_mode_edit_48px;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(366, 175);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(87, 23);
             this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -836,17 +864,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::App1.Properties.Resources.address_book;
-            this.pictureBox1.Location = new System.Drawing.Point(429, 245);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(312, 205);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmTerapeuta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,6 +880,7 @@
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroPanel8.ResumeLayout(false);
             this.metroPanel8.PerformLayout();
             this.metroPanel4.ResumeLayout(false);
@@ -877,7 +895,6 @@
             this.metroTabPage3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTerapeuta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -50,6 +50,7 @@
             this.dtDiasNoLaborables = new MetroFramework.Controls.MetroDateTime();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.btnEliminarDiaNoLaboral = new System.Windows.Forms.Button();
             this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel6 = new MetroFramework.Controls.MetroPanel();
             this.rbtAño = new MetroFramework.Controls.MetroRadioButton();
@@ -60,7 +61,6 @@
             this.cbmTera = new MetroFramework.Controls.MetroComboBox();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEliminarDiaNoLaboral = new System.Windows.Forms.Button();
             this.metroPanel8.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -82,6 +82,7 @@
             // metroPanel8
             // 
             this.metroPanel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel8.Controls.Add(this.btnGenerar);
             this.metroPanel8.Controls.Add(this.metroLabel5);
             this.metroPanel8.Controls.Add(this.metroLabel4);
             this.metroPanel8.Controls.Add(this.metroPanel4);
@@ -89,7 +90,7 @@
             this.metroPanel8.HorizontalScrollbarBarColor = true;
             this.metroPanel8.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel8.HorizontalScrollbarSize = 10;
-            this.metroPanel8.Location = new System.Drawing.Point(35, 63);
+            this.metroPanel8.Location = new System.Drawing.Point(30, 63);
             this.metroPanel8.Name = "metroPanel8";
             this.metroPanel8.Size = new System.Drawing.Size(751, 159);
             this.metroPanel8.TabIndex = 47;
@@ -282,12 +283,15 @@
             // 
             // btnCargarDIASNOLAB
             // 
+            this.btnCargarDIASNOLAB.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCargarDIASNOLAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarDIASNOLAB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCargarDIASNOLAB.Location = new System.Drawing.Point(259, 16);
             this.btnCargarDIASNOLAB.Name = "btnCargarDIASNOLAB";
             this.btnCargarDIASNOLAB.Size = new System.Drawing.Size(75, 23);
             this.btnCargarDIASNOLAB.TabIndex = 40;
             this.btnCargarDIASNOLAB.Text = "Cargar";
-            this.btnCargarDIASNOLAB.UseVisualStyleBackColor = true;
+            this.btnCargarDIASNOLAB.UseVisualStyleBackColor = false;
             this.btnCargarDIASNOLAB.Click += new System.EventHandler(this.btnCargarDIASNOLAB_Click);
             // 
             // dtDiasNoLaborables
@@ -310,9 +314,9 @@
             this.metroPanel7.HorizontalScrollbarBarColor = true;
             this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel7.HorizontalScrollbarSize = 10;
-            this.metroPanel7.Location = new System.Drawing.Point(35, 247);
+            this.metroPanel7.Location = new System.Drawing.Point(30, 228);
             this.metroPanel7.Name = "metroPanel7";
-            this.metroPanel7.Size = new System.Drawing.Size(386, 225);
+            this.metroPanel7.Size = new System.Drawing.Size(403, 207);
             this.metroPanel7.TabIndex = 46;
             this.metroPanel7.VerticalScrollbarBarColor = true;
             this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
@@ -321,11 +325,25 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(6, 5);
+            this.metroLabel3.Location = new System.Drawing.Point(3, 5);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(115, 19);
             this.metroLabel3.TabIndex = 42;
             this.metroLabel3.Text = "Dias No Laborales";
+            // 
+            // btnEliminarDiaNoLaboral
+            // 
+            this.btnEliminarDiaNoLaboral.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarDiaNoLaboral.Image = global::App1.Properties.Resources._1433804667_ic_delete_48px;
+            this.btnEliminarDiaNoLaboral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(318, 167);
+            this.btnEliminarDiaNoLaboral.Name = "btnEliminarDiaNoLaboral";
+            this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(80, 35);
+            this.btnEliminarDiaNoLaboral.TabIndex = 43;
+            this.btnEliminarDiaNoLaboral.Text = "Quitar";
+            this.btnEliminarDiaNoLaboral.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminarDiaNoLaboral.UseVisualStyleBackColor = true;
+            this.btnEliminarDiaNoLaboral.Click += new System.EventHandler(this.btnEliminarDiaNoLaboral_Click_1);
             // 
             // metroPanel5
             // 
@@ -334,9 +352,9 @@
             this.metroPanel5.HorizontalScrollbarBarColor = true;
             this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel5.HorizontalScrollbarSize = 10;
-            this.metroPanel5.Location = new System.Drawing.Point(75, 36);
+            this.metroPanel5.Location = new System.Drawing.Point(15, 27);
             this.metroPanel5.Name = "metroPanel5";
-            this.metroPanel5.Size = new System.Drawing.Size(234, 138);
+            this.metroPanel5.Size = new System.Drawing.Size(238, 170);
             this.metroPanel5.TabIndex = 36;
             this.metroPanel5.VerticalScrollbarBarColor = true;
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
@@ -353,7 +371,7 @@
             this.metroPanel6.HorizontalScrollbarSize = 10;
             this.metroPanel6.Location = new System.Drawing.Point(3, 3);
             this.metroPanel6.Name = "metroPanel6";
-            this.metroPanel6.Size = new System.Drawing.Size(226, 39);
+            this.metroPanel6.Size = new System.Drawing.Size(231, 39);
             this.metroPanel6.TabIndex = 44;
             this.metroPanel6.VerticalScrollbarBarColor = true;
             this.metroPanel6.VerticalScrollbarHighlightOnWheel = false;
@@ -396,9 +414,9 @@
             this.lstNoLaboralesSemana.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstNoLaboralesSemana.FormattingEnabled = true;
             this.lstNoLaboralesSemana.ItemHeight = 16;
-            this.lstNoLaboralesSemana.Location = new System.Drawing.Point(35, 48);
+            this.lstNoLaboralesSemana.Location = new System.Drawing.Point(18, 48);
             this.lstNoLaboralesSemana.Name = "lstNoLaboralesSemana";
-            this.lstNoLaboralesSemana.Size = new System.Drawing.Size(147, 18);
+            this.lstNoLaboralesSemana.Size = new System.Drawing.Size(198, 114);
             this.lstNoLaboralesSemana.TabIndex = 35;
             // 
             // cboTerapeuta
@@ -415,7 +433,7 @@
             // 
             this.cbmTera.FormattingEnabled = true;
             this.cbmTera.ItemHeight = 23;
-            this.cbmTera.Location = new System.Drawing.Point(123, 28);
+            this.cbmTera.Location = new System.Drawing.Point(113, 24);
             this.cbmTera.Name = "cbmTera";
             this.cbmTera.Size = new System.Drawing.Size(163, 29);
             this.cbmTera.Style = MetroFramework.MetroColorStyle.Orange;
@@ -431,7 +449,7 @@
             this.btnGenerar.ForeColor = System.Drawing.Color.White;
             this.btnGenerar.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
             this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerar.Location = new System.Drawing.Point(635, 228);
+            this.btnGenerar.Location = new System.Drawing.Point(579, 114);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(151, 32);
             this.btnGenerar.TabIndex = 50;
@@ -443,35 +461,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::App1.Properties.Resources.address_book;
-            this.pictureBox1.Location = new System.Drawing.Point(459, 266);
+            this.pictureBox1.Location = new System.Drawing.Point(435, 228);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(327, 200);
+            this.pictureBox1.Size = new System.Drawing.Size(346, 207);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 51;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnEliminarDiaNoLaboral
-            // 
-            this.btnEliminarDiaNoLaboral.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarDiaNoLaboral.Image = global::App1.Properties.Resources._1433804667_ic_delete_48px;
-            this.btnEliminarDiaNoLaboral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(287, 180);
-            this.btnEliminarDiaNoLaboral.Name = "btnEliminarDiaNoLaboral";
-            this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(80, 35);
-            this.btnEliminarDiaNoLaboral.TabIndex = 43;
-            this.btnEliminarDiaNoLaboral.Text = "Quitar";
-            this.btnEliminarDiaNoLaboral.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminarDiaNoLaboral.UseVisualStyleBackColor = true;
-            this.btnEliminarDiaNoLaboral.Click += new System.EventHandler(this.btnEliminarDiaNoLaboral_Click_1);
             // 
             // frmAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 500);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnGenerar);
+            this.ClientSize = new System.Drawing.Size(831, 440);
             this.Controls.Add(this.cbmTera);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroPanel8);
             this.Controls.Add(this.metroPanel7);
             this.Controls.Add(this.cboTerapeuta);

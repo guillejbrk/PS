@@ -79,5 +79,12 @@ namespace App1.Forms
             }
                   
         }
+
+        private void brnNuevo_Click(object sender, EventArgs e)
+        {
+            frmCargarTratamiento caTtra = new frmCargarTratamiento();
+            caTtra.Show();
+            this.Close();
+        }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button3 = new System.Windows.Forms.Button();
             this.btnCargarTratamiento = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,7 +40,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgvTrtamiento = new MetroFramework.Controls.MetroGrid();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.btnQuitar = new System.Windows.Forms.Button();
             this.cbmProducto = new MetroFramework.Controls.MetroComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -52,14 +51,16 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkOrange;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(599, 289);
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(624, 267);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(62, 23);
+            this.button3.Size = new System.Drawing.Size(71, 26);
             this.button3.TabIndex = 16;
             this.button3.Text = "Cerrar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -113,10 +114,9 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.dtgvTrtamiento);
             this.panel1.Controls.Add(this.metroPanel1);
-            this.panel1.Controls.Add(this.btnQuitar);
             this.panel1.Location = new System.Drawing.Point(34, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(530, 249);
+            this.panel1.Size = new System.Drawing.Size(530, 230);
             this.panel1.TabIndex = 18;
             // 
             // dtgvTrtamiento
@@ -128,39 +128,39 @@
             this.dtgvTrtamiento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvTrtamiento.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgvTrtamiento.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTrtamiento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTrtamiento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvTrtamiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = null;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvTrtamiento.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTrtamiento.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvTrtamiento.EnableHeadersVisualStyles = false;
             this.dtgvTrtamiento.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dtgvTrtamiento.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dtgvTrtamiento.Location = new System.Drawing.Point(7, 116);
             this.dtgvTrtamiento.Name = "dtgvTrtamiento";
             this.dtgvTrtamiento.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTrtamiento.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTrtamiento.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvTrtamiento.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvTrtamiento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvTrtamiento.Size = new System.Drawing.Size(491, 87);
@@ -187,19 +187,6 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // btnQuitar
-            // 
-            this.btnQuitar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitar.ForeColor = System.Drawing.Color.White;
-            this.btnQuitar.Location = new System.Drawing.Point(436, 209);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(62, 23);
-            this.btnQuitar.TabIndex = 19;
-            this.btnQuitar.Text = "Quitar";
-            this.btnQuitar.UseVisualStyleBackColor = false;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
-            // 
             // cbmProducto
             // 
             this.cbmProducto.FormattingEnabled = true;
@@ -222,23 +209,23 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::App1.Properties.Resources.checklist;
-            this.pictureBox1.Location = new System.Drawing.Point(570, 115);
+            this.pictureBox1.Location = new System.Drawing.Point(570, 94);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(125, 150);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // frmAdmTratamiento
+            // frmCargarTratamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(698, 332);
+            this.ClientSize = new System.Drawing.Size(698, 299);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
-            this.Name = "frmAdmTratamiento";
+            this.Name = "frmCargarTratamiento";
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Administrar Tratamiento";
+            this.Text = "Cargar Tratamiento";
             this.Load += new System.EventHandler(this.frmAdmTratamiento_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTrtamiento)).EndInit();
@@ -262,7 +249,6 @@
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroComboBox cbmProducto;
         private MetroFramework.Controls.MetroGrid dtgvTrtamiento;
-        private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.PictureBox pictureBox1;
 
     }

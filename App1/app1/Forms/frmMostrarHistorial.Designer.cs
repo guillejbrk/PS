@@ -55,7 +55,7 @@
             // 
             this.cboFecha.FormattingEnabled = true;
             this.cboFecha.ItemHeight = 23;
-            this.cboFecha.Location = new System.Drawing.Point(301, 12);
+            this.cboFecha.Location = new System.Drawing.Point(338, 12);
             this.cboFecha.Name = "cboFecha";
             this.cboFecha.Size = new System.Drawing.Size(169, 29);
             this.cboFecha.TabIndex = 1;
@@ -67,7 +67,7 @@
             this.txtObservacion.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtObservacion.FontWeight = MetroFramework.MetroTextBoxWeight.Light;
             this.txtObservacion.Lines = new string[0];
-            this.txtObservacion.Location = new System.Drawing.Point(23, 129);
+            this.txtObservacion.Location = new System.Drawing.Point(13, 123);
             this.txtObservacion.MaxLength = 32767;
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
@@ -75,7 +75,7 @@
             this.txtObservacion.ReadOnly = true;
             this.txtObservacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtObservacion.SelectedText = "";
-            this.txtObservacion.Size = new System.Drawing.Size(320, 169);
+            this.txtObservacion.Size = new System.Drawing.Size(320, 178);
             this.txtObservacion.Style = MetroFramework.MetroColorStyle.Orange;
             this.txtObservacion.TabIndex = 2;
             this.txtObservacion.UseSelectable = true;
@@ -92,7 +92,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(252, 15);
+            this.metroLabel2.Location = new System.Drawing.Point(289, 15);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(46, 19);
             this.metroLabel2.TabIndex = 4;
@@ -101,7 +101,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::App1.Properties.Resources.book3;
-            this.pictureBox1.Location = new System.Drawing.Point(359, 122);
+            this.pictureBox1.Location = new System.Drawing.Point(339, 122);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(237, 179);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -110,13 +110,16 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCerrar.BackColor = System.Drawing.Color.LightGray;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Location = new System.Drawing.Point(521, 285);
+            this.btnCerrar.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(501, 278);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -129,14 +132,14 @@
             this.panel1.Controls.Add(this.cboPaciente);
             this.panel1.Location = new System.Drawing.Point(13, 56);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 58);
+            this.panel1.Size = new System.Drawing.Size(527, 58);
             this.panel1.TabIndex = 7;
             // 
             // frmMostrarHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 318);
+            this.ClientSize = new System.Drawing.Size(589, 310);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtObservacion);

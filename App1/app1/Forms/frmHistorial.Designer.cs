@@ -57,7 +57,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(24, 63);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(403, 258);
+            this.metroPanel1.Size = new System.Drawing.Size(384, 242);
             this.metroPanel1.TabIndex = 3;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -105,13 +105,13 @@
             this.cboCliente.ItemHeight = 23;
             this.cboCliente.Location = new System.Drawing.Point(92, 3);
             this.cboCliente.Name = "cboCliente";
-            this.cboCliente.Size = new System.Drawing.Size(121, 29);
+            this.cboCliente.Size = new System.Drawing.Size(179, 29);
             this.cboCliente.TabIndex = 15;
             this.cboCliente.UseSelectable = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 88);
+            this.textBox1.Location = new System.Drawing.Point(89, 90);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -124,11 +124,14 @@
             this.btnCargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCargar.Location = new System.Drawing.Point(285, 217);
+            this.btnCargar.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargar.Location = new System.Drawing.Point(291, 210);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(82, 27);
+            this.btnCargar.Size = new System.Drawing.Size(76, 27);
             this.btnCargar.TabIndex = 8;
             this.btnCargar.Text = "Cargar";
+            this.btnCargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click_1);
             // 
@@ -137,23 +140,25 @@
             this.pictureBox1.Image = global::App1.Properties.Resources.book3;
             this.pictureBox1.Location = new System.Drawing.Point(433, 63);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(292, 258);
+            this.pictureBox1.Size = new System.Drawing.Size(267, 228);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(651, 315);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(626, 297);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 27);
+            this.button1.Size = new System.Drawing.Size(74, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Cerrar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -161,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 344);
+            this.ClientSize = new System.Drawing.Size(707, 328);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroPanel1);
@@ -173,7 +178,6 @@
             this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -388,6 +388,8 @@
     <None Include="Resources\aa.png" />
     <None Include="Resources\3.png" />
     <Content Include="ico.ico" />
+    <None Include="Resources\1434259696_ic_refresh_48px.ico" />
+    <None Include="Resources\1434261143_ic_send_48px.ico" />
     <Content Include="TODO.txt" />
     <None Include="Resources\telephone_red.png" />
     <None Include="Resources\diary.png" />

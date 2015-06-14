@@ -40,7 +40,9 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -59,9 +61,9 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(23, 63);
+            this.metroPanel1.Location = new System.Drawing.Point(26, 62);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(393, 183);
+            this.metroPanel1.Size = new System.Drawing.Size(366, 154);
             this.metroPanel1.TabIndex = 3;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -70,7 +72,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(236, 82);
+            this.metroLabel5.Location = new System.Drawing.Point(156, 83);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(16, 19);
             this.metroLabel5.TabIndex = 25;
@@ -118,7 +120,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(12, 121);
+            this.metroLabel4.Location = new System.Drawing.Point(14, 121);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(69, 19);
             this.metroLabel4.TabIndex = 21;
@@ -127,7 +129,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(12, 82);
+            this.metroLabel3.Location = new System.Drawing.Point(35, 86);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(46, 19);
             this.metroLabel3.TabIndex = 20;
@@ -136,7 +138,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(12, 47);
+            this.metroLabel2.Location = new System.Drawing.Point(20, 47);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(65, 19);
             this.metroLabel2.TabIndex = 19;
@@ -145,7 +147,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(12, 9);
+            this.metroLabel1.Location = new System.Drawing.Point(20, 9);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(66, 19);
             this.metroLabel1.TabIndex = 18;
@@ -157,11 +159,14 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(309, 148);
+            this.btnNuevo.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(266, 121);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(77, 28);
+            this.btnNuevo.Size = new System.Drawing.Size(89, 28);
             this.btnNuevo.TabIndex = 17;
             this.btnNuevo.Text = "Cargar";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -177,23 +182,36 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCerrar.BackColor = System.Drawing.Color.Gainsboro;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(422, 218);
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.Black;
+            this.btnCerrar.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(459, 201);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(77, 28);
+            this.btnCerrar.Size = new System.Drawing.Size(78, 23);
             this.btnCerrar.TabIndex = 25;
             this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::App1.Properties.Resources.shopping_cart_add;
+            this.pictureBox1.Location = new System.Drawing.Point(406, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(131, 133);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
             // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 256);
+            this.ClientSize = new System.Drawing.Size(546, 230);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.metroPanel1);
             this.Name = "frmProductos";
@@ -203,6 +221,7 @@
             this.Load += new System.EventHandler(this.frmProductos_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,6 +240,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.Button btnCerrar;
         private MetroFramework.Controls.MetroLabel metroLabel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
 
 

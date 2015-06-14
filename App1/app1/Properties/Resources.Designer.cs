@@ -123,6 +123,26 @@ namespace App1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1434259696_ic_refresh_48px {
+            get {
+                object obj = ResourceManager.GetObject("1434259696_ic_refresh_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1434261143_ic_send_48px {
+            get {
+                object obj = ResourceManager.GetObject("1434261143_ic_send_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3 {
             get {
                 object obj = ResourceManager.GetObject("3", resourceCulture);

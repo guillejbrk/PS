@@ -36,8 +36,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(300, 300);
+            this.ClientSize = new System.Drawing.Size(579, 284);
             this.Name = "frmAyuda";
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "frmAyuda";
             this.ResumeLayout(false);
 

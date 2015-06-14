@@ -33,7 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbPaciente = new System.Windows.Forms.ComboBox();
             this.dtgvTurnosPaciente = new MetroFramework.Controls.MetroGrid();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTurnosPaciente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbPaciente
@@ -41,7 +43,7 @@
             this.cmbPaciente.FormattingEnabled = true;
             this.cmbPaciente.Location = new System.Drawing.Point(14, 63);
             this.cmbPaciente.Name = "cmbPaciente";
-            this.cmbPaciente.Size = new System.Drawing.Size(121, 21);
+            this.cmbPaciente.Size = new System.Drawing.Size(153, 21);
             this.cmbPaciente.TabIndex = 0;
             this.cmbPaciente.SelectedIndexChanged += new System.EventHandler(this.cmbPaciente_SelectedIndexChanged);
             // 
@@ -49,6 +51,7 @@
             // 
             this.dtgvTurnosPaciente.AllowUserToResizeRows = false;
             this.dtgvTurnosPaciente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgvTurnosPaciente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvTurnosPaciente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dtgvTurnosPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvTurnosPaciente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -86,15 +89,26 @@
             this.dtgvTurnosPaciente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvTurnosPaciente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvTurnosPaciente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvTurnosPaciente.Size = new System.Drawing.Size(458, 150);
+            this.dtgvTurnosPaciente.Size = new System.Drawing.Size(356, 150);
             this.dtgvTurnosPaciente.Style = MetroFramework.MetroColorStyle.Orange;
             this.dtgvTurnosPaciente.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::App1.Properties.Resources.blocnote;
+            this.pictureBox1.Location = new System.Drawing.Point(376, 90);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(159, 152);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // frmPacienteTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 261);
+            this.ClientSize = new System.Drawing.Size(552, 247);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dtgvTurnosPaciente);
             this.Controls.Add(this.cmbPaciente);
             this.Name = "frmPacienteTurnos";
@@ -102,6 +116,7 @@
             this.Text = "Historial de Turnos por Paciente";
             this.Load += new System.EventHandler(this.frmPacienteTurnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTurnosPaciente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -110,5 +125,6 @@
 
         private System.Windows.Forms.ComboBox cmbPaciente;
         private MetroFramework.Controls.MetroGrid dtgvTurnosPaciente;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

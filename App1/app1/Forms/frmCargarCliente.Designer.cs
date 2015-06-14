@@ -42,10 +42,8 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.btnACtualizar = new System.Windows.Forms.Button();
             this.txtDomi = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtCel = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
@@ -58,6 +56,8 @@
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnACtualizar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -127,9 +127,9 @@
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.Location = new System.Drawing.Point(6, 209);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(51, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(54, 19);
             this.metroLabel8.TabIndex = 54;
-            this.metroLabel8.Text = "Correo";
+            this.metroLabel8.Text = "Correo:";
             // 
             // metroLabel7
             // 
@@ -138,7 +138,7 @@
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(84, 19);
             this.metroLabel7.TabIndex = 53;
-            this.metroLabel7.Text = "Numero Cel.";
+            this.metroLabel7.Text = "Numero Cel:";
             // 
             // metroLabel6
             // 
@@ -147,16 +147,16 @@
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(80, 19);
             this.metroLabel6.TabIndex = 52;
-            this.metroLabel6.Text = "Numero Tel.";
+            this.metroLabel6.Text = "Numero Tel:";
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Location = new System.Drawing.Point(6, 131);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(64, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(67, 19);
             this.metroLabel5.TabIndex = 51;
-            this.metroLabel5.Text = "Domicilio";
+            this.metroLabel5.Text = "Domicilio:";
             // 
             // metroLabel4
             // 
@@ -165,50 +165,34 @@
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(92, 19);
             this.metroLabel4.TabIndex = 50;
-            this.metroLabel4.Text = "Fecha de Nac.";
+            this.metroLabel4.Text = "Fecha de Nac:";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(6, 81);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(42, 19);
             this.metroLabel3.TabIndex = 49;
-            this.metroLabel3.Text = "Edad";
+            this.metroLabel3.Text = "Edad:";
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(6, 56);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(59, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(62, 19);
             this.metroLabel2.TabIndex = 48;
-            this.metroLabel2.Text = "Nombre";
+            this.metroLabel2.Text = "Nombre:";
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(6, 30);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(58, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(61, 19);
             this.metroLabel1.TabIndex = 47;
-            this.metroLabel1.Text = "Apellido";
-            // 
-            // btnACtualizar
-            // 
-            this.btnACtualizar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnACtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnACtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnACtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnACtualizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnACtualizar.ImageKey = "(none)";
-            this.btnACtualizar.Location = new System.Drawing.Point(194, 251);
-            this.btnACtualizar.Name = "btnACtualizar";
-            this.btnACtualizar.Size = new System.Drawing.Size(77, 30);
-            this.btnACtualizar.TabIndex = 46;
-            this.btnACtualizar.Text = "Actualizar";
-            this.btnACtualizar.UseVisualStyleBackColor = false;
-            this.btnACtualizar.Click += new System.EventHandler(this.btnACtualizar_Click_1);
+            this.metroLabel1.Text = "Apellido:";
             // 
             // txtDomi
             // 
@@ -229,20 +213,6 @@
             this.dtpFecha.Size = new System.Drawing.Size(135, 20);
             this.dtpFecha.TabIndex = 4;
             this.dtpFecha.Value = new System.DateTime(2008, 12, 31, 0, 0, 0, 0);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnGuardar.Location = new System.Drawing.Point(294, 250);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 30);
-            this.btnGuardar.TabIndex = 9;
-            this.btnGuardar.Text = "Cargar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_2);
             // 
             // txtCorreo
             // 
@@ -370,7 +340,7 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(6, 31);
+            this.metroLabel9.Location = new System.Drawing.Point(6, 30);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(124, 19);
             this.metroLabel9.TabIndex = 53;
@@ -379,14 +349,13 @@
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCerrar.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(651, 385);
+            this.btnCerrar.Location = new System.Drawing.Point(646, 385);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 26);
+            this.btnCerrar.Size = new System.Drawing.Size(80, 26);
             this.btnCerrar.TabIndex = 55;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -396,12 +365,48 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::App1.Properties.Resources.user_man1;
-            this.pictureBox1.Location = new System.Drawing.Point(518, 152);
+            this.pictureBox1.Location = new System.Drawing.Point(533, 123);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(208, 201);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnACtualizar
+            // 
+            this.btnACtualizar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnACtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnACtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnACtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnACtualizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnACtualizar.Image = global::App1.Properties.Resources._1434259696_ic_refresh_48px;
+            this.btnACtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnACtualizar.ImageKey = "(none)";
+            this.btnACtualizar.Location = new System.Drawing.Point(188, 250);
+            this.btnACtualizar.Name = "btnACtualizar";
+            this.btnACtualizar.Size = new System.Drawing.Size(95, 31);
+            this.btnACtualizar.TabIndex = 46;
+            this.btnACtualizar.Text = "Actualizar";
+            this.btnACtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnACtualizar.UseVisualStyleBackColor = false;
+            this.btnACtualizar.Click += new System.EventHandler(this.btnACtualizar_Click_1);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnGuardar.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(289, 250);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(80, 30);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Cargar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_2);
             // 
             // button1
             // 
