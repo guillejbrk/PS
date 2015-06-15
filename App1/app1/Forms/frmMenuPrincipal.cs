@@ -216,7 +216,9 @@ namespace App1.Forms
             t.Show();
         }
 
-        private void infomeDiasToolStripMenuItem_Click(object sender, EventArgs e)
+  
+
+        private void gastosEnProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmInformes2 tf = new frmInformes2();
             tf.MdiParent = this;

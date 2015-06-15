@@ -132,11 +132,7 @@ namespace App1.Forms
             cboDia.DataSource = Listadedias;
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            frmCargarTratamiento frmCargarTra = new frmCargarTratamiento();
-            frmCargarTra.ShowDialog();
-        }
+      
 
         private void cboTratamiento_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -398,6 +394,12 @@ namespace App1.Forms
            
 
             return true;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmCargarTratamiento frmCargarTra = new frmCargarTratamiento();
+            frmCargarTra.ShowDialog();
         }
 
       

@@ -30,69 +30,59 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dtsDias = new App1.dtsDias();
-            this.turnoTableAdapter = new App1.dtsDiasTableAdapters.TurnoTableAdapter();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtGastos = new App1.dtGastos();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.turnoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtsDias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource1)).BeginInit();
+            this.productosTableAdapter = new App1.dtGastosTableAdapters.ProductosTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGastos)).BeginInit();
             this.SuspendLayout();
             // 
-            // turnoBindingSource
+            // productosBindingSource
             // 
-            this.turnoBindingSource.DataMember = "Turno";
-            this.turnoBindingSource.DataSource = this.dtsDias;
+            this.productosBindingSource.DataMember = "Productos";
+            this.productosBindingSource.DataSource = this.dtGastos;
             // 
-            // dtsDias
+            // dtGastos
             // 
-            this.dtsDias.DataSetName = "dtsDias";
-            this.dtsDias.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // turnoTableAdapter
-            // 
-            this.turnoTableAdapter.ClearBeforeFill = true;
+            this.dtGastos.DataSetName = "dtGastos";
+            this.dtGastos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.turnoBindingSource1;
+            reportDataSource1.Value = this.productosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "App1.RepoHo.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(23, 63);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "App1.RepoProductos.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(23, 42);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(561, 299);
+            this.reportViewer1.Size = new System.Drawing.Size(660, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // turnoBindingSource1
+            // productosTableAdapter
             // 
-            this.turnoBindingSource1.DataMember = "Turno";
-            this.turnoBindingSource1.DataSource = this.dtsDias;
+            this.productosTableAdapter.ClearBeforeFill = true;
             // 
             // frmInformes2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 414);
+            this.ClientSize = new System.Drawing.Size(844, 525);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmInformes2";
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "frmInformes2";
             this.Load += new System.EventHandler(this.frmInformes2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtsDias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGastos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private dtsDias dtsDias;
-        private System.Windows.Forms.BindingSource turnoBindingSource;
-        private dtsDiasTableAdapters.TurnoTableAdapter turnoTableAdapter;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource turnoBindingSource1;
+        private dtGastos dtGastos;
+        private System.Windows.Forms.BindingSource productosBindingSource;
+        private dtGastosTableAdapters.ProductosTableAdapter productosTableAdapter;
     }
 }

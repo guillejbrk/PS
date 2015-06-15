@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.cboDia = new MetroFramework.Controls.MetroComboBox();
             this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
             this.cboTratamiento = new MetroFramework.Controls.MetroComboBox();
@@ -46,19 +47,18 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.cboPaciente = new MetroFramework.Controls.MetroComboBox();
             this.panelCanelado = new MetroFramework.Controls.MetroPanel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.txtMotivo = new System.Windows.Forms.TextBox();
+            this.btnCargar = new System.Windows.Forms.Button();
             this.btnCrearPaciente = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvTurnos = new MetroFramework.Controls.MetroGrid();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.btnImprimirTurno = new System.Windows.Forms.Button();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnCargar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -71,6 +71,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnNuevo);
             this.panel1.Controls.Add(this.cboDia);
             this.panel1.Controls.Add(this.cboTerapeuta);
             this.panel1.Controls.Add(this.cboTratamiento);
@@ -79,21 +80,33 @@
             this.panel1.Controls.Add(this.metroLabel3);
             this.panel1.Controls.Add(this.metroLabel2);
             this.panel1.Controls.Add(this.metroLabel1);
-            this.panel1.Controls.Add(this.metroButton1);
             this.panel1.Controls.Add(this.cboPaciente);
             this.panel1.Controls.Add(this.panelCanelado);
             this.panel1.Controls.Add(this.btnCargar);
             this.panel1.Controls.Add(this.btnCrearPaciente);
-            this.panel1.Location = new System.Drawing.Point(10, 53);
+            this.panel1.Location = new System.Drawing.Point(10, 49);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(408, 448);
+            this.panel1.Size = new System.Drawing.Size(393, 431);
             this.panel1.TabIndex = 9;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = global::App1.Properties.Resources._1433804360_ic_expand_more_48px;
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(303, 46);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(73, 23);
+            this.btnNuevo.TabIndex = 33;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // cboDia
             // 
             this.cboDia.FormattingEnabled = true;
             this.cboDia.ItemHeight = 23;
-            this.cboDia.Location = new System.Drawing.Point(104, 101);
+            this.cboDia.Location = new System.Drawing.Point(94, 104);
             this.cboDia.Name = "cboDia";
             this.cboDia.Size = new System.Drawing.Size(156, 29);
             this.cboDia.TabIndex = 32;
@@ -104,7 +117,7 @@
             // 
             this.cboTerapeuta.FormattingEnabled = true;
             this.cboTerapeuta.ItemHeight = 23;
-            this.cboTerapeuta.Location = new System.Drawing.Point(104, 67);
+            this.cboTerapeuta.Location = new System.Drawing.Point(94, 71);
             this.cboTerapeuta.Name = "cboTerapeuta";
             this.cboTerapeuta.Size = new System.Drawing.Size(169, 29);
             this.cboTerapeuta.TabIndex = 31;
@@ -115,7 +128,7 @@
             // 
             this.cboTratamiento.FormattingEnabled = true;
             this.cboTratamiento.ItemHeight = 23;
-            this.cboTratamiento.Location = new System.Drawing.Point(103, 37);
+            this.cboTratamiento.Location = new System.Drawing.Point(94, 40);
             this.cboTratamiento.Name = "cboTratamiento";
             this.cboTratamiento.Size = new System.Drawing.Size(198, 29);
             this.cboTratamiento.TabIndex = 30;
@@ -134,7 +147,7 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(10, 134);
+            this.metroPanel1.Location = new System.Drawing.Point(1, 137);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(385, 145);
             this.metroPanel1.TabIndex = 28;
@@ -198,8 +211,9 @@
             // 
             // lstDias
             // 
+            this.lstDias.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.lstDias.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstDias.ForeColor = System.Drawing.Color.DimGray;
+            this.lstDias.ForeColor = System.Drawing.Color.Black;
             this.lstDias.FormattingEnabled = true;
             this.lstDias.ItemHeight = 18;
             this.lstDias.Location = new System.Drawing.Point(81, 21);
@@ -211,7 +225,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(64, 110);
+            this.metroLabel4.Location = new System.Drawing.Point(55, 113);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(31, 19);
             this.metroLabel4.TabIndex = 26;
@@ -220,7 +234,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(28, 66);
+            this.metroLabel3.Location = new System.Drawing.Point(19, 69);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(69, 19);
             this.metroLabel3.TabIndex = 25;
@@ -229,7 +243,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(16, 37);
+            this.metroLabel2.Location = new System.Drawing.Point(7, 40);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(81, 19);
             this.metroLabel2.TabIndex = 24;
@@ -238,27 +252,17 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(37, 4);
+            this.metroLabel1.Location = new System.Drawing.Point(28, 7);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(60, 19);
             this.metroLabel1.TabIndex = 23;
             this.metroLabel1.Text = "Paciente:";
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(312, 35);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(91, 23);
-            this.metroButton1.TabIndex = 22;
-            this.metroButton1.Text = "Cargar";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
             // cboPaciente
             // 
             this.cboPaciente.FormattingEnabled = true;
             this.cboPaciente.ItemHeight = 23;
-            this.cboPaciente.Location = new System.Drawing.Point(104, 6);
+            this.cboPaciente.Location = new System.Drawing.Point(94, 9);
             this.cboPaciente.Name = "cboPaciente";
             this.cboPaciente.Size = new System.Drawing.Size(197, 29);
             this.cboPaciente.TabIndex = 21;
@@ -272,9 +276,9 @@
             this.panelCanelado.HorizontalScrollbarBarColor = true;
             this.panelCanelado.HorizontalScrollbarHighlightOnWheel = false;
             this.panelCanelado.HorizontalScrollbarSize = 10;
-            this.panelCanelado.Location = new System.Drawing.Point(12, 316);
+            this.panelCanelado.Location = new System.Drawing.Point(3, 319);
             this.panelCanelado.Name = "panelCanelado";
-            this.panelCanelado.Size = new System.Drawing.Size(360, 81);
+            this.panelCanelado.Size = new System.Drawing.Size(360, 96);
             this.panelCanelado.TabIndex = 20;
             this.panelCanelado.VerticalScrollbarBarColor = true;
             this.panelCanelado.VerticalScrollbarHighlightOnWheel = false;
@@ -294,35 +298,57 @@
             this.txtMotivo.Location = new System.Drawing.Point(77, 24);
             this.txtMotivo.Multiline = true;
             this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(221, 46);
+            this.txtMotivo.Size = new System.Drawing.Size(221, 52);
             this.txtMotivo.TabIndex = 16;
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.ForeColor = System.Drawing.Color.White;
+            this.btnCargar.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargar.Location = new System.Drawing.Point(303, 288);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(83, 25);
+            this.btnCargar.TabIndex = 8;
+            this.btnCargar.Text = "Alta";
+            this.btnCargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCargar.UseVisualStyleBackColor = false;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // btnCrearPaciente
             // 
-            this.btnCrearPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearPaciente.Location = new System.Drawing.Point(312, 4);
+            this.btnCrearPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearPaciente.Image = global::App1.Properties.Resources._1433804360_ic_expand_more_48px;
+            this.btnCrearPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCrearPaciente.Location = new System.Drawing.Point(303, 12);
             this.btnCrearPaciente.Name = "btnCrearPaciente";
-            this.btnCrearPaciente.Size = new System.Drawing.Size(91, 23);
+            this.btnCrearPaciente.Size = new System.Drawing.Size(73, 23);
             this.btnCrearPaciente.TabIndex = 10;
-            this.btnCrearPaciente.Text = "Crear";
+            this.btnCrearPaciente.Text = "Nuevo";
+            this.btnCrearPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCrearPaciente.UseVisualStyleBackColor = true;
             this.btnCrearPaciente.Click += new System.EventHandler(this.btnCrearPaciente_Click);
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.dtgvTurnos);
             this.panel2.Controls.Add(this.btnImprimirTurno);
             this.panel2.Controls.Add(this.metroLabel7);
             this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Location = new System.Drawing.Point(424, 49);
+            this.panel2.Location = new System.Drawing.Point(404, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(442, 210);
+            this.panel2.Size = new System.Drawing.Size(462, 210);
             this.panel2.TabIndex = 11;
             // 
             // dtgvTurnos
             // 
             this.dtgvTurnos.AllowUserToResizeRows = false;
             this.dtgvTurnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgvTurnos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvTurnos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dtgvTurnos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvTurnos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -361,9 +387,22 @@
             this.dtgvTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvTurnos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvTurnos.Size = new System.Drawing.Size(387, 131);
+            this.dtgvTurnos.Size = new System.Drawing.Size(407, 131);
             this.dtgvTurnos.Style = MetroFramework.MetroColorStyle.Orange;
             this.dtgvTurnos.TabIndex = 15;
+            // 
+            // btnImprimirTurno
+            // 
+            this.btnImprimirTurno.Image = global::App1.Properties.Resources._1433804429_ic_local_print_shop_48px;
+            this.btnImprimirTurno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimirTurno.Location = new System.Drawing.Point(343, 184);
+            this.btnImprimirTurno.Name = "btnImprimirTurno";
+            this.btnImprimirTurno.Size = new System.Drawing.Size(116, 23);
+            this.btnImprimirTurno.TabIndex = 16;
+            this.btnImprimirTurno.Text = "Imprimir Turno";
+            this.btnImprimirTurno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimirTurno.UseVisualStyleBackColor = true;
+            this.btnImprimirTurno.Click += new System.EventHandler(this.btnImprimirTurno_Click);
             // 
             // metroLabel7
             // 
@@ -374,19 +413,6 @@
             this.metroLabel7.TabIndex = 14;
             this.metroLabel7.Text = "Turnos Por Terapeutas";
             // 
-            // btnImprimirTurno
-            // 
-            this.btnImprimirTurno.Image = global::App1.Properties.Resources._1433804429_ic_local_print_shop_48px;
-            this.btnImprimirTurno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimirTurno.Location = new System.Drawing.Point(323, 184);
-            this.btnImprimirTurno.Name = "btnImprimirTurno";
-            this.btnImprimirTurno.Size = new System.Drawing.Size(116, 23);
-            this.btnImprimirTurno.TabIndex = 16;
-            this.btnImprimirTurno.Text = "Imprimir Turno";
-            this.btnImprimirTurno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImprimirTurno.UseVisualStyleBackColor = true;
-            this.btnImprimirTurno.Click += new System.EventHandler(this.btnImprimirTurno_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.DarkOrange;
@@ -394,7 +420,7 @@
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCancelar.Image = global::App1.Properties.Resources._1433804360_ic_expand_more_48px;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(3, 184);
+            this.btnCancelar.Location = new System.Drawing.Point(3, 183);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(87, 23);
             this.btnCancelar.TabIndex = 12;
@@ -408,7 +434,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(788, 497);
+            this.button1.Location = new System.Drawing.Point(787, 494);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(79, 25);
             this.button1.TabIndex = 10;
@@ -417,28 +443,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // btnCargar
-            // 
-            this.btnCargar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.ForeColor = System.Drawing.Color.White;
-            this.btnCargar.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
-            this.btnCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargar.Location = new System.Drawing.Point(312, 285);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(83, 25);
-            this.btnCargar.TabIndex = 8;
-            this.btnCargar.Text = "Alta";
-            this.btnCargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCargar.UseVisualStyleBackColor = false;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = global::App1.Properties.Resources.blocnote;
             this.pictureBox1.Image = global::App1.Properties.Resources.blocnote;
-            this.pictureBox1.Location = new System.Drawing.Point(539, 265);
+            this.pictureBox1.Location = new System.Drawing.Point(537, 275);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(327, 216);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -449,7 +458,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 524);
+            this.ClientSize = new System.Drawing.Size(874, 521);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -485,7 +494,6 @@
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroPanel panelCanelado;
         private MetroFramework.Controls.MetroComboBox cboPaciente;
-        private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroPanel metroPanel1;
@@ -503,5 +511,6 @@
         private MetroFramework.Controls.MetroGrid dtgvTurnos;
         private System.Windows.Forms.Button btnImprimirTurno;
         private MetroFramework.Controls.MetroLabel metroLabel8;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

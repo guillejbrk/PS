@@ -19,10 +19,9 @@ namespace App1.Forms
 
         private void frmInformes2_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dtsDias.Turno' table. You can move, or remove it, as needed.
-            this.turnoTableAdapter.Fill(this.dtsDias.Turno);
+            // TODO: This line of code loads data into the 'dtGastos.Productos' table. You can move, or remove it, as needed.
+            this.productosTableAdapter.Fill(this.dtGastos.Productos);
 
-            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
     }

@@ -97,10 +97,10 @@
     <Compile Include="Clases\Terapeuta.cs" />
     <Compile Include="Clases\Tratamiento.cs" />
     <Compile Include="Clases\Turno.cs" />
-    <Compile Include="dtsDias.Designer.cs">
+    <Compile Include="dtGastos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dtsDias.xsd</DependentUpon>
+      <DependentUpon>dtGastos.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmAcercaDe.cs">
       <SubType>Form</SubType>
@@ -299,7 +299,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Repo2.rdlc" />
-    <EmbeddedResource Include="RepoHo.rdlc" />
+    <EmbeddedResource Include="RepoProductos.rdlc" />
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -325,16 +325,16 @@
     <None Include="BDConsuDataSet1.xss">
       <DependentUpon>BDConsuDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="dtsDias.xsc">
-      <DependentUpon>dtsDias.xsd</DependentUpon>
+    <None Include="dtGastos.xsc">
+      <DependentUpon>dtGastos.xsd</DependentUpon>
     </None>
-    <None Include="dtsDias.xsd">
+    <None Include="dtGastos.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dtsDias.Designer.cs</LastGenOutput>
+      <LastGenOutput>dtGastos.Designer.cs</LastGenOutput>
     </None>
-    <None Include="dtsDias.xss">
-      <DependentUpon>dtsDias.xsd</DependentUpon>
+    <None Include="dtGastos.xss">
+      <DependentUpon>dtGastos.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
