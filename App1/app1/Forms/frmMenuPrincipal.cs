@@ -225,6 +225,11 @@ namespace App1.Forms
             tf.Show();
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
  
       
 

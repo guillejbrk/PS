@@ -147,13 +147,13 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(626, 297);
+            this.button1.Location = new System.Drawing.Point(624, 298);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(74, 23);
             this.button1.TabIndex = 2;

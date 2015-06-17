@@ -42,8 +42,10 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.btnACtualizar = new System.Windows.Forms.Button();
             this.txtDomi = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtCel = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
@@ -54,11 +56,9 @@
             this.txtBuscar = new MetroFramework.Controls.MetroTextBox();
             this.dtgvPaciente = new MetroFramework.Controls.MetroGrid();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnACtualizar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,7 +73,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(547, 357);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroTabControl1.TabIndex = 0;
@@ -194,6 +194,24 @@
             this.metroLabel1.TabIndex = 47;
             this.metroLabel1.Text = "Apellido:";
             // 
+            // btnACtualizar
+            // 
+            this.btnACtualizar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnACtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnACtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnACtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnACtualizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnACtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnACtualizar.ImageKey = "(none)";
+            this.btnACtualizar.Location = new System.Drawing.Point(188, 250);
+            this.btnACtualizar.Name = "btnACtualizar";
+            this.btnACtualizar.Size = new System.Drawing.Size(95, 31);
+            this.btnACtualizar.TabIndex = 46;
+            this.btnACtualizar.Text = "Actualizar";
+            this.btnACtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnACtualizar.UseVisualStyleBackColor = false;
+            this.btnACtualizar.Click += new System.EventHandler(this.btnACtualizar_Click_1);
+            // 
             // txtDomi
             // 
             this.txtDomi.Location = new System.Drawing.Point(117, 130);
@@ -213,6 +231,23 @@
             this.dtpFecha.Size = new System.Drawing.Size(135, 20);
             this.dtpFecha.TabIndex = 4;
             this.dtpFecha.Value = new System.DateTime(2008, 12, 31, 0, 0, 0, 0);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnGuardar.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(289, 250);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(80, 30);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Cargar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_2);
             // 
             // txtCorreo
             // 
@@ -346,68 +381,6 @@
             this.metroLabel9.TabIndex = 53;
             this.metroLabel9.Text = "Buscar Por Apellido";
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCerrar.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
-            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(646, 385);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(80, 26);
-            this.btnCerrar.TabIndex = 55;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::App1.Properties.Resources.user_man1;
-            this.pictureBox1.Location = new System.Drawing.Point(533, 123);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 201);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnACtualizar
-            // 
-            this.btnACtualizar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnACtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnACtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnACtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnACtualizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnACtualizar.Image = global::App1.Properties.Resources._1434259696_ic_refresh_48px;
-            this.btnACtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnACtualizar.ImageKey = "(none)";
-            this.btnACtualizar.Location = new System.Drawing.Point(188, 250);
-            this.btnACtualizar.Name = "btnACtualizar";
-            this.btnACtualizar.Size = new System.Drawing.Size(95, 31);
-            this.btnACtualizar.TabIndex = 46;
-            this.btnACtualizar.Text = "Actualizar";
-            this.btnACtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnACtualizar.UseVisualStyleBackColor = false;
-            this.btnACtualizar.Click += new System.EventHandler(this.btnACtualizar_Click_1);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnGuardar.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(289, 250);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(80, 30);
-            this.btnGuardar.TabIndex = 9;
-            this.btnGuardar.Text = "Cargar";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_2);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DarkOrange;
@@ -424,6 +397,32 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCerrar.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(646, 385);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(80, 26);
+            this.btnCerrar.TabIndex = 55;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::App1.Properties.Resources.user_man1;
+            this.pictureBox1.Location = new System.Drawing.Point(533, 164);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 201);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // frmCargarCliente
             // 

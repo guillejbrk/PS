@@ -51,7 +51,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button3.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -69,11 +69,14 @@
             this.btnCargarTratamiento.BackColor = System.Drawing.Color.DarkOrange;
             this.btnCargarTratamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarTratamiento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCargarTratamiento.Location = new System.Drawing.Point(389, 76);
+            this.btnCargarTratamiento.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnCargarTratamiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargarTratamiento.Location = new System.Drawing.Point(404, 76);
             this.btnCargarTratamiento.Name = "btnCargarTratamiento";
-            this.btnCargarTratamiento.Size = new System.Drawing.Size(91, 23);
+            this.btnCargarTratamiento.Size = new System.Drawing.Size(76, 23);
             this.btnCargarTratamiento.TabIndex = 13;
             this.btnCargarTratamiento.Text = "Cargar";
+            this.btnCargarTratamiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCargarTratamiento.UseVisualStyleBackColor = false;
             this.btnCargarTratamiento.Click += new System.EventHandler(this.btnCargarTratamiento_Click);
             // 

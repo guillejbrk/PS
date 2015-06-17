@@ -95,7 +95,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::App1.Properties.Resources.Presentation_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(696, 167);
+            this.pictureBox1.Location = new System.Drawing.Point(679, 167);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(191, 205);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 559);
+            this.ClientSize = new System.Drawing.Size(878, 559);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmInformes";

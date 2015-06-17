@@ -38,8 +38,8 @@
             this.turnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTurnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turnoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
@@ -55,12 +55,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(749, 229);
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(747, 232);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "Cerrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtgvTurnos
@@ -134,15 +139,6 @@
             this.panel1.Size = new System.Drawing.Size(651, 202);
             this.panel1.TabIndex = 7;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::App1.Properties.Resources.diary_128;
-            this.pictureBox1.Location = new System.Drawing.Point(680, 80);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 137);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.DarkOrange;
@@ -158,6 +154,15 @@
             this.btnNuevo.Text = "Nuevo Turno";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::App1.Properties.Resources.diary_128;
+            this.pictureBox1.Location = new System.Drawing.Point(680, 80);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(143, 137);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // Turnos
             // 

@@ -30,6 +30,7 @@
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
+            this.btnGenerar = new System.Windows.Forms.Button();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
@@ -59,7 +60,6 @@
             this.lstNoLaboralesSemana = new System.Windows.Forms.ListBox();
             this.cboTerapeuta = new MetroFramework.Controls.MetroComboBox();
             this.cbmTera = new MetroFramework.Controls.MetroComboBox();
-            this.btnGenerar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel8.SuspendLayout();
             this.metroPanel4.SuspendLayout();
@@ -97,6 +97,23 @@
             this.metroPanel8.VerticalScrollbarBarColor = true;
             this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel8.VerticalScrollbarSize = 10;
+            // 
+            // btnGenerar
+            // 
+            this.btnGenerar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.ForeColor = System.Drawing.Color.White;
+            this.btnGenerar.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerar.Location = new System.Drawing.Point(579, 114);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(151, 32);
+            this.btnGenerar.TabIndex = 50;
+            this.btnGenerar.Text = "Generar Turnos";
+            this.btnGenerar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenerar.UseVisualStyleBackColor = false;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // metroLabel5
             // 
@@ -136,11 +153,14 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(287, 68);
+            this.btnEliminar.Image = global::App1.Properties.Resources._1433804667_ic_delete_48px;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(285, 66);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 34);
             this.btnEliminar.TabIndex = 34;
             this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -286,11 +306,14 @@
             this.btnCargarDIASNOLAB.BackColor = System.Drawing.Color.DarkOrange;
             this.btnCargarDIASNOLAB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarDIASNOLAB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCargarDIASNOLAB.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnCargarDIASNOLAB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCargarDIASNOLAB.Location = new System.Drawing.Point(259, 16);
             this.btnCargarDIASNOLAB.Name = "btnCargarDIASNOLAB";
             this.btnCargarDIASNOLAB.Size = new System.Drawing.Size(75, 23);
             this.btnCargarDIASNOLAB.TabIndex = 40;
             this.btnCargarDIASNOLAB.Text = "Cargar";
+            this.btnCargarDIASNOLAB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCargarDIASNOLAB.UseVisualStyleBackColor = false;
             this.btnCargarDIASNOLAB.Click += new System.EventHandler(this.btnCargarDIASNOLAB_Click);
             // 
@@ -336,9 +359,9 @@
             this.btnEliminarDiaNoLaboral.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarDiaNoLaboral.Image = global::App1.Properties.Resources._1433804667_ic_delete_48px;
             this.btnEliminarDiaNoLaboral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(318, 167);
+            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(318, 171);
             this.btnEliminarDiaNoLaboral.Name = "btnEliminarDiaNoLaboral";
-            this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(80, 35);
+            this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(80, 31);
             this.btnEliminarDiaNoLaboral.TabIndex = 43;
             this.btnEliminarDiaNoLaboral.Text = "Quitar";
             this.btnEliminarDiaNoLaboral.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -354,7 +377,7 @@
             this.metroPanel5.HorizontalScrollbarSize = 10;
             this.metroPanel5.Location = new System.Drawing.Point(15, 27);
             this.metroPanel5.Name = "metroPanel5";
-            this.metroPanel5.Size = new System.Drawing.Size(238, 170);
+            this.metroPanel5.Size = new System.Drawing.Size(270, 170);
             this.metroPanel5.TabIndex = 36;
             this.metroPanel5.VerticalScrollbarBarColor = true;
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
@@ -369,7 +392,7 @@
             this.metroPanel6.HorizontalScrollbarBarColor = true;
             this.metroPanel6.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel6.HorizontalScrollbarSize = 10;
-            this.metroPanel6.Location = new System.Drawing.Point(3, 3);
+            this.metroPanel6.Location = new System.Drawing.Point(21, 3);
             this.metroPanel6.Name = "metroPanel6";
             this.metroPanel6.Size = new System.Drawing.Size(231, 39);
             this.metroPanel6.TabIndex = 44;
@@ -414,7 +437,7 @@
             this.lstNoLaboralesSemana.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstNoLaboralesSemana.FormattingEnabled = true;
             this.lstNoLaboralesSemana.ItemHeight = 16;
-            this.lstNoLaboralesSemana.Location = new System.Drawing.Point(18, 48);
+            this.lstNoLaboralesSemana.Location = new System.Drawing.Point(34, 48);
             this.lstNoLaboralesSemana.Name = "lstNoLaboralesSemana";
             this.lstNoLaboralesSemana.Size = new System.Drawing.Size(198, 114);
             this.lstNoLaboralesSemana.TabIndex = 35;
@@ -440,23 +463,6 @@
             this.cbmTera.TabIndex = 48;
             this.cbmTera.UseSelectable = true;
             this.cbmTera.SelectedIndexChanged += new System.EventHandler(this.cbmTera_SelectedIndexChanged);
-            // 
-            // btnGenerar
-            // 
-            this.btnGenerar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.ForeColor = System.Drawing.Color.White;
-            this.btnGenerar.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
-            this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerar.Location = new System.Drawing.Point(579, 114);
-            this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(151, 32);
-            this.btnGenerar.TabIndex = 50;
-            this.btnGenerar.Text = "Generar Turnos";
-            this.btnGenerar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGenerar.UseVisualStyleBackColor = false;
-            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // pictureBox1
             // 

@@ -143,14 +143,17 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(525, 215);
+            this.btnCerrar.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.ForeColor = System.Drawing.Color.Black;
+            this.btnCerrar.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(517, 224);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(63, 21);
+            this.btnCerrar.Size = new System.Drawing.Size(71, 21);
             this.btnCerrar.TabIndex = 5;
             this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
@@ -168,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 242);
+            this.ClientSize = new System.Drawing.Size(597, 251);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.pictureBox1);

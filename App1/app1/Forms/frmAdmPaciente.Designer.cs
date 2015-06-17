@@ -54,11 +54,14 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnModificar.Location = new System.Drawing.Point(330, 190);
+            this.btnModificar.Image = global::App1.Properties.Resources._1434259696_ic_refresh_48px;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(309, 190);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 26);
+            this.btnModificar.Size = new System.Drawing.Size(96, 26);
             this.btnModificar.TabIndex = 43;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -68,25 +71,30 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNuevo.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevo.Location = new System.Drawing.Point(18, 190);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 26);
             this.btnNuevo.TabIndex = 47;
             this.btnNuevo.Text = "Alta";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // Cerrar
             // 
-            this.Cerrar.BackColor = System.Drawing.Color.DarkOrange;
-            this.Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Cerrar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Cerrar.Location = new System.Drawing.Point(605, 280);
+            this.Cerrar.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
+            this.Cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cerrar.Location = new System.Drawing.Point(583, 280);
             this.Cerrar.Name = "Cerrar";
-            this.Cerrar.Size = new System.Drawing.Size(55, 25);
+            this.Cerrar.Size = new System.Drawing.Size(77, 25);
             this.Cerrar.TabIndex = 50;
             this.Cerrar.Text = "Cerrar";
+            this.Cerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Cerrar.UseVisualStyleBackColor = false;
             this.Cerrar.Click += new System.EventHandler(this.Cerrar_Click);
             // 
@@ -178,11 +186,14 @@
             // 
             // button1
             // 
+            this.button1.Image = global::App1.Properties.Resources._1433804360_ic_expand_more_48px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(141, 193);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 23);
             this.button1.TabIndex = 52;
             this.button1.Text = "Historial de Turnos";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
