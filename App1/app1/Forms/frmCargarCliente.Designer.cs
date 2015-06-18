@@ -73,7 +73,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(547, 357);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroTabControl1.TabIndex = 0;
@@ -196,11 +196,12 @@
             // 
             // btnACtualizar
             // 
-            this.btnACtualizar.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnACtualizar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnACtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnACtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnACtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnACtualizar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnACtualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnACtualizar.Image = global::App1.Properties.Resources._1434259696_ic_refresh_48px;
             this.btnACtualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnACtualizar.ImageKey = "(none)";
             this.btnACtualizar.Location = new System.Drawing.Point(188, 250);

@@ -104,7 +104,7 @@
             this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.White;
-            this.btnGenerar.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
+            this.btnGenerar.Image = global::App1.Properties.Resources._1433804360_ic_expand_more_48px;
             this.btnGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenerar.Location = new System.Drawing.Point(579, 114);
             this.btnGenerar.Name = "btnGenerar";
@@ -153,11 +153,11 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Image = global::App1.Properties.Resources._1433804667_ic_delete_48px;
+            this.btnEliminar.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(285, 66);
+            this.btnEliminar.Location = new System.Drawing.Point(285, 77);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 34);
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 34;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

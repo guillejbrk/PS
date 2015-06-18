@@ -102,7 +102,7 @@ namespace App1.Forms
             SqlCommand cmd = Conn.CreateCommand();
 
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '"+ DateTime.Now.AddDays(365).ToShortDateString()+"'";
+            cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '"+ DateTime.Now.AddDays(365).ToShortDateString()+"' order by Fecha";
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();
@@ -171,7 +171,7 @@ namespace App1.Forms
                     SqlCommand cmd = Conn.CreateCommand();
 
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '" + DateTime.Now.AddDays(365).ToShortDateString() + "'";
+                    cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '" + DateTime.Now.AddDays(365).ToShortDateString() + "' order by Fecha";
                     cmd.ExecuteNonQuery();
 
                     DataTable dt = new DataTable();
@@ -208,7 +208,7 @@ namespace App1.Forms
                         SqlCommand cmd = Conn.CreateCommand();
 
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '" + DateTime.Now.AddDays(365).ToShortDateString() + "'";
+                        cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '" + DateTime.Now.AddDays(365).ToShortDateString() + "'order by Fecha";
                         cmd.ExecuteNonQuery();
 
                         DataTable dt = new DataTable();
@@ -359,7 +359,7 @@ namespace App1.Forms
                 SqlCommand cmd = Conn.CreateCommand();
 
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '" + DateTime.Now.AddDays(365).ToShortDateString() + "'";
+                cmd.CommandText = "select id_Turno 'Nro. Turno', Apellido,Nombre,Fecha,hora,Estado,Motivo from Turno t JOIN Paciente p on t.id_Paciente = p.nro_Paciente JOIN Estado_Turnos e on t.id_Estado=e.id_Estado_Turno where  id_Terapeuta='" + (((Terapeuta)cboTerapeuta.SelectedItem).Id) + "' and Fecha between '" + DateTime.Now.ToShortDateString() + "' and '" + DateTime.Now.AddDays(365).ToShortDateString() + "'order by Fecha";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();

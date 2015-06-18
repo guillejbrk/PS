@@ -346,7 +346,6 @@
             // 
             // dtgvTurnos
             // 
-            this.dtgvTurnos.AllowUserToResizeRows = false;
             this.dtgvTurnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgvTurnos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvTurnos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -374,7 +373,7 @@
             this.dtgvTurnos.EnableHeadersVisualStyles = false;
             this.dtgvTurnos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dtgvTurnos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtgvTurnos.Location = new System.Drawing.Point(20, 43);
+            this.dtgvTurnos.Location = new System.Drawing.Point(3, 43);
             this.dtgvTurnos.Name = "dtgvTurnos";
             this.dtgvTurnos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -387,7 +386,7 @@
             this.dtgvTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvTurnos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvTurnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvTurnos.Size = new System.Drawing.Size(407, 131);
+            this.dtgvTurnos.Size = new System.Drawing.Size(452, 131);
             this.dtgvTurnos.Style = MetroFramework.MetroColorStyle.Orange;
             this.dtgvTurnos.TabIndex = 15;
             // 

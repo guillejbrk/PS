@@ -110,7 +110,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.LightGray;
+            this.btnCerrar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = global::App1.Properties.Resources._1433804497_ic_close_48px;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
