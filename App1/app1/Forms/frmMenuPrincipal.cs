@@ -172,9 +172,7 @@ namespace App1.Forms
 
         private void informacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAyuda Ayu = new frmAyuda();
-            Ayu.MdiParent = this;
-            Ayu.Show();
+            Help.ShowHelp(this, "file://C:\\Users\\Guille\\Documents\\GitHub\\PS\\App1\\PS\\App1\\app1\\CHM\\ManuaUsuariol.chm");
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)

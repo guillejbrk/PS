@@ -92,52 +92,15 @@ namespace App1
                 txtCel.Text = Convert.ToString(ClienteSeleccionado.Cel);
                 txtCorreo.Text = ClienteSeleccionado.Correo;
                 btnGuardar.Enabled = false;
-                btnACtualizar.Enabled = true;
+                btnActu2.Enabled = true;
+             
                 metroTabControl1.SelectedIndex = 0;
 
             }
 
         }
 
-        private void btnACtualizar_Click_1(object sender, EventArgs e)
-        {
-            
-            Cliente pCliente = new Cliente();
-            pCliente.Apellido = txtApellido.Text;
-            pCliente.Nombre = txtNombre.Text;
-            pCliente.Edad = Convert.ToInt64(txtEdad.Text);
-            pCliente.Fecha = dtpFecha.Value.ToShortDateString();
-            pCliente.Domicilio = txtDomi.Text;
-            pCliente.Tel = txtTel.Text;
-            pCliente.Cel = txtCel.Text;
-            pCliente.Correo = txtCorreo.Text;
-            pCliente.Id = ClienteActual.Id;
-
-
-            int resultado = ClienteDAL.Modificar(pCliente);
-
-            if (resultado > 0)
-            {
-
-                MessageBox.Show("Paciente Modificado Correctamente", "Paciente Modificado", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                limpiar();
-                btnACtualizar.Enabled = false;
-                btnGuardar.Enabled = true;
-                txtBuscar.Text = "";
-                dtgvPaciente.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
-            }
-
-            else
-            {
-                MessageBox.Show("No se pudo Modificar el Paciente", "Error!!", MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-            }
-
-
-
-
-        }
+       
 
         private void btnGuardar_Click_2(object sender, EventArgs e)
         {
@@ -165,7 +128,7 @@ namespace App1
                 {
                     MessageBox.Show("Paciente Cargado Corerectamente", "Cargado", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                    btnACtualizar.Enabled = false;
+                    btnActu2.Enabled = false;
 
 
                     limpiar();
@@ -184,7 +147,8 @@ namespace App1
 
         private void frmCargarCliente_Load(object sender, EventArgs e)
         {
-            btnACtualizar.Enabled = false;
+            btnActu2.Enabled = false;
+         
             metroTabControl1.SelectedIndex = 0;
         }
 
@@ -241,6 +205,45 @@ namespace App1
            
         }
 
+        private void btnActu2_Click(object sender, EventArgs e)
+        {
+
+            Cliente pCliente = new Cliente();
+            pCliente.Apellido = txtApellido.Text;
+            pCliente.Nombre = txtNombre.Text;
+            pCliente.Edad = Convert.ToInt64(txtEdad.Text);
+            pCliente.Fecha = dtpFecha.Value.ToShortDateString();
+            pCliente.Domicilio = txtDomi.Text;
+            pCliente.Tel = txtTel.Text;
+            pCliente.Cel = txtCel.Text;
+            pCliente.Correo = txtCorreo.Text;
+            pCliente.Id = ClienteActual.Id;
+
+
+            int resultado = ClienteDAL.Modificar(pCliente);
+
+            if (resultado > 0)
+            {
+
+                MessageBox.Show("Paciente Modificado Correctamente", "Paciente Modificado", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                limpiar();
+                btnActu2.Enabled = false;
+                btnGuardar.Enabled = true;
+                txtBuscar.Text = "";
+                dtgvPaciente.DataSource = ClienteDAL.BuscarClientes(txtBuscar.Text);
+            }
+
+            else
+            {
+                MessageBox.Show("No se pudo Modificar el Paciente", "Error!!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            }
+
+
+
+
+        }
 
        
 
