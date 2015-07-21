@@ -310,7 +310,7 @@ namespace App1.Forms
                                             Rectangle rect = new Rectangle(0, 0, 440, 160);
                                            
                                             e1.Graphics.DrawRectangle(blackPen, rect);
-                                            System.Drawing.Image img = System.Drawing.Image.FromFile("C:\\Users\\Guille\\Documents\\GitHub\\PS\\App1\\PS\\App1\\App1\\Resources\\sa.png");
+                                            System.Drawing.Image img = System.Drawing.Image.FromFile("..\\..\\Resources\\sa.png");
                                             Point loc = new Point(160, 10);
                                             e1.Graphics.DrawImage(img, loc);
                                             
@@ -353,7 +353,8 @@ namespace App1.Forms
                 panelCanelado.Visible = true;
 
                 MessageBox.Show("Turno Cancelado Correctamente", "Turno", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                btnCargar.Enabled = true;
+                txtMotivo.Clear();
                 SqlConnection Conn = BDComun.obtenerConexion();
                 dtgvTurnos.DataSource = null;
                 SqlCommand cmd = Conn.CreateCommand();
@@ -389,7 +390,10 @@ namespace App1.Forms
                 txtMotivo.Focus();
                 panelCanelado.Visible = true;
                 txtMotivo.Visible = true;
+                btnCargar.Enabled = false;
                 return false;
+         
+
             }
            
 

@@ -26,10 +26,7 @@ namespace App1.Forms
 
         }
 
-        private void metroTabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
+     
            
 
 
@@ -101,6 +98,12 @@ namespace App1.Forms
                     cboTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeuta();
                     cboTerapeuta.DisplayMember = "Apellido";
                     cboTerapeuta.ValueMember = "Id";
+                    dtgvTerapeuta.DataSource = TerapeutaDAL.ObtenerTerapeutaParaDTGV();
+                    txtApellido.Clear();
+                    txtNombre.Clear();
+                    txtUsuario.Clear();
+                    txtPass.Clear();
+                    txtPass2.Clear();
 
 
 
@@ -687,10 +690,12 @@ namespace App1.Forms
             }
         }
 
-        private void metroTabPage2_Click(object sender, EventArgs e)
+        private void metroTabPage1_Click(object sender, EventArgs e)
         {
 
         }
+
+   
 
    
       

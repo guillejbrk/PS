@@ -236,7 +236,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(19, 69);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(71, 19);
             this.metroLabel3.TabIndex = 25;
             this.metroLabel3.Text = "Terapeuta:";
             // 
@@ -245,7 +245,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(7, 40);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(83, 19);
             this.metroLabel2.TabIndex = 24;
             this.metroLabel2.Text = "Tratamiento:";
             // 
@@ -254,7 +254,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(28, 7);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(61, 19);
             this.metroLabel1.TabIndex = 23;
             this.metroLabel1.Text = "Paciente:";
             // 
@@ -346,6 +346,7 @@
             // 
             // dtgvTurnos
             // 
+            this.dtgvTurnos.AllowUserToResizeRows = false;
             this.dtgvTurnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgvTurnos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvTurnos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -375,6 +376,7 @@
             this.dtgvTurnos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dtgvTurnos.Location = new System.Drawing.Point(3, 43);
             this.dtgvTurnos.Name = "dtgvTurnos";
+            this.dtgvTurnos.ReadOnly = true;
             this.dtgvTurnos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
@@ -408,7 +410,7 @@
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.Location = new System.Drawing.Point(20, 10);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(136, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(141, 19);
             this.metroLabel7.TabIndex = 14;
             this.metroLabel7.Text = "Turnos Por Terapeutas";
             // 

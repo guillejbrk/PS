@@ -172,7 +172,7 @@ namespace App1.Forms
 
         private void informacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "file://C:\\Users\\Guille\\Documents\\GitHub\\PS\\App1\\PS\\App1\\app1\\CHM\\ManuaUsuariol.chm");
+            Help.ShowHelp(this, "C:\\Users\\Gabriel\\Desktop\\PS-master\\App1\\app1\\CHM\\ManuaUsuariol.chm");
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -223,10 +223,7 @@ namespace App1.Forms
             tf.Show();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+     
 
  
       
