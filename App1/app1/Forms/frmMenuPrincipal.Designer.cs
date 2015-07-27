@@ -80,7 +80,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(143, 588);
+            this.menuStrip1.Size = new System.Drawing.Size(143, 490);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -343,7 +343,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::App1.Properties.Resources.sa;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 562);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 445);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(137, 86);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -356,7 +356,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1226, 668);
+            this.ClientSize = new System.Drawing.Size(1000, 570);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -369,6 +369,7 @@
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Bienvenido";
             this.TransparencyKey = System.Drawing.Color.Empty;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);

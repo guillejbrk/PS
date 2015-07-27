@@ -13,6 +13,7 @@ using System.Globalization;
 using System.Threading;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
+using System.IO;
 
 namespace App1.Forms
 {
@@ -299,6 +300,12 @@ namespace App1.Forms
 
                                 }
 
+
+                               string resourcePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                                resourcePath += "\\Resources\\sa.png";
+                                if (resourcePath == null)
+                                    throw new FileNotFoundException("Resource not found");
+
                                 string s = textToPrint;
                                
                                         PrintDialog pdi = new PrintDialog();
@@ -310,7 +317,7 @@ namespace App1.Forms
                                             Rectangle rect = new Rectangle(0, 0, 440, 160);
                                            
                                             e1.Graphics.DrawRectangle(blackPen, rect);
-                                            System.Drawing.Image img = System.Drawing.Image.FromFile("..\\..\\Resources\\sa.png");
+                                            System.Drawing.Image img = System.Drawing.Image.FromFile(resourcePath);
                                             Point loc = new Point(160, 10);
                                             e1.Graphics.DrawImage(img, loc);
                                             

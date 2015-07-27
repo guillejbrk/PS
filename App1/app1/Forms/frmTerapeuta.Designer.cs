@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sdf = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
@@ -52,6 +52,7 @@
             this.txtPass = new MetroFramework.Controls.MetroTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNuevosTurnos = new System.Windows.Forms.Button();
             this.metroPanel8 = new MetroFramework.Controls.MetroPanel();
@@ -87,7 +88,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dtgvTerapeuta = new MetroFramework.Controls.MetroGrid();
-            this.button2 = new System.Windows.Forms.Button();
             this.sdf.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -112,8 +112,8 @@
             this.sdf.Controls.Add(this.metroTabPage3);
             this.sdf.Location = new System.Drawing.Point(141, 52);
             this.sdf.Name = "sdf";
-            this.sdf.SelectedIndex = 0;
-            this.sdf.Size = new System.Drawing.Size(770, 507);
+            this.sdf.SelectedIndex = 1;
+            this.sdf.Size = new System.Drawing.Size(770, 479);
             this.sdf.Style = MetroFramework.MetroColorStyle.Orange;
             this.sdf.TabIndex = 16;
             this.sdf.UseSelectable = true;
@@ -126,7 +126,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(762, 465);
+            this.metroTabPage1.Size = new System.Drawing.Size(762, 437);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Cargar Terapeuta";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
@@ -184,7 +184,7 @@
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.Location = new System.Drawing.Point(3, 0);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(68, 19);
+            this.metroLabel10.Size = new System.Drawing.Size(66, 19);
             this.metroLabel10.TabIndex = 4;
             this.metroLabel10.Text = "Terapeuta";
             // 
@@ -359,6 +359,7 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.button2);
             this.metroTabPage2.Controls.Add(this.pictureBox1);
             this.metroTabPage2.Controls.Add(this.btnNuevosTurnos);
             this.metroTabPage2.Controls.Add(this.metroPanel8);
@@ -369,20 +370,34 @@
             this.metroTabPage2.HorizontalScrollbarSize = 10;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(762, 465);
+            this.metroTabPage2.Size = new System.Drawing.Size(762, 437);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Administracion Agenda";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(566, 390);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 26);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Cerrar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::App1.Properties.Resources.address_book;
-            this.pictureBox1.Location = new System.Drawing.Point(429, 245);
+            this.pictureBox1.Location = new System.Drawing.Point(336, 225);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(312, 205);
+            this.pictureBox1.Size = new System.Drawing.Size(312, 191);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
@@ -396,7 +411,7 @@
             this.btnNuevosTurnos.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNuevosTurnos.Image = global::App1.Properties.Resources._1433804360_ic_expand_more_48px;
             this.btnNuevosTurnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevosTurnos.Location = new System.Drawing.Point(598, 207);
+            this.btnNuevosTurnos.Location = new System.Drawing.Point(410, 186);
             this.btnNuevosTurnos.Name = "btnNuevosTurnos";
             this.btnNuevosTurnos.Size = new System.Drawing.Size(143, 35);
             this.btnNuevosTurnos.TabIndex = 45;
@@ -415,9 +430,9 @@
             this.metroPanel8.HorizontalScrollbarBarColor = true;
             this.metroPanel8.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel8.HorizontalScrollbarSize = 10;
-            this.metroPanel8.Location = new System.Drawing.Point(3, 42);
+            this.metroPanel8.Location = new System.Drawing.Point(3, 38);
             this.metroPanel8.Name = "metroPanel8";
-            this.metroPanel8.Size = new System.Drawing.Size(751, 159);
+            this.metroPanel8.Size = new System.Drawing.Size(735, 141);
             this.metroPanel8.TabIndex = 44;
             this.metroPanel8.VerticalScrollbarBarColor = true;
             this.metroPanel8.VerticalScrollbarHighlightOnWheel = false;
@@ -426,7 +441,7 @@
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(384, 35);
+            this.metroLabel12.Location = new System.Drawing.Point(392, 43);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(119, 19);
             this.metroLabel12.TabIndex = 39;
@@ -435,7 +450,7 @@
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(6, 14);
+            this.metroLabel11.Location = new System.Drawing.Point(13, 2);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(177, 19);
             this.metroLabel11.TabIndex = 38;
@@ -451,13 +466,14 @@
             this.metroPanel4.HorizontalScrollbarBarColor = true;
             this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel4.HorizontalScrollbarSize = 10;
-            this.metroPanel4.Location = new System.Drawing.Point(6, 35);
+            this.metroPanel4.Location = new System.Drawing.Point(5, 16);
             this.metroPanel4.Name = "metroPanel4";
             this.metroPanel4.Size = new System.Drawing.Size(372, 111);
             this.metroPanel4.TabIndex = 37;
             this.metroPanel4.VerticalScrollbarBarColor = true;
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel4.VerticalScrollbarSize = 10;
+            this.metroPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.metroPanel4_Paint);
             // 
             // btnEliminar
             // 
@@ -603,7 +619,7 @@
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(384, 57);
+            this.metroPanel3.Location = new System.Drawing.Point(384, 59);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(341, 53);
             this.metroPanel3.TabIndex = 35;
@@ -618,7 +634,7 @@
             this.btnCargarNoLab.ForeColor = System.Drawing.Color.White;
             this.btnCargarNoLab.Image = global::App1.Properties.Resources._1433804248_ic_add_48px;
             this.btnCargarNoLab.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargarNoLab.Location = new System.Drawing.Point(261, 13);
+            this.btnCargarNoLab.Location = new System.Drawing.Point(258, 10);
             this.btnCargarNoLab.Name = "btnCargarNoLab";
             this.btnCargarNoLab.Size = new System.Drawing.Size(75, 23);
             this.btnCargarNoLab.TabIndex = 40;
@@ -633,7 +649,7 @@
             this.dtDiasNoLaborables.Location = new System.Drawing.Point(17, 10);
             this.dtDiasNoLaborables.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dtDiasNoLaborables.MinDate = new System.DateTime(2015, 1, 1, 0, 0, 0, 0);
-            this.dtDiasNoLaborables.MinimumSize = new System.Drawing.Size(4, 29);
+            this.dtDiasNoLaborables.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtDiasNoLaborables.Name = "dtDiasNoLaborables";
             this.dtDiasNoLaborables.Size = new System.Drawing.Size(235, 29);
             this.dtDiasNoLaborables.TabIndex = 30;
@@ -641,16 +657,15 @@
             // metroPanel7
             // 
             this.metroPanel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroPanel7.Controls.Add(this.btnEliminarDiaNoLaboral);
             this.metroPanel7.Controls.Add(this.metroLabel1);
             this.metroPanel7.Controls.Add(this.metroPanel6);
             this.metroPanel7.Controls.Add(this.metroPanel5);
             this.metroPanel7.HorizontalScrollbarBarColor = true;
             this.metroPanel7.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel7.HorizontalScrollbarSize = 10;
-            this.metroPanel7.Location = new System.Drawing.Point(3, 207);
+            this.metroPanel7.Location = new System.Drawing.Point(2, 189);
             this.metroPanel7.Name = "metroPanel7";
-            this.metroPanel7.Size = new System.Drawing.Size(379, 234);
+            this.metroPanel7.Size = new System.Drawing.Size(326, 227);
             this.metroPanel7.TabIndex = 43;
             this.metroPanel7.VerticalScrollbarBarColor = true;
             this.metroPanel7.VerticalScrollbarHighlightOnWheel = false;
@@ -663,7 +678,7 @@
             this.btnEliminarDiaNoLaboral.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEliminarDiaNoLaboral.Image = global::App1.Properties.Resources._1433804667_ic_delete_48px;
             this.btnEliminarDiaNoLaboral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(292, 199);
+            this.btnEliminarDiaNoLaboral.Location = new System.Drawing.Point(169, 96);
             this.btnEliminarDiaNoLaboral.Name = "btnEliminarDiaNoLaboral";
             this.btnEliminarDiaNoLaboral.Size = new System.Drawing.Size(75, 28);
             this.btnEliminarDiaNoLaboral.TabIndex = 43;
@@ -677,7 +692,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(16, 14);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(197, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(195, 19);
             this.metroLabel1.TabIndex = 42;
             this.metroLabel1.Text = "Dias No laborales del Terapeuta";
             // 
@@ -733,13 +748,14 @@
             // 
             // metroPanel5
             // 
+            this.metroPanel5.Controls.Add(this.btnEliminarDiaNoLaboral);
             this.metroPanel5.Controls.Add(this.lstNoLaboralesSemana);
             this.metroPanel5.HorizontalScrollbarBarColor = true;
             this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel5.HorizontalScrollbarSize = 10;
             this.metroPanel5.Location = new System.Drawing.Point(38, 81);
             this.metroPanel5.Name = "metroPanel5";
-            this.metroPanel5.Size = new System.Drawing.Size(248, 140);
+            this.metroPanel5.Size = new System.Drawing.Size(248, 127);
             this.metroPanel5.TabIndex = 36;
             this.metroPanel5.VerticalScrollbarBarColor = true;
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
@@ -754,7 +770,7 @@
             this.lstNoLaboralesSemana.ItemHeight = 16;
             this.lstNoLaboralesSemana.Location = new System.Drawing.Point(43, 20);
             this.lstNoLaboralesSemana.Name = "lstNoLaboralesSemana";
-            this.lstNoLaboralesSemana.Size = new System.Drawing.Size(147, 82);
+            this.lstNoLaboralesSemana.Size = new System.Drawing.Size(147, 66);
             this.lstNoLaboralesSemana.TabIndex = 35;
             // 
             // cboTerapeuta
@@ -777,7 +793,7 @@
             this.metroTabPage3.HorizontalScrollbarSize = 10;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(762, 465);
+            this.metroTabPage3.Size = new System.Drawing.Size(762, 437);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "Administar Terapeuta";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
@@ -818,64 +834,49 @@
             this.dtgvTerapeuta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvTerapeuta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgvTerapeuta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTerapeuta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTerapeuta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvTerapeuta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvTerapeuta.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTerapeuta.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvTerapeuta.EnableHeadersVisualStyles = false;
             this.dtgvTerapeuta.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dtgvTerapeuta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dtgvTerapeuta.Location = new System.Drawing.Point(28, 19);
             this.dtgvTerapeuta.Name = "dtgvTerapeuta";
             this.dtgvTerapeuta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTerapeuta.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTerapeuta.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgvTerapeuta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgvTerapeuta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvTerapeuta.Size = new System.Drawing.Size(425, 150);
             this.dtgvTerapeuta.Style = MetroFramework.MetroColorStyle.Orange;
             this.dtgvTerapeuta.TabIndex = 6;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(914, 520);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 26);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Cerrar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // frmTerapeuta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 554);
+            this.ClientSize = new System.Drawing.Size(887, 515);
             this.Controls.Add(this.sdf);
-            this.Controls.Add(this.button2);
             this.Name = "frmTerapeuta";
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Administrar Terapeuta";

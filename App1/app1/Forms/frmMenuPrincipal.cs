@@ -8,17 +8,19 @@ using System.Text;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using System.Reflection;
+using System.IO;
 
 
 namespace App1.Forms
 {
     public partial class frmMenuPrincipal : MetroForm
     {
+        
         public frmMenuPrincipal()
         {
             InitializeComponent();
-        
-       
+            
            
         }
 
@@ -119,8 +121,8 @@ namespace App1.Forms
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-           
-            
+
+          
             lblUsuario.Text = Program.usuario;
             Tiempo.Enabled = true;
         }
@@ -172,7 +174,14 @@ namespace App1.Forms
 
         private void informacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "C:\\Users\\Gabriel\\Desktop\\PS-master\\App1\\app1\\CHM\\ManuaUsuariol.chm");
+            string resourcePath =  "ManuaUsuariol.chm";                  
+           
+            resourcePath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            resourcePath += "\\Resources\\ManuaUsuariol.chm";
+            if (resourcePath == null)
+            throw new FileNotFoundException("Resource not found");
+
+            Help.ShowHelp(this, resourcePath);
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -183,19 +192,10 @@ namespace App1.Forms
 
         }
 
-        private void frmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            {
-                if (MessageBox.Show("¿Seguro que dese salir?", "Salir",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question) == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
-            } 
+       
 
 
-        }
+    
 
      
 
@@ -222,6 +222,18 @@ namespace App1.Forms
             tf.MdiParent = this;
             tf.Show();
         }
+
+        private void frmMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+             DialogResult Mensaje = MessageBox.Show("¿Seguro que Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if ( Mensaje == DialogResult.Yes)
+            {
+                System.Environment.Exit(0);
+            }
+
+          
+        }
+        
 
      
 

@@ -695,6 +695,11 @@ namespace App1.Forms
 
         }
 
+        private void metroPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
    
 
    

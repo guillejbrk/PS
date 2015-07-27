@@ -65,7 +65,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "App1.Repo2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(10, 32);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(663, 507);
+            this.reportViewer1.Size = new System.Drawing.Size(550, 336);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -95,9 +95,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::App1.Properties.Resources.Presentation_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(679, 167);
+            this.pictureBox1.Location = new System.Drawing.Point(566, 163);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(191, 205);
+            this.pictureBox1.Size = new System.Drawing.Size(135, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 559);
+            this.ClientSize = new System.Drawing.Size(720, 396);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frmInformes";

@@ -1,0 +1,3 @@
+﻿SELECT  p.Apellido,p.Nombre, Fecha, hora, id_Terapeuta
+ FROM Turno t JOIN Paciente p 
+  on t.id_Paciente=p.nro_Paciente

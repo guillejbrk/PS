@@ -56,7 +56,6 @@ C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.exe
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.pdb
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\bin\Debug\App1.exe
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\bin\Debug\App1.pdb
-C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.csprojResolveAssemblyReference.cache
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmAdmPaciente.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.Forms.frmAgenda.resources
 C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.frmCargarCliente.resources
@@ -165,3 +164,10 @@ C:\Users\Guille\Desktop\PS-master\App1\App1\obj\x86\Debug\App1.Properties.Resour
 C:\Users\Guille\Desktop\PS-master\App1\App1\obj\x86\Debug\App1.csproj.GenerateResource.Cache
 C:\Users\Guille\Desktop\PS-master\App1\App1\obj\x86\Debug\RdlCompile.cache
 C:\Users\Guille\Desktop\PS-master\App1\App1\obj\x86\Debug\RdlCompile.compiled
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.csprojResolveAssemblyReference.cache
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\bin\Debug\Resources\ManuaUsuariol.chm
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\bin\Debug\Resources\sa.png
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\bin\Debug\App1.exe.manifest
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\bin\Debug\App1.application
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.exe.manifest
+C:\Users\Guille\Documents\GitHub\PS\App1\PS\App1\app1\obj\x86\Debug\App1.application
