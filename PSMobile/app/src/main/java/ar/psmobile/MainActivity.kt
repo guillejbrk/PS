@@ -297,7 +297,6 @@ private fun ClientForm(original: Client?, dismiss: () -> Unit, save: (String, St
         dismissButton = { TextButton(onClick = dismiss) { Text("Cancelar") } })
 }
 @Composable
-@Composable
 private fun TurnForm(original: Appointment?, clients: List<Client>, dismiss: () -> Unit, save: (Long, String, String, String) -> Unit) {
     var selected by remember(original) { mutableStateOf(original?.clientId ?: clients.firstOrNull()?.id) }
     var date by remember(original) { mutableStateOf(original?.date ?: LocalDate.now().toString()) }
