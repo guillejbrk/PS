@@ -31,3 +31,6 @@ GitHub Actions → *PS Mobile APK* → `app-debug.apk` (artefacto). El APK debug
 - Bloqueo de eliminación de clientes que tengan turnos asociados.
 - Formulario de turnos con validación de fecha y hora.
 - Pendiente: cifrado de datos, bloqueo de acceso, historial de tratamientos y copia de seguridad segura. **No utilizar con datos reales de pacientes todavía.**
+
+## 0.5 Alpha — contactos Android
+Al crear o editar un cliente, **Importar desde contactos del teléfono** abre el selector nativo para elegir un número. Completa nombre y teléfono antes de guardar en Room. No pide permiso general READ_CONTACTS, no importa la agenda completa y funciona sin internet.
