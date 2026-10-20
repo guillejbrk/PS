@@ -4,6 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.background
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -19,15 +22,18 @@ import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.LocalTime
 
-private val green = Color(0xFF367D70)
-private val background = Color(0xFFF5F7F6)
+private val green = Color(0xFFB59AFF)
+private val background = Color(0xFF0B1022)
+private val panel = Color(0xFF18213A)
+private val muted = Color(0xFFAAB5D0)
+private val accent = Color(0xFF7654E8)
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val dao = ClinicDatabase.get(this).dao()
         setContent {
             MaterialTheme(
-                colorScheme = lightColorScheme(primary = green, background = background, surface = Color.White),
+                colorScheme = darkColorScheme(primary = green, onPrimary = background, background = background, surface = panel, onSurface = Color(0xFFF4F5FF), onBackground = Color(0xFFF4F5FF), surfaceVariant = Color(0xFF273354), onSurfaceVariant = muted, secondaryContainer = Color(0xFF302652)),
                 shapes = Shapes(medium = RoundedCornerShape(18.dp), large = RoundedCornerShape(24.dp))
             ) { ClinicApp(dao) }
         }
@@ -57,14 +63,14 @@ fun ClinicApp(dao: ClinicDao) {
         topBar = {
             CenterAlignedTopAppBar(title = {
                 Column {
-                    Text("PS MOBILE", fontWeight = FontWeight.Bold)
-                    Text("GESTIÓN DE CONSULTORIO", style = MaterialTheme.typography.labelSmall, color = green)
+                    Text("PS  /  MOBILE", fontWeight = FontWeight.ExtraBold, letterSpacing = 1.5.sp)
+                    Text("DASHBOARD · CONSULTORIO", style = MaterialTheme.typography.labelSmall, color = muted)
                 }
             }, colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = background))
         },
         snackbarHost = { SnackbarHost(snackbar) },
         bottomBar = {
-            NavigationBar(containerColor = Color.White) {
+            NavigationBar(containerColor = panel) {
                 listOf("Inicio", "Agenda", "Clientes").forEachIndexed { index, label ->
                     NavigationBarItem(selected = section == index, onClick = { section = index },
                         icon = { Text(listOf("⌂", "▦", "●")[index]) }, label = { Text(label) })
@@ -75,24 +81,37 @@ fun ClinicApp(dao: ClinicDao) {
             FloatingActionButton(onClick = {
                 if (section == 2) { editingClient = null; clientDialog = true }
                 else { editingTurn = null; turnDialog = true }
-            }, containerColor = green, contentColor = Color.White) { Text("+", style = MaterialTheme.typography.headlineMedium) }
+            }, containerColor = accent, contentColor = Color.White) { Text("+", style = MaterialTheme.typography.headlineMedium) }
         }
     ) { padding ->
         LazyColumn(Modifier.fillMaxSize().padding(padding), contentPadding = PaddingValues(20.dp),
             verticalArrangement = Arrangement.spacedBy(14.dp)) {
             if (section == 0) {
                 item {
-                    Text("Tu consultorio, organizado.", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-                    Text("Resumen de hoy", color = Color.Gray)
+                    Text("Tu centro de control", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.ExtraBold)
+                    Text("Actividad y estadísticas · " + LocalDate.now(), color = muted)
                 }
                 item {
-                    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                        Metric("Turnos de hoy", turns.count { it.date == LocalDate.now().toString() }, Modifier.weight(1f))
-                        Metric("Clientes", clients.size, Modifier.weight(1f))
+                    Card(colors = CardDefaults.cardColors(containerColor = Color.Transparent), shape = RoundedCornerShape(24.dp)) {
+                        Column(Modifier.fillMaxWidth().background(Brush.linearGradient(listOf(Color(0xFF5836A9), Color(0xFF2C3982), Color(0xFF1D2752)))).padding(20.dp)) {
+                            Text("RESUMEN GENERAL", color = Color(0xFFE4DDFF), style = MaterialTheme.typography.labelMedium)
+                            Text("El día de tu consultorio", color = Color.White, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+                            Spacer(Modifier.height(14.dp))
+                            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                                Metric("Turnos de hoy", turns.count { it.date == LocalDate.now().toString() }, Modifier.weight(1f))
+                                Metric("Próximos", turns.count { it.date >= LocalDate.now().toString() }, Modifier.weight(1f))
+                            }
+                        }
                     }
                 }
                 item {
-                    Text("Accesos rápidos", style = MaterialTheme.typography.titleLarge)
+                    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                        Metric("Clientes", clients.size, Modifier.weight(1f))
+                        Metric("Sesiones registradas", turns.size, Modifier.weight(1f))
+                    }
+                }
+                item {
+                    Text("Accesos rápidos", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                     Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                         Button(onClick = { editingTurn = null; turnDialog = true }, modifier = Modifier.weight(1f)) { Text("Nuevo turno") }
                         OutlinedButton(onClick = { editingClient = null; clientDialog = true }, modifier = Modifier.weight(1f)) { Text("Nuevo cliente") }
@@ -107,8 +126,8 @@ fun ClinicApp(dao: ClinicDao) {
             }
             if (section == 1) {
                 item {
-                    Text("Agenda", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-                    Text("Turnos registrados: " + turns.size, color = Color.Gray)
+                    Text("Agenda de sesiones", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+                    Text("Turnos registrados: " + turns.size, color = muted)
                 }
                 if (turns.isEmpty()) item { Empty("Sin turnos", "Tocá + para agendar una sesión.") }
                 else items(turns.sortedWith(compareBy<Appointment> { it.date }.thenBy { it.time }), key = { it.id }) { turn ->
@@ -117,17 +136,17 @@ fun ClinicApp(dao: ClinicDao) {
             }
             if (section == 2) {
                 item {
-                    Text("Clientes", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-                    Text("Fichas registradas: " + clients.size, color = Color.Gray)
+                    Text("Directorio de clientes", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+                    Text("Fichas registradas: " + clients.size, color = muted)
                 }
                 item { OutlinedTextField(search, { search = it }, label = { Text("Buscar nombre o teléfono") }, modifier = Modifier.fillMaxWidth(), singleLine = true) }
                 val filtered = clients.filter { it.name.contains(search, true) || it.phone.contains(search, true) }
                 if (filtered.isEmpty()) item { Empty("Sin resultados", "Agregá un cliente o cambiá la búsqueda.") }
                 else items(filtered, key = { it.id }) { client ->
-                    Card(colors = CardDefaults.cardColors(containerColor = Color.White)) {
+                    Card(colors = CardDefaults.cardColors(containerColor = panel)) {
                         Column(Modifier.fillMaxWidth().padding(16.dp)) {
                             Text(client.name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-                            Text(client.phone.ifBlank { "Sin teléfono" }, color = Color.Gray)
+                            Text(client.phone.ifBlank { "Sin teléfono" }, color = muted)
                             Text("Turnos: " + turns.count { it.clientId == client.id }, color = green)
                             Row {
                                 TextButton(onClick = { editingClient = client; clientDialog = true }) { Text("Editar") }
@@ -176,29 +195,29 @@ fun ClinicApp(dao: ClinicDao) {
 }
 @Composable
 private fun Metric(title: String, number: Int, modifier: Modifier) {
-    Card(modifier, colors = CardDefaults.cardColors(containerColor = Color.White)) {
+    Card(modifier, colors = CardDefaults.cardColors(containerColor = panel)) {
         Column(Modifier.padding(18.dp)) {
-            Text(number.toString(), style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.Bold, color = green)
+            Text(number.toString(), style = MaterialTheme.typography.headlineLarge, fontWeight = FontWeight.ExtraBold, color = green)
             Text(title, style = MaterialTheme.typography.bodyMedium)
         }
     }
 }
 @Composable
 private fun Empty(title: String, subtitle: String) {
-    Card(colors = CardDefaults.cardColors(containerColor = Color.White), modifier = Modifier.fillMaxWidth()) {
+    Card(colors = CardDefaults.cardColors(containerColor = panel), modifier = Modifier.fillMaxWidth()) {
         Column(Modifier.padding(28.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium)
-            Text(subtitle, color = Color.Gray)
+            Text(subtitle, color = muted)
         }
     }
 }
 @Composable
 private fun TurnCard(turn: Appointment, name: String, edit: () -> Unit, delete: () -> Unit) {
-    Card(colors = CardDefaults.cardColors(containerColor = Color.White)) {
+    Card(colors = CardDefaults.cardColors(containerColor = panel)) {
         Column(Modifier.fillMaxWidth().padding(16.dp)) {
             Text(turn.date + "  ·  " + turn.time, color = green, fontWeight = FontWeight.Bold)
             Text(name, style = MaterialTheme.typography.titleMedium)
-            Text(turn.note.ifBlank { "Sesión programada" }, color = Color.Gray)
+            Text(turn.note.ifBlank { "Sesión programada" }, color = muted)
             Row {
                 TextButton(onClick = edit) { Text("Editar") }
                 TextButton(onClick = delete) { Text("Eliminar") }
