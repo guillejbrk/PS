@@ -13,6 +13,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.background
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Home
+import androidx.compose.material.icons.rounded.Event
+import androidx.compose.material.icons.rounded.People
+import androidx.compose.material.icons.rounded.Add
+import androidx.compose.material.icons.rounded.ChevronRight
+import androidx.compose.material.icons.rounded.CalendarToday
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -30,10 +37,10 @@ import java.time.LocalDate
 import java.time.LocalTime
 
 private val green = Color(0xFFB59AFF)
-private val background = Color(0xFF0B1022)
-private val panel = Color(0xFF18213A)
+private val background = Color(0xFF101725)
+private val panel = Color(0xFF1D2838)
 private val muted = Color(0xFFAAB5D0)
-private val accent = Color(0xFF7654E8)
+private val accent = Color(0xFF7666D8)
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,7 +88,7 @@ fun ClinicApp(dao: ClinicDao) {
             NavigationBar(containerColor = panel) {
                 listOf("Inicio", "Agenda", "Clientes").forEachIndexed { index, label ->
                     NavigationBarItem(selected = section == index, onClick = { section = index },
-                        icon = { Text(listOf("⌂", "▦", "●")[index]) }, label = { Text(label) })
+                        icon = { Icon(listOf(Icons.Rounded.Home, Icons.Rounded.Event, Icons.Rounded.People)[index], contentDescription = null) }, label = { Text(label) })
                 }
             }
         },
@@ -89,49 +96,69 @@ fun ClinicApp(dao: ClinicDao) {
             FloatingActionButton(onClick = {
                 if (section == 2) { editingClient = null; clientDialog = true }
                 else { editingTurn = null; turnDialog = true }
-            }, containerColor = accent, contentColor = Color.White) { Text("+", style = MaterialTheme.typography.headlineMedium) }
+            }, containerColor = accent, contentColor = Color.White) { Icon(Icons.Rounded.Add, contentDescription = "Agregar") }
         }
     ) { padding ->
         LazyColumn(Modifier.fillMaxSize().padding(padding), contentPadding = PaddingValues(20.dp),
             verticalArrangement = Arrangement.spacedBy(14.dp)) {
             if (section == 0) {
                 item {
-                    Text("Tu centro de control", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.ExtraBold)
-                    Text("Actividad y estadísticas · " + LocalDate.now(), color = muted)
+                    Text("LUNES A DOMINGO · ORGANIZACIÓN DIARIA", color = muted, style = MaterialTheme.typography.labelSmall, letterSpacing = 1.sp)
+                    Spacer(Modifier.height(7.dp))
+                    Text("Agenda del consultorio", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.SemiBold)
+                    Text("Hoy, " + LocalDate.now().dayOfMonth + " de " +
+                        LocalDate.now().month.getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale("es", "AR")),
+                        color = muted)
                 }
                 item {
-                    Card(colors = CardDefaults.cardColors(containerColor = Color.Transparent), shape = RoundedCornerShape(24.dp)) {
-                        Column(Modifier.fillMaxWidth().background(Brush.linearGradient(listOf(Color(0xFF5836A9), Color(0xFF2C3982), Color(0xFF1D2752)))).padding(20.dp)) {
-                            Text("RESUMEN GENERAL", color = Color(0xFFE4DDFF), style = MaterialTheme.typography.labelMedium)
-                            Text("El día de tu consultorio", color = Color.White, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-                            Spacer(Modifier.height(14.dp))
-                            Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                                Metric("Turnos de hoy", turns.count { it.date == LocalDate.now().toString() }, Modifier.weight(1f))
-                                Metric("Próximos", turns.count { it.date >= LocalDate.now().toString() }, Modifier.weight(1f))
+                    val todayCount = turns.count { it.date == LocalDate.now().toString() }
+                    val next = turns.filter { it.date >= LocalDate.now().toString() }.sortedWith(compareBy<Appointment> { it.date }.thenBy { it.time }).firstOrNull()
+                    Card(colors = CardDefaults.cardColors(containerColor = panel), shape = RoundedCornerShape(16.dp),
+                        border = BorderStroke(1.dp, Color(0xFF39465C))) {
+                        Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                            Text("PRÓXIMA SESIÓN", color = muted, style = MaterialTheme.typography.labelMedium, letterSpacing = 1.sp)
+                            if (next == null) {
+                                Text("Sin turnos programados", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Medium)
+                                Text("La agenda está libre. Podés registrar una nueva sesión.", color = muted)
+                            } else {
+                                Text(next.time + "  ·  " + next.date, color = green, style = MaterialTheme.typography.titleMedium)
+                                Text(clients.find { it.id == next.clientId }?.name ?: "Cliente", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.SemiBold)
+                                Text(next.note.ifBlank { "Sesión programada" }, color = muted)
+                            }
+                            HorizontalDivider(color = Color(0xFF39465C))
+                            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                                Text("Turnos hoy: " + todayCount, color = muted, modifier = Modifier.weight(1f))
+                                TextButton(onClick = { section = 1 }) {
+                                    Text("Abrir agenda")
+                                    Icon(Icons.Rounded.ChevronRight, contentDescription = null)
+                                }
                             }
                         }
                     }
                 }
                 item {
-                    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                        Metric("Clientes", clients.size, Modifier.weight(1f))
-                        Metric("Sesiones registradas", turns.size, Modifier.weight(1f))
+                    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        Metric("Pacientes", clients.size, Modifier.weight(1f))
+                        Metric("Turnos futuros", turns.count { it.date >= LocalDate.now().toString() }, Modifier.weight(1f))
                     }
+                }
+                item {
+                    Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                        Text("Turnos de hoy", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold,
+                            modifier = Modifier.weight(1f))
+                        TextButton(onClick = { section = 1; selectedDate = LocalDate.now() }) { Text("Ver agenda") }
+                    }
+                }
+                val today = turns.filter { it.date == LocalDate.now().toString() }.sortedBy { it.time }
+                if (today.isEmpty()) item { Empty("No hay turnos para hoy", "Podés agregar una sesión con el botón +.") }
+                else items(today, key = { it.id }) { turn ->
+                    TurnCard(turn, clients.find { it.id == turn.clientId }?.name ?: "Cliente",
+                        { editingTurn = turn; turnDialog = true }, { removeTurn = turn })
+                }
+                item {
+                    Text("Actividad reciente", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
                 }
                 item { ActivityAnalytics(turns) }
-                item {
-                    Text("Accesos rápidos", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-                    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                        Button(onClick = { editingTurn = null; turnDialog = true }, modifier = Modifier.weight(1f)) { Text("Nuevo turno") }
-                        OutlinedButton(onClick = { editingClient = null; clientDialog = true }, modifier = Modifier.weight(1f)) { Text("Nuevo cliente") }
-                    }
-                }
-                item { Text("Agenda de hoy", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold) }
-                val today = turns.filter { it.date == LocalDate.now().toString() }
-                if (today.isEmpty()) item { Empty("Tu agenda está libre", "Agregá un turno para comenzar.") }
-                else items(today, key = { it.id }) { turn ->
-                    TurnCard(turn, clients.find { it.id == turn.clientId }?.name ?: "Cliente", { editingTurn = turn; turnDialog = true }, { removeTurn = turn })
-                }
             }
             if (section == 1) {
                 item {
