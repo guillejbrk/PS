@@ -17,10 +17,10 @@ import java.time.YearMonth
 import java.time.format.TextStyle
 import java.util.Locale
 
-private val purple = Color(0xFFA78BFA)
-private val blue = Color(0xFF60A5FA)
-private val panelColor = Color(0xFF18213A)
-private val mutedColor = Color(0xFFAAB5D0)
+private val purple = Color(0xFF3158EF)
+private val blue = Color(0xFF3158EF)
+private val panelColor = Color.White
+private val mutedColor = Color(0xFF68738A)
 private val spanish = Locale("es", "AR")
 
 @Composable
@@ -32,7 +32,7 @@ fun AppointmentCalendar(turns: List<Appointment>, selected: LocalDate, onSelect:
         Column(Modifier.fillMaxWidth().padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(month.month.getDisplayName(TextStyle.FULL, spanish).replaceFirstChar { it.uppercase() } + " " + month.year,
-                    color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp, modifier = Modifier.weight(1f))
+                    color = Color(0xFF202B45), fontWeight = FontWeight.Bold, fontSize = 18.sp, modifier = Modifier.weight(1f))
                 TextButton(onClick = { month = month.minusMonths(1) }) { Text("‹", fontSize = 23.sp) }
                 TextButton(onClick = { month = month.plusMonths(1) }) { Text("›", fontSize = 23.sp) }
             }
@@ -53,12 +53,12 @@ fun AppointmentCalendar(turns: List<Appointment>, selected: LocalDate, onSelect:
                             val active = selected == date
                             Column(
                                 Modifier.weight(1f).height(50.dp)
-                                    .background(if (active) Color(0xFF6748B7) else Color.Transparent, RoundedCornerShape(12.dp))
+                                    .background(if (active) Color(0xFFEAF0FF) else Color.Transparent, RoundedCornerShape(12.dp))
                                     .clickable { onSelect(date) },
                                 horizontalAlignment = Alignment.CenterHorizontally,
                                 verticalArrangement = Arrangement.Center
                             ) {
-                                Text(d.toString(), color = Color.White, fontWeight = if (active) FontWeight.Bold else FontWeight.Normal)
+                                Text(d.toString(), color = Color(0xFF202B45), fontWeight = if (active) FontWeight.Bold else FontWeight.Normal)
                                 if ((countByDay[date.toString()] ?: 0) > 0) Text("•", color = blue, fontSize = 13.sp)
                             }
                         } else Spacer(Modifier.weight(1f).height(50.dp))
@@ -86,17 +86,17 @@ fun ActivityAnalytics(turns: List<Appointment>) {
     val maximum = (values.maxOfOrNull { it.second } ?: 0).coerceAtLeast(1)
     Card(colors = CardDefaults.cardColors(containerColor = panelColor), shape = RoundedCornerShape(20.dp)) {
         Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
-            Text("Actividad · 4 semanas", fontWeight = FontWeight.Bold, color = Color.White, fontSize = 18.sp)
+            Text("Actividad · 4 semanas", fontWeight = FontWeight.Bold, color = Color(0xFF202B45), fontSize = 18.sp)
             Text("Turnos registrados por semana", color = mutedColor, fontSize = 12.sp)
             Row(Modifier.fillMaxWidth().height(155.dp), horizontalArrangement = Arrangement.spacedBy(15.dp),
                 verticalAlignment = Alignment.Bottom) {
                 values.forEach { (label, count) ->
                     Column(Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Bottom) {
-                        Text(count.toString(), color = Color.White, fontSize = 13.sp)
+                        Text(count.toString(), color = Color(0xFF202B45), fontSize = 13.sp)
                         Spacer(Modifier.height(6.dp))
                         Box(Modifier.fillMaxWidth(0.65f).height((12f + count.toFloat() / maximum * 96f).dp)
-                            .background(if (count == 0) Color(0xFF354263) else purple, RoundedCornerShape(topStart = 9.dp, topEnd = 9.dp)))
+                            .background(if (count == 0) Color(0xFFE8ECF5) else purple, RoundedCornerShape(topStart = 9.dp, topEnd = 9.dp)))
                         Spacer(Modifier.height(7.dp))
                         Text(label, color = mutedColor, fontSize = 11.sp)
                     }
