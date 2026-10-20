@@ -25,9 +25,13 @@ interface ClinicDao {
     @Query("SELECT * FROM clients ORDER BY name COLLATE NOCASE")
     fun clients(): Flow<List<Client>>
     @Insert suspend fun addClient(client: Client)
+    @Update suspend fun updateClient(client: Client)
+    @Delete suspend fun deleteClient(client: Client)
     @Query("SELECT * FROM appointments ORDER BY date, time")
     fun appointments(): Flow<List<Appointment>>
     @Insert suspend fun addAppointment(appointment: Appointment)
+    @Update suspend fun updateAppointment(appointment: Appointment)
+    @Delete suspend fun deleteAppointment(appointment: Appointment)
 }
 
 @Database(entities = [Client::class, Appointment::class], version = 1, exportSchema = false)
