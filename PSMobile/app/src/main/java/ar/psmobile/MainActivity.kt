@@ -1,6 +1,12 @@
 package ar.psmobile
 
 import android.os.Bundle
+import android.app.Activity
+import android.content.Intent
+import android.provider.ContactsContract
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.ui.platform.LocalContext
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
@@ -241,9 +247,47 @@ private fun ConfirmDelete(title: String, description: String, dismiss: () -> Uni
 private fun ClientForm(original: Client?, dismiss: () -> Unit, save: (String, String) -> Unit) {
     var name by remember(original) { mutableStateOf(original?.name ?: "") }
     var phone by remember(original) { mutableStateOf(original?.phone ?: "") }
+    var contactError by remember { mutableStateOf("") }
+    val context = LocalContext.current
+    val pickContact = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val uri = result.data?.data
+            if (uri == null) {
+                contactError = "No se pudo leer el contacto seleccionado."
+            } else {
+                try {
+                    context.contentResolver.query(
+                        uri,
+                        arrayOf(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+                            ContactsContract.CommonDataKinds.Phone.NUMBER),
+                        null, null, null
+                    )?.use { cursor ->
+                        if (cursor.moveToFirst()) {
+                            val nameIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME)
+                            val numberIndex = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)
+                            if (nameIndex >= 0) name = cursor.getString(nameIndex).orEmpty()
+                            if (numberIndex >= 0) phone = cursor.getString(numberIndex).orEmpty()
+                            contactError = ""
+                        } else contactError = "El contacto elegido no tiene un teléfono disponible."
+                    } ?: run { contactError = "No se pudo abrir el contacto." }
+                } catch (_: Exception) {
+                    contactError = "No se pudo importar el contacto. Podés cargarlo manualmente."
+                }
+            }
+        }
+    }
     AlertDialog(onDismissRequest = dismiss, title = { Text(if (original == null) "Nuevo cliente" else "Editar cliente") },
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                OutlinedButton(onClick = {
+                    try {
+                        pickContact.launch(Intent(Intent.ACTION_PICK,
+                            ContactsContract.CommonDataKinds.Phone.CONTENT_URI))
+                    } catch (_: Exception) {
+                        contactError = "No hay una aplicación de contactos disponible."
+                    }
+                }, modifier = Modifier.fillMaxWidth()) { Text("Importar desde contactos del teléfono") }
+                if (contactError.isNotBlank()) Text(contactError, color = MaterialTheme.colorScheme.error)
                 OutlinedTextField(name, { name = it }, label = { Text("Nombre y apellido") }, singleLine = true)
                 OutlinedTextField(phone, { phone = it }, label = { Text("Teléfono") }, singleLine = true,
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone))
@@ -252,6 +296,7 @@ private fun ClientForm(original: Client?, dismiss: () -> Unit, save: (String, St
         confirmButton = { Button(enabled = name.isNotBlank(), onClick = { save(name.trim(), phone.trim()) }) { Text("Guardar") } },
         dismissButton = { TextButton(onClick = dismiss) { Text("Cancelar") } })
 }
+@Composable
 @Composable
 private fun TurnForm(original: Appointment?, clients: List<Client>, dismiss: () -> Unit, save: (Long, String, String, String) -> Unit) {
     var selected by remember(original) { mutableStateOf(original?.clientId ?: clients.firstOrNull()?.id) }
