@@ -48,6 +48,7 @@ fun ClinicApp(dao: ClinicDao) {
     val scope = rememberCoroutineScope()
     var section by remember { mutableIntStateOf(0) }
     var search by remember { mutableStateOf("") }
+    var selectedDate by remember { mutableStateOf(LocalDate.now()) }
     var editingClient by remember { mutableStateOf<Client?>(null) }
     var editingTurn by remember { mutableStateOf<Appointment?>(null) }
     var clientDialog by remember { mutableStateOf(false) }
@@ -111,6 +112,7 @@ fun ClinicApp(dao: ClinicDao) {
                         Metric("Sesiones registradas", turns.size, Modifier.weight(1f))
                     }
                 }
+                item { ActivityAnalytics(turns) }
                 item {
                     Text("Accesos rápidos", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                     Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -130,8 +132,11 @@ fun ClinicApp(dao: ClinicDao) {
                     Text("Agenda de sesiones", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
                     Text("Turnos registrados: " + turns.size, color = muted)
                 }
-                if (turns.isEmpty()) item { Empty("Sin turnos", "Tocá + para agendar una sesión.") }
-                else items(turns.sortedWith(compareBy<Appointment> { it.date }.thenBy { it.time }), key = { it.id }) { turn ->
+                item { AppointmentCalendar(turns, selectedDate) { selectedDate = it } }
+                item { Text("Turnos de " + selectedDate.toString(), style = MaterialTheme.typography.titleLarge) }
+                val dayTurns = turns.filter { it.date == selectedDate.toString() }.sortedBy { it.time }
+                if (dayTurns.isEmpty()) item { Empty("Sin turnos para esta fecha", "Elegí otro día o tocá + para agendar.") }
+                else items(dayTurns, key = { it.id }) { turn ->
                     TurnCard(turn, clients.find { it.id == turn.clientId }?.name ?: "Cliente", { editingTurn = turn; turnDialog = true }, { removeTurn = turn })
                 }
             }
