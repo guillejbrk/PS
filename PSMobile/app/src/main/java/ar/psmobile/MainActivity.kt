@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.background
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.material.icons.rounded.AddCircle
+import androidx.compose.material.icons.rounded.ContactPhone
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.Event
@@ -36,18 +38,20 @@ import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.LocalTime
 
-private val green = Color(0xFFB59AFF)
-private val background = Color(0xFF101725)
-private val panel = Color(0xFF1D2838)
-private val muted = Color(0xFFAAB5D0)
-private val accent = Color(0xFF7666D8)
+private val green = Color(0xFF3158EF)
+private val background = Color(0xFFF7F8FC)
+private val panel = Color.White
+private val muted = Color(0xFF68738A)
+private val accent = Color(0xFF3158EF)
+private val ink = Color(0xFF202B45)
+private val paleBlue = Color(0xFFEAF0FF)
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val dao = ClinicDatabase.get(this).dao()
         setContent {
             MaterialTheme(
-                colorScheme = darkColorScheme(primary = green, onPrimary = background, background = background, surface = panel, onSurface = Color(0xFFF4F5FF), onBackground = Color(0xFFF4F5FF), surfaceVariant = Color(0xFF273354), onSurfaceVariant = muted, secondaryContainer = Color(0xFF302652)),
+                colorScheme = lightColorScheme(primary = green, onPrimary = Color.White, background = background, surface = panel, onSurface = ink, onBackground = ink, surfaceVariant = paleBlue, onSurfaceVariant = muted, secondaryContainer = paleBlue),
                 shapes = Shapes(medium = RoundedCornerShape(18.dp), large = RoundedCornerShape(24.dp))
             ) { ClinicApp(dao) }
         }
@@ -76,19 +80,19 @@ fun ClinicApp(dao: ClinicDao) {
     Scaffold(
         containerColor = background,
         topBar = {
-            CenterAlignedTopAppBar(title = {
+            TopAppBar(title = {
                 Column {
-                    Text("PS  /  MOBILE", fontWeight = FontWeight.ExtraBold, letterSpacing = 1.5.sp)
-                    Text("DASHBOARD · CONSULTORIO", style = MaterialTheme.typography.labelSmall, color = muted)
+                    Text("PS Mobile", fontWeight = FontWeight.Bold, color = Color.White)
+                    Text("Gestión de consultorio", style = MaterialTheme.typography.labelSmall, color = Color(0xFFDCE5FF))
                 }
-            }, colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = background))
+            }, colors = TopAppBarDefaults.topAppBarColors(containerColor = green))
         },
         snackbarHost = { SnackbarHost(snackbar) },
         bottomBar = {
-            NavigationBar(containerColor = panel) {
-                listOf("Inicio", "Agenda", "Clientes").forEachIndexed { index, label ->
+            NavigationBar(containerColor = panel, tonalElevation = 4.dp) {
+                listOf("Inicio", "Agenda", "Clientes", "Más").forEachIndexed { index, label ->
                     NavigationBarItem(selected = section == index, onClick = { section = index },
-                        icon = { Icon(listOf(Icons.Rounded.Home, Icons.Rounded.Event, Icons.Rounded.People)[index], contentDescription = null) }, label = { Text(label) })
+                        icon = { Icon(listOf(Icons.Rounded.Home, Icons.Rounded.Event, Icons.Rounded.People, Icons.Rounded.ContactPhone)[index], contentDescription = null) }, label = { Text(label) })
                 }
             }
         },
@@ -103,33 +107,29 @@ fun ClinicApp(dao: ClinicDao) {
             verticalArrangement = Arrangement.spacedBy(14.dp)) {
             if (section == 0) {
                 item {
-                    Text("LUNES A DOMINGO · ORGANIZACIÓN DIARIA", color = muted, style = MaterialTheme.typography.labelSmall, letterSpacing = 1.sp)
-                    Spacer(Modifier.height(7.dp))
-                    Text("Agenda del consultorio", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.SemiBold)
-                    Text("Hoy, " + LocalDate.now().dayOfMonth + " de " +
-                        LocalDate.now().month.getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale("es", "AR")),
-                        color = muted)
+                    Text("Agenda del consultorio", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, color = ink)
+                    Text("Organizá tus sesiones y pacientes", color = muted)
                 }
                 item {
                     val todayCount = turns.count { it.date == LocalDate.now().toString() }
                     val next = turns.filter { it.date >= LocalDate.now().toString() }.sortedWith(compareBy<Appointment> { it.date }.thenBy { it.time }).firstOrNull()
-                    Card(colors = CardDefaults.cardColors(containerColor = panel), shape = RoundedCornerShape(16.dp),
-                        border = BorderStroke(1.dp, Color(0xFF39465C))) {
-                        Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                            Text("PRÓXIMA SESIÓN", color = muted, style = MaterialTheme.typography.labelMedium, letterSpacing = 1.sp)
+                    Card(colors = CardDefaults.cardColors(containerColor = panel), shape = RoundedCornerShape(26.dp),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 5.dp)) {
+                        Column(Modifier.fillMaxWidth().padding(22.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                            Text("PRÓXIMA SESIÓN", color = green, style = MaterialTheme.typography.labelMedium, letterSpacing = 1.sp)
                             if (next == null) {
-                                Text("Sin turnos programados", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Medium)
-                                Text("La agenda está libre. Podés registrar una nueva sesión.", color = muted)
+                                Text("Sin turnos programados", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+                                Text("Agregá una sesión para empezar a organizar tu jornada.", color = muted)
                             } else {
-                                Text(next.time + "  ·  " + next.date, color = green, style = MaterialTheme.typography.titleMedium)
-                                Text(clients.find { it.id == next.clientId }?.name ?: "Cliente", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.SemiBold)
+                                Text(clients.find { it.id == next.clientId }?.name ?: "Cliente", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
+                                Text(next.date + " · " + next.time, color = green, style = MaterialTheme.typography.titleMedium)
                                 Text(next.note.ifBlank { "Sesión programada" }, color = muted)
                             }
-                            HorizontalDivider(color = Color(0xFF39465C))
+                            HorizontalDivider(color = paleBlue)
                             Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
-                                Text("Turnos hoy: " + todayCount, color = muted, modifier = Modifier.weight(1f))
+                                Text("Turnos de hoy: " + todayCount, modifier = Modifier.weight(1f), color = muted)
                                 TextButton(onClick = { section = 1 }) {
-                                    Text("Abrir agenda")
+                                    Text("Ver agenda")
                                     Icon(Icons.Rounded.ChevronRight, contentDescription = null)
                                 }
                             }
@@ -137,27 +137,41 @@ fun ClinicApp(dao: ClinicDao) {
                     }
                 }
                 item {
+                    Text("Accesos rápidos", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+                    Spacer(Modifier.height(10.dp))
                     Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        Metric("Pacientes", clients.size, Modifier.weight(1f))
-                        Metric("Turnos futuros", turns.count { it.date >= LocalDate.now().toString() }, Modifier.weight(1f))
+                        Button(onClick = { editingTurn = null; turnDialog = true }, modifier = Modifier.weight(1f)) {
+                            Icon(Icons.Rounded.AddCircle, contentDescription = null)
+                            Spacer(Modifier.width(6.dp))
+                            Text("Turno")
+                        }
+                        FilledTonalButton(onClick = { editingClient = null; clientDialog = true }, modifier = Modifier.weight(1f)) {
+                            Icon(Icons.Rounded.People, contentDescription = null)
+                            Spacer(Modifier.width(6.dp))
+                            Text("Cliente")
+                        }
+                    }
+                }
+                item {
+                    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        Metric("Clientes", clients.size, Modifier.weight(1f))
+                        Metric("Próximos turnos", turns.count { it.date >= LocalDate.now().toString() }, Modifier.weight(1f))
                     }
                 }
                 item {
                     Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
-                        Text("Turnos de hoy", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold,
+                        Text("Agenda de hoy", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold,
                             modifier = Modifier.weight(1f))
-                        TextButton(onClick = { section = 1; selectedDate = LocalDate.now() }) { Text("Ver agenda") }
+                        TextButton(onClick = { section = 1; selectedDate = LocalDate.now() }) { Text("Ver todos") }
                     }
                 }
                 val today = turns.filter { it.date == LocalDate.now().toString() }.sortedBy { it.time }
-                if (today.isEmpty()) item { Empty("No hay turnos para hoy", "Podés agregar una sesión con el botón +.") }
+                if (today.isEmpty()) item { Empty("No hay turnos para hoy", "Agregá uno con el botón +.") }
                 else items(today, key = { it.id }) { turn ->
                     TurnCard(turn, clients.find { it.id == turn.clientId }?.name ?: "Cliente",
                         { editingTurn = turn; turnDialog = true }, { removeTurn = turn })
                 }
-                item {
-                    Text("Actividad reciente", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.SemiBold)
-                }
+                item { Text("Actividad", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold) }
                 item { ActivityAnalytics(turns) }
             }
             if (section == 1) {
@@ -195,6 +209,10 @@ fun ClinicApp(dao: ClinicDao) {
                         }
                     }
                 }
+            }
+            if (section == 3) {
+                item { Text("Más opciones", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold) }
+                item { Empty("PS Mobile · Datos locales", "Los datos de clientes y turnos permanecen en este dispositivo. No uses información clínica real hasta incorporar protección y respaldos cifrados.") }
             }
         }
     }
