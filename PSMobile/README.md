@@ -22,3 +22,12 @@ GitHub Actions → *PS Mobile APK* → `app-debug.apk` (artefacto). El APK debug
 - Ficha clínica y evolución de sesiones
 - Control de acceso, cifrado de base local, exportación/importación cifrada
 - Evaluar importación de datos existentes de SQL Server desde un archivo de migración **sin credenciales**
+
+## 0.2 Alpha — interfaz y operaciones
+- Inicio renovado con indicadores, accesos rápidos y agenda del día.
+- Barra inferior Inicio / Agenda / Clientes.
+- Búsqueda de clientes por nombre o teléfono.
+- Edición y eliminación con confirmación, sin cambiar el esquema Room v1 (preserva los registros locales de la Alpha 0.1).
+- Bloqueo de eliminación de clientes que tengan turnos asociados.
+- Formulario de turnos con validación de fecha y hora.
+- Pendiente: cifrado de datos, bloqueo de acceso, historial de tratamientos y copia de seguridad segura. **No utilizar con datos reales de pacientes todavía.**
